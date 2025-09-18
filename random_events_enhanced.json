@@ -1,89 +1,89 @@
 [
     {
         "id": 1,
-        "title": "🌪️ SIÊU BÃO MOLAVE!",
-        "text": "Siêu bão cấp 16 đổ bộ miền Trung, sức gió 200km/h. Hàng triệu người cần sơ tán khẩn cấp!",
+        "title": "SIÊU BÃO YAGI TẤN CÔNG MIỀN BẮC!",
+        "text": "Siêu bão cấp 16 đổ bộ miền Bắc, gió 200km/h. Hàng triệu người cần sơ tán khẩn cấp, thiệt hại hạ tầng nghiêm trọng!",
         "image": "https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=800&q=80",
         "effects": {
-            "discontent": 10,
+            "discontent": 15,
             "conflict": 5,
-            "economy": -20,
-            "environment": -15,
-            "freedom": -5,
-            "security": -10
+            "economy": -25,
+            "environment": -20,
+            "freedom": -10,
+            "security": -15
         },
         "rarity": "common"
     },
     {
         "id": 2,
-        "title": "💰 PHÁT HIỆN MỎ DẦU KHỔNG LỒ!",
-        "text": "Tập đoàn dầu khí vừa phát hiện mỏ dầu trữ lượng 5 tỷ thùng ngoài khơi biển Đông!",
+        "title": "PHÁT HIỆN MỎ DẦU KHỔNG LỒ BIỂN ĐÔNG!",
+        "text": "Tập đoàn dầu khí phát hiện mỏ dầu trữ lượng 8 tỷ thùng ngoài khơ Vũng Tàu!",
         "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80",
         "effects": {
-            "discontent": -15,
+            "discontent": -20,
             "conflict": -5,
-            "economy": 25,
-            "environment": -10,
+            "economy": 30,
+            "environment": -15,
             "freedom": 5,
-            "security": 10
+            "security": 15
         },
         "rarity": "rare"
     },
     {
         "id": 3,
-        "title": "🦠 DỊCH CÚM GIA CẦM H5N1!",
-        "text": "Dịch cúm gia cầm bùng phát tại 20 tỉnh thành, 10 triệu con gia cầm bị tiêu hủy!",
+        "title": "DỊCH CORONA BIẾN CHỦNG MỚI!",
+        "text": "Phát hiện biến chủng COVID-26 lây lan nhanh gấp 3 lần, WHO tuyên bố tình trạng khẩn cấp!",
         "image": "https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=800&q=80",
         "effects": {
-            "discontent": 15,
-            "conflict": 8,
-            "economy": -15,
+            "discontent": 25,
+            "conflict": 10,
+            "economy": -30,
             "environment": 5,
-            "freedom": -8,
-            "security": -5
+            "freedom": -25,
+            "security": -10
         },
         "rarity": "common"
     },
     {
         "id": 4,
-        "title": "🎉 OLYMPIC PARIS 2024!",
-        "text": "Đoàn thể thao quốc gia giành 10 HCV tại Olympic, phá kỷ lục lịch sử!",
+        "title": "ĐỘI TUYỂN VIỆT NAM VÔ ĐỊCH WORLD CUP!",
+        "text": "Đội tuyển Việt Nam tạo địa chấn lịch sử, đánh bại Pháp 2-1 tại chung kết World Cup 2026!",
         "image": "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&q=80",
         "effects": {
-            "discontent": -20,
-            "conflict": -10,
-            "economy": 5,
+            "discontent": -30,
+            "conflict": -15,
+            "economy": 15,
             "environment": 0,
-            "freedom": 10,
-            "security": 5
+            "freedom": 20,
+            "security": 10
         },
-        "rarity": "common"
+        "rarity": "legendary"
     },
     {
         "id": 5,
-        "title": "🔥 CHÁY RỪNG AMAZON VIỆT NAM!",
-        "text": "Cháy rừng lan rộng 50,000 hecta rừng nguyên sinh tại Tây Nguyên trong mùa khô!",
-        "image": "https://images.unsplash.com/photo-1574263867128-ed1ce4aa51b5?w=800&q=80",
+        "title": "TỔNG BÍ THƯ NGUYỄN PHÚ TRỌNG QUA ĐỜI!",
+        "text": "Tổng Bí thư Nguyễn Phú Trọng qua đời, cả nước tang lễ quốc gia, chuyển giao quyền lực diễn ra ổn định!",
+        "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80",
         "effects": {
-            "discontent": 20,
-            "conflict": 10,
-            "economy": -10,
-            "environment": -25,
-            "freedom": 0,
-            "security": -5
+            "discontent": 10,
+            "conflict": 8,
+            "economy": -5,
+            "environment": 0,
+            "freedom": 5,
+            "security": -10
         },
-        "rarity": "common"
+        "rarity": "epic"
     },
     {
         "id": 6,
-        "title": "👨‍🚀 VỆ TINH VIỆT NAM!",
-        "text": "Thành công phóng vệ tinh viễn thông tự chế đầu tiên, đưa Việt Nam vào câu lạc bộ không gian!",
-        "image": "https://images.unsplash.com/photo-1543722088-4c1ba8a4b4c0?w=800&q=80",
+        "title": "NVIDIA ĐẦU TƯ 50 TỶ USD VÀO VIỆT NAM!",
+        "text": "NVIDIA công bố đầu tư 50 tỷ USD xây dựng trung tâm AI và semiconductor lớn nhất châu Á tại Việt Nam!",
+        "image": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&q=80",
         "effects": {
             "discontent": -15,
             "conflict": -5,
-            "economy": 10,
-            "environment": 0,
+            "economy": 35,
+            "environment": -10,
             "freedom": 10,
             "security": 15
         },
@@ -91,13 +91,340 @@
     },
     {
         "id": 7,
-        "title": "💻 TẤN CÔNG MẠNG QUỐC GIA!",
-        "text": "Nhóm hacker quốc tế tấn công hệ thống ngân hàng, rò rỉ 50 triệu thông tin cá nhân!",
+        "title": "TẤN CÔNG MẠNG QUY MÔ LỚN!",
+        "text": "Nhóm hacker quốc tế tấn công hệ thống ngân hàng, rò rỉ 100 triệu thông tin cá nhân và 5000 tỷ tiền mặt!",
         "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&q=80",
+        "effects": {
+            "discontent": 30,
+            "conflict": 15,
+            "economy": -25,
+            "environment": 0,
+            "freedom": -15,
+            "security": -30
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 8,
+        "title": "VIỆT NAM THƯƠNG MẠI HÓA 5G TOÀN QUỐC!",
+        "text": "Viettel và VNPT chính thức thương mại hóa 5G toàn quốc, tốc độ internet tăng 100 lần, cách mạng số bắt đầu!",
+        "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+        "effects": {
+            "discontent": -10,
+            "conflict": -5,
+            "economy": 25,
+            "environment": -5,
+            "freedom": 15,
+            "security": 10
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 9,
+        "title": "LẠM PHÁT TĂNG VỌT 18%!",
+        "text": "Giá cả hàng hóa tăng chóng mặt, lương tối thiểu không theo kịp chi phí sinh hoạt, người dân biểu tình!",
+        "image": "https://images.unsplash.com/photo-1559526324-593bc073d938?w=800&q=80",
+        "effects": {
+            "discontent": 35,
+            "conflict": 25,
+            "economy": -30,
+            "environment": 0,
+            "freedom": 0,
+            "security": -15
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 10,
+        "title": "ĐỘNG ĐẤT 7.8 RICHTER TẠI VIỆT NAM!",
+        "text": "Động đất 7.8 Richter rung chuyển miền Bắc, cảnh báo sóng thần cao 8m sắp tới, hàng triệu người sơ tán!",
+        "image": "https://images.unsplash.com/photo-1564415315949-7a0c4c73aab4?w=800&q=80",
+        "effects": {
+            "discontent": 25,
+            "conflict": 20,
+            "economy": -35,
+            "environment": -25,
+            "freedom": -20,
+            "security": -25
+        },
+        "rarity": "rare"
+    },
+    {
+        "id": 11,
+        "title": "ĐỀ ÁN ĐƯỜNG SẮT CAO TỐC BẮC-NAM!",
+        "text": "Quốc hội thông qua đầu tư 58 tỷ USD xây dựng đường sắt cao tốc Bắc-Nam, tạo đột phá hạ tầng!",
+        "image": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&q=80",
+        "effects": {
+            "discontent": -15,
+            "conflict": -10,
+            "economy": 30,
+            "environment": -15,
+            "freedom": 5,
+            "security": 10
+        },
+        "rarity": "epic"
+    },
+    {
+        "id": 12,
+        "title": "MẤT ĐIỆN TOÀN QUỐC 8 TIẾNG!",
+        "text": "Sự cố lưới điện khiến 90% lãnh thổ mất điện 8 tiếng liên tục, tê liệt toàn bộ hoạt động kinh tế!",
+        "image": "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&q=80",
+        "effects": {
+            "discontent": 30,
+            "conflict": 20,
+            "economy": -25,
+            "environment": 5,
+            "freedom": -10,
+            "security": -20
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 13,
+        "title": "VINFAST BÁN 1 TRIỆU XE ĐIỆN!",
+        "text": "VinFast đạt mốc 1 triệu xe điện bán ra toàn cầu, trở thành Tesla của châu Á, cổ phiếu tăng 500%!",
+        "image": "https://images.unsplash.com/photo-1593941707882-a5bac6861d75?w=800&q=80",
+        "effects": {
+            "discontent": -20,
+            "conflict": -10,
+            "economy": 25,
+            "environment": 20,
+            "freedom": 10,
+            "security": 5
+        },
+        "rarity": "rare"
+    },
+    {
+        "id": 14,
+        "title": "ỨNG DỤNG ZALO BỊ HACK TOÀN BỘ!",
+        "text": "Zalo với 75 triệu người dùng bị hack hoàn toàn, toàn bộ tin nhắn và thông tin cá nhân bị rò rỉ!",
+        "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80",
+        "effects": {
+            "discontent": 25,
+            "conflict": 15,
+            "economy": -15,
+            "environment": 0,
+            "freedom": -20,
+            "security": -25
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 15,
+        "title": "PHIM 'TRƯNG VƯƠNG' THẮNG OSCAR!",
+        "text": "Phim 'Trưng Vương' của đạo diễn Trần Anh Hùng giành Oscar Phim hay nhất, làm rạng danh điện ảnh Việt!",
+        "image": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=800&q=80",
+        "effects": {
+            "discontent": -25,
+            "conflict": -15,
+            "economy": 15,
+            "environment": 0,
+            "freedom": 20,
+            "security": 5
+        },
+        "rarity": "rare"
+    },
+    {
+        "id": 16,
+        "title": "LŨ LỤT MIỀN TRUNG LỊCH SỬ!",
+        "text": "Bão số 10 gây mưa lũ lịch sử tại miền Trung, 200 người chết, 5 triệu người bị ảnh hưởng!",
+        "image": "https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=800&q=80",
+        "effects": {
+            "discontent": 20,
+            "conflict": 10,
+            "economy": -30,
+            "environment": -20,
+            "freedom": -5,
+            "security": -15
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 17,
+        "title": "NẮNG NÓNG KỶ LỤC 48°C!",
+        "text": "Nhiệt độ cao kỷ lục 48°C kéo dài 3 tuần tại miền Bắc, hệ thống điện quá tải, cháy rừng lan rộng!",
+        "image": "https://images.unsplash.com/photo-1504370805625-d32c54b16100?w=800&q=80",
         "effects": {
             "discontent": 25,
             "conflict": 15,
             "economy": -20,
+            "environment": -25,
+            "freedom": -10,
+            "security": -15
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 18,
+        "title": "METRO HÀNH LANG XANH VẬN HÀNH!",
+        "text": "Tuyến Metro Nhổn - Ga Hà Nội chính thức vận hành, giảm 70% ùn tắc giao thông, dân chúng hân hoan!",
+        "image": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&q=80",
+        "effects": {
+            "discontent": -20,
+            "conflict": -10,
+            "economy": 15,
+            "environment": 15,
+            "freedom": 10,
+            "security": 5
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 19,
+        "title": "KHÁM PHÁ KHO BÁU NGUYỄN VUA!",
+        "text": "Phát hiện kho báu 500 tấn vàng của các vua Nguyễn tại Huế, giá trị ước tính 1000 tỷ USD!",
+        "image": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&q=80",
+        "effects": {
+            "discontent": -15,
+            "conflict": 5,
+            "economy": 40,
+            "environment": 0,
+            "freedom": 10,
+            "security": -5
+        },
+        "rarity": "legendary"
+    },
+    {
+        "id": 20,
+        "title": "ĐẢO NHÂN TẠO PHÚ QUỐC MỞ RỘNG!",
+        "text": "Hoàn thành đảo nhân tạo 15,000 hecta, tạo ra 'Singapore mới' của Việt Nam, thu hút 50 tỷ USD FDI!",
+        "image": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=80",
+        "effects": {
+            "discontent": -10,
+            "conflict": 0,
+            "economy": 35,
+            "environment": -20,
+            "freedom": 10,
+            "security": 15
+        },
+        "rarity": "epic"
+    },
+    {
+        "id": 101,
+        "title": "GÓI KÍCH THÍCH KINH TẾ 200 TỶ USD!",
+        "text": "Chính phủ quyết định bơm 200 tỷ USD vào nền kinh tế chống suy thoái. Ngân hàng trung ương giảm lãi suất về 0%!",
+        "image": "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&q=80",
+        "effects": {
+            "discontent": -15,
+            "conflict": -10,
+            "economy": 40,
+            "environment": -10,
+            "freedom": 0,
+            "security": 10
+        },
+        "rarity": "conditional",
+        "triggerCondition": {
+            "economy": 25
+        },
+        "category": "economicstimulus"
+    },
+    {
+        "id": 102,
+        "title": "CHƯƠNG TRÌNH CÔNG NGHIỆP HÓA 4.0!",
+        "text": "Khởi động kế hoạch 10 năm xây dựng 2000 nhà máy thông minh, tạo 10 triệu việc làm chất lượng cao!",
+        "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80",
+        "effects": {
+            "discontent": -20,
+            "conflict": -10,
+            "economy": 35,
+            "environment": -20,
+            "freedom": -5,
+            "security": 15
+        },
+        "rarity": "conditional",
+        "triggerCondition": {
+            "economy": 40
+        },
+        "category": "industrialization"
+    },
+    {
+        "id": 103,
+        "title": "TUYÊN BỐ THIẾT QUÂN LUẬT TOÀN QUỐC!",
+        "text": "Quân đội được triển khai toàn quốc, giới nghiêm từ 20h-6h. Tất cả biểu tình bị cấm, truyền thông bị kiểm duyệt!",
+        "image": "https://images.unsplash.com/photo-1526558829113-b118b3889c6c?w=800&q=80",
+        "effects": {
+            "discontent": 25,
+            "conflict": -30,
+            "economy": -15,
+            "environment": 0,
+            "freedom": -40,
+            "security": 40
+        },
+        "rarity": "conditional",
+        "triggerCondition": {
+            "conflict": 75
+        },
+        "category": "martiallaw"
+    },
+    {
+        "id": 21,
+        "title": "CHUYỂN ĐỔI SỐ QUỐC GIA HOÀN TẤT!",
+        "text": "Việt Nam hoàn tất chuyển đổi số 100% dịch vụ công, trở thành quốc gia đầu tiên trong khu vực đạt 'Digital Government 5.0'!",
+        "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
+        "effects": {
+            "discontent": -20,
+            "conflict": -10,
+            "economy": 30,
+            "environment": 5,
+            "freedom": 15,
+            "security": 20
+        },
+        "rarity": "epic"
+    },
+    {
+        "id": 22,
+        "title": "ĐÀO BITCOIN ILLEGAL QUY MÔ LỚN!",
+        "text": "Phát hiện trang trại đào bitcoin bất hợp pháp tiêu thụ điện bằng cả thành phố Đà Nẵng, gây thiếu điện toàn miền Bắc!",
+        "image": "https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=800&q=80",
+        "effects": {
+            "discontent": 20,
+            "conflict": 15,
+            "economy": -20,
+            "environment": -25,
+            "freedom": -15,
+            "security": -20
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 23,
+        "title": "AI CHAT GPT VIỆT NAM RA MẮT!",
+        "text": "VinGroup ra mắt VinAI - trợ lý AI tiếng Việt vượt trội ChatGPT, có 500 triệu người dùng trong 3 tháng đầu!",
+        "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
+        "effects": {
+            "discontent": -15,
+            "conflict": -5,
+            "economy": 25,
+            "environment": 0,
+            "freedom": 10,
+            "security": 15
+        },
+        "rarity": "rare"
+    },
+    {
+        "id": 24,
+        "title": "CHÁY RỪNG U MINH HẠ KHỦNG KHIẾP!",
+        "text": "Cháy rừng U Minh Hạ kéo dài 2 tuần, 50,000 hecta bị thiêu rụi, khói độc bao phủ 5 tỉnh miền Tây!",
+        "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
+        "effects": {
+            "discontent": 25,
+            "conflict": 10,
+            "economy": -20,
+            "environment": -35,
+            "freedom": -10,
+            "security": -15
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 25,
+        "title": "THAM NHŨNG CỰC TRƯỞNG HẢI QUAN!",
+        "text": "Cục trưởng Tổng cục Hải quan bị bắt vì nhận hối lộ 2000 tỷ từ các doanh nghiệp xuất nhập khẩu!",
+        "image": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80",
+        "effects": {
+            "discontent": 30,
+            "conflict": 20,
+            "economy": -15,
             "environment": 0,
             "freedom": -10,
             "security": -25
@@ -105,918 +432,528 @@
         "rarity": "common"
     },
     {
-        "id": 8,
-        "title": "🏆 NOBEL VẬT LÝ 2025!",
-        "text": "Nhà khoa học Việt Nam đoạt giải Nobel Vật lý cho nghiên cứu năng lượng fusion!",
-        "image": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&q=80",
-        "effects": {
-            "discontent": -25,
-            "conflict": -10,
-            "economy": 15,
-            "environment": 20,
-            "freedom": 15,
-            "security": 10
-        },
-        "rarity": "legendary"
-    },
-    {
-        "id": 9,
-        "title": "📈 LẠMPHÁT TĂNG VỌT 15%!",
-        "text": "Giá cả hàng hóa tăng chóng mặt, lương tối thiểu không theo kịp chi phí sinh hoạt!",
-        "image": "https://images.unsplash.com/photo-1559526324-593bc073d938?w=800&q=80",
-        "effects": {
-            "discontent": 30,
-            "conflict": 20,
-            "economy": -25,
-            "environment": 0,
-            "freedom": 0,
-            "security": -10
-        },
-        "rarity": "common"
-    },
-    {
-        "id": 10,
-        "title": "🌊 SÓNG THẦN CẢNH BÁO!",
-        "text": "Động đất 8.5 độ Richter ngoài khơi, cảnh báo sóng thần cao 10m sắp đổ bộ!",
-        "image": "https://images.unsplash.com/photo-1564415315949-7a0c4c73aab4?w=800&q=80",
-        "effects": {
-            "discontent": 20,
-            "conflict": 15,
-            "economy": -30,
-            "environment": -20,
-            "freedom": -15,
-            "security": -20
-        },
-        "rarity": "rare"
-    },
-    {
-        "id": 11,
-        "title": "🎭 LỄ HỘI TRUYỀN THỐNG!",
-        "text": "Lễ hội Đền Hùng thu hút 5 triệu du khách, tăng cường tinh thần dân tộc!",
-        "image": "https://picsum.photos/id/111/800/400",
-        "effects": {
-            "discontent": -10,
-            "conflict": -5,
-            "economy": 10,
-            "environment": -5,
-            "freedom": 5,
-            "security": 0
-        },
-        "rarity": "common"
-    },
-    {
-        "id": 12,
-        "title": "⚡ MẤT ĐIỆN TOÀN QUỐC!",
-        "text": "Sự cố lưới điện khiến 80% lãnh thổ mất điện 6 tiếng liên tục!",
-        "image": "https://picsum.photos/id/112/800/400",
-        "effects": {
-            "discontent": 25,
-            "conflict": 15,
-            "economy": -20,
-            "environment": 5,
-            "freedom": -5,
-            "security": -15
-        },
-        "rarity": "common"
-    },
-    {
-        "id": 13,
-        "title": "🚢 CHÌM TÀU DẦU!",
-        "text": "Tàu chở 100,000 tấn dầu chìm ngoài khơi, tạo vệt dầu loang dài 50km!",
-        "image": "https://picsum.photos/id/113/800/400",
-        "effects": {
-            "discontent": 20,
-            "conflict": 10,
-            "economy": -15,
-            "environment": -30,
-            "freedom": 0,
-            "security": -5
-        },
-        "rarity": "common"
-    },
-    {
-        "id": 14,
-        "title": "📱 ỨNG DỤNG VIỆT TOÀN CẦU!",
-        "text": "Startup Việt Nam tạo ra app được 1 tỷ người sử dụng trên toàn thế giới!",
-        "image": "https://picsum.photos/id/114/800/400",
+        "id": 26,
+        "title": "SAMSUNG ĐẦU TƯ THÊM 30 TỶ USD!",
+        "text": "Samsung quyết định đầu tư thêm 30 tỷ USD mở rộng nhà máy sản xuất chip tại Bắc Ninh và TP.HCM!",
+        "image": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&q=80",
         "effects": {
             "discontent": -15,
             "conflict": -5,
-            "economy": 20,
-            "environment": 0,
-            "freedom": 10,
-            "security": 5
-        },
-        "rarity": "common"
-    },
-    {
-        "id": 15,
-        "title": "🦠 VI-RÚT MỚI COVID-25!",
-        "text": "Phát hiện biến thể virus mới lây lan nhanh gấp 5 lần COVID-19!",
-        "image": "https://picsum.photos/id/115/800/400",
-        "effects": {
-            "discontent": 30,
-            "conflict": 20,
-            "economy": -25,
-            "environment": 0,
-            "freedom": -20,
-            "security": -15
-        },
-        "rarity": "common"
-    },
-    {
-        "id": 16,
-        "title": "🏭 NHÀ MÁY SAMSUNG KHỔNG LỒ!",
-        "text": "Samsung đầu tư 50 tỷ USD xây nhà máy chip bán dẫn lớn nhất châu Á!",
-        "image": "https://picsum.photos/id/116/800/400",
-        "effects": {
-            "discontent": -10,
-            "conflict": -5,
-            "economy": 30,
-            "environment": -10,
-            "freedom": 5,
-            "security": 10
-        },
-        "rarity": "common"
-    },
-    {
-        "id": 17,
-        "title": "🌡️ NÓNG KỶ LỤC 55°C!",
-        "text": "Nhiệt độ cao kỷ lục 55°C kéo dài 2 tuần, hệ thống điện quá tải!",
-        "image": "https://picsum.photos/id/117/800/400",
-        "effects": {
-            "discontent": 25,
-            "conflict": 10,
-            "economy": -15,
-            "environment": -20,
-            "freedom": -5,
-            "security": -10
-        },
-        "rarity": "common"
-    },
-    {
-        "id": 18,
-        "title": "🎬 PHIM VIỆT OSCAR!",
-        "text": "Phim Việt Nam đầu tiên giành giải Oscar Phim hay nhất, gây sốt toàn cầu!",
-        "image": "https://picsum.photos/id/118/800/400",
-        "effects": {
-            "discontent": -20,
-            "conflict": -10,
-            "economy": 15,
-            "environment": 0,
-            "freedom": 15,
-            "security": 5
-        },
-        "rarity": "common"
-    },
-    {
-        "id": 19,
-        "title": "💣 KHỦNG BỐ HỌP BOM!",
-        "text": "Phát hiện 500 quả bom từ thời chiến tranh tại trung tâm Hà Nội!",
-        "image": "https://picsum.photos/id/119/800/400",
-        "effects": {
-            "discontent": 20,
-            "conflict": 15,
-            "economy": -10,
-            "environment": 0,
-            "freedom": -10,
-            "security": -15
-        },
-        "rarity": "common"
-    },
-    {
-        "id": 20,
-        "title": "🏖️ ĐẢO NHÂN TẠO KHỔNG LỒ!",
-        "text": "Hoàn thành đảo nhân tạo 10,000 hecta, tạo ra 'Singapore mới' ở Việt Nam!",
-        "image": "https://picsum.photos/id/120/800/400",
-        "effects": {
-            "discontent": -5,
-            "conflict": 0,
-            "economy": 25,
+            "economy": 35,
             "environment": -15,
             "freedom": 5,
             "security": 10
         },
-        "rarity": "common"
-    },
-    {
-        "id": 21,
-        "title": "📊 KHÁM PHÁ KHO BÁU CỔ ĐẠI #21!",
-        "text": "Sự kiện Khám phá kho báu cổ đại quan trọng ảnh hưởng đến tình hình đất nước.",
-        "image": "https://picsum.photos/id/171/800/400",
-        "effects": {
-            "discontent": 19,
-            "conflict": -1,
-            "economy": -16,
-            "environment": 4,
-            "freedom": -1,
-            "security": 1
-        },
-        "rarity": "common"
-    },
-    {
-        "id": 22,
-        "title": "📊 TẤN CÔNG KHỦNG BỐ #22!",
-        "text": "Sự kiện Tấn công khủng bố quan trọng ảnh hưởng đến tình hình đất nước.",
-        "image": "https://picsum.photos/id/172/800/400",
-        "effects": {
-            "discontent": -16,
-            "conflict": -13,
-            "economy": -6,
-            "environment": 7,
-            "freedom": 13,
-            "security": -14
-        },
-        "rarity": "common"
-    },
-    {
-        "id": 23,
-        "title": "📊 THÀNH TỰU Y HỌC #23!",
-        "text": "Sự kiện Thành tựu y học quan trọng ảnh hưởng đến tình hình đất nước.",
-        "image": "https://picsum.photos/id/173/800/400",
-        "effects": {
-            "discontent": -19,
-            "conflict": 6,
-            "economy": 9,
-            "environment": 14,
-            "freedom": -5,
-            "security": -10
-        },
-        "rarity": "common"
-    },
-    {
-        "id": 24,
-        "title": "📊 THIÊN TAI LŨ LỤT #24!",
-        "text": "Sự kiện Thiên tai lũ lụt quan trọng ảnh hưởng đến tình hình đất nước.",
-        "image": "https://picsum.photos/id/174/800/400",
-        "effects": {
-            "discontent": -16,
-            "conflict": -12,
-            "economy": -4,
-            "environment": -17,
-            "freedom": -6,
-            "security": 5
-        },
-        "rarity": "common"
-    },
-    {
-        "id": 25,
-        "title": "📊 KHỦNG HOẢNG TÀI CHÍNH #25!",
-        "text": "Sự kiện Khủng hoảng tài chính quan trọng ảnh hưởng đến tình hình đất nước.",
-        "image": "https://picsum.photos/id/175/800/400",
-        "effects": {
-            "discontent": 5,
-            "conflict": -15,
-            "economy": -19,
-            "environment": 18,
-            "freedom": 4,
-            "security": 7
-        },
-        "rarity": "common"
-    },
-    {
-        "id": 26,
-        "title": "📊 PHÁT MINH CÔNG NGHỆ #26!",
-        "text": "Sự kiện Phát minh công nghệ quan trọng ảnh hưởng đến tình hình đất nước.",
-        "image": "https://picsum.photos/id/176/800/400",
-        "effects": {
-            "discontent": -2,
-            "conflict": 12,
-            "economy": -9,
-            "environment": 20,
-            "freedom": -12,
-            "security": 6
-        },
-        "rarity": "common"
+        "rarity": "epic"
     },
     {
         "id": 27,
-        "title": "📊 BIỂU TÌNH QUY MÔ LỚN #27!",
-        "text": "Sự kiện Biểu tình quy mô lớn quan trọng ảnh hưởng đến tình hình đất nước.",
-        "image": "https://picsum.photos/id/177/800/400",
+        "title": "GIẢI PHẪ BĂNG ĐẢNG MA TÚY XÀ PHÒNG!",
+        "text": "Công an triệt phá đường dây ma túy 'xà phòng' quy mô 500kg, trị giá 15,000 tỷ, bắt giữ 200 đối tượng!",
+        "image": "https://images.unsplash.com/photo-1559526324-593bc073d938?w=800&q=80",
         "effects": {
-            "discontent": 6,
-            "conflict": 2,
-            "economy": 11,
-            "environment": 12,
-            "freedom": -4,
-            "security": 11
+            "discontent": -20,
+            "conflict": -15,
+            "economy": 10,
+            "environment": 5,
+            "freedom": 0,
+            "security": 30
         },
-        "rarity": "common"
+        "rarity": "rare"
     },
     {
         "id": 28,
-        "title": "📊 THÀNH CÔNG NGOẠI GIAO #28!",
-        "text": "Sự kiện Thành công ngoại giao quan trọng ảnh hưởng đến tình hình đất nước.",
-        "image": "https://picsum.photos/id/178/800/400",
+        "title": "HẠN HÁN KHỦNG KHIẾP ĐỒNG BẰNG SÔNG CỬU LONG!",
+        "text": "Hạn hán kéo dài 6 tháng, mực nước sông Mekong xuống thấp kỷ lục, 2 triệu ha lúa bị thiệt hại!",
+        "image": "https://images.unsplash.com/photo-1504370805625-d32c54b16100?w=800&q=80",
         "effects": {
-            "discontent": 0,
-            "conflict": -14,
-            "economy": 15,
-            "environment": 19,
-            "freedom": 10,
-            "security": 18
+            "discontent": 30,
+            "conflict": 20,
+            "economy": -35,
+            "environment": -30,
+            "freedom": -5,
+            "security": -15
         },
         "rarity": "common"
     },
     {
         "id": 29,
-        "title": "📊 THẢM HỌA MÔI TRƯỜNG #29!",
-        "text": "Sự kiện Thảm họa môi trường quan trọng ảnh hưởng đến tình hình đất nước.",
-        "image": "https://picsum.photos/id/179/800/400",
+        "title": "PHÁT HIỆN LOÀI KHỦNG LONG MỚI!",
+        "text": "Paleontologists phát hiện hóa thạch khủng long mới 150 triệu năm tuổi tại Lạng Sơn, định danh 'Vietnamasaurus'!",
+        "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80",
         "effects": {
-            "discontent": 14,
-            "conflict": -9,
-            "economy": 2,
-            "environment": -5,
-            "freedom": 7,
-            "security": -14
+            "discontent": -10,
+            "conflict": -5,
+            "economy": 15,
+            "environment": 10,
+            "freedom": 15,
+            "security": 0
         },
-        "rarity": "common"
+        "rarity": "rare"
     },
     {
         "id": 30,
-        "title": "📊 THẮNG LỢI THỂ THAO #30!",
-        "text": "Sự kiện Thắng lợi thể thao quan trọng ảnh hưởng đến tình hình đất nước.",
-        "image": "https://picsum.photos/id/180/800/400",
+        "title": "CẢNG HÀNG KHÔNG LONG THÀNH KHAI TRƯƠNG!",
+        "text": "Cảng hàng không Long Thành giai đoạn 1 chính thức khai trương, công suất 25 triệu khách/năm!",
+        "image": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80",
         "effects": {
-            "discontent": -11,
-            "conflict": 3,
-            "economy": -1,
-            "environment": 10,
-            "freedom": 10,
-            "security": 7
+            "discontent": -25,
+            "conflict": -10,
+            "economy": 40,
+            "environment": -20,
+            "freedom": 15,
+            "security": 20
         },
-        "rarity": "common"
+        "rarity": "epic"
     },
     {
         "id": 31,
-        "title": "📊 KHÁM PHÁ KHO BÁU CỔ ĐẠI #31!",
-        "text": "Sự kiện Khám phá kho báu cổ đại quan trọng ảnh hưởng đến tình hình đất nước.",
-        "image": "https://picsum.photos/id/181/800/400",
+        "title": "SCAM TIỀN ĐIỆN TỬ 50,000 TỶ!",
+        "text": "Phát hiện đường dây lừa đảo tiền điện tử lớn nhất lịch sử với 50,000 tỷ, hại 2 triệu người!",
+        "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80",
         "effects": {
-            "discontent": 0,
-            "conflict": 11,
-            "economy": -23,
-            "environment": -1,
-            "freedom": 12,
-            "security": 19
+            "discontent": 40,
+            "conflict": 25,
+            "economy": -30,
+            "environment": 0,
+            "freedom": -15,
+            "security": -35
         },
         "rarity": "common"
     },
     {
         "id": 32,
-        "title": "📊 TẤN CÔNG KHỦNG BỐ #32!",
-        "text": "Sự kiện Tấn công khủng bố quan trọng ảnh hưởng đến tình hình đất nước.",
-        "image": "https://picsum.photos/id/182/800/400",
+        "title": "ĐỘI TUYỂN ESPORTS VÔ ĐỊCH THẾ GIỚI!",
+        "text": "Team Flash giành chức vô địch World Championship Mobile Legends, thu về 10 triệu USD tiền thưởng!",
+        "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80",
         "effects": {
-            "discontent": -1,
-            "conflict": 8,
-            "economy": -17,
-            "environment": -8,
-            "freedom": 14,
-            "security": -19
+            "discontent": -20,
+            "conflict": -10,
+            "economy": 10,
+            "environment": 0,
+            "freedom": 15,
+            "security": 5
         },
-        "rarity": "common"
+        "rarity": "rare"
     },
     {
         "id": 33,
-        "title": "📊 THÀNH TỰU Y HỌC #33!",
-        "text": "Sự kiện Thành tựu y học quan trọng ảnh hưởng đến tình hình đất nước.",
-        "image": "https://picsum.photos/id/183/800/400",
+        "title": "PHÁT HIỆN DẦU SHALE 100 TỶ THÙNG!",
+        "text": "Khám phá mỏ dầu shale khổng lồ 100 tỷ thùng tại vịnh Bắc Bộ, lớn gấp 20 lần mỏ Bạch Hổ!",
+        "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80",
         "effects": {
-            "discontent": -13,
-            "conflict": 12,
-            "economy": 25,
-            "environment": 3,
-            "freedom": -9,
-            "security": 1
+            "discontent": -25,
+            "conflict": 10,
+            "economy": 50,
+            "environment": -25,
+            "freedom": 5,
+            "security": 20
         },
-        "rarity": "common"
+        "rarity": "legendary"
     },
     {
         "id": 34,
-        "title": "📊 THIÊN TAI LŨ LỤT #34!",
-        "text": "Sự kiện Thiên tai lũ lụt quan trọng ảnh hưởng đến tình hình đất nước.",
-        "image": "https://picsum.photos/id/184/800/400",
+        "title": "DỊCH CÚMA H7N9 BẮC BỘ!",
+        "text": "Virus cúm gia cầm H7N9 đột biến lây người, WHO cảnh báo nguy cơ đại dịch cấp độ 4!",
+        "image": "https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=800&q=80",
         "effects": {
-            "discontent": 18,
-            "conflict": 2,
-            "economy": -16,
-            "environment": -20,
-            "freedom": 10,
-            "security": 20
+            "discontent": 35,
+            "conflict": 20,
+            "economy": -40,
+            "environment": -10,
+            "freedom": -30,
+            "security": -20
         },
         "rarity": "common"
     },
     {
         "id": 35,
-        "title": "📊 KHỦNG HOẢNG TÀI CHÍNH #35!",
-        "text": "Sự kiện Khủng hoảng tài chính quan trọng ảnh hưởng đến tình hình đất nước.",
-        "image": "https://picsum.photos/id/185/800/400",
+        "title": "QUANTUM INTERNET VIỆT NAM!",
+        "text": "Viettel thành công triển khai mạng internet lượng tử đầu tiên Đông Nam Á, tốc độ 1000 Gbps!",
+        "image": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&q=80",
         "effects": {
-            "discontent": -5,
-            "conflict": 0,
-            "economy": -8,
-            "environment": 12,
-            "freedom": -2,
-            "security": -1
+            "discontent": -15,
+            "conflict": -10,
+            "economy": 30,
+            "environment": 0,
+            "freedom": 20,
+            "security": 25
         },
-        "rarity": "common"
+        "rarity": "epic"
     },
     {
         "id": 36,
-        "title": "📊 PHÁT MINH CÔNG NGHỆ #36!",
-        "text": "Sự kiện Phát minh công nghệ quan trọng ảnh hưởng đến tình hình đất nước.",
-        "image": "https://picsum.photos/id/186/800/400",
+        "title": "BÃO THÉP CATEGORY 6 TẤN CÔNG!",
+        "text": "Siêu bão Molave II cấp 6 (chưa từng có) với gió 350km/h sắp đổ bộ, toàn miền Bắc sơ tán khẩn cấp!",
+        "image": "https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=800&q=80",
         "effects": {
-            "discontent": 10,
-            "conflict": -2,
-            "economy": 7,
-            "environment": 18,
-            "freedom": -8,
-            "security": 12
+            "discontent": 40,
+            "conflict": 25,
+            "economy": -50,
+            "environment": -40,
+            "freedom": -25,
+            "security": -30
         },
-        "rarity": "common"
+        "rarity": "legendary"
     },
     {
         "id": 37,
-        "title": "📊 BIỂU TÌNH QUY MÔ LỚN #37!",
-        "text": "Sự kiện Biểu tình quy mô lớn quan trọng ảnh hưởng đến tình hình đất nước.",
-        "image": "https://picsum.photos/id/187/800/400",
+        "title": "CÔNG NGHỆ GEN EDITING CHO LÚA!",
+        "text": "Viện Lúa Việt Nam tạo thành công giống lúa biến đổi gen chống lũ, năng suất gấp 3 lần!",
+        "image": "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=800&q=80",
         "effects": {
-            "discontent": 16,
-            "conflict": -9,
-            "economy": -8,
-            "environment": -18,
-            "freedom": -6,
-            "security": 2
+            "discontent": -10,
+            "conflict": 5,
+            "economy": 25,
+            "environment": 15,
+            "freedom": -5,
+            "security": 10
         },
-        "rarity": "common"
+        "rarity": "rare"
     },
     {
         "id": 38,
-        "title": "📊 THÀNH CÔNG NGOẠI GIAO #38!",
-        "text": "Sự kiện Thành công ngoại giao quan trọng ảnh hưởng đến tình hình đất nước.",
-        "image": "https://picsum.photos/id/188/800/400",
+        "title": "VINPEARL SAFARI MỞ RỘNG CHÂU PHI!",
+        "text": "VinGroup mở rộng chuỗi VinPearl Safari sang Kenya, đầu tư 5 tỷ USD bảo tồn động vật hoang dã!",
+        "image": "https://images.unsplash.com/photo-1549366021-9f761d040a94?w=800&q=80",
         "effects": {
-            "discontent": -2,
-            "conflict": 1,
-            "economy": 4,
-            "environment": 12,
-            "freedom": 0,
-            "security": 11
+            "discontent": -10,
+            "conflict": 0,
+            "economy": 20,
+            "environment": 25,
+            "freedom": 10,
+            "security": 5
         },
-        "rarity": "common"
+        "rarity": "rare"
     },
     {
         "id": 39,
-        "title": "📊 THẢM HỌA MÔI TRƯỜNG #39!",
-        "text": "Sự kiện Thảm họa môi trường quan trọng ảnh hưởng đến tình hình đất nước.",
-        "image": "https://picsum.photos/id/189/800/400",
+        "title": "FACEBOOK VÀ GOOGLE BỊ CHẶN!",
+        "text": "Chính phủ quyết định chặn Facebook và Google do vi phạm luật an ninh mạng, 90 triệu người bức xúc!",
+        "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80",
         "effects": {
-            "discontent": -7,
-            "conflict": -9,
-            "economy": -15,
-            "environment": -15,
-            "freedom": 11,
-            "security": 5
+            "discontent": 45,
+            "conflict": 35,
+            "economy": -25,
+            "environment": 0,
+            "freedom": -40,
+            "security": 20
         },
         "rarity": "common"
     },
     {
         "id": 40,
-        "title": "📊 THẮNG LỢI THỂ THAO #40!",
-        "text": "Sự kiện Thắng lợi thể thao quan trọng ảnh hưởng đến tình hình đất nước.",
-        "image": "https://picsum.photos/id/190/800/400",
+        "title": "ROBOT THAY THẾ 50% LAO ĐỘNG!",
+        "text": "Cuộc cách mạng AI-Robot khiến 50% lao động Việt Nam bị thay thế, 25 triệu người thất nghiệp!",
+        "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=80",
         "effects": {
-            "discontent": -4,
-            "conflict": 13,
-            "economy": 14,
-            "environment": -3,
+            "discontent": 40,
+            "conflict": 30,
+            "economy": 20,
+            "environment": 10,
             "freedom": -10,
-            "security": 8
+            "security": -25
         },
         "rarity": "common"
     },
     {
         "id": 41,
-        "title": "📊 KHÁM PHÁ KHO BÁU CỔ ĐẠI #41!",
-        "text": "Sự kiện Khám phá kho báu cổ đại quan trọng ảnh hưởng đến tình hình đất nước.",
-        "image": "https://picsum.photos/id/191/800/400",
+        "title": "VINFAST MỞ NHÀN MÁY TẠI MỸ!",
+        "text": "VinFast chính thức khánh thành nhà máy tại North Carolina, sản xuất 300,000 xe/năm cho thị trường Mỹ!",
+        "image": "https://images.unsplash.com/photo-1593941707882-a5bac6861d75?w=800&q=80",
         "effects": {
-            "discontent": -8,
+            "discontent": -20,
             "conflict": -10,
-            "economy": -19,
-            "environment": -10,
-            "freedom": 14,
-            "security": 18
+            "economy": 35,
+            "environment": 15,
+            "freedom": 15,
+            "security": 10
         },
-        "rarity": "common"
+        "rarity": "epic"
     },
     {
         "id": 42,
-        "title": "📊 TẤN CÔNG KHỦNG BỐ #42!",
-        "text": "Sự kiện Tấn công khủng bố quan trọng ảnh hưởng đến tình hình đất nước.",
-        "image": "https://picsum.photos/id/192/800/400",
+        "title": "CHÌM TÀU DU LỊCH HẠ LONG!",
+        "text": "Du thuyền 5 sao chở 200 khách Trung Quốc chìm tại vịnh Hạ Long, 50 người mất tích!",
+        "image": "https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=800&q=80",
         "effects": {
-            "discontent": 11,
-            "conflict": -3,
-            "economy": 9,
-            "environment": 19,
+            "discontent": 25,
+            "conflict": 15,
+            "economy": -25,
+            "environment": -15,
             "freedom": -5,
-            "security": -5
+            "security": -20
         },
         "rarity": "common"
     },
     {
         "id": 43,
-        "title": "📊 THÀNH TỰU Y HỌC #43!",
-        "text": "Sự kiện Thành tựu y học quan trọng ảnh hưởng đến tình hình đất nước.",
-        "image": "https://picsum.photos/id/193/800/400",
+        "title": "KHÁM PHÁ HANG ĐỘNG SÂU NHẤT THẾ GIỚI!",
+        "text": "Phát hiện hang động sâu 2000m tại Phong Nha, phá kỷ lục thế giới, thu hút 10 triệu du khách/năm!",
+        "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
         "effects": {
-            "discontent": 1,
-            "conflict": 3,
-            "economy": -22,
-            "environment": -9,
-            "freedom": -11,
-            "security": -18
+            "discontent": -15,
+            "conflict": 0,
+            "economy": 25,
+            "environment": 20,
+            "freedom": 10,
+            "security": 5
         },
-        "rarity": "common"
+        "rarity": "rare"
     },
     {
         "id": 44,
-        "title": "📊 THIÊN TAI LŨ LỤT #44!",
-        "text": "Sự kiện Thiên tai lũ lụt quan trọng ảnh hưởng đến tình hình đất nước.",
-        "image": "https://picsum.photos/id/194/800/400",
+        "title": "TRỊ GIÁ ĐỒNG VIỆT NAM SỤP ĐỔ!",
+        "text": "VND mất giá 50% so với USD trong 3 tháng, lạm phát tăng vọt 25%, kinh tế rơi vào khủng hoảng!",
+        "image": "https://images.unsplash.com/photo-1559526324-593bc073d938?w=800&q=80",
         "effects": {
-            "discontent": 2,
-            "conflict": -11,
-            "economy": 0,
-            "environment": 7,
-            "freedom": 11,
-            "security": -5
+            "discontent": 45,
+            "conflict": 35,
+            "economy": -45,
+            "environment": 0,
+            "freedom": -15,
+            "security": -25
         },
         "rarity": "common"
     },
     {
         "id": 45,
-        "title": "📊 KHỦNG HOẢNG TÀI CHÍNH #45!",
-        "text": "Sự kiện Khủng hoảng tài chính quan trọng ảnh hưởng đến tình hình đất nước.",
-        "image": "https://picsum.photos/id/195/800/400",
+        "title": "CÔNG VIÊN GIẢI TRÍ DISNEY VIỆT NAM!",
+        "text": "Disney chính thức ký hợp đồng xây dựng công viên giải trí 15 tỷ USD tại Đồng Nai!",
+        "image": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=800&q=80",
         "effects": {
-            "discontent": -1,
-            "conflict": 10,
-            "economy": -24,
-            "environment": 17,
-            "freedom": -8,
-            "security": -3
+            "discontent": -25,
+            "conflict": -10,
+            "economy": 30,
+            "environment": -15,
+            "freedom": 20,
+            "security": 10
         },
-        "rarity": "common"
+        "rarity": "epic"
     },
     {
         "id": 46,
-        "title": "📊 PHÁT MINH CÔNG NGHỆ #46!",
-        "text": "Sự kiện Phát minh công nghệ quan trọng ảnh hưởng đến tình hình đất nước.",
-        "image": "https://picsum.photos/id/196/800/400",
+        "title": "KHỔ QUA ĐƯỢC UNESCO CÔNG NHẬN!",
+        "text": "Khổ qua đắng Việt Nam được UNESCO công nhận là 'Siêu thực phẩm toàn cầu', xuất khẩu tăng 1000%!",
+        "image": "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=800&q=80",
         "effects": {
-            "discontent": 19,
-            "conflict": 11,
-            "economy": 15,
-            "environment": -3,
-            "freedom": 3,
-            "security": 2
+            "discontent": -15,
+            "conflict": -5,
+            "economy": 25,
+            "environment": 15,
+            "freedom": 10,
+            "security": 5
         },
-        "rarity": "common"
+        "rarity": "rare"
     },
     {
         "id": 47,
-        "title": "📊 BIỂU TÌNH QUY MÔ LỚN #47!",
-        "text": "Sự kiện Biểu tình quy mô lớn quan trọng ảnh hưởng đến tình hình đất nước.",
-        "image": "https://picsum.photos/id/197/800/400",
+        "title": "SỤTT LỞ ĐẤT QUY MÔ LỚN MIỀN NÚI!",
+        "text": "Sạt lở đất khủng khiếp tại 6 tỉnh miền núi phía Bắc, 300 người chết, 1000 người mất tích!",
+        "image": "https://images.unsplash.com/photo-1564415315949-7a0c4c73aab4?w=800&q=80",
         "effects": {
-            "discontent": -10,
-            "conflict": 9,
-            "economy": 16,
-            "environment": -16,
+            "discontent": 35,
+            "conflict": 25,
+            "economy": -30,
+            "environment": -25,
             "freedom": -15,
-            "security": -14
+            "security": -25
         },
         "rarity": "common"
     },
     {
         "id": 48,
-        "title": "📊 THÀNH CÔNG NGOẠI GIAO #48!",
-        "text": "Sự kiện Thành công ngoại giao quan trọng ảnh hưởng đến tình hình đất nước.",
-        "image": "https://picsum.photos/id/198/800/400",
+        "title": "SPACE X PHÓNG VỆ TINH VIỆT NAM!",
+        "text": "SpaceX phóng thành công 50 vệ tinh viễn thông VietSat cho Viettel, phủ sóng toàn cầu!",
+        "image": "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&q=80",
         "effects": {
-            "discontent": 6,
-            "conflict": 5,
-            "economy": -19,
-            "environment": 12,
-            "freedom": -3,
-            "security": -14
+            "discontent": -10,
+            "conflict": -5,
+            "economy": 20,
+            "environment": 0,
+            "freedom": 15,
+            "security": 25
         },
-        "rarity": "common"
+        "rarity": "rare"
     },
     {
         "id": 49,
-        "title": "📊 THẢM HỌA MÔI TRƯỜNG #49!",
-        "text": "Sự kiện Thảm họa môi trường quan trọng ảnh hưởng đến tình hình đất nước.",
-        "image": "https://picsum.photos/id/199/800/400",
+        "title": "NHẬT BẢN ĐẦU TƯ SHINKANSEN VIỆT NAM!",
+        "text": "Nhật Bản quyết định đầu tư 100 tỷ USD xây dựng tàu cao tốc Shinkansen tuyến Hà Nội - TP.HCM!",
+        "image": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&q=80",
         "effects": {
-            "discontent": 15,
-            "conflict": -1,
-            "economy": -14,
-            "environment": -1,
-            "freedom": 0,
-            "security": 9
+            "discontent": -20,
+            "conflict": -10,
+            "economy": 40,
+            "environment": -10,
+            "freedom": 10,
+            "security": 15
         },
-        "rarity": "common"
+        "rarity": "epic"
     },
     {
         "id": 50,
-        "title": "📊 THẮNG LỢI THỂ THAO #50!",
-        "text": "Sự kiện Thắng lợi thể thao quan trọng ảnh hưởng đến tình hình đất nước.",
-        "image": "https://picsum.photos/id/200/800/400",
+        "title": "ĐẶC ZONE KINH TẾ VÂN ĐỒN - PHÚC QUỐC!",
+        "text": "Chính phủ phê duyệt đặc khu kinh tế Vân Đồn - Phú Quốc với chế độ 'một quốc gia, hai thể chế'!",
+        "image": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=80",
         "effects": {
-            "discontent": 19,
-            "conflict": 4,
-            "economy": 8,
-            "environment": -11,
-            "freedom": -14,
-            "security": -12
+            "discontent": 15,
+            "conflict": 20,
+            "economy": 35,
+            "environment": -15,
+            "freedom": -10,
+            "security": -5
+        },
+        "rarity": "epic"
+    },
+    {
+        "id": 51,
+        "title": "FESTIVAL ÂM NHẠC QUỐC TẾ HÀ NỘI!",
+        "text": "Hà Nội tổ chức festival âm nhạc quốc tế lớn nhất châu Á với 500 nghệ sĩ, thu hút 5 triệu khách!",
+        "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
+        "effects": {
+            "discontent": -20,
+            "conflict": -10,
+            "economy": 20,
+            "environment": -5,
+            "freedom": 25,
+            "security": 0
+        },
+        "rarity": "rare"
+    },
+    {
+        "id": 52,
+        "title": "THIÊN THẠCH RƠI XUỐNG VIỆT NAM!",
+        "text": "Thiên thạch khối lượng 50 tấn rơi xuống biển Quy Nhon, tạo sóng thần cao 15m, thiệt hại khủng khiếp!",
+        "image": "https://images.unsplash.com/photo-1446776743709-bff93679c27d?w=800&q=80",
+        "effects": {
+            "discontent": 40,
+            "conflict": 30,
+            "economy": -40,
+            "environment": -30,
+            "freedom": -20,
+            "security": -35
+        },
+        "rarity": "legendary"
+    },
+    {
+        "id": 53,
+        "title": "BAMBOO AIRWAYS IPO 50 TỶ USD!",
+        "text": "Bamboo Airways IPO thành công 50 tỷ USD trên sàn NASDAQ, trở thành hãng hàng không giá trị nhất châu Á!",
+        "image": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80",
+        "effects": {
+            "discontent": -15,
+            "conflict": -5,
+            "economy": 30,
+            "environment": -10,
+            "freedom": 15,
+            "security": 10
+        },
+        "rarity": "epic"
+    },
+    {
+        "id": 54,
+        "title": "CHIẾN TRANH MẠNG TỪ TRUNG QUỐC!",
+        "text": "Hackers Trung Quốc tấn công 1000 hệ thống chính phủ, đánh cắp dữ liệu 95 triệu công dân Việt Nam!",
+        "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&q=80",
+        "effects": {
+            "discontent": 40,
+            "conflict": 35,
+            "economy": -20,
+            "environment": 0,
+            "freedom": -25,
+            "security": -40
         },
         "rarity": "common"
     },
     {
-        "id": 101,
-        "title": "💰 GÓI KÍCH THÍCH KINH TẾ KHẨN CẤP!",
-        "text": "Chính phủ quyết định bơm 500 tỷ USD vào nền kinh tế để chống suy thoái. Ngân hàng trung ương giảm lãi suất về 0%!",
-        "image": "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&q=80",
+        "id": 55,
+        "title": "UBER AIR VIỆT NAM THỬ NGHIỆM!",
+        "text": "Uber Air thử nghiệm taxi bay đầu tiên tại TP.HCM, 15 phút từ sân bay Tân Sơn Nhất tới trung tâm!",
+        "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=80",
         "effects": {
             "discontent": -10,
-            "conflict": -5,
-            "economy": 30,
-            "environment": -5,
-            "freedom": 0,
+            "conflict": 0,
+            "economy": 25,
+            "environment": 15,
+            "freedom": 15,
             "security": 5
         },
-        "rarity": "conditional",
-        "trigger_condition": {
-            "economy": "<30"
-        },
-        "category": "economic_stimulus"
+        "rarity": "rare"
     },
     {
-        "id": 102,
-        "title": "🏭 CHƯƠNG TRÌNH CÔNG NGHIỆP HÓA MỚI!",
-        "text": "Khởi động kế hoạch 5 năm xây dựng 1000 nhà máy mới, tạo 5 triệu việc làm. Ưu tiên sản xuất và xuất khẩu!",
-        "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80",
+        "id": 56,
+        "title": "VIETCOMBANK HACK MẤT 100,000 TỶ!",
+        "text": "Vietcombank bị hack, mất trắng 100,000 tỷ VND, hệ thống ngân hàng toàn quốc tê liệt 3 ngày!",
+        "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80",
         "effects": {
-            "discontent": -15,
-            "conflict": -8,
-            "economy": 25,
-            "environment": -15,
-            "freedom": -5,
-            "security": 10
-        },
-        "rarity": "conditional",
-        "trigger_condition": {
-            "economy": "<35"
-        },
-        "category": "industrialization"
-    },
-    {
-        "id": 103,
-        "title": "⚔️ TUYÊN BỐ THIẾT QUÂN LUẬT!",
-        "text": "Quân đội được triển khai toàn quốc, giới nghiêm từ 22h-6h. Tất cả biểu tình bị cấm, truyền thông bị kiểm duyệt!",
-        "image": "https://images.unsplash.com/photo-1526558829113-b118b3889c6c?w=800&q=80",
-        "effects": {
-            "discontent": 20,
-            "conflict": -25,
-            "economy": -10,
+            "discontent": 45,
+            "conflict": 30,
+            "economy": -40,
             "environment": 0,
-            "freedom": -30,
-            "security": 35
+            "freedom": -20,
+            "security": -45
         },
-        "rarity": "conditional",
-        "trigger_condition": {
-            "conflict": ">70"
-        },
-        "category": "martial_law"
+        "rarity": "common"
     },
     {
-        "id": 104,
-        "title": "🤝 HỘI NGHỊ HÒA GIẢI QUỐC GIA!",
-        "text": "Tổ chức đối thoại với các phe đối lập, thỏa thuận chia sẻ quyền lực và cải cách chính trị toàn diện!",
-        "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
-        "effects": {
-            "discontent": -20,
-            "conflict": -30,
-            "economy": 5,
-            "environment": 0,
-            "freedom": 25,
-            "security": -10
-        },
-        "rarity": "conditional",
-        "trigger_condition": {
-            "conflict": ">65"
-        },
-        "category": "reconciliation"
-    },
-    {
-        "id": 105,
-        "title": "💸 TĂNG LƯƠNG TỐI THIỂU 200%!",
-        "text": "Quyết định tăng lương tối thiểu từ 4.68 triệu lên 15 triệu/tháng. Đồng thời miễn thuế thu nhập dưới 20 triệu!",
-        "image": "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&q=80",
+        "id": 57,
+        "title": "MADE IN VIETNAM IPHONE 16!",
+        "text": "Apple chính thức chuyển 80% sản xuất iPhone từ Trung Quốc sang Việt Nam, tạo 500,000 việc làm!",
+        "image": "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=800&q=80",
         "effects": {
             "discontent": -25,
-            "conflict": -15,
-            "economy": -15,
-            "environment": 0,
-            "freedom": 10,
-            "security": 5
-        },
-        "rarity": "conditional",
-        "trigger_condition": {
-            "discontent": ">70"
-        },
-        "category": "wage_increase"
-    },
-    {
-        "id": 106,
-        "title": "🏥 Y TẾ - GIÁO DỤC MIỄN PHÍ TOÀN QUỐC!",
-        "text": "Triển khai y tế và giáo dục hoàn toàn miễn phí. Đầu tư 200 tỷ USD xây 10,000 bệnh viện và trường học mới!",
-        "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&q=80",
-        "effects": {
-            "discontent": -30,
             "conflict": -10,
-            "economy": -25,
-            "environment": 5,
-            "freedom": 15,
-            "security": 0
-        },
-        "rarity": "conditional",
-        "trigger_condition": {
-            "discontent": ">75"
-        },
-        "category": "social_welfare"
-    },
-    {
-        "id": 107,
-        "title": "🌱 TUYÊN BỐ KHẨN CẤP SINH THÁI QUỐC GIA!",
-        "text": "Đóng cửa toàn bộ nhà máy ô nhiễm trong 60 ngày. Đầu tư 1000 tỷ USD cho năng lượng sạch và trồng rừng!",
-        "image": "https://images.unsplash.com/photo-1569163139394-de4e5f43e4e3?w=800&q=80",
-        "effects": {
-            "discontent": 10,
-            "conflict": 15,
-            "economy": -30,
-            "environment": 40,
-            "freedom": -10,
-            "security": -5
-        },
-        "rarity": "conditional",
-        "trigger_condition": {
-            "environment": "<25"
-        },
-        "category": "environmental_emergency"
-    },
-    {
-        "id": 108,
-        "title": "♻️ CHIẾN DỊCH KINH TẾ TUẦN HOÀN!",
-        "text": "Cấm hoàn toàn nhựa dùng một lần, tái chế 100% rác thải, chuyển đổi toàn bộ sang năng lượng tái tạo trong 10 năm!",
-        "image": "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=800&q=80",
-        "effects": {
-            "discontent": 5,
-            "conflict": 8,
-            "economy": -20,
-            "environment": 35,
-            "freedom": -5,
-            "security": 0
-        },
-        "rarity": "conditional",
-        "trigger_condition": {
-            "environment": "<30"
-        },
-        "category": "circular_economy"
-    },
-    {
-        "id": 109,
-        "title": "🗳️ CẢI CÁCH CHÍNH TRỊ TOÀN DIỆN!",
-        "text": "Tổ chức bầu cử tự do với nhiều đảng phái, thành lập tòa án hiến pháp độc lập, đảm bảo tự do báo chí tuyệt đối!",
-        "image": "https://images.unsplash.com/photo-1566169019970-f7fc4bd01d91?w=800&q=80",
-        "effects": {
-            "discontent": -20,
-            "conflict": -15,
-            "economy": -5,
-            "environment": 0,
-            "freedom": 35,
-            "security": -15
-        },
-        "rarity": "conditional",
-        "trigger_condition": {
-            "freedom": "<25"
-        },
-        "category": "democratic_reform"
-    },
-    {
-        "id": 110,
-        "title": "🛡️ HIỆN ĐẠI HÓA QUỐC PHÒNG TOÀN DIỆN!",
-        "text": "Tăng ngân sách quốc phòng lên 10% GDP, mua 100 máy bay chiến đấu F-35, nâng cấp toàn bộ hệ thống radar!",
-        "image": "https://images.unsplash.com/photo-1526558829113-b118b3889c6c?w=800&q=80",
-        "effects": {
-            "discontent": 10,
-            "conflict": 5,
-            "economy": -20,
-            "environment": -10,
-            "freedom": -10,
-            "security": 40
-        },
-        "rarity": "conditional",
-        "trigger_condition": {
-            "security": "<30"
-        },
-        "category": "military_modernization"
-    },
-    {
-        "id": 201,
-        "title": "📊 HIỆU ỨNG DOMINO KINH TẾ!",
-        "text": "Gói kích thích kinh tế đã tạo ra hiệu ứng tích cực. Thất nghiệp giảm 50%, FDI tăng 300%, chứng khoán tăng trần liên tục!",
-        "image": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80",
-        "effects": {
-            "discontent": -15,
-            "conflict": -10,
-            "economy": 20,
-            "environment": -5,
-            "freedom": 5,
-            "security": 10
-        },
-        "rarity": "chain",
-        "trigger_condition": {
-            "previous_event": "economic_stimulus",
-            "turns_after": 2
-        },
-        "category": "economic_boom"
-    },
-    {
-        "id": 202,
-        "title": "🏭 BOOM CÔNG NGHIỆP!",
-        "text": "Kế hoạch công nghiệp hóa thành công vượt mong đợi! 2000 nhà máy đã khởi công, xuất khẩu tăng 500%, trở thành 'xưởng sản xuất thế giới'!",
-        "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
-        "effects": {
-            "discontent": -10,
-            "conflict": -5,
-            "economy": 25,
+            "economy": 45,
             "environment": -20,
-            "freedom": 0,
+            "freedom": 10,
             "security": 15
         },
-        "rarity": "chain",
-        "trigger_condition": {
-            "previous_event": "industrialization",
-            "turns_after": 3
-        },
-        "category": "industrial_boom"
+        "rarity": "epic"
     },
     {
-        "id": 301,
-        "title": "🚨 TỰ ĐỘNG: NGÂN HÀNG TRUNG ƯƠNG CAN THIỆP!",
-        "text": "Ngân hàng Trung ương tự động hạ lãi suất xuống 0%, bơm 100 tỷ USD thanh khoản, cứu trợ các ngân hàng gặp khó khăn!",
-        "image": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80",
+        "id": 58,
+        "title": "KHÁM PHÁ THÀNH PHỐ MAYA CỔ ĐẠI!",
+        "text": "Khảo cổ học phát hiện thành phố Maya cổ đại 3000 năm tuổi tại tỉnh Lai Châu, chấn động thế giới!",
+        "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80",
         "effects": {
-            "discontent": -5,
+            "discontent": -10,
             "conflict": 0,
-            "economy": 15,
-            "environment": 0,
-            "freedom": -5,
+            "economy": 20,
+            "environment": 15,
+            "freedom": 15,
             "security": 5
         },
-        "rarity": "auto_response",
-        "trigger_condition": {
-            "economy": "<20",
-            "auto_trigger": true
-        },
-        "category": "economic_intervention"
+        "rarity": "legendary"
     },
     {
-        "id": 302,
-        "title": "🚨 TỰ ĐỘNG: QUÂN ĐỘI TRẤN AN TÌNH HÌNH!",
-        "text": "Quân đội tự động được triển khai bảo vệ các cơ quan nhà nước và cơ sở hạ tầng quan trọng khi tình hình căng thẳng!",
-        "image": "https://images.unsplash.com/photo-1526558829113-b118b3889c6c?w=800&q=80",
+        "id": 59,
+        "title": "BÙ NỔ HẠT NHÂN NHA TRANG!",
+        "text": "Lò phản ứng hạt nhân Đà Lạt bị rò rỉ phóng xạ, toàn bộ Nha Trang sơ tán trong bán kính 50km!",
+        "image": "https://images.unsplash.com/photo-1564415315949-7a0c4c73aab4?w=800&q=80",
         "effects": {
-            "discontent": 5,
-            "conflict": -10,
-            "economy": -5,
-            "environment": 0,
-            "freedom": -10,
-            "security": 20
+            "discontent": 50,
+            "conflict": 40,
+            "economy": -50,
+            "environment": -45,
+            "freedom": -30,
+            "security": -40
         },
-        "rarity": "auto_response",
-        "trigger_condition": {
-            "conflict": ">80",
-            "auto_trigger": true
+        "rarity": "legendary"
+    },
+    {
+        "id": 60,
+        "title": "VIỆT NAM GIA NHẬP G7!",
+        "text": "Việt Nam chính thức được mời gia nhập G7 với tư cách thành viên chính thức, nâng tầm vị thế quốc tế!",
+        "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80",
+        "effects": {
+            "discontent": -30,
+            "conflict": -20,
+            "economy": 40,
+            "environment": 10,
+            "freedom": 25,
+            "security": 30
         },
-        "category": "security_intervention"
+        "rarity": "legendary"
     }
 ]
