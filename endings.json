@@ -1,0 +1,117 @@
+{
+    "endings": [
+        {
+            "id": "perfect_leader",
+            "name": "🏆 LÃNH ĐẠO HOÀN HẢO",
+            "condition": "all_stats_above_70",
+            "description": "Bạn đã đạt được sự cân bằng hoàn hảo giữa tất cả các chỉ số. Đất nước thịnh vượng, dân chúng hạnh phúc, và bạn được ghi nhận là một trong những nhà lãnh đạo vĩ đại nhất trong lịch sử!",
+            "image": "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80",
+            "requirements": {
+                "discontent": "< 30",
+                "conflict": "< 30",
+                "economy": "> 70",
+                "environment": "> 70",
+                "freedom": "> 70",
+                "security": "> 70"
+            }
+        },
+        {
+            "id": "revolution",
+            "name": "🔥 CÁCH MẠNG BÙNG NỔ",
+            "condition": "conflict_above_85",
+            "description": "Xung đột xã hội đã vượt quá ngưỡng chịu đựng. Hàng triệu người dân xuống đường đòi bạn từ chức. Quân đội từ chối tuân lệnh. Bạn đã mất quyền lực hoàn toàn!",
+            "image": "https://images.unsplash.com/photo-1556740749-887f6717d7e4?w=800&q=80",
+            "requirements": {
+                "conflict": ">= 85"
+            }
+        },
+        {
+            "id": "dictator",
+            "name": "👑 ĐỘC TÀI HIỆU QUẢ",
+            "condition": "high_security_low_freedom",
+            "description": "Bạn đã xây dựng một nhà nước mạnh mẽ với an ninh cao nhưng hạn chế tự do dân chủ. Đất nước ổn định và phát triển, nhưng với cái giá của quyền tự do cá nhân.",
+            "image": "https://images.unsplash.com/photo-1526558829113-b118b3889c6c?w=800&q=80",
+            "requirements": {
+                "security": "> 80",
+                "freedom": "< 40",
+                "conflict": "< 50"
+            }
+        },
+        {
+            "id": "democratic_hero",
+            "name": "🗽 NGƯỜI HÙNG DÂN CHỦ",
+            "condition": "high_freedom_low_security",
+            "description": "Bạn đã ưu tiên tự do và dân chủ trên hết. Xã hội cởi mở, người dân có quyền tự do tối đa, nhưng đôi khi thiếu ổn định về an ninh.",
+            "image": "https://images.unsplash.com/photo-1515165562835-cf79a9c7d532?w=800&q=80",
+            "requirements": {
+                "freedom": "> 80",
+                "security": "< 50",
+                "discontent": "< 40"
+            }
+        },
+        {
+            "id": "economic_emperor",
+            "name": "💰 HOÀNG ĐẾ KINH TẾ",
+            "condition": "high_economy",
+            "description": "Bạn đã biến đất nước thành một cường quốc kinh tế. GDP tăng trưởng mạnh mẽ, thu nhập bình quân cao, nhưng có thể phải hy sinh một số giá trị xã hội khác.",
+            "image": "https://images.unsplash.com/photo-1459257831348-f0cdd359235f?w=800&q=80",
+            "requirements": {
+                "economy": "> 85",
+                "discontent": "< 50"
+            }
+        },
+        {
+            "id": "green_messiah",
+            "name": "🌱 ĐẤN CỨU THẾ XANH",
+            "condition": "high_environment",
+            "description": "Bạn đã đặt bảo vệ môi trường lên hàng đầu. Đất nước trở thành hình mẫu về phát triển bền vững, nhưng có thể phải chậm lại tốc độ tăng trưởng kinh tế.",
+            "image": "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=800&q=80",
+            "requirements": {
+                "environment": "> 85",
+                "economy": "> 50"
+            }
+        },
+        {
+            "id": "fallen_leader",
+            "name": "💀 KẺ SA NGÃ",
+            "condition": "high_discontent",
+            "description": "Dân chúng hoàn toàn mất lòng tin vào bạn. Tỷ lệ ủng hộ xuống thấp kỷ lục. Bạn vẫn nắm quyền nhưng chỉ là một bóng ma của chính mình.",
+            "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80",
+            "requirements": {
+                "discontent": "> 80"
+            }
+        },
+        {
+            "id": "war_lord",
+            "name": "⚔️ TƯỚNG QUÂN THÉP",
+            "condition": "high_security_high_conflict",
+            "description": "Bạn đã biến đất nước thành một pháo đài quân sự. An ninh tối đa nhưng xã hội căng thẳng và chia rẽ sâu sắc.",
+            "image": "https://images.unsplash.com/photo-1526558829113-b118b3889c6c?w=800&q=80",
+            "requirements": {
+                "security": "> 80",
+                "conflict": "> 60",
+                "freedom": "< 30"
+            }
+        },
+        {
+            "id": "balanced_ruler",
+            "name": "⚖️ LÃNH ĐẠO CÂN BẰNG",
+            "condition": "moderate_all_stats",
+            "description": "Bạn đã duy trì một sự cân bằng hợp lý giữa các lĩnh vực. Không xuất sắc ở mảng nào nhưng cũng không có điểm yếu chết người. Một nhà lãnh đạo ổn định.",
+            "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
+            "requirements": {
+                "all_stats": "40-70"
+            }
+        },
+        {
+            "id": "mystery_ending",
+            "name": "❓ KẾT THÚC BÍ ẨN",
+            "condition": "special_combination",
+            "description": "Sự kết hợp độc đáo của các quyết định đã dẫn đến một kết quả không thể dự đoán trước. Lịch sử sẽ phán xét bạn như thế nào...",
+            "image": "https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=800&q=80",
+            "requirements": {
+                "special": "unique_stat_combination"
+            }
+        }
+    ]
+}

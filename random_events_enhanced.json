@@ -1,0 +1,1022 @@
+[
+    {
+        "id": 1,
+        "title": "🌪️ SIÊU BÃO MOLAVE!",
+        "text": "Siêu bão cấp 16 đổ bộ miền Trung, sức gió 200km/h. Hàng triệu người cần sơ tán khẩn cấp!",
+        "image": "https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=800&q=80",
+        "effects": {
+            "discontent": 10,
+            "conflict": 5,
+            "economy": -20,
+            "environment": -15,
+            "freedom": -5,
+            "security": -10
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 2,
+        "title": "💰 PHÁT HIỆN MỎ DẦU KHỔNG LỒ!",
+        "text": "Tập đoàn dầu khí vừa phát hiện mỏ dầu trữ lượng 5 tỷ thùng ngoài khơi biển Đông!",
+        "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80",
+        "effects": {
+            "discontent": -15,
+            "conflict": -5,
+            "economy": 25,
+            "environment": -10,
+            "freedom": 5,
+            "security": 10
+        },
+        "rarity": "rare"
+    },
+    {
+        "id": 3,
+        "title": "🦠 DỊCH CÚM GIA CẦM H5N1!",
+        "text": "Dịch cúm gia cầm bùng phát tại 20 tỉnh thành, 10 triệu con gia cầm bị tiêu hủy!",
+        "image": "https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=800&q=80",
+        "effects": {
+            "discontent": 15,
+            "conflict": 8,
+            "economy": -15,
+            "environment": 5,
+            "freedom": -8,
+            "security": -5
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 4,
+        "title": "🎉 OLYMPIC PARIS 2024!",
+        "text": "Đoàn thể thao quốc gia giành 10 HCV tại Olympic, phá kỷ lục lịch sử!",
+        "image": "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&q=80",
+        "effects": {
+            "discontent": -20,
+            "conflict": -10,
+            "economy": 5,
+            "environment": 0,
+            "freedom": 10,
+            "security": 5
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 5,
+        "title": "🔥 CHÁY RỪNG AMAZON VIỆT NAM!",
+        "text": "Cháy rừng lan rộng 50,000 hecta rừng nguyên sinh tại Tây Nguyên trong mùa khô!",
+        "image": "https://images.unsplash.com/photo-1574263867128-ed1ce4aa51b5?w=800&q=80",
+        "effects": {
+            "discontent": 20,
+            "conflict": 10,
+            "economy": -10,
+            "environment": -25,
+            "freedom": 0,
+            "security": -5
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 6,
+        "title": "👨‍🚀 VỆ TINH VIỆT NAM!",
+        "text": "Thành công phóng vệ tinh viễn thông tự chế đầu tiên, đưa Việt Nam vào câu lạc bộ không gian!",
+        "image": "https://images.unsplash.com/photo-1543722088-4c1ba8a4b4c0?w=800&q=80",
+        "effects": {
+            "discontent": -15,
+            "conflict": -5,
+            "economy": 10,
+            "environment": 0,
+            "freedom": 10,
+            "security": 15
+        },
+        "rarity": "epic"
+    },
+    {
+        "id": 7,
+        "title": "💻 TẤN CÔNG MẠNG QUỐC GIA!",
+        "text": "Nhóm hacker quốc tế tấn công hệ thống ngân hàng, rò rỉ 50 triệu thông tin cá nhân!",
+        "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&q=80",
+        "effects": {
+            "discontent": 25,
+            "conflict": 15,
+            "economy": -20,
+            "environment": 0,
+            "freedom": -10,
+            "security": -25
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 8,
+        "title": "🏆 NOBEL VẬT LÝ 2025!",
+        "text": "Nhà khoa học Việt Nam đoạt giải Nobel Vật lý cho nghiên cứu năng lượng fusion!",
+        "image": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&q=80",
+        "effects": {
+            "discontent": -25,
+            "conflict": -10,
+            "economy": 15,
+            "environment": 20,
+            "freedom": 15,
+            "security": 10
+        },
+        "rarity": "legendary"
+    },
+    {
+        "id": 9,
+        "title": "📈 LẠMPHÁT TĂNG VỌT 15%!",
+        "text": "Giá cả hàng hóa tăng chóng mặt, lương tối thiểu không theo kịp chi phí sinh hoạt!",
+        "image": "https://images.unsplash.com/photo-1559526324-593bc073d938?w=800&q=80",
+        "effects": {
+            "discontent": 30,
+            "conflict": 20,
+            "economy": -25,
+            "environment": 0,
+            "freedom": 0,
+            "security": -10
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 10,
+        "title": "🌊 SÓNG THẦN CẢNH BÁO!",
+        "text": "Động đất 8.5 độ Richter ngoài khơi, cảnh báo sóng thần cao 10m sắp đổ bộ!",
+        "image": "https://images.unsplash.com/photo-1564415315949-7a0c4c73aab4?w=800&q=80",
+        "effects": {
+            "discontent": 20,
+            "conflict": 15,
+            "economy": -30,
+            "environment": -20,
+            "freedom": -15,
+            "security": -20
+        },
+        "rarity": "rare"
+    },
+    {
+        "id": 11,
+        "title": "🎭 LỄ HỘI TRUYỀN THỐNG!",
+        "text": "Lễ hội Đền Hùng thu hút 5 triệu du khách, tăng cường tinh thần dân tộc!",
+        "image": "https://picsum.photos/id/111/800/400",
+        "effects": {
+            "discontent": -10,
+            "conflict": -5,
+            "economy": 10,
+            "environment": -5,
+            "freedom": 5,
+            "security": 0
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 12,
+        "title": "⚡ MẤT ĐIỆN TOÀN QUỐC!",
+        "text": "Sự cố lưới điện khiến 80% lãnh thổ mất điện 6 tiếng liên tục!",
+        "image": "https://picsum.photos/id/112/800/400",
+        "effects": {
+            "discontent": 25,
+            "conflict": 15,
+            "economy": -20,
+            "environment": 5,
+            "freedom": -5,
+            "security": -15
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 13,
+        "title": "🚢 CHÌM TÀU DẦU!",
+        "text": "Tàu chở 100,000 tấn dầu chìm ngoài khơi, tạo vệt dầu loang dài 50km!",
+        "image": "https://picsum.photos/id/113/800/400",
+        "effects": {
+            "discontent": 20,
+            "conflict": 10,
+            "economy": -15,
+            "environment": -30,
+            "freedom": 0,
+            "security": -5
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 14,
+        "title": "📱 ỨNG DỤNG VIỆT TOÀN CẦU!",
+        "text": "Startup Việt Nam tạo ra app được 1 tỷ người sử dụng trên toàn thế giới!",
+        "image": "https://picsum.photos/id/114/800/400",
+        "effects": {
+            "discontent": -15,
+            "conflict": -5,
+            "economy": 20,
+            "environment": 0,
+            "freedom": 10,
+            "security": 5
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 15,
+        "title": "🦠 VI-RÚT MỚI COVID-25!",
+        "text": "Phát hiện biến thể virus mới lây lan nhanh gấp 5 lần COVID-19!",
+        "image": "https://picsum.photos/id/115/800/400",
+        "effects": {
+            "discontent": 30,
+            "conflict": 20,
+            "economy": -25,
+            "environment": 0,
+            "freedom": -20,
+            "security": -15
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 16,
+        "title": "🏭 NHÀ MÁY SAMSUNG KHỔNG LỒ!",
+        "text": "Samsung đầu tư 50 tỷ USD xây nhà máy chip bán dẫn lớn nhất châu Á!",
+        "image": "https://picsum.photos/id/116/800/400",
+        "effects": {
+            "discontent": -10,
+            "conflict": -5,
+            "economy": 30,
+            "environment": -10,
+            "freedom": 5,
+            "security": 10
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 17,
+        "title": "🌡️ NÓNG KỶ LỤC 55°C!",
+        "text": "Nhiệt độ cao kỷ lục 55°C kéo dài 2 tuần, hệ thống điện quá tải!",
+        "image": "https://picsum.photos/id/117/800/400",
+        "effects": {
+            "discontent": 25,
+            "conflict": 10,
+            "economy": -15,
+            "environment": -20,
+            "freedom": -5,
+            "security": -10
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 18,
+        "title": "🎬 PHIM VIỆT OSCAR!",
+        "text": "Phim Việt Nam đầu tiên giành giải Oscar Phim hay nhất, gây sốt toàn cầu!",
+        "image": "https://picsum.photos/id/118/800/400",
+        "effects": {
+            "discontent": -20,
+            "conflict": -10,
+            "economy": 15,
+            "environment": 0,
+            "freedom": 15,
+            "security": 5
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 19,
+        "title": "💣 KHỦNG BỐ HỌP BOM!",
+        "text": "Phát hiện 500 quả bom từ thời chiến tranh tại trung tâm Hà Nội!",
+        "image": "https://picsum.photos/id/119/800/400",
+        "effects": {
+            "discontent": 20,
+            "conflict": 15,
+            "economy": -10,
+            "environment": 0,
+            "freedom": -10,
+            "security": -15
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 20,
+        "title": "🏖️ ĐẢO NHÂN TẠO KHỔNG LỒ!",
+        "text": "Hoàn thành đảo nhân tạo 10,000 hecta, tạo ra 'Singapore mới' ở Việt Nam!",
+        "image": "https://picsum.photos/id/120/800/400",
+        "effects": {
+            "discontent": -5,
+            "conflict": 0,
+            "economy": 25,
+            "environment": -15,
+            "freedom": 5,
+            "security": 10
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 21,
+        "title": "📊 KHÁM PHÁ KHO BÁU CỔ ĐẠI #21!",
+        "text": "Sự kiện Khám phá kho báu cổ đại quan trọng ảnh hưởng đến tình hình đất nước.",
+        "image": "https://picsum.photos/id/171/800/400",
+        "effects": {
+            "discontent": 19,
+            "conflict": -1,
+            "economy": -16,
+            "environment": 4,
+            "freedom": -1,
+            "security": 1
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 22,
+        "title": "📊 TẤN CÔNG KHỦNG BỐ #22!",
+        "text": "Sự kiện Tấn công khủng bố quan trọng ảnh hưởng đến tình hình đất nước.",
+        "image": "https://picsum.photos/id/172/800/400",
+        "effects": {
+            "discontent": -16,
+            "conflict": -13,
+            "economy": -6,
+            "environment": 7,
+            "freedom": 13,
+            "security": -14
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 23,
+        "title": "📊 THÀNH TỰU Y HỌC #23!",
+        "text": "Sự kiện Thành tựu y học quan trọng ảnh hưởng đến tình hình đất nước.",
+        "image": "https://picsum.photos/id/173/800/400",
+        "effects": {
+            "discontent": -19,
+            "conflict": 6,
+            "economy": 9,
+            "environment": 14,
+            "freedom": -5,
+            "security": -10
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 24,
+        "title": "📊 THIÊN TAI LŨ LỤT #24!",
+        "text": "Sự kiện Thiên tai lũ lụt quan trọng ảnh hưởng đến tình hình đất nước.",
+        "image": "https://picsum.photos/id/174/800/400",
+        "effects": {
+            "discontent": -16,
+            "conflict": -12,
+            "economy": -4,
+            "environment": -17,
+            "freedom": -6,
+            "security": 5
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 25,
+        "title": "📊 KHỦNG HOẢNG TÀI CHÍNH #25!",
+        "text": "Sự kiện Khủng hoảng tài chính quan trọng ảnh hưởng đến tình hình đất nước.",
+        "image": "https://picsum.photos/id/175/800/400",
+        "effects": {
+            "discontent": 5,
+            "conflict": -15,
+            "economy": -19,
+            "environment": 18,
+            "freedom": 4,
+            "security": 7
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 26,
+        "title": "📊 PHÁT MINH CÔNG NGHỆ #26!",
+        "text": "Sự kiện Phát minh công nghệ quan trọng ảnh hưởng đến tình hình đất nước.",
+        "image": "https://picsum.photos/id/176/800/400",
+        "effects": {
+            "discontent": -2,
+            "conflict": 12,
+            "economy": -9,
+            "environment": 20,
+            "freedom": -12,
+            "security": 6
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 27,
+        "title": "📊 BIỂU TÌNH QUY MÔ LỚN #27!",
+        "text": "Sự kiện Biểu tình quy mô lớn quan trọng ảnh hưởng đến tình hình đất nước.",
+        "image": "https://picsum.photos/id/177/800/400",
+        "effects": {
+            "discontent": 6,
+            "conflict": 2,
+            "economy": 11,
+            "environment": 12,
+            "freedom": -4,
+            "security": 11
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 28,
+        "title": "📊 THÀNH CÔNG NGOẠI GIAO #28!",
+        "text": "Sự kiện Thành công ngoại giao quan trọng ảnh hưởng đến tình hình đất nước.",
+        "image": "https://picsum.photos/id/178/800/400",
+        "effects": {
+            "discontent": 0,
+            "conflict": -14,
+            "economy": 15,
+            "environment": 19,
+            "freedom": 10,
+            "security": 18
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 29,
+        "title": "📊 THẢM HỌA MÔI TRƯỜNG #29!",
+        "text": "Sự kiện Thảm họa môi trường quan trọng ảnh hưởng đến tình hình đất nước.",
+        "image": "https://picsum.photos/id/179/800/400",
+        "effects": {
+            "discontent": 14,
+            "conflict": -9,
+            "economy": 2,
+            "environment": -5,
+            "freedom": 7,
+            "security": -14
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 30,
+        "title": "📊 THẮNG LỢI THỂ THAO #30!",
+        "text": "Sự kiện Thắng lợi thể thao quan trọng ảnh hưởng đến tình hình đất nước.",
+        "image": "https://picsum.photos/id/180/800/400",
+        "effects": {
+            "discontent": -11,
+            "conflict": 3,
+            "economy": -1,
+            "environment": 10,
+            "freedom": 10,
+            "security": 7
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 31,
+        "title": "📊 KHÁM PHÁ KHO BÁU CỔ ĐẠI #31!",
+        "text": "Sự kiện Khám phá kho báu cổ đại quan trọng ảnh hưởng đến tình hình đất nước.",
+        "image": "https://picsum.photos/id/181/800/400",
+        "effects": {
+            "discontent": 0,
+            "conflict": 11,
+            "economy": -23,
+            "environment": -1,
+            "freedom": 12,
+            "security": 19
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 32,
+        "title": "📊 TẤN CÔNG KHỦNG BỐ #32!",
+        "text": "Sự kiện Tấn công khủng bố quan trọng ảnh hưởng đến tình hình đất nước.",
+        "image": "https://picsum.photos/id/182/800/400",
+        "effects": {
+            "discontent": -1,
+            "conflict": 8,
+            "economy": -17,
+            "environment": -8,
+            "freedom": 14,
+            "security": -19
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 33,
+        "title": "📊 THÀNH TỰU Y HỌC #33!",
+        "text": "Sự kiện Thành tựu y học quan trọng ảnh hưởng đến tình hình đất nước.",
+        "image": "https://picsum.photos/id/183/800/400",
+        "effects": {
+            "discontent": -13,
+            "conflict": 12,
+            "economy": 25,
+            "environment": 3,
+            "freedom": -9,
+            "security": 1
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 34,
+        "title": "📊 THIÊN TAI LŨ LỤT #34!",
+        "text": "Sự kiện Thiên tai lũ lụt quan trọng ảnh hưởng đến tình hình đất nước.",
+        "image": "https://picsum.photos/id/184/800/400",
+        "effects": {
+            "discontent": 18,
+            "conflict": 2,
+            "economy": -16,
+            "environment": -20,
+            "freedom": 10,
+            "security": 20
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 35,
+        "title": "📊 KHỦNG HOẢNG TÀI CHÍNH #35!",
+        "text": "Sự kiện Khủng hoảng tài chính quan trọng ảnh hưởng đến tình hình đất nước.",
+        "image": "https://picsum.photos/id/185/800/400",
+        "effects": {
+            "discontent": -5,
+            "conflict": 0,
+            "economy": -8,
+            "environment": 12,
+            "freedom": -2,
+            "security": -1
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 36,
+        "title": "📊 PHÁT MINH CÔNG NGHỆ #36!",
+        "text": "Sự kiện Phát minh công nghệ quan trọng ảnh hưởng đến tình hình đất nước.",
+        "image": "https://picsum.photos/id/186/800/400",
+        "effects": {
+            "discontent": 10,
+            "conflict": -2,
+            "economy": 7,
+            "environment": 18,
+            "freedom": -8,
+            "security": 12
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 37,
+        "title": "📊 BIỂU TÌNH QUY MÔ LỚN #37!",
+        "text": "Sự kiện Biểu tình quy mô lớn quan trọng ảnh hưởng đến tình hình đất nước.",
+        "image": "https://picsum.photos/id/187/800/400",
+        "effects": {
+            "discontent": 16,
+            "conflict": -9,
+            "economy": -8,
+            "environment": -18,
+            "freedom": -6,
+            "security": 2
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 38,
+        "title": "📊 THÀNH CÔNG NGOẠI GIAO #38!",
+        "text": "Sự kiện Thành công ngoại giao quan trọng ảnh hưởng đến tình hình đất nước.",
+        "image": "https://picsum.photos/id/188/800/400",
+        "effects": {
+            "discontent": -2,
+            "conflict": 1,
+            "economy": 4,
+            "environment": 12,
+            "freedom": 0,
+            "security": 11
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 39,
+        "title": "📊 THẢM HỌA MÔI TRƯỜNG #39!",
+        "text": "Sự kiện Thảm họa môi trường quan trọng ảnh hưởng đến tình hình đất nước.",
+        "image": "https://picsum.photos/id/189/800/400",
+        "effects": {
+            "discontent": -7,
+            "conflict": -9,
+            "economy": -15,
+            "environment": -15,
+            "freedom": 11,
+            "security": 5
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 40,
+        "title": "📊 THẮNG LỢI THỂ THAO #40!",
+        "text": "Sự kiện Thắng lợi thể thao quan trọng ảnh hưởng đến tình hình đất nước.",
+        "image": "https://picsum.photos/id/190/800/400",
+        "effects": {
+            "discontent": -4,
+            "conflict": 13,
+            "economy": 14,
+            "environment": -3,
+            "freedom": -10,
+            "security": 8
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 41,
+        "title": "📊 KHÁM PHÁ KHO BÁU CỔ ĐẠI #41!",
+        "text": "Sự kiện Khám phá kho báu cổ đại quan trọng ảnh hưởng đến tình hình đất nước.",
+        "image": "https://picsum.photos/id/191/800/400",
+        "effects": {
+            "discontent": -8,
+            "conflict": -10,
+            "economy": -19,
+            "environment": -10,
+            "freedom": 14,
+            "security": 18
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 42,
+        "title": "📊 TẤN CÔNG KHỦNG BỐ #42!",
+        "text": "Sự kiện Tấn công khủng bố quan trọng ảnh hưởng đến tình hình đất nước.",
+        "image": "https://picsum.photos/id/192/800/400",
+        "effects": {
+            "discontent": 11,
+            "conflict": -3,
+            "economy": 9,
+            "environment": 19,
+            "freedom": -5,
+            "security": -5
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 43,
+        "title": "📊 THÀNH TỰU Y HỌC #43!",
+        "text": "Sự kiện Thành tựu y học quan trọng ảnh hưởng đến tình hình đất nước.",
+        "image": "https://picsum.photos/id/193/800/400",
+        "effects": {
+            "discontent": 1,
+            "conflict": 3,
+            "economy": -22,
+            "environment": -9,
+            "freedom": -11,
+            "security": -18
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 44,
+        "title": "📊 THIÊN TAI LŨ LỤT #44!",
+        "text": "Sự kiện Thiên tai lũ lụt quan trọng ảnh hưởng đến tình hình đất nước.",
+        "image": "https://picsum.photos/id/194/800/400",
+        "effects": {
+            "discontent": 2,
+            "conflict": -11,
+            "economy": 0,
+            "environment": 7,
+            "freedom": 11,
+            "security": -5
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 45,
+        "title": "📊 KHỦNG HOẢNG TÀI CHÍNH #45!",
+        "text": "Sự kiện Khủng hoảng tài chính quan trọng ảnh hưởng đến tình hình đất nước.",
+        "image": "https://picsum.photos/id/195/800/400",
+        "effects": {
+            "discontent": -1,
+            "conflict": 10,
+            "economy": -24,
+            "environment": 17,
+            "freedom": -8,
+            "security": -3
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 46,
+        "title": "📊 PHÁT MINH CÔNG NGHỆ #46!",
+        "text": "Sự kiện Phát minh công nghệ quan trọng ảnh hưởng đến tình hình đất nước.",
+        "image": "https://picsum.photos/id/196/800/400",
+        "effects": {
+            "discontent": 19,
+            "conflict": 11,
+            "economy": 15,
+            "environment": -3,
+            "freedom": 3,
+            "security": 2
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 47,
+        "title": "📊 BIỂU TÌNH QUY MÔ LỚN #47!",
+        "text": "Sự kiện Biểu tình quy mô lớn quan trọng ảnh hưởng đến tình hình đất nước.",
+        "image": "https://picsum.photos/id/197/800/400",
+        "effects": {
+            "discontent": -10,
+            "conflict": 9,
+            "economy": 16,
+            "environment": -16,
+            "freedom": -15,
+            "security": -14
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 48,
+        "title": "📊 THÀNH CÔNG NGOẠI GIAO #48!",
+        "text": "Sự kiện Thành công ngoại giao quan trọng ảnh hưởng đến tình hình đất nước.",
+        "image": "https://picsum.photos/id/198/800/400",
+        "effects": {
+            "discontent": 6,
+            "conflict": 5,
+            "economy": -19,
+            "environment": 12,
+            "freedom": -3,
+            "security": -14
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 49,
+        "title": "📊 THẢM HỌA MÔI TRƯỜNG #49!",
+        "text": "Sự kiện Thảm họa môi trường quan trọng ảnh hưởng đến tình hình đất nước.",
+        "image": "https://picsum.photos/id/199/800/400",
+        "effects": {
+            "discontent": 15,
+            "conflict": -1,
+            "economy": -14,
+            "environment": -1,
+            "freedom": 0,
+            "security": 9
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 50,
+        "title": "📊 THẮNG LỢI THỂ THAO #50!",
+        "text": "Sự kiện Thắng lợi thể thao quan trọng ảnh hưởng đến tình hình đất nước.",
+        "image": "https://picsum.photos/id/200/800/400",
+        "effects": {
+            "discontent": 19,
+            "conflict": 4,
+            "economy": 8,
+            "environment": -11,
+            "freedom": -14,
+            "security": -12
+        },
+        "rarity": "common"
+    },
+    {
+        "id": 101,
+        "title": "💰 GÓI KÍCH THÍCH KINH TẾ KHẨN CẤP!",
+        "text": "Chính phủ quyết định bơm 500 tỷ USD vào nền kinh tế để chống suy thoái. Ngân hàng trung ương giảm lãi suất về 0%!",
+        "image": "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&q=80",
+        "effects": {
+            "discontent": -10,
+            "conflict": -5,
+            "economy": 30,
+            "environment": -5,
+            "freedom": 0,
+            "security": 5
+        },
+        "rarity": "conditional",
+        "trigger_condition": {
+            "economy": "<30"
+        },
+        "category": "economic_stimulus"
+    },
+    {
+        "id": 102,
+        "title": "🏭 CHƯƠNG TRÌNH CÔNG NGHIỆP HÓA MỚI!",
+        "text": "Khởi động kế hoạch 5 năm xây dựng 1000 nhà máy mới, tạo 5 triệu việc làm. Ưu tiên sản xuất và xuất khẩu!",
+        "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80",
+        "effects": {
+            "discontent": -15,
+            "conflict": -8,
+            "economy": 25,
+            "environment": -15,
+            "freedom": -5,
+            "security": 10
+        },
+        "rarity": "conditional",
+        "trigger_condition": {
+            "economy": "<35"
+        },
+        "category": "industrialization"
+    },
+    {
+        "id": 103,
+        "title": "⚔️ TUYÊN BỐ THIẾT QUÂN LUẬT!",
+        "text": "Quân đội được triển khai toàn quốc, giới nghiêm từ 22h-6h. Tất cả biểu tình bị cấm, truyền thông bị kiểm duyệt!",
+        "image": "https://images.unsplash.com/photo-1526558829113-b118b3889c6c?w=800&q=80",
+        "effects": {
+            "discontent": 20,
+            "conflict": -25,
+            "economy": -10,
+            "environment": 0,
+            "freedom": -30,
+            "security": 35
+        },
+        "rarity": "conditional",
+        "trigger_condition": {
+            "conflict": ">70"
+        },
+        "category": "martial_law"
+    },
+    {
+        "id": 104,
+        "title": "🤝 HỘI NGHỊ HÒA GIẢI QUỐC GIA!",
+        "text": "Tổ chức đối thoại với các phe đối lập, thỏa thuận chia sẻ quyền lực và cải cách chính trị toàn diện!",
+        "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
+        "effects": {
+            "discontent": -20,
+            "conflict": -30,
+            "economy": 5,
+            "environment": 0,
+            "freedom": 25,
+            "security": -10
+        },
+        "rarity": "conditional",
+        "trigger_condition": {
+            "conflict": ">65"
+        },
+        "category": "reconciliation"
+    },
+    {
+        "id": 105,
+        "title": "💸 TĂNG LƯƠNG TỐI THIỂU 200%!",
+        "text": "Quyết định tăng lương tối thiểu từ 4.68 triệu lên 15 triệu/tháng. Đồng thời miễn thuế thu nhập dưới 20 triệu!",
+        "image": "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&q=80",
+        "effects": {
+            "discontent": -25,
+            "conflict": -15,
+            "economy": -15,
+            "environment": 0,
+            "freedom": 10,
+            "security": 5
+        },
+        "rarity": "conditional",
+        "trigger_condition": {
+            "discontent": ">70"
+        },
+        "category": "wage_increase"
+    },
+    {
+        "id": 106,
+        "title": "🏥 Y TẾ - GIÁO DỤC MIỄN PHÍ TOÀN QUỐC!",
+        "text": "Triển khai y tế và giáo dục hoàn toàn miễn phí. Đầu tư 200 tỷ USD xây 10,000 bệnh viện và trường học mới!",
+        "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&q=80",
+        "effects": {
+            "discontent": -30,
+            "conflict": -10,
+            "economy": -25,
+            "environment": 5,
+            "freedom": 15,
+            "security": 0
+        },
+        "rarity": "conditional",
+        "trigger_condition": {
+            "discontent": ">75"
+        },
+        "category": "social_welfare"
+    },
+    {
+        "id": 107,
+        "title": "🌱 TUYÊN BỐ KHẨN CẤP SINH THÁI QUỐC GIA!",
+        "text": "Đóng cửa toàn bộ nhà máy ô nhiễm trong 60 ngày. Đầu tư 1000 tỷ USD cho năng lượng sạch và trồng rừng!",
+        "image": "https://images.unsplash.com/photo-1569163139394-de4e5f43e4e3?w=800&q=80",
+        "effects": {
+            "discontent": 10,
+            "conflict": 15,
+            "economy": -30,
+            "environment": 40,
+            "freedom": -10,
+            "security": -5
+        },
+        "rarity": "conditional",
+        "trigger_condition": {
+            "environment": "<25"
+        },
+        "category": "environmental_emergency"
+    },
+    {
+        "id": 108,
+        "title": "♻️ CHIẾN DỊCH KINH TẾ TUẦN HOÀN!",
+        "text": "Cấm hoàn toàn nhựa dùng một lần, tái chế 100% rác thải, chuyển đổi toàn bộ sang năng lượng tái tạo trong 10 năm!",
+        "image": "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=800&q=80",
+        "effects": {
+            "discontent": 5,
+            "conflict": 8,
+            "economy": -20,
+            "environment": 35,
+            "freedom": -5,
+            "security": 0
+        },
+        "rarity": "conditional",
+        "trigger_condition": {
+            "environment": "<30"
+        },
+        "category": "circular_economy"
+    },
+    {
+        "id": 109,
+        "title": "🗳️ CẢI CÁCH CHÍNH TRỊ TOÀN DIỆN!",
+        "text": "Tổ chức bầu cử tự do với nhiều đảng phái, thành lập tòa án hiến pháp độc lập, đảm bảo tự do báo chí tuyệt đối!",
+        "image": "https://images.unsplash.com/photo-1566169019970-f7fc4bd01d91?w=800&q=80",
+        "effects": {
+            "discontent": -20,
+            "conflict": -15,
+            "economy": -5,
+            "environment": 0,
+            "freedom": 35,
+            "security": -15
+        },
+        "rarity": "conditional",
+        "trigger_condition": {
+            "freedom": "<25"
+        },
+        "category": "democratic_reform"
+    },
+    {
+        "id": 110,
+        "title": "🛡️ HIỆN ĐẠI HÓA QUỐC PHÒNG TOÀN DIỆN!",
+        "text": "Tăng ngân sách quốc phòng lên 10% GDP, mua 100 máy bay chiến đấu F-35, nâng cấp toàn bộ hệ thống radar!",
+        "image": "https://images.unsplash.com/photo-1526558829113-b118b3889c6c?w=800&q=80",
+        "effects": {
+            "discontent": 10,
+            "conflict": 5,
+            "economy": -20,
+            "environment": -10,
+            "freedom": -10,
+            "security": 40
+        },
+        "rarity": "conditional",
+        "trigger_condition": {
+            "security": "<30"
+        },
+        "category": "military_modernization"
+    },
+    {
+        "id": 201,
+        "title": "📊 HIỆU ỨNG DOMINO KINH TẾ!",
+        "text": "Gói kích thích kinh tế đã tạo ra hiệu ứng tích cực. Thất nghiệp giảm 50%, FDI tăng 300%, chứng khoán tăng trần liên tục!",
+        "image": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80",
+        "effects": {
+            "discontent": -15,
+            "conflict": -10,
+            "economy": 20,
+            "environment": -5,
+            "freedom": 5,
+            "security": 10
+        },
+        "rarity": "chain",
+        "trigger_condition": {
+            "previous_event": "economic_stimulus",
+            "turns_after": 2
+        },
+        "category": "economic_boom"
+    },
+    {
+        "id": 202,
+        "title": "🏭 BOOM CÔNG NGHIỆP!",
+        "text": "Kế hoạch công nghiệp hóa thành công vượt mong đợi! 2000 nhà máy đã khởi công, xuất khẩu tăng 500%, trở thành 'xưởng sản xuất thế giới'!",
+        "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
+        "effects": {
+            "discontent": -10,
+            "conflict": -5,
+            "economy": 25,
+            "environment": -20,
+            "freedom": 0,
+            "security": 15
+        },
+        "rarity": "chain",
+        "trigger_condition": {
+            "previous_event": "industrialization",
+            "turns_after": 3
+        },
+        "category": "industrial_boom"
+    },
+    {
+        "id": 301,
+        "title": "🚨 TỰ ĐỘNG: NGÂN HÀNG TRUNG ƯƠNG CAN THIỆP!",
+        "text": "Ngân hàng Trung ương tự động hạ lãi suất xuống 0%, bơm 100 tỷ USD thanh khoản, cứu trợ các ngân hàng gặp khó khăn!",
+        "image": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80",
+        "effects": {
+            "discontent": -5,
+            "conflict": 0,
+            "economy": 15,
+            "environment": 0,
+            "freedom": -5,
+            "security": 5
+        },
+        "rarity": "auto_response",
+        "trigger_condition": {
+            "economy": "<20",
+            "auto_trigger": true
+        },
+        "category": "economic_intervention"
+    },
+    {
+        "id": 302,
+        "title": "🚨 TỰ ĐỘNG: QUÂN ĐỘI TRẤN AN TÌNH HÌNH!",
+        "text": "Quân đội tự động được triển khai bảo vệ các cơ quan nhà nước và cơ sở hạ tầng quan trọng khi tình hình căng thẳng!",
+        "image": "https://images.unsplash.com/photo-1526558829113-b118b3889c6c?w=800&q=80",
+        "effects": {
+            "discontent": 5,
+            "conflict": -10,
+            "economy": -5,
+            "environment": 0,
+            "freedom": -10,
+            "security": 20
+        },
+        "rarity": "auto_response",
+        "trigger_condition": {
+            "conflict": ">80",
+            "auto_trigger": true
+        },
+        "category": "security_intervention"
+    }
+]
