@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Người Cầm Quyền Simulator</title>
+    <title>Người Cầm Quyền Simulator - With Difficulty Modes</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Source+Sans+Pro:wght@400;600;700&display=swap"
       rel="stylesheet"
@@ -23,6 +23,77 @@
         overflow-x: hidden;
       }
 
+      /* Difficulty Selection Screen */
+      .difficulty-selection {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.95);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .difficulty-modal {
+        background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+        padding: 40px;
+        border-radius: 20px;
+        max-width: 700px;
+        text-align: center;
+        border: 2px solid #444;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+      }
+
+      .difficulty-option {
+        margin: 20px 0;
+        padding: 25px;
+        border: 2px solid #444;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background: linear-gradient(135deg, #333 0%, #222 100%);
+      }
+
+      .difficulty-option:hover {
+        border-color: #4caf50;
+        background: linear-gradient(135deg, #444 0%, #333 100%);
+        transform: translateY(-2px);
+      }
+
+      .difficulty-option h3 {
+        margin: 0 0 10px 0;
+        color: #fff;
+        font-size: 1.4em;
+      }
+
+      .difficulty-option p {
+        margin: 0 0 10px 0;
+        color: #ccc;
+        font-size: 1.1em;
+      }
+
+      .difficulty-stats {
+        font-size: 0.9em;
+        color: #999;
+        margin-top: 10px;
+      }
+
+      #difficulty-indicator {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: rgba(0,0,0,0.8);
+        color: white;
+        padding: 10px 15px;
+        border-radius: 20px;
+        font-size: 14px;
+        z-index: 500;
+        border: 1px solid #444;
+      }
+
       /* Start Screen */
       .start-screen {
         position: fixed;
@@ -36,6 +107,7 @@
         justify-content: center;
         align-items: center;
         z-index: 1000;
+        text-align: center;
         transition: opacity 0.8s ease;
       }
 
@@ -100,6 +172,7 @@
         z-index: 999;
         text-transform: uppercase;
         letter-spacing: 1px;
+        display: none;
       }
 
       .guide-btn:hover {
@@ -110,109 +183,94 @@
         box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
       }
 
-      /* Guide Popup */
-      .guide-popup {
+      /* Guide Modal */
+      .guide-modal {
         position: fixed;
         top: 0;
         left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.95);
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.95);
+        z-index: 2000;
         display: none;
         align-items: center;
         justify-content: center;
-        z-index: 2000;
         padding: 20px;
       }
 
       .guide-content {
-        background: #1a1a1a;
-        color: #ffffff;
-        max-width: 900px;
+        background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+        padding: 30px;
+        border-radius: 20px;
+        max-width: 800px;
         max-height: 90vh;
         overflow-y: auto;
-        border-radius: 12px;
-        padding: 30px;
-        position: relative;
-        border: 1px solid #444;
+        border: 2px solid #444;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.8);
       }
 
-      .guide-close {
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        background: #cc0000;
+      .guide-title {
+        font-size: 2rem;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .guide-section {
+        margin-bottom: 25px;
+        padding: 20px;
+        background: rgba(255,255,255,0.05);
+        border-radius: 10px;
+      }
+
+      .guide-section h3 {
+        color: #4caf50;
+        font-size: 1.3em;
+        margin-bottom: 15px;
+      }
+
+      .guide-section h4 {
+        color: #ffd700;
+        font-size: 1.1em;
+        margin: 15px 0 10px 0;
+      }
+
+      .guide-section p, .guide-section li {
+        color: #ccc;
+        line-height: 1.6;
+        margin-bottom: 8px;
+      }
+
+      .guide-section ul {
+        margin-left: 20px;
+      }
+
+      .ending-item {
+        background: rgba(0,0,0,0.3);
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 8px;
+        border-left: 4px solid;
+      }
+
+      .ending-success { border-left-color: #4caf50; }
+      .ending-failure { border-left-color: #f44336; }
+      .ending-special { border-left-color: #ff9800; }
+
+      .close-guide {
+        background: #f44336;
         color: white;
         border: none;
-        padding: 8px 15px;
+        padding: 10px 20px;
         border-radius: 5px;
         cursor: pointer;
-        font-weight: bold;
-        font-size: 1.1em;
-      }
-
-      .guide-close:hover {
-        background: #ff0000;
-      }
-
-      .guide-content h1 {
-        color: #ffffff;
-        text-align: center;
-        margin-bottom: 25px;
-        border-bottom: 3px solid #555;
-        padding-bottom: 10px;
-      }
-
-      .guide-content h2 {
-        color: #cccccc;
-        margin-top: 25px;
-        margin-bottom: 15px;
-        border-left: 4px solid #666;
-        padding-left: 12px;
-      }
-
-      .guide-content h3 {
-        color: #bbbbbb;
+        font-size: 1em;
         margin-top: 20px;
-        margin-bottom: 10px;
+        float: right;
       }
 
-      .guide-content ul,
-      .guide-content ol {
-        padding-left: 20px;
-        margin-bottom: 15px;
-      }
-
-      .guide-content li {
-        margin-bottom: 5px;
-        line-height: 1.6;
-        color: #dddddd;
-      }
-
-      .guide-content code {
-        background: #333333;
-        color: #ffffff;
-        padding: 2px 6px;
-        border-radius: 3px;
-        font-family: monospace;
-      }
-
-      .guide-content .warning {
-        background: #331111;
-        border-left: 4px solid #cc0000;
-        padding: 15px;
-        margin: 15px 0;
-        border-radius: 5px;
-        color: #ffcccc;
-      }
-
-      .guide-content .tip {
-        background: #113311;
-        border-left: 4px solid #00cc00;
-        padding: 15px;
-        margin: 15px 0;
-        border-radius: 5px;
-        color: #ccffcc;
+      .close-guide:hover {
+        background: #d32f2f;
       }
 
       /* Main Container */
@@ -379,70 +437,7 @@
         font-style: italic;
       }
 
-      /* =================================
-           THÔNG BÁO LỰAỌ CHỌN (Choice Result)
-           ================================= */
-      .result-panel {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: #1a1a1a;
-        color: #ffffff;
-        border: 3px solid #4caf50;
-        border-radius: 12px;
-        padding: 25px;
-        max-width: 500px;
-        width: 85%;
-        text-align: center;
-        z-index: 1400;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
-        animation: slideIn 0.5s ease-out;
-        display: none;
-      }
-
-      .result-panel h3 {
-        color: #4caf50;
-        margin-bottom: 15px;
-        font-size: 1.3em;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
-
-      .result-panel .result-description {
-        font-size: 1.1em;
-        margin-bottom: 20px;
-        color: #dddddd;
-        line-height: 1.5;
-      }
-
-      .result-panel .result-effects {
-        background: #333333;
-        padding: 15px;
-        border-radius: 8px;
-        border: 1px solid #555;
-        margin-top: 15px;
-      }
-
-      .result-panel .effects-title {
-        font-size: 1em;
-        font-weight: 600;
-        margin-bottom: 10px;
-        color: #ffffff;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
-
-      .result-panel .effects-list {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 8px;
-        font-size: 0.9em;
-      }
-
-      /* =================================
-           THÔNG BÁO SỰ KIỆN NGẪU NHIÊN (Random Event)
-           ================================= */
+      /* Random Event */
       .random-event {
         position: fixed;
         top: 50%;
@@ -460,23 +455,6 @@
         width: 90%;
         z-index: 1500;
         display: none;
-      }
-
-      /* Event Types - Màu border khác nhau */
-      .event-conditional {
-        border-color: #ff6666;
-      }
-
-      .event-chain {
-        border-color: #3399ff;
-      }
-
-      .event-auto {
-        border-color: #ff9933;
-      }
-
-      .event-normal {
-        border-color: #666666;
       }
 
       .event-title {
@@ -525,9 +503,6 @@
         border: 1px solid #777;
       }
 
-      /* =================================
-           CHUNG CHO CẢ HAI LOẠI THÔNG BÁO
-           ================================= */
       .effect-positive {
         color: #00ff00;
         font-weight: 700;
@@ -544,19 +519,6 @@
         color: #ffaa00;
         font-weight: 700;
         text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
-      }
-
-      .event-type {
-        background: #666666;
-        color: #ffffff;
-        padding: 5px 10px;
-        border-radius: 15px;
-        font-size: 0.8em;
-        text-align: center;
-        margin-bottom: 15px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-weight: bold;
       }
 
       @keyframes slideIn {
@@ -625,6 +587,11 @@
           flex-direction: column;
           gap: 10px;
         }
+
+        .difficulty-modal, .guide-content {
+          margin: 20px;
+          padding: 30px;
+        }
       }
     </style>
   </head>
@@ -633,121 +600,107 @@
     <div class="start-screen" id="startScreen">
       <h1 class="start-title">NGƯỜI CẦM QUYỀN</h1>
       <p class="start-subtitle">Simulator Chính Trị Chiến Lược</p>
-      <button class="start-btn" onclick="startGame()">BẮT ĐẦU GAME</button>
+      <button class="start-btn" onclick="showDifficultySelection()">BẮT ĐẦU GAME</button>
     </div>
 
     <!-- Guide Button -->
-    <button class="guide-btn" onclick="openGuide()">HƯỚNG DẪN</button>
+    <button class="guide-btn" onclick="openGuide()" id="guideBtn">HƯỚNG DẪN</button>
 
-    <!-- Guide Popup -->
-    <div class="guide-popup" id="guidePopup">
+    <!-- Guide Modal -->
+    <div class="guide-modal" id="guideModal">
       <div class="guide-content">
-        <button class="guide-close" onclick="closeGuide()">✕</button>
-
-        <h1>HƯỚNG DẪN CHIẾN LƯỢC - NGƯỜI CẦM QUYỀN SIMULATOR</h1>
-
-        <h2>TỔNG QUAN GAME</h2>
-        <p>
-          <strong>Mục tiêu:</strong> Duy trì quyền lực và dẫn dắt đất nước qua 20+ lượt chơi với 6 chỉ số quan trọng:
-        </p>
-        <ul>
-          <li><strong>Bất Mãn (Discontent):</strong> ≤ 80 tránh nổi loạn</li>
-          <li><strong>Xung Đột (Conflict):</strong> ≤ 85 tránh cách mạng</li>
-          <li><strong>Kinh Tế (Economy):</strong> ≥ 30 tránh suy thoái</li>
-          <li><strong>Môi Trường (Environment):</strong> Cân bằng phát triển</li>
-          <li><strong>Tự Do (Freedom):</strong> Cân bằng dân chủ vs kiểm soát</li>
-          <li><strong>An Ninh (Security):</strong> ≥ 30 tránh hỗn loạn</li>
-        </ul>
-
-        <h2>CÁC TÌNH HUỐNG KẾT THÚC SỚM (GAME OVER)</h2>
-
-        <h3>🔥 CÁCH MẠNG - Xung Đột ≥ 85</h3>
-        <div class="warning">
-          <strong>Triệu chứng báo động:</strong>
-          <ul>
-            <li>Biểu tình quy mô lớn liên tục</li>
-            <li>Đình công toàn quốc</li>
-            <li>Quân đội từ chối tuân lệnh</li>
-            <li>Bạo lực đường phố lan rộng</li>
-          </ul>
-        </div>
-        <p><strong>Cách tránh:</strong> Luôn dưới 80 Xung Đột, sử dụng "Hội nghị hòa giải" khi ≥65 Conflict</p>
-
-        <h3>⚰️ MẤT QUYỀN LỰC - Bất Mãn ≥ 80</h3>
-        <div class="warning">
-          <strong>Triệu chứng:</strong>
-          <ul>
-            <li>Tỷ lệ ủng hộ giảm mạnh</li>
-            <li>Các bộ trưởng từ chức hàng loạt</li>
-            <li>Truyền thông phản đối gay gắt</li>
-            <li>Đảng cầm quyền nội bộ rạn nứt</li>
-          </ul>
+        <h2 class="guide-title">🎮 HƯỚNG DẪN GAME</h2>
+        
+        <div class="guide-section">
+          <h3>📋 Cách Chơi Cơ Bản</h3>
+          <p><strong>Mục tiêu:</strong> Duy trì quyền lực và dẫn dắt đất nước thông qua các quyết định chính trị.</p>
+          <p><strong>Cơ chế:</strong> Mỗi lượt, bạn sẽ đối mặt với các tình huống và phải chọn 1 trong 2-3 lựa chọn.</p>
+          <p><strong>Chỉ số quan trọng:</strong> Quản lý 6 chỉ số - Bất Mãn, Xung Đột, Kinh Tế, Môi Trường, Tự Do, An Ninh.</p>
         </div>
 
-        <h2>ĐƯỜNG ĐẾN CÁC KẾT THÚC TỐT</h2>
-
-        <h3>👑 PERFECT LEADER - Tất cả chỉ số ≥70</h3>
-        <div class="tip">
-          <strong>Chiến lược cân bằng hoàn hảo:</strong><br />
-          <code>Bất Mãn ≤30 | Xung Đột ≤40 | Kinh Tế ≥75 | Môi Trường ≥70 | Tự Do ≥70 | An Ninh ≥70</code>
+        <div class="guide-section">
+          <h3>⚙️ Độ Khó</h3>
+          <p><strong>🟢 Easy Mode (15 rounds):</strong> Tác động tiêu cực giảm 30%, tác động tích cực tăng 20%, ít sự kiện ngẫu nhiên</p>
+          <p><strong>🟡 Normal Mode (30 rounds):</strong> Cân bằng hoàn hảo, tác động chuẩn, vừa phải sự kiện ngẫu nhiên</p>
+          <p><strong>🔴 Hard Mode (50 rounds):</strong> Tác động tiêu cực tăng 40%, tác động tích cực giảm 20%, nhiều sự kiện ngẫu nhiên</p>
         </div>
 
-        <h3>💰 ECONOMIC EMPEROR - Kinh tế ≥85</h3>
-        <p>Gói kích thích 500 tỷ USD, công nghiệp hóa mạnh mẽ, đầu tư FDI</p>
+        <div class="guide-section">
+          <h3>🎯 Các Kết Thúc Có Thể Gặp</h3>
+          
+          <div class="ending-item ending-success">
+            <h4>🏆 NHÀ LÃNH ĐẠO TÀI BA - BEST LEADER EVER</h4>
+            <p><strong>Điều kiện:</strong> Bất Mãn ≤20, Xung Đột ≤25, Kinh Tế ≥70, Môi Trường ≥60, Tự Do ≥65, An Ninh ≥60</p>
+            <p>Kết thúc hoàn hảo nhất! Bạn cân bằng xuất sắc tất cả các yếu tố xã hội.</p>
+          </div>
 
-        <h3>🌱 GREEN MESSIAH - Môi trường ≥85</h3>
-        <p>Khẩn cấp sinh thái, đóng nhà máy nhiệt điện, đầu tư năng lượng sạch</p>
+          <div class="ending-item ending-special">
+            <h4>⚔️ ĐỘC TÀI QUÂN SỰ (TẠM THỜI)</h4>
+            <p><strong>Điều kiện:</strong> An Ninh ≥75, Tự Do ≤25</p>
+            <p>Dẫn đến ending Hitler Collapse sau 2 giây. Quyền lực tuyệt đối không bền vững.</p>
+          </div>
 
-        <h3>🗳️ DEMOCRATIC HERO - Tự Do ≥80, An Ninh <50</h3>
-        <p>Cải cách chính trị, bầu cử tự do, tự do báo chí tuyệt đối</p>
+          <div class="ending-item ending-failure">
+            <h4>💥 HẬU QUẢ CỦA ĐỘC TÀI - DICTATOR'S COLLAPSE</h4>
+            <p><strong>Điều kiện:</strong> Sau khi trở thành độc tài</p>
+            <p>"You look like Hitler after this you will collapse!" - Cách mạng lật đổ chế độ độc tài.</p>
+          </div>
 
-        <h3>🛡️ WARLORD - An Ninh ≥80, Xung Đột <60</h3>
-        <p>Hiện đại hóa quốc phòng, tăng ngân sách 10% GDP, mua F-35</p>
+          <div class="ending-item ending-failure">
+            <h4>🔥 CÁCH MẠNG BÙNG NỔ</h4>
+            <p><strong>Điều kiện:</strong> Xung Đột ≥85</p>
+            <p>Người dân nổi dậy và lật đổ chính quyền khi xung đột xã hội quá cao.</p>
+          </div>
 
-        <h2>QUẢN LÝ SỰ KIỆN NGẪU NHIÊN</h2>
-        <ul>
-          <li><strong>Common (80%):</strong> Ảnh hưởng ±5-20 điểm</li>
-          <li><strong>Rare (15%):</strong> Ảnh hưởng ±10-30 điểm</li>
-          <li><strong>Epic (3%):</strong> Ảnh hưởng ±15-40 điểm</li>
-          <li><strong>Legendary (2%):</strong> Ảnh hưởng ±20-50 điểm</li>
-        </ul>
+          <div class="ending-item ending-failure">
+            <h4>🔻 MẤT QUYỀN LỰC</h4>
+            <p><strong>Điều kiện:</strong> Bất Mãn ≥80</p>
+            <p>Dân chúng bất mãn tới mức truất phế bạn khỏi chức vụ.</p>
+          </div>
 
-        <h3>⚡ Sự Kiện Tự Động:</h3>
-        <ul>
-          <li><strong>Economy <20:</strong> Ngân hàng TW can thiệp (+15 Economy)</li>
-          <li><strong>Conflict >80:</strong> Quân đội tự động triển khai (+20 Security, -10 Freedom)</li>
-        </ul>
+          <div class="ending-item ending-failure">
+            <h4>📉 SỤP ĐỔ KINH TẾ</h4>
+            <p><strong>Điều kiện:</strong> Kinh Tế ≤10</p>
+            <p>Nền kinh tế sụp đổ hoàn toàn, đất nước rơi vào khủng hoảng.</p>
+          </div>
 
-        <h2>CHIẾN THUẬT NÂNG CAO</h2>
-        <p><strong>Ưu tiên theo giai đoạn:</strong></p>
-        <ul>
-          <li><strong>Lượt 1-5:</strong> Ổn định Bất Mãn + Xung Đột</li>
-          <li><strong>Lượt 6-10:</strong> Phát triển Kinh Tế + An Ninh</li>
-          <li><strong>Lượt 11-15:</strong> Cân bằng Môi Trường + Tự Do</li>
-          <li><strong>Lượt 16-20:</strong> Đẩy chỉ số mục tiêu lên cao</li>
-        </ul>
+          <div class="ending-item ending-failure">
+            <h4>🌍 THẢM HỌA MÔI TRƯỜNG</h4>
+            <p><strong>Điều kiện:</strong> Môi Trường ≤10</p>
+            <p>Biến đổi khí hậu và ô nhiễm làm đất nước không thể sinh sống.</p>
+          </div>
 
-        <h3>⚠️ Tránh các bẫy:</h3>
-        <ul>
-          <li><strong>Thiết quân luật:</strong> +35 Security nhưng -30 Freedom</li>
-          <li><strong>Tăng lương 200%:</strong> -25 Economy, có thể gây phá sản</li>
-          <li><strong>Đóng nhà máy:</strong> +40 Environment nhưng -30 Economy</li>
-        </ul>
+          <div class="ending-item ending-success">
+            <h4>💰 HOÀNG ĐẾ KINH TẾ</h4>
+            <p><strong>Điều kiện:</strong> Kinh Tế ≥85 (sau turn 10)</p>
+            <p>Phát triển nền kinh tế mạnh mẽ, biến đất nước thành cường quốc.</p>
+          </div>
 
-        <h2>TIPS CHUYÊN NGHIỆP</h2>
-        <div class="tip">
+          <div class="ending-item ending-success">
+            <h4>🌱 VUA BẢO VỆ MÔI TRƯỜNG</h4>
+            <p><strong>Điều kiện:</strong> Môi Trường ≥85 (sau turn 10)</p>
+            <p>Biến đất nước thành thiên đường xanh với môi trường hoàn hảo.</p>
+          </div>
+
+          <div class="ending-item ending-special">
+            <h4>⏰ KẾT THÚC NHIỆM KỲ</h4>
+            <p><strong>Điều kiện:</strong> Hoàn thành hết số rounds</p>
+            <p>Kết thúc tự nhiên, đánh giá dựa trên các chỉ số cuối game.</p>
+          </div>
+        </div>
+
+        <div class="guide-section">
+          <h3>💡 Chiến Thuật</h3>
           <ul>
-            <li>Luôn theo dõi 2 chỉ số nguy hiểm: Xung Đột & Bất Mãn</li>
-            <li>Chuẩn bị dự phòng: Giữ 1-2 chính sách "cứu cấp"</li>
-            <li>Tận dụng sự kiện: Random events có thể là cơ hội vàng</li>
-            <li>Đọc kỹ description: Hiểu rõ trade-off của mỗi quyết định</li>
-            <li>Kiên nhẫn: Một số ending cần 15+ lượt để đạt được</li>
+            <li><strong>Cân bằng là chìa khóa:</strong> Đừng để bất kỳ chỉ số nào quá thấp hoặc quá cao</li>
+            <li><strong>Ưu tiên Kinh Tế:</strong> Nền kinh tế mạnh giúp giải quyết nhiều vấn đề</li>
+            <li><strong>Kiểm soát Xung Đột:</strong> Luôn giữ dưới 80, sử dụng đối thoại khi cần</li>
+            <li><strong>Đầu tư dài hạn:</strong> Môi Trường và Giáo Dục tạo nền tảng bền vững</li>
+            <li><strong>Linh hoạt:</strong> Thích ứng với sự kiện ngẫu nhiên và điều chỉnh chiến lược</li>
           </ul>
         </div>
 
-        <p style="text-align: center; font-size: 1.2em; font-weight: bold; margin-top: 30px">
-          🏆 Thành công = Kiên nhẫn + Chiến thuật + Một chút may mắn!
-        </p>
+        <button class="close-guide" onclick="closeGuide()">ĐÓNG</button>
       </div>
     </div>
 
@@ -766,8 +719,8 @@
 
       <!-- Game Info -->
       <div class="game-info">
-        <div class="turn-counter">Lượt: <span id="turnCounter">1</span></div>
-        <div class="game-score">Điểm: <span id="gameScore">0</span></div>
+        <div class="turn-counter">Lượt <span id="turnCounter">1</span></div>
+        <div class="game-score">Điểm <span id="gameScore">0</span></div>
       </div>
 
       <!-- Story Section -->
@@ -781,11 +734,6 @@
       <!-- Choices -->
       <div class="choices-grid" id="choicesGrid">
         <!-- Choices will be populated by JavaScript -->
-      </div>
-
-      <!-- Result Panel -->
-      <div class="result-panel" id="resultPanel">
-        <!-- Results will be shown here -->
       </div>
 
       <!-- Random Event -->
@@ -802,7 +750,11 @@
     </div>
 
     <script>
-      // Game state
+      // === DIFFICULTY MODES SYSTEM ===
+      
+      // Global game state
+      let currentDifficulty = 'normal';
+      let maxTurns = 30;
       let gameState = {
         currentTurn: 1,
         stats: {
@@ -811,72 +763,274 @@
           economy: 55,
           environment: 50,
           freedom: 60,
-          security: 45,
+          security: 45
         },
         score: 0,
         gameEnded: false,
         eventHistory: [],
+        usedScenarios: []
+      };
+
+      // Difficulty modes configuration - UPDATED ROUNDS
+      const DIFFICULTY_MODES = {
+        easy: {
+          name: "DỄ - Easy Mode",
+          description: "Bắt đầu với ít tác động tiêu cực - Perfect for beginners",
+          startingStats: {
+            discontent: 35,
+            conflict: 25,
+            economy: 65,
+            environment: 60,
+            freedom: 70,
+            security: 55
+          },
+          effectMultiplier: 0.7,
+          positiveBoost: 1.2,
+          randomEventsFrequency: 0.3,
+          maxTurns: 15  // UPDATED: 15 rounds
+        },
+        normal: {
+          name: "BÌNH THƯỜNG - Normal Mode", 
+          description: "Cân bằng hoàn hảo - Can breathe :D",
+          startingStats: {
+            discontent: 45,
+            conflict: 35,
+            economy: 55,
+            environment: 50,
+            freedom: 60,
+            security: 45
+          },
+          effectMultiplier: 1.0,
+          positiveBoost: 1.0,
+          randomEventsFrequency: 0.5,
+          maxTurns: 30  // UPDATED: 30 rounds
+        },
+        hard: {
+          name: "KHÓ - Hard Mode",
+          description: "Thử thách khắc nghiệt nhất - Most hard to play", 
+          startingStats: {
+            discontent: 55,
+            conflict: 45,
+            economy: 45,
+            environment: 40,
+            freedom: 50,
+            security: 35
+          },
+          effectMultiplier: 1.4,
+          positiveBoost: 0.8,
+          randomEventsFrequency: 0.7,
+          maxTurns: 50  // UPDATED: 50 rounds
+        }
       };
 
       // Stat labels
       const statLabels = {
-        discontent: "Bất Mãn",
-        conflict: "Xung Đột",
-        economy: "Kinh Tế",
-        environment: "Môi Trường",
-        freedom: "Tự Do",
-        security: "An Ninh",
+        discontent: "🔥 Bất Mãn",
+        conflict: "⚔️ Xung Đột", 
+        economy: "💰 Kinh Tế",
+        environment: "🌍 Môi Trường",
+        freedom: "🗽 Tự Do",
+        security: "🛡️ An Ninh"
       };
 
       // Game data
-      let gameStoryData = {};
+      let gameStoryData = [];
       let randomEventsData = [];
-      let endingsData = {};
+      let endingsData = [];
+      let dictatorModeTriggered = false;
+
+      // Function to show difficulty selection screen
+      function showDifficultySelection() {
+        document.getElementById('startScreen').classList.add('hidden');
+        
+        const difficultyHTML = `
+        <div class="difficulty-selection" id="difficultySelection">
+          <div class="difficulty-modal">
+            <h2 style="color: #fff; margin-bottom: 20px; font-size: 2rem;">🎮 CHỌN ĐỘ KHÓ</h2>
+            <p style="color: #ccc; margin-bottom: 30px;">SELECT DIFFICULTY MODE</p>
+            
+            <div class="difficulty-options">
+              ${Object.entries(DIFFICULTY_MODES).map(([key, mode]) => `
+                <div class="difficulty-option" onclick="selectDifficulty('${key}')">
+                  <h3>${mode.name}</h3>
+                  <p>${mode.description}</p>
+                  <div class="difficulty-stats">
+                    Starting Economy: ${mode.startingStats.economy} | 
+                    Rounds: ${mode.maxTurns} | 
+                    Random Events: ${Math.round(mode.randomEventsFrequency * 100)}%
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </div>`;
+        
+        document.body.insertAdjacentHTML('beforeend', difficultyHTML);
+      }
+
+      // Function to select difficulty and start game
+      function selectDifficulty(difficulty) {
+        currentDifficulty = difficulty;
+        const mode = DIFFICULTY_MODES[difficulty];
+        
+        // Set starting stats based on difficulty
+        gameState.stats = { ...mode.startingStats };
+        maxTurns = mode.maxTurns;
+        
+        // Remove difficulty selection screen
+        document.getElementById('difficultySelection').remove();
+        
+        // Show difficulty indicator
+        showDifficultyIndicator(mode.name);
+        
+        // Start game
+        startGame();
+      }
+
+      // Function to show difficulty indicator
+      function showDifficultyIndicator(difficultyName) {
+        const indicator = `
+        <div id="difficulty-indicator">
+          🎮 ${difficultyName}
+        </div>`;
+        
+        document.body.insertAdjacentHTML('beforeend', indicator);
+      }
+
+      // Function to apply difficulty modifiers to effects
+      function applyDifficultyModifiers(effects) {
+        const mode = DIFFICULTY_MODES[currentDifficulty];
+        const modifiedEffects = {};
+        
+        Object.entries(effects).forEach(([stat, value]) => {
+          if (value > 0) {
+            // Positive effect - apply positive boost
+            modifiedEffects[stat] = Math.round(value * mode.positiveBoost);
+          } else {
+            // Negative effect - apply effect multiplier
+            modifiedEffects[stat] = Math.round(value * mode.effectMultiplier);
+          }
+        });
+        
+        return modifiedEffects;
+      }
 
       // Load game data
       async function loadGameData() {
         try {
           const [storyResponse, eventsResponse, endingsResponse] = await Promise.all([
-            fetch("game_story_data_expanded.json"),
-            fetch("random_events_enhanced.json"),
-            fetch("endings.json"),
+            fetch('game_story_data_expanded.json'),
+            fetch('random_events_enhanced.json'),
+            fetch('endings.json')
           ]);
-
+          
           gameStoryData = await storyResponse.json();
           randomEventsData = await eventsResponse.json();
-          endingsData = await endingsResponse.json();
-
-          console.log("Game data loaded successfully");
+          const endingsJson = await endingsResponse.json();
+          endingsData = endingsJson.endings || endingsJson;
+          
+          console.log('Game data loaded successfully:', {
+            scenarios: gameStoryData.length,
+            randomEvents: randomEventsData.length,
+            endings: endingsData.length
+          });
         } catch (error) {
-          console.error("Error loading game data:", error);
+          console.error('Error loading game data:', error);
+          // Fallback data
+          gameStoryData = [
+            {
+              id: 1,
+              title: "Khủng Hoảng Kinh Tế",
+              description: "Nền kinh tế đất nước đang gặp khó khăn nghiêm trọng. GDP giảm mạnh, thất nghiệp tăng cao. Bạn cần có biện pháp khẩn cấp để ổn định tình hình.",
+              choices: [
+                {
+                  title: "Gói kích thích kinh tế 500 tỷ USD",
+                  text: "Đầu tư mạnh mẽ vào cơ sở hạ tầng và hỗ trợ doanh nghiệp",
+                  effects: { discontent: -10, economy: 25, environment: -5, security: 5 }
+                },
+                {
+                  title: "Cắt giảm chi tiêu chính phủ",
+                  text: "Kiểm soát ngân sách chặt chẽ để ổn định tài chính",
+                  effects: { discontent: 15, economy: 10, security: -5, freedom: -5 }
+                }
+              ]
+            },
+            {
+              id: 2,
+              title: "Biểu Tình Quy Mô Lớn",
+              description: "Hàng ngàn người dân xuống đường biểu tình phản đối chính sách mới. Tình hình có nguy cơ bất ổn.",
+              choices: [
+                {
+                  title: "Đối thoại với người biểu tình",
+                  text: "Tổ chức cuộc gặp gỡ để lắng nghe ý kiến",
+                  effects: { discontent: -15, conflict: -10, freedom: 10, security: -5 }
+                },
+                {
+                  title: "Tăng cường an ninh",
+                  text: "Triển khai lực lượng để duy trì trật tự",
+                  effects: { conflict: 15, freedom: -15, security: 10, discontent: 10 }
+                }
+              ]
+            },
+            {
+              id: 3,
+              title: "Thảm Họa Thiên Nhiên",
+              description: "Một trận lụt lớn vừa xảy ra, gây thiệt hại nghiêm trọng. Hàng ngàn người dân cần được cứu trợ khẩn cấp.",
+              choices: [
+                {
+                  title: "Huy động tất cả nguồn lực cứu trợ",
+                  text: "Triển khai toàn bộ lực lượng để giúp đỡ người dân",
+                  effects: { discontent: -20, economy: -15, security: 5, environment: 5 }
+                },
+                {
+                  title: "Kêu gọi cộng đồng quốc tế hỗ trợ",
+                  text: "Yêu cầu viện trợ từ các nước bạn và tổ chức quốc tế",
+                  effects: { discontent: -10, economy: -5, freedom: 5, environment: 10 }
+                }
+              ]
+            }
+          ];
+          randomEventsData = [];
+          endingsData = [];
         }
       }
 
       // Initialize game
       function startGame() {
-        document.getElementById("startScreen").classList.add("hidden");
-        document.getElementById("gameContainer").style.display = "block";
-
-        updateDisplay();
-        loadCurrentStory();
+        loadGameData().then(() => {
+          document.getElementById('gameContainer').style.display = 'block';
+          document.getElementById('guideBtn').style.display = 'block';
+          updateDisplay();
+          loadCurrentStory();
+        });
       }
 
       // Update stats display
       function updateStatsDisplay() {
-        const statsPanel = document.getElementById("statsPanel");
-        statsPanel.innerHTML = "";
+        const statsPanel = document.getElementById('statsPanel');
+        statsPanel.innerHTML = '';
 
         Object.entries(gameState.stats).forEach(([stat, value]) => {
-          const statElement = document.createElement("div");
-          statElement.className = "stat";
+          const statElement = document.createElement('div');
+          statElement.className = 'stat';
+          
+          // Color coding based on stat type and value
+          let fillColor = '#4caf50'; // Default green
+          if (stat === 'discontent' || stat === 'conflict') {
+            // Higher is worse for these stats
+            fillColor = value >= 70 ? '#ff4444' : value >= 50 ? '#ffaa00' : '#4caf50';
+          } else {
+            // Higher is better for these stats  
+            fillColor = value >= 60 ? '#4caf50' : value >= 40 ? '#ffaa00' : '#ff4444';
+          }
 
           statElement.innerHTML = `
-                    <div class="stat-label">${statLabels[stat]}</div>
-                    <div class="stat-value">${value}</div>
-                    <div class="stat-bar">
-                        <div class="stat-fill" style="width: ${value}%"></div>
-                    </div>
-                `;
+            <div class="stat-label">${statLabels[stat]}</div>
+            <div class="stat-value" style="color: ${fillColor}">${value}</div>
+            <div class="stat-bar">
+              <div class="stat-fill" style="width: ${Math.max(0, Math.min(100, value))}%; background: ${fillColor}"></div>
+            </div>
+          `;
 
           statsPanel.appendChild(statElement);
         });
@@ -884,93 +1038,97 @@
 
       // Update turn and score
       function updateGameInfo() {
-        document.getElementById("turnCounter").textContent = gameState.currentTurn;
-        document.getElementById("gameScore").textContent = gameState.score;
+        document.getElementById('turnCounter').textContent = gameState.currentTurn + '/' + maxTurns;
+        document.getElementById('gameScore').textContent = gameState.score;
       }
 
-      // Load current story
-      // Load current story - SỬA LỖI
+      // FIXED: Load current story function
       function loadCurrentStory() {
-        // Nếu gameStoryData là array, lấy theo index
+        console.log(`Loading story for turn ${gameState.currentTurn}/${maxTurns}`);
+        
+        // Get available scenarios that haven't been used
+        const availableScenarios = gameStoryData.filter(scenario => 
+          !gameState.usedScenarios.includes(scenario.id)
+        );
+        
         let storyData;
-
-        if (Array.isArray(gameStoryData)) {
-          // Lấy story theo currentTurn-1 (vì array bắt đầu từ 0)
-          const storyIndex = gameState.currentTurn - 1;
-          storyData = gameStoryData[storyIndex] || gameStoryData[0];
+        
+        if (availableScenarios.length > 0) {
+          // Use a random available scenario
+          storyData = availableScenarios[Math.floor(Math.random() * availableScenarios.length)];
+          gameState.usedScenarios.push(storyData.id);
+          console.log(`Selected scenario: ${storyData.title} (ID: ${storyData.id})`);
         } else {
-          // Logic cũ nếu là object
-          const storyKey = `turn_${gameState.currentTurn}`;
-          storyData = gameStoryData[storyKey] || gameStoryData["turn_1"];
+          // All scenarios used, reset and start over
+          if (gameStoryData.length > 0) {
+            console.log('All scenarios used, resetting used scenarios list');
+            gameState.usedScenarios = [];
+            storyData = gameStoryData[Math.floor(Math.random() * gameStoryData.length)];
+            gameState.usedScenarios.push(storyData.id);
+          } else {
+            // Fallback scenario
+            storyData = {
+              id: 999,
+              title: "Quyết Định Quan Trọng",
+              description: "Một tình huống quan trọng đang chờ quyết định của bạn. Hãy cân nhắc kỹ lưỡng trước khi hành động.",
+              choices: [
+                {
+                  title: "Lựa chọn thận trọng",
+                  text: "Hành động một cách cẩn thận và thận trọng để tránh rủi ro",
+                  effects: { discontent: -5, security: 5, conflict: -3 }
+                },
+                {
+                  title: "Hành động mạnh mẽ", 
+                  text: "Đưa ra quyết định quyết đoán và mạnh mẽ để giải quyết vấn đề",
+                  effects: { conflict: -5, freedom: -5, security: 10 }
+                }
+              ]
+            };
+          }
         }
 
-        // Kiểm tra storyData có tồn tại không
-        if (!storyData) {
-          console.error("Story data not found for turn:", gameState.currentTurn);
-          storyData = {
-            title: "Bắt đầu nhiệm kỳ",
-            description: "Chào mừng đến với ghế quyền lực.",
-            choices: [
-              {
-                title: "Tiếp tục",
-                text: "Tiến tới lượt tiếp theo",
-                effects: { discontent: 0 },
-              },
-            ],
-          };
-        }
-
-        // Map data từ JSON structure
-        const title = storyData.title || storyData.text || "Tình huống chính trị";
-        const description =
-          storyData.description || storyData.text || "Một tình huống quan trọng đang chờ quyết định của bạn.";
-        const choices = storyData.choices || [];
-
-        document.getElementById("storyTitle").textContent = title;
-        document.getElementById("storyText").textContent = description;
-
-        displayChoices(choices);
+        // Display the story
+        document.getElementById('storyTitle').textContent = storyData.title;
+        document.getElementById('storyText').textContent = storyData.description;
+        displayChoices(storyData.choices);
       }
 
       // Display choices
-      // Display choices - Cải thiện
       function displayChoices(choices) {
-        const choicesGrid = document.getElementById("choicesGrid");
-        choicesGrid.innerHTML = "";
+        const choicesGrid = document.getElementById('choicesGrid');
+        choicesGrid.innerHTML = '';
 
-        // Đảm bảo có ít nhất 1 choice
+        // Ensure we have at least 1 choice
         if (!choices || choices.length === 0) {
-          choices = [
-            {
-              title: "Tiếp tục",
-              text: "Chuyển sang lượt tiếp theo",
-              effects: { discontent: 0 },
-            },
-          ];
+          choices = [{
+            title: "Tiếp tục",
+            text: "Chuyển sang lượt tiếp theo",
+            effects: { discontent: 0 }
+          }];
         }
 
         choices.forEach((choice, index) => {
-          const choiceElement = document.createElement("div");
-          choiceElement.className = "choice";
+          const choiceElement = document.createElement('div');
+          choiceElement.className = 'choice';
           choiceElement.onclick = () => makeChoice(choice, index);
 
           // Create effects preview
-          let effectsPreview = "";
+          let effectsPreview = '';
           if (choice.effects) {
             Object.entries(choice.effects).forEach(([stat, change]) => {
               if (change !== 0) {
-                const sign = change > 0 ? "+" : "";
+                const sign = change > 0 ? '+' : '';
                 const statName = statLabels[stat] || stat;
-                effectsPreview += `${statName}: ${sign}${change} `;
+                effectsPreview += `${statName} ${sign}${change} `;
               }
             });
           }
 
           choiceElement.innerHTML = `
-            <div class="choice-title">${choice.title || choice.text || "Lựa chọn"}</div>
-            <div class="choice-text">${choice.text || "Một quyết định quan trọng"}</div>
-            <div class="choice-effects">Tác động: ${effectsPreview || "Không có"}</div>
-        `;
+            <div class="choice-title">${choice.title}</div>
+            <div class="choice-text">${choice.text}</div>
+            <div class="choice-effects">Tác động: ${effectsPreview || 'Không có'}</div>
+          `;
 
           choicesGrid.appendChild(choiceElement);
         });
@@ -978,16 +1136,21 @@
 
       // Make choice
       function makeChoice(choice, index) {
+        console.log(`Making choice at turn ${gameState.currentTurn}:`, choice.title);
+        
+        // Apply difficulty modifiers
+        const modifiedEffects = applyDifficultyModifiers(choice.effects || {});
+        console.log('Modified effects:', modifiedEffects);
+        
         // Apply effects
-        Object.entries(choice.effects).forEach(([stat, change]) => {
+        Object.entries(modifiedEffects).forEach(([stat, change]) => {
+          const oldValue = gameState.stats[stat];
           gameState.stats[stat] = Math.max(0, Math.min(100, gameState.stats[stat] + change));
+          console.log(`${stat}: ${oldValue} -> ${gameState.stats[stat]} (${change > 0 ? '+' : ''}${change})`);
         });
 
         // Update score
-        gameState.score += Math.abs(Object.values(choice.effects).reduce((sum, val) => sum + val, 0));
-
-        // Show choice result
-        showChoiceResult(choice);
+        gameState.score += Math.abs(Object.values(modifiedEffects).reduce((sum, val) => sum + val, 0));
 
         // Update display
         updateDisplay();
@@ -998,49 +1161,20 @@
         }
 
         // Next turn
-        setTimeout(() => {
-          gameState.currentTurn++;
+        gameState.currentTurn++;
 
-          // Random event chance (30%)
-          if (Math.random() < 0.3) {
+        // Random event chance based on difficulty
+        const mode = DIFFICULTY_MODES[currentDifficulty];
+        setTimeout(() => {
+          if (Math.random() < mode.randomEventsFrequency && randomEventsData.length > 0) {
             triggerRandomEvent();
+            setTimeout(() => {
+              loadCurrentStory();
+            }, 5000);
           } else {
             loadCurrentStory();
           }
-        }, 3000);
-      }
-
-      // Enhanced Choice Result Display
-      function showChoiceResult(choice) {
-        const resultPanel = document.getElementById("resultPanel");
-
-        // Create effects HTML
-        let effectsHtml = "";
-        Object.entries(choice.effects).forEach(([stat, change]) => {
-          if (change !== 0) {
-            const label = statLabels[stat];
-            const sign = change > 0 ? "+" : "";
-            const className = change > 0 ? "effect-positive" : change < 0 ? "effect-negative" : "effect-neutral";
-
-            effectsHtml += `<div class="effect-item"><span class="${className}">${label}: ${sign}${change}</span></div>`;
-          }
-        });
-
-        resultPanel.innerHTML = `
-                <h3>CHÍNH SÁCH ĐÃ THỰC HIỆN</h3>
-                <div class="result-description">${choice.text}</div>
-                <div class="result-effects">
-                    <div class="effects-title">Tác Động</div>
-                    <div class="effects-list">${effectsHtml}</div>
-                </div>
-            `;
-
-        resultPanel.style.display = "block";
-
-        // Auto-hide after 3 seconds
-        setTimeout(() => {
-          resultPanel.style.display = "none";
-        }, 3000);
+        }, 1500);
       }
 
       // Trigger random event
@@ -1048,115 +1182,61 @@
         const event = selectRandomEvent();
         if (event) {
           showRandomEvent(event);
-
-          setTimeout(() => {
-            loadCurrentStory();
-          }, 5000);
-        } else {
-          loadCurrentStory();
         }
       }
 
       // Select random event
       function selectRandomEvent() {
-        if (!randomEventsData || randomEventsData.length === 0) return null;
-
-        const availableEvents = randomEventsData.filter((event) => {
-          // Check if event conditions are met
-          return Math.random() < getRarityChance(event.rarity);
-        });
-
-        if (availableEvents.length === 0) return null;
-
-        return availableEvents[Math.floor(Math.random() * availableEvents.length)];
+        if (!randomEventsData || randomEventsData.length === 0) {
+          return null;
+        }
+        
+        return randomEventsData[Math.floor(Math.random() * randomEventsData.length)];
       }
 
-      // Get rarity chance
-      function getRarityChance(rarity) {
-        switch (rarity) {
-          case "common":
-            return 0.8;
-          case "rare":
-            return 0.15;
-          case "epic":
-            return 0.03;
-          case "legendary":
-            return 0.02;
-          default:
-            return 0.5;
-        }
-      }
-
-      // Enhanced Random Event Display
-      function showRandomEvent(event = null) {
-        if (!event) {
-          event = selectRandomEvent();
-        }
+      // Show random event
+      function showRandomEvent(event) {
         if (!event) return;
 
-        const randomEventEl = document.getElementById("randomEvent");
+        const randomEventEl = document.getElementById('randomEvent');
 
-        // Track event in history
-        gameState.eventHistory.push({
-          id: event.id,
-          category: event.category,
-          turn: gameState.currentTurn,
-          title: event.title,
-        });
-
-        // Determine event type class
-        let eventClass = "event-normal";
-        if (event.rarity === "conditional") eventClass = "event-conditional";
-        else if (event.rarity === "chain") eventClass = "event-chain";
-        else if (event.rarity === "autoresponse") eventClass = "event-auto";
-
-        // APPLY EFFECTS FIRST - FIX THE BUG
-        let effectsHtml = "";
-        Object.entries(event.effects).forEach(([stat, change]) => {
+        // Apply effects with difficulty modifiers
+        const modifiedEffects = applyDifficultyModifiers(event.effects || {});
+        let effectsHtml = '';
+        
+        Object.entries(modifiedEffects).forEach(([stat, change]) => {
           if (change !== 0) {
             // Apply the effect to game state
             const oldValue = gameState.stats[stat];
             gameState.stats[stat] = Math.max(0, Math.min(100, gameState.stats[stat] + change));
-            const newValue = gameState.stats[stat];
 
             // Create display for the effect
-            const label = statLabels[stat];
-            const sign = change > 0 ? "+" : "";
-            const className = change > 0 ? "effect-positive" : change < 0 ? "effect-negative" : "effect-neutral";
-
-            effectsHtml += `<div class="effect-item"><span class="${className}">${label}: ${sign}${change}</span></div>`;
-
-            // Log for debugging
-            console.log(`Applied effect: ${stat} ${oldValue} → ${newValue} (${sign}${change})`);
+            const label = statLabels[stat] || stat;
+            const sign = change > 0 ? '+' : '';
+            const className = change > 0 ? 'effect-positive' : change < 0 ? 'effect-negative' : 'effect-neutral';
+            effectsHtml += `<div class="effect-item"><span class="${className}">${label} ${sign}${change}</span></div>`;
+            
+            console.log(`Random event effect - ${stat}: ${oldValue} -> ${gameState.stats[stat]} (${sign}${change})`);
           }
         });
 
-        // Event type indicator
-        let typeIndicator = "";
-        if (event.rarity === "conditional") typeIndicator = "SỰ KIỆN ĐIỀU KIỆN";
-        else if (event.rarity === "chain") typeIndicator = "SỰ KIỆN LIÊN HOÀN";
-        else if (event.rarity === "autoresponse") typeIndicator = "PHẢN ỨNG TỰ ĐỘNG";
-        else typeIndicator = "SỰ KIỆN NGẪU NHIÊN";
-
         randomEventEl.innerHTML = `
-                <div class="event-type">${typeIndicator}</div>
-                <div class="event-title">${event.title}</div>
-                <div class="event-description">${event.text}</div>
-                <div class="event-effects">
-                    <div class="effects-title">Ảnh Hưởng</div>
-                    <div class="effects-grid">${effectsHtml}</div>
-                </div>
-            `;
+          <div class="event-title">${event.title}</div>
+          <div class="event-description">${event.text}</div>
+          <div class="event-effects">
+            <div class="effects-title">Ảnh Hưởng</div>
+            <div class="effects-grid">${effectsHtml}</div>
+          </div>
+        `;
 
-        randomEventEl.className = `random-event ${eventClass}`;
-        randomEventEl.style.display = "block";
-
-        // UPDATE STATS DISPLAY AFTER APPLYING EFFECTS
+        randomEventEl.style.display = 'block';
+        
+        // Update stats display after applying effects
         updateStatsDisplay();
 
         // Auto-hide after 5 seconds
         setTimeout(() => {
-          randomEventEl.style.display = "none";
+          randomEventEl.style.display = 'none';
         }, 5000);
       }
 
@@ -1164,92 +1244,63 @@
       function checkGameEnd() {
         // Check failure conditions
         if (gameState.stats.conflict >= 85) {
-          endGame(
-            "revolution",
-            "CÁCH MẠNG",
-            "Xung đột đã đạt mức tới hạn. Người dân nổi dậy và lật đổ chính quyền. Game Over!"
-          );
+          endGame('revolution', '🔥 CÁCH MẠNG BÙNG NỔ', 'Xung đột đạt mức tới hạn. Người dân nổi dậy và lật đổ chính quyền!');
           return true;
         }
 
         if (gameState.stats.discontent >= 80) {
-          endGame(
-            "overthrown",
-            "MẤT QUYỀN LỰC",
-            "Sự bất mãn của dân chúng đã đạt đỉnh điểm. Bạn bị truất phế khỏi chức vụ. Game Over!"
-          );
+          endGame('overthrown', '🔻 MẤT QUYỀN LỰC', 'Sự bất mãn của dân chúng đạt đỉnh điểm. Bạn bị truất phế khỏi chức vụ!');
           return true;
         }
 
         if (gameState.stats.economy <= 10) {
-          endGame(
-            "economic_collapse",
-            "SỤP ĐỔ KINH TẾ",
-            "Nền kinh tế đã sụp đổ hoàn toàn. Đất nước rơi vào khủng hoảng. Game Over!"
-          );
+          endGame('economiccollapse', '📉 SỤP ĐỔ KINH TẾ', 'Nền kinh tế sụp đổ hoàn toàn. Đất nước rơi vào khủng hoảng!');
           return true;
         }
 
-        // Check success conditions after turn 15
-        if (gameState.currentTurn >= 15) {
-          // Perfect Leader
-          if (Object.values(gameState.stats).every((stat) => stat >= 70)) {
-            endGame(
-              "perfect_leader",
-              "LÃNH ĐẠO HOÀN HẢO",
-              "Bạn đã cân bằng tất cả các yếu tố một cách xuất sắc. Đất nước thịnh vượng và ổn định!"
-            );
+        if (gameState.stats.environment <= 10) {
+          endGame('environmental_disaster', '🌍 THẢM HỌA MÔI TRƯỜNG', 'Môi trường bị tàn phá nghiêm trọng. Biến đổi khí hậu và ô nhiễm đã làm đất nước không thể sinh sống!');
+          return true;
+        }
+
+        // Check success conditions after turn 10
+        if (gameState.currentTurn >= 10) {
+          // Best Leader Ever ending
+          if (gameState.stats.discontent <= 20 && gameState.stats.conflict <= 25 && 
+              gameState.stats.economy >= 70 && gameState.stats.environment >= 60 && 
+              gameState.stats.freedom >= 65 && gameState.stats.security >= 60) {
+            endGame('talented_leader', '🏆 NHÀ LÃNH ĐẠO TÀI BA - BEST LEADER EVER', 'Bạn đã thành công xuất sắc! Đất nước thịnh vượng, dân chúng hạnh phúc, tự do được đảm bảo và an ninh ổn định. You are a best leader ever! Bạn sẽ được nhớ mãi như một nhà lãnh đạo tài ba!');
             return true;
           }
 
-          // Economic Emperor
+          // Hitler aftermath ending (dictator path)
+          if (gameState.stats.security >= 75 && gameState.stats.freedom <= 25) {
+            if (!dictatorModeTriggered) {
+              dictatorModeTriggered = true;
+              // Show temporary dictator message, then collapse after 2 seconds
+              setTimeout(() => {
+                endGame('hitler_aftermath', '💥 HẬU QUẢ CỦA ĐỘC TÀI - DICTATOR\'S COLLAPSE', 'Bạn đã trở thành nhà độc tài, nhưng lịch sử chứng minh: "Quyền lực tuyệt đối dẫn đến sự sụp đổ tuyệt đối." Một năm sau, cách mạng bùng nổ và lật đổ chế độ độc tài! You look like Hitler after this you will collapse! Giống như trong lịch sử, mọi chế độ độc tài đều có ngày sụp đổ.');
+              }, 2000);
+              
+              endGame('dictator_temporary', '⚔️ ĐỘC TÀI QUÂN SỰ (TẠM THỜI)', 'Bạn đã thiết lập chế độ độc tài quân sự. Đất nước trong tầm kiểm soát tuyệt đối... nhưng lịch sử sẽ phán xét...');
+              return true;
+            }
+          }
+
           if (gameState.stats.economy >= 85) {
-            endGame(
-              "economic_emperor",
-              "HOÀNG ĐẾ KINH TẾ",
-              "Nền kinh tế phát triển mạnh mẽ. Bạn đã biến đất nước thành cường quốc kinh tế!"
-            );
+            endGame('economic_emperor', '💰 HOÀNG ĐẾ KINH TẾ', 'Nền kinh tế phát triển mạnh mẽ. Bạn biến đất nước thành cường quốc kinh tế!');
             return true;
           }
 
-          // Green Messiah
           if (gameState.stats.environment >= 85) {
-            endGame(
-              "green_messiah",
-              "CỨU TINH MÔI TRƯỜNG",
-              "Môi trường được bảo vệ tuyệt đối. Bạn đã tạo ra một xã hội bền vững!"
-            );
-            return true;
-          }
-
-          // Democratic Hero
-          if (gameState.stats.freedom >= 80 && gameState.stats.security < 50) {
-            endGame(
-              "democratic_hero",
-              "ANH HÙNG DÂN CHỦ",
-              "Tự do và dân chủ được tôn trọng. Bạn đã xây dựng một xã hội tự do!"
-            );
-            return true;
-          }
-
-          // Warlord
-          if (gameState.stats.security >= 80 && gameState.stats.conflict < 60) {
-            endGame(
-              "warlord",
-              "LÃNH CHÚ QUÂN SỰ",
-              "An ninh được đảm bảo tuyệt đối. Bạn đã tạo ra một quốc gia mạnh mẽ!"
-            );
+            endGame('environmental_champion', '🌱 VUA BẢO VỆ MÔI TRƯỜNG', 'Bạn đã biến đất nước thành thiên đường xanh. Môi trường được bảo vệ hoàn hảo!');
             return true;
           }
         }
 
-        // Natural end at turn 20
-        if (gameState.currentTurn >= 20) {
-          endGame(
-            "natural_end",
-            "KẾT THÚC NHIỆM KỲ",
-            "Bạn đã hoàn thành nhiệm kỳ cầm quyền. Kết quả cuối cùng tùy thuộc vào các chỉ số hiện tại."
-          );
+        // Natural end at max turns
+        if (gameState.currentTurn > maxTurns) {
+          endGame('natural_end', '⏰ KẾT THÚC NHIỆM KỲ', `Bạn hoàn thành nhiệm kỳ cầm quyền ${maxTurns} lượt. Kết quả cuối cùng tùy thuộc vào các chỉ số bạn đạt được.`);
           return true;
         }
 
@@ -1258,16 +1309,18 @@
 
       // End game
       function endGame(endingType, title, description) {
+        console.log(`Game ended with: ${endingType}`);
         gameState.gameEnded = true;
-
-        document.getElementById("endingTitle").textContent = title;
-        document.getElementById("endingDescription").textContent = description;
-        document.getElementById("gameEnd").style.display = "block";
-        document.getElementById("choicesGrid").style.display = "none";
+        document.getElementById('endingTitle').textContent = title;
+        document.getElementById('endingDescription').textContent = description;
+        document.getElementById('gameEnd').style.display = 'block';
+        document.getElementById('choicesGrid').style.display = 'none';
       }
 
       // Restart game
       function restartGame() {
+        console.log('Restarting game...');
+        
         // Reset game state
         gameState = {
           currentTurn: 1,
@@ -1277,20 +1330,28 @@
             economy: 55,
             environment: 50,
             freedom: 60,
-            security: 45,
+            security: 45
           },
           score: 0,
           gameEnded: false,
           eventHistory: [],
+          usedScenarios: []
         };
+        
+        dictatorModeTriggered = false;
+
+        // Remove difficulty indicator
+        const indicator = document.getElementById('difficulty-indicator');
+        if (indicator) indicator.remove();
 
         // Hide end screen
-        document.getElementById("gameEnd").style.display = "none";
-        document.getElementById("choicesGrid").style.display = "grid";
-
-        // Restart game
-        updateDisplay();
-        loadCurrentStory();
+        document.getElementById('gameEnd').style.display = 'none';
+        document.getElementById('choicesGrid').style.display = 'grid';
+        document.getElementById('guideBtn').style.display = 'none';
+        
+        // Hide game container and show start screen
+        document.getElementById('gameContainer').style.display = 'none';
+        document.getElementById('startScreen').classList.remove('hidden');
       }
 
       // Update all displays
@@ -1301,23 +1362,23 @@
 
       // Guide functions
       function openGuide() {
-        document.getElementById("guidePopup").style.display = "flex";
+        document.getElementById('guideModal').style.display = 'flex';
       }
 
       function closeGuide() {
-        document.getElementById("guidePopup").style.display = "none";
+        document.getElementById('guideModal').style.display = 'none';
       }
 
-      // Close guide when clicking outside content
-      document.getElementById("guidePopup").addEventListener("click", function (e) {
+      // Close guide when clicking outside
+      document.getElementById('guideModal').addEventListener('click', function(e) {
         if (e.target === this) {
           closeGuide();
         }
       });
 
       // Initialize when page loads
-      window.addEventListener("load", () => {
-        loadGameData();
+      window.addEventListener('load', function() {
+        console.log('Political Simulator loaded with difficulty modes and comprehensive guide');
       });
     </script>
   </body>

@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Người Cầm Quyền Simulator</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Source+Sans+Pro:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        font-family: "Source Sans Pro", sans-serif;
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+        color: #f5f5f5;
+        overflow-x: hidden;
+      }
+
+      /* Start Screen */
+      .start-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, #000 0%, #333 50%, #000 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        transition: opacity 0.8s ease;
+      }
+
+      .start-screen.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .start-title {
+        font-family: "Merriweather", serif;
+        font-size: 3.5em;
+        font-weight: 700;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+        letter-spacing: 2px;
+      }
+
+      .start-subtitle {
+        font-size: 1.3em;
+        color: #ccc;
+        text-align: center;
+        margin-bottom: 40px;
+        font-style: italic;
+      }
+
+      .start-btn {
+        background: linear-gradient(135deg, #4caf50, #45a049);
+        color: white;
+        border: none;
+        padding: 20px 40px;
+        font-size: 1.3em;
+        font-weight: 600;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
+      }
+
+      .start-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 30px rgba(76, 175, 80, 0.4);
+      }
+
+      /* Guide Button */
+      .guide-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #2d2d2d;
+        color: #ffffff;
+        border: 2px solid #555;
+        padding: 12px 20px;
+        font-size: 1em;
+        font-weight: 600;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 999;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .guide-btn:hover {
+        background: #1a1a1a;
+        border-color: #777;
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+      }
+
+      /* Guide Popup */
+      .guide-popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.95);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 2000;
+        padding: 20px;
+      }
+
+      .guide-content {
+        background: #1a1a1a;
+        color: #ffffff;
+        max-width: 900px;
+        max-height: 90vh;
+        overflow-y: auto;
+        border-radius: 12px;
+        padding: 30px;
+        position: relative;
+        border: 1px solid #444;
+      }
+
+      .guide-close {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        background: #cc0000;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 1.1em;
+      }
+
+      .guide-close:hover {
+        background: #ff0000;
+      }
+
+      .guide-content h1 {
+        color: #ffffff;
+        text-align: center;
+        margin-bottom: 25px;
+        border-bottom: 3px solid #555;
+        padding-bottom: 10px;
+      }
+
+      .guide-content h2 {
+        color: #cccccc;
+        margin-top: 25px;
+        margin-bottom: 15px;
+        border-left: 4px solid #666;
+        padding-left: 12px;
+      }
+
+      .guide-content h3 {
+        color: #bbbbbb;
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+
+      .guide-content ul,
+      .guide-content ol {
+        padding-left: 20px;
+        margin-bottom: 15px;
+      }
+
+      .guide-content li {
+        margin-bottom: 5px;
+        line-height: 1.6;
+        color: #dddddd;
+      }
+
+      .guide-content code {
+        background: #333333;
+        color: #ffffff;
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-family: monospace;
+      }
+
+      .guide-content .warning {
+        background: #331111;
+        border-left: 4px solid #cc0000;
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 5px;
+        color: #ffcccc;
+      }
+
+      .guide-content .tip {
+        background: #113311;
+        border-left: 4px solid #00cc00;
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 5px;
+        color: #ccffcc;
+      }
+
+      /* Main Container */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      /* Header */
+      .header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .header h1 {
+        font-family: "Merriweather", serif;
+        font-size: 2.8em;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .header .subtitle {
+        font-size: 1.2em;
+        opacity: 0.9;
+        font-style: italic;
+      }
+
+      /* Stats Panel */
+      .stats-panel {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 15px;
+        margin-bottom: 30px;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+      }
+
+      .stat {
+        text-align: center;
+        padding: 15px;
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+      }
+
+      .stat:hover {
+        transform: translateY(-5px);
+      }
+
+      .stat-label {
+        font-size: 0.9em;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 600;
+      }
+
+      .stat-value {
+        font-size: 2em;
+        font-weight: 700;
+        margin-bottom: 5px;
+      }
+
+      .stat-bar {
+        width: 100%;
+        height: 8px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 4px;
+        overflow: hidden;
+      }
+
+      .stat-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #4caf50, #81c784);
+        border-radius: 4px;
+        transition: width 0.5s ease;
+      }
+
+      /* Game Info */
+      .game-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+        padding: 15px 25px;
+        background: rgba(0, 0, 0, 0.4);
+        border-radius: 10px;
+      }
+
+      .turn-counter {
+        font-size: 1.3em;
+        font-weight: 600;
+      }
+
+      .game-score {
+        font-size: 1.1em;
+        opacity: 0.8;
+      }
+
+      /* Story Section */
+      .story-section {
+        background: rgba(255, 255, 255, 0.08);
+        padding: 25px;
+        border-radius: 15px;
+        margin-bottom: 30px;
+        border-left: 4px solid #4caf50;
+      }
+
+      .story-title {
+        font-size: 1.4em;
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: #4caf50;
+      }
+
+      .story-text {
+        font-size: 1.1em;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      /* Choices */
+      .choices-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin-bottom: 30px;
+      }
+
+      .choice {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+      }
+
+      .choice:hover {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: #4caf50;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .choice-title {
+        font-size: 1.2em;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #4caf50;
+      }
+
+      .choice-text {
+        line-height: 1.5;
+        margin-bottom: 15px;
+      }
+
+      .choice-effects {
+        font-size: 0.9em;
+        opacity: 0.8;
+        font-style: italic;
+      }
+
+      /* =================================
+           THÔNG BÁO LỰAỌ CHỌN (Choice Result)
+           ================================= */
+      .result-panel {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #1a1a1a;
+        color: #ffffff;
+        border: 3px solid #4caf50;
+        border-radius: 12px;
+        padding: 25px;
+        max-width: 500px;
+        width: 85%;
+        text-align: center;
+        z-index: 1400;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
+        animation: slideIn 0.5s ease-out;
+        display: none;
+      }
+
+      .result-panel h3 {
+        color: #4caf50;
+        margin-bottom: 15px;
+        font-size: 1.3em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .result-panel .result-description {
+        font-size: 1.1em;
+        margin-bottom: 20px;
+        color: #dddddd;
+        line-height: 1.5;
+      }
+
+      .result-panel .result-effects {
+        background: #333333;
+        padding: 15px;
+        border-radius: 8px;
+        border: 1px solid #555;
+        margin-top: 15px;
+      }
+
+      .result-panel .effects-title {
+        font-size: 1em;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #ffffff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .result-panel .effects-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 8px;
+        font-size: 0.9em;
+      }
+
+      /* =================================
+           THÔNG BÁO SỰ KIỆN NGẪU NHIÊN (Random Event)
+           ================================= */
+      .random-event {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #1a1a1a;
+        color: #ffffff;
+        padding: 25px;
+        border-radius: 12px;
+        text-align: center;
+        animation: slideIn 0.5s ease-out;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
+        border: 3px solid #555;
+        max-width: 600px;
+        width: 90%;
+        z-index: 1500;
+        display: none;
+      }
+
+      /* Event Types - Màu border khác nhau */
+      .event-conditional {
+        border-color: #ff6666;
+      }
+
+      .event-chain {
+        border-color: #3399ff;
+      }
+
+      .event-auto {
+        border-color: #ff9933;
+      }
+
+      .event-normal {
+        border-color: #666666;
+      }
+
+      .event-title {
+        font-size: 1.4em;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: #ffffff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+      }
+
+      .event-description {
+        font-size: 1.1em;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        color: #eeeeee;
+      }
+
+      .event-effects {
+        background: #333333;
+        padding: 15px;
+        border-radius: 8px;
+        border: 1px solid #555;
+      }
+
+      .effects-title {
+        font-size: 1em;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #ffffff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .effects-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        font-size: 0.9em;
+      }
+
+      .effect-item {
+        padding: 8px;
+        background: #555555;
+        border-radius: 6px;
+        text-align: center;
+        border: 1px solid #777;
+      }
+
+      /* =================================
+           CHUNG CHO CẢ HAI LOẠI THÔNG BÁO
+           ================================= */
+      .effect-positive {
+        color: #00ff00;
+        font-weight: 700;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+      }
+
+      .effect-negative {
+        color: #ff4444;
+        font-weight: 700;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+      }
+
+      .effect-neutral {
+        color: #ffaa00;
+        font-weight: 700;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+      }
+
+      .event-type {
+        background: #666666;
+        color: #ffffff;
+        padding: 5px 10px;
+        border-radius: 15px;
+        font-size: 0.8em;
+        text-align: center;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: bold;
+      }
+
+      @keyframes slideIn {
+        from {
+          transform: translate(-50%, -60%);
+          opacity: 0;
+        }
+        to {
+          transform: translate(-50%, -50%);
+          opacity: 1;
+        }
+      }
+
+      /* Game End */
+      .game-end {
+        text-align: center;
+        padding: 40px;
+        background: rgba(0, 0, 0, 0.8);
+        border-radius: 20px;
+        margin-top: 30px;
+      }
+
+      .game-end h2 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        color: #4caf50;
+      }
+
+      .ending-description {
+        font-size: 1.3em;
+        line-height: 1.6;
+        margin-bottom: 30px;
+      }
+
+      .restart-btn {
+        background: linear-gradient(135deg, #4caf50, #45a049);
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        font-size: 1.2em;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .restart-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .start-title {
+          font-size: 2.5em;
+        }
+
+        .stats-panel {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .choices-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .game-info {
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Start Screen -->
+    <div class="start-screen" id="startScreen">
+      <h1 class="start-title">NGƯỜI CẦM QUYỀN</h1>
+      <p class="start-subtitle">Simulator Chính Trị Chiến Lược</p>
+      <button class="start-btn" onclick="startGame()">BẮT ĐẦU GAME</button>
+    </div>
+
+    <!-- Guide Button -->
+    <button class="guide-btn" onclick="openGuide()">HƯỚNG DẪN</button>
+
+    <!-- Guide Popup -->
+    <div class="guide-popup" id="guidePopup">
+      <div class="guide-content">
+        <button class="guide-close" onclick="closeGuide()">✕</button>
+
+        <h1>HƯỚNG DẪN CHIẾN LƯỢC - NGƯỜI CẦM QUYỀN SIMULATOR</h1>
+
+        <h2>TỔNG QUAN GAME</h2>
+        <p>
+          <strong>Mục tiêu:</strong> Duy trì quyền lực và dẫn dắt đất nước qua 20+ lượt chơi với 6 chỉ số quan trọng:
+        </p>
+        <ul>
+          <li><strong>Bất Mãn (Discontent):</strong> ≤ 80 tránh nổi loạn</li>
+          <li><strong>Xung Đột (Conflict):</strong> ≤ 85 tránh cách mạng</li>
+          <li><strong>Kinh Tế (Economy):</strong> ≥ 30 tránh suy thoái</li>
+          <li><strong>Môi Trường (Environment):</strong> Cân bằng phát triển</li>
+          <li><strong>Tự Do (Freedom):</strong> Cân bằng dân chủ vs kiểm soát</li>
+          <li><strong>An Ninh (Security):</strong> ≥ 30 tránh hỗn loạn</li>
+        </ul>
+
+        <h2>CÁC TÌNH HUỐNG KẾT THÚC SỚM (GAME OVER)</h2>
+
+        <h3>🔥 CÁCH MẠNG - Xung Đột ≥ 85</h3>
+        <div class="warning">
+          <strong>Triệu chứng báo động:</strong>
+          <ul>
+            <li>Biểu tình quy mô lớn liên tục</li>
+            <li>Đình công toàn quốc</li>
+            <li>Quân đội từ chối tuân lệnh</li>
+            <li>Bạo lực đường phố lan rộng</li>
+          </ul>
+        </div>
+        <p><strong>Cách tránh:</strong> Luôn dưới 80 Xung Đột, sử dụng "Hội nghị hòa giải" khi ≥65 Conflict</p>
+
+        <h3>⚰️ MẤT QUYỀN LỰC - Bất Mãn ≥ 80</h3>
+        <div class="warning">
+          <strong>Triệu chứng:</strong>
+          <ul>
+            <li>Tỷ lệ ủng hộ giảm mạnh</li>
+            <li>Các bộ trưởng từ chức hàng loạt</li>
+            <li>Truyền thông phản đối gay gắt</li>
+            <li>Đảng cầm quyền nội bộ rạn nứt</li>
+          </ul>
+        </div>
+
+        <h2>ĐƯỜNG ĐẾN CÁC KẾT THÚC TỐT</h2>
+
+        <h3>👑 PERFECT LEADER - Tất cả chỉ số ≥70</h3>
+        <div class="tip">
+          <strong>Chiến lược cân bằng hoàn hảo:</strong><br />
+          <code>Bất Mãn ≤30 | Xung Đột ≤40 | Kinh Tế ≥75 | Môi Trường ≥70 | Tự Do ≥70 | An Ninh ≥70</code>
+        </div>
+
+        <h3>💰 ECONOMIC EMPEROR - Kinh tế ≥85</h3>
+        <p>Gói kích thích 500 tỷ USD, công nghiệp hóa mạnh mẽ, đầu tư FDI</p>
+
+        <h3>🌱 GREEN MESSIAH - Môi trường ≥85</h3>
+        <p>Khẩn cấp sinh thái, đóng nhà máy nhiệt điện, đầu tư năng lượng sạch</p>
+
+        <h3>🗳️ DEMOCRATIC HERO - Tự Do ≥80, An Ninh <50</h3>
+        <p>Cải cách chính trị, bầu cử tự do, tự do báo chí tuyệt đối</p>
+
+        <h3>🛡️ WARLORD - An Ninh ≥80, Xung Đột <60</h3>
+        <p>Hiện đại hóa quốc phòng, tăng ngân sách 10% GDP, mua F-35</p>
+
+        <h2>QUẢN LÝ SỰ KIỆN NGẪU NHIÊN</h2>
+        <ul>
+          <li><strong>Common (80%):</strong> Ảnh hưởng ±5-20 điểm</li>
+          <li><strong>Rare (15%):</strong> Ảnh hưởng ±10-30 điểm</li>
+          <li><strong>Epic (3%):</strong> Ảnh hưởng ±15-40 điểm</li>
+          <li><strong>Legendary (2%):</strong> Ảnh hưởng ±20-50 điểm</li>
+        </ul>
+
+        <h3>⚡ Sự Kiện Tự Động:</h3>
+        <ul>
+          <li><strong>Economy <20:</strong> Ngân hàng TW can thiệp (+15 Economy)</li>
+          <li><strong>Conflict >80:</strong> Quân đội tự động triển khai (+20 Security, -10 Freedom)</li>
+        </ul>
+
+        <h2>CHIẾN THUẬT NÂNG CAO</h2>
+        <p><strong>Ưu tiên theo giai đoạn:</strong></p>
+        <ul>
+          <li><strong>Lượt 1-5:</strong> Ổn định Bất Mãn + Xung Đột</li>
+          <li><strong>Lượt 6-10:</strong> Phát triển Kinh Tế + An Ninh</li>
+          <li><strong>Lượt 11-15:</strong> Cân bằng Môi Trường + Tự Do</li>
+          <li><strong>Lượt 16-20:</strong> Đẩy chỉ số mục tiêu lên cao</li>
+        </ul>
+
+        <h3>⚠️ Tránh các bẫy:</h3>
+        <ul>
+          <li><strong>Thiết quân luật:</strong> +35 Security nhưng -30 Freedom</li>
+          <li><strong>Tăng lương 200%:</strong> -25 Economy, có thể gây phá sản</li>
+          <li><strong>Đóng nhà máy:</strong> +40 Environment nhưng -30 Economy</li>
+        </ul>
+
+        <h2>TIPS CHUYÊN NGHIỆP</h2>
+        <div class="tip">
+          <ul>
+            <li>Luôn theo dõi 2 chỉ số nguy hiểm: Xung Đột & Bất Mãn</li>
+            <li>Chuẩn bị dự phòng: Giữ 1-2 chính sách "cứu cấp"</li>
+            <li>Tận dụng sự kiện: Random events có thể là cơ hội vàng</li>
+            <li>Đọc kỹ description: Hiểu rõ trade-off của mỗi quyết định</li>
+            <li>Kiên nhẫn: Một số ending cần 15+ lượt để đạt được</li>
+          </ul>
+        </div>
+
+        <p style="text-align: center; font-size: 1.2em; font-weight: bold; margin-top: 30px">
+          🏆 Thành công = Kiên nhẫn + Chiến thuật + Một chút may mắn!
+        </p>
+      </div>
+    </div>
+
+    <!-- Main Game -->
+    <div class="container" id="gameContainer" style="display: none">
+      <!-- Header -->
+      <div class="header">
+        <h1>NGƯỜI CẦM QUYỀN</h1>
+        <div class="subtitle">Quyết định tương lai đất nước</div>
+      </div>
+
+      <!-- Stats Panel -->
+      <div class="stats-panel" id="statsPanel">
+        <!-- Stats will be populated by JavaScript -->
+      </div>
+
+      <!-- Game Info -->
+      <div class="game-info">
+        <div class="turn-counter">Lượt: <span id="turnCounter">1</span></div>
+        <div class="game-score">Điểm: <span id="gameScore">0</span></div>
+      </div>
+
+      <!-- Story Section -->
+      <div class="story-section">
+        <div class="story-title" id="storyTitle">Bắt đầu nhiệm kỳ</div>
+        <div class="story-text" id="storyText">
+          Chào mừng đến với ghế quyền lực. Những quyết định của bạn sẽ định hình tương lai của đất nước.
+        </div>
+      </div>
+
+      <!-- Choices -->
+      <div class="choices-grid" id="choicesGrid">
+        <!-- Choices will be populated by JavaScript -->
+      </div>
+
+      <!-- Result Panel -->
+      <div class="result-panel" id="resultPanel">
+        <!-- Results will be shown here -->
+      </div>
+
+      <!-- Random Event -->
+      <div class="random-event" id="randomEvent">
+        <!-- Random events will be shown here -->
+      </div>
+
+      <!-- Game End -->
+      <div class="game-end" id="gameEnd" style="display: none">
+        <h2 id="endingTitle">Game Over</h2>
+        <div class="ending-description" id="endingDescription"></div>
+        <button class="restart-btn" onclick="restartGame()">Chơi lại</button>
+      </div>
+    </div>
+
+    <script>
+      // Game state
+      let gameState = {
+        currentTurn: 1,
+        stats: {
+          discontent: 45,
+          conflict: 35,
+          economy: 55,
+          environment: 50,
+          freedom: 60,
+          security: 45,
+        },
+        score: 0,
+        gameEnded: false,
+        eventHistory: [],
+      };
+
+      // Stat labels
+      const statLabels = {
+        discontent: "Bất Mãn",
+        conflict: "Xung Đột",
+        economy: "Kinh Tế",
+        environment: "Môi Trường",
+        freedom: "Tự Do",
+        security: "An Ninh",
+      };
+
+      // Game data
+      let gameStoryData = {};
+      let randomEventsData = [];
+      let endingsData = {};
+
+      // Load game data
+      async function loadGameData() {
+        try {
+          const [storyResponse, eventsResponse, endingsResponse] = await Promise.all([
+            fetch("game_story_data_expanded.json"),
+            fetch("random_events_enhanced.json"),
+            fetch("endings.json"),
+          ]);
+
+          gameStoryData = await storyResponse.json();
+          randomEventsData = await eventsResponse.json();
+          endingsData = await endingsResponse.json();
+
+          console.log("Game data loaded successfully");
+        } catch (error) {
+          console.error("Error loading game data:", error);
+        }
+      }
+
+      // Initialize game
+      function startGame() {
+        document.getElementById("startScreen").classList.add("hidden");
+        document.getElementById("gameContainer").style.display = "block";
+
+        updateDisplay();
+        loadCurrentStory();
+      }
+
+      // Update stats display
+      function updateStatsDisplay() {
+        const statsPanel = document.getElementById("statsPanel");
+        statsPanel.innerHTML = "";
+
+        Object.entries(gameState.stats).forEach(([stat, value]) => {
+          const statElement = document.createElement("div");
+          statElement.className = "stat";
+
+          statElement.innerHTML = `
+                    <div class="stat-label">${statLabels[stat]}</div>
+                    <div class="stat-value">${value}</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: ${value}%"></div>
+                    </div>
+                `;
+
+          statsPanel.appendChild(statElement);
+        });
+      }
+
+      // Update turn and score
+      function updateGameInfo() {
+        document.getElementById("turnCounter").textContent = gameState.currentTurn;
+        document.getElementById("gameScore").textContent = gameState.score;
+      }
+
+      // Load current story
+      // Load current story - SỬA LỖI
+      function loadCurrentStory() {
+        // Nếu gameStoryData là array, lấy theo index
+        let storyData;
+
+        if (Array.isArray(gameStoryData)) {
+          // Lấy story theo currentTurn-1 (vì array bắt đầu từ 0)
+          const storyIndex = gameState.currentTurn - 1;
+          storyData = gameStoryData[storyIndex] || gameStoryData[0];
+        } else {
+          // Logic cũ nếu là object
+          const storyKey = `turn_${gameState.currentTurn}`;
+          storyData = gameStoryData[storyKey] || gameStoryData["turn_1"];
+        }
+
+        // Kiểm tra storyData có tồn tại không
+        if (!storyData) {
+          console.error("Story data not found for turn:", gameState.currentTurn);
+          storyData = {
+            title: "Bắt đầu nhiệm kỳ",
+            description: "Chào mừng đến với ghế quyền lực.",
+            choices: [
+              {
+                title: "Tiếp tục",
+                text: "Tiến tới lượt tiếp theo",
+                effects: { discontent: 0 },
+              },
+            ],
+          };
+        }
+
+        // Map data từ JSON structure
+        const title = storyData.title || storyData.text || "Tình huống chính trị";
+        const description =
+          storyData.description || storyData.text || "Một tình huống quan trọng đang chờ quyết định của bạn.";
+        const choices = storyData.choices || [];
+
+        document.getElementById("storyTitle").textContent = title;
+        document.getElementById("storyText").textContent = description;
+
+        displayChoices(choices);
+      }
+
+      // Display choices
+      // Display choices - Cải thiện
+      function displayChoices(choices) {
+        const choicesGrid = document.getElementById("choicesGrid");
+        choicesGrid.innerHTML = "";
+
+        // Đảm bảo có ít nhất 1 choice
+        if (!choices || choices.length === 0) {
+          choices = [
+            {
+              title: "Tiếp tục",
+              text: "Chuyển sang lượt tiếp theo",
+              effects: { discontent: 0 },
+            },
+          ];
+        }
+
+        choices.forEach((choice, index) => {
+          const choiceElement = document.createElement("div");
+          choiceElement.className = "choice";
+          choiceElement.onclick = () => makeChoice(choice, index);
+
+          // Create effects preview
+          let effectsPreview = "";
+          if (choice.effects) {
+            Object.entries(choice.effects).forEach(([stat, change]) => {
+              if (change !== 0) {
+                const sign = change > 0 ? "+" : "";
+                const statName = statLabels[stat] || stat;
+                effectsPreview += `${statName}: ${sign}${change} `;
+              }
+            });
+          }
+
+          choiceElement.innerHTML = `
+            <div class="choice-title">${choice.title || choice.text || "Lựa chọn"}</div>
+            <div class="choice-text">${choice.text || "Một quyết định quan trọng"}</div>
+            <div class="choice-effects">Tác động: ${effectsPreview || "Không có"}</div>
+        `;
+
+          choicesGrid.appendChild(choiceElement);
+        });
+      }
+
+      // Make choice
+      function makeChoice(choice, index) {
+        // Apply effects
+        Object.entries(choice.effects).forEach(([stat, change]) => {
+          gameState.stats[stat] = Math.max(0, Math.min(100, gameState.stats[stat] + change));
+        });
+
+        // Update score
+        gameState.score += Math.abs(Object.values(choice.effects).reduce((sum, val) => sum + val, 0));
+
+        // Show choice result
+        showChoiceResult(choice);
+
+        // Update display
+        updateDisplay();
+
+        // Check for game end conditions
+        if (checkGameEnd()) {
+          return;
+        }
+
+        // Next turn
+        setTimeout(() => {
+          gameState.currentTurn++;
+
+          // Random event chance (30%)
+          if (Math.random() < 0.3) {
+            triggerRandomEvent();
+          } else {
+            loadCurrentStory();
+          }
+        }, 3000);
+      }
+
+      // Enhanced Choice Result Display
+      function showChoiceResult(choice) {
+        const resultPanel = document.getElementById("resultPanel");
+
+        // Create effects HTML
+        let effectsHtml = "";
+        Object.entries(choice.effects).forEach(([stat, change]) => {
+          if (change !== 0) {
+            const label = statLabels[stat];
+            const sign = change > 0 ? "+" : "";
+            const className = change > 0 ? "effect-positive" : change < 0 ? "effect-negative" : "effect-neutral";
+
+            effectsHtml += `<div class="effect-item"><span class="${className}">${label}: ${sign}${change}</span></div>`;
+          }
+        });
+
+        resultPanel.innerHTML = `
+                <h3>CHÍNH SÁCH ĐÃ THỰC HIỆN</h3>
+                <div class="result-description">${choice.text}</div>
+                <div class="result-effects">
+                    <div class="effects-title">Tác Động</div>
+                    <div class="effects-list">${effectsHtml}</div>
+                </div>
+            `;
+
+        resultPanel.style.display = "block";
+
+        // Auto-hide after 3 seconds
+        setTimeout(() => {
+          resultPanel.style.display = "none";
+        }, 3000);
+      }
+
+      // Trigger random event
+      function triggerRandomEvent() {
+        const event = selectRandomEvent();
+        if (event) {
+          showRandomEvent(event);
+
+          setTimeout(() => {
+            loadCurrentStory();
+          }, 5000);
+        } else {
+          loadCurrentStory();
+        }
+      }
+
+      // Select random event
+      function selectRandomEvent() {
+        if (!randomEventsData || randomEventsData.length === 0) return null;
+
+        const availableEvents = randomEventsData.filter((event) => {
+          // Check if event conditions are met
+          return Math.random() < getRarityChance(event.rarity);
+        });
+
+        if (availableEvents.length === 0) return null;
+
+        return availableEvents[Math.floor(Math.random() * availableEvents.length)];
+      }
+
+      // Get rarity chance
+      function getRarityChance(rarity) {
+        switch (rarity) {
+          case "common":
+            return 0.8;
+          case "rare":
+            return 0.15;
+          case "epic":
+            return 0.03;
+          case "legendary":
+            return 0.02;
+          default:
+            return 0.5;
+        }
+      }
+
+      // Enhanced Random Event Display
+      function showRandomEvent(event = null) {
+        if (!event) {
+          event = selectRandomEvent();
+        }
+        if (!event) return;
+
+        const randomEventEl = document.getElementById("randomEvent");
+
+        // Track event in history
+        gameState.eventHistory.push({
+          id: event.id,
+          category: event.category,
+          turn: gameState.currentTurn,
+          title: event.title,
+        });
+
+        // Determine event type class
+        let eventClass = "event-normal";
+        if (event.rarity === "conditional") eventClass = "event-conditional";
+        else if (event.rarity === "chain") eventClass = "event-chain";
+        else if (event.rarity === "autoresponse") eventClass = "event-auto";
+
+        // APPLY EFFECTS FIRST - FIX THE BUG
+        let effectsHtml = "";
+        Object.entries(event.effects).forEach(([stat, change]) => {
+          if (change !== 0) {
+            // Apply the effect to game state
+            const oldValue = gameState.stats[stat];
+            gameState.stats[stat] = Math.max(0, Math.min(100, gameState.stats[stat] + change));
+            const newValue = gameState.stats[stat];
+
+            // Create display for the effect
+            const label = statLabels[stat];
+            const sign = change > 0 ? "+" : "";
+            const className = change > 0 ? "effect-positive" : change < 0 ? "effect-negative" : "effect-neutral";
+
+            effectsHtml += `<div class="effect-item"><span class="${className}">${label}: ${sign}${change}</span></div>`;
+
+            // Log for debugging
+            console.log(`Applied effect: ${stat} ${oldValue} → ${newValue} (${sign}${change})`);
+          }
+        });
+
+        // Event type indicator
+        let typeIndicator = "";
+        if (event.rarity === "conditional") typeIndicator = "SỰ KIỆN ĐIỀU KIỆN";
+        else if (event.rarity === "chain") typeIndicator = "SỰ KIỆN LIÊN HOÀN";
+        else if (event.rarity === "autoresponse") typeIndicator = "PHẢN ỨNG TỰ ĐỘNG";
+        else typeIndicator = "SỰ KIỆN NGẪU NHIÊN";
+
+        randomEventEl.innerHTML = `
+                <div class="event-type">${typeIndicator}</div>
+                <div class="event-title">${event.title}</div>
+                <div class="event-description">${event.text}</div>
+                <div class="event-effects">
+                    <div class="effects-title">Ảnh Hưởng</div>
+                    <div class="effects-grid">${effectsHtml}</div>
+                </div>
+            `;
+
+        randomEventEl.className = `random-event ${eventClass}`;
+        randomEventEl.style.display = "block";
+
+        // UPDATE STATS DISPLAY AFTER APPLYING EFFECTS
+        updateStatsDisplay();
+
+        // Auto-hide after 5 seconds
+        setTimeout(() => {
+          randomEventEl.style.display = "none";
+        }, 5000);
+      }
+
+      // Check game end conditions
+      function checkGameEnd() {
+        // Check failure conditions
+        if (gameState.stats.conflict >= 85) {
+          endGame(
+            "revolution",
+            "CÁCH MẠNG",
+            "Xung đột đã đạt mức tới hạn. Người dân nổi dậy và lật đổ chính quyền. Game Over!"
+          );
+          return true;
+        }
+
+        if (gameState.stats.discontent >= 80) {
+          endGame(
+            "overthrown",
+            "MẤT QUYỀN LỰC",
+            "Sự bất mãn của dân chúng đã đạt đỉnh điểm. Bạn bị truất phế khỏi chức vụ. Game Over!"
+          );
+          return true;
+        }
+
+        if (gameState.stats.economy <= 10) {
+          endGame(
+            "economic_collapse",
+            "SỤP ĐỔ KINH TẾ",
+            "Nền kinh tế đã sụp đổ hoàn toàn. Đất nước rơi vào khủng hoảng. Game Over!"
+          );
+          return true;
+        }
+
+        // Check success conditions after turn 15
+        if (gameState.currentTurn >= 15) {
+          // Perfect Leader
+          if (Object.values(gameState.stats).every((stat) => stat >= 70)) {
+            endGame(
+              "perfect_leader",
+              "LÃNH ĐẠO HOÀN HẢO",
+              "Bạn đã cân bằng tất cả các yếu tố một cách xuất sắc. Đất nước thịnh vượng và ổn định!"
+            );
+            return true;
+          }
+
+          // Economic Emperor
+          if (gameState.stats.economy >= 85) {
+            endGame(
+              "economic_emperor",
+              "HOÀNG ĐẾ KINH TẾ",
+              "Nền kinh tế phát triển mạnh mẽ. Bạn đã biến đất nước thành cường quốc kinh tế!"
+            );
+            return true;
+          }
+
+          // Green Messiah
+          if (gameState.stats.environment >= 85) {
+            endGame(
+              "green_messiah",
+              "CỨU TINH MÔI TRƯỜNG",
+              "Môi trường được bảo vệ tuyệt đối. Bạn đã tạo ra một xã hội bền vững!"
+            );
+            return true;
+          }
+
+          // Democratic Hero
+          if (gameState.stats.freedom >= 80 && gameState.stats.security < 50) {
+            endGame(
+              "democratic_hero",
+              "ANH HÙNG DÂN CHỦ",
+              "Tự do và dân chủ được tôn trọng. Bạn đã xây dựng một xã hội tự do!"
+            );
+            return true;
+          }
+
+          // Warlord
+          if (gameState.stats.security >= 80 && gameState.stats.conflict < 60) {
+            endGame(
+              "warlord",
+              "LÃNH CHÚ QUÂN SỰ",
+              "An ninh được đảm bảo tuyệt đối. Bạn đã tạo ra một quốc gia mạnh mẽ!"
+            );
+            return true;
+          }
+        }
+
+        // Natural end at turn 20
+        if (gameState.currentTurn >= 20) {
+          endGame(
+            "natural_end",
+            "KẾT THÚC NHIỆM KỲ",
+            "Bạn đã hoàn thành nhiệm kỳ cầm quyền. Kết quả cuối cùng tùy thuộc vào các chỉ số hiện tại."
+          );
+          return true;
+        }
+
+        return false;
+      }
+
+      // End game
+      function endGame(endingType, title, description) {
+        gameState.gameEnded = true;
+
+        document.getElementById("endingTitle").textContent = title;
+        document.getElementById("endingDescription").textContent = description;
+        document.getElementById("gameEnd").style.display = "block";
+        document.getElementById("choicesGrid").style.display = "none";
+      }
+
+      // Restart game
+      function restartGame() {
+        // Reset game state
+        gameState = {
+          currentTurn: 1,
+          stats: {
+            discontent: 45,
+            conflict: 35,
+            economy: 55,
+            environment: 50,
+            freedom: 60,
+            security: 45,
+          },
+          score: 0,
+          gameEnded: false,
+          eventHistory: [],
+        };
+
+        // Hide end screen
+        document.getElementById("gameEnd").style.display = "none";
+        document.getElementById("choicesGrid").style.display = "grid";
+
+        // Restart game
+        updateDisplay();
+        loadCurrentStory();
+      }
+
+      // Update all displays
+      function updateDisplay() {
+        updateStatsDisplay();
+        updateGameInfo();
+      }
+
+      // Guide functions
+      function openGuide() {
+        document.getElementById("guidePopup").style.display = "flex";
+      }
+
+      function closeGuide() {
+        document.getElementById("guidePopup").style.display = "none";
+      }
+
+      // Close guide when clicking outside content
+      document.getElementById("guidePopup").addEventListener("click", function (e) {
+        if (e.target === this) {
+          closeGuide();
+        }
+      });
+
+      // Initialize when page loads
+      window.addEventListener("load", () => {
+        loadGameData();
+      });
+    </script>
+  </body>
+</html>

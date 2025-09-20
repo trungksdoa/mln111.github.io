@@ -81,6 +81,13 @@
         transform: translateY(-2px);
         box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
       }
+      .start-btn:disabled {
+        background: linear-gradient(45deg, #888, #666) !important;
+        cursor: not-allowed !important;
+        transform: none !important;
+        opacity: 0.6;
+        box-shadow: none !important;
+      }
 
       /* Main Game */
       .game-container {
@@ -148,7 +155,7 @@
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
       }
       .stat-item::before {
-        content: "";
+        content: '';
         position: absolute;
         top: 0;
         left: 0;
@@ -240,75 +247,64 @@
         border-color: #666;
         transform: translateX(5px);
       }
+      .choice-btn:disabled {
+        background: #555 !important;
+        cursor: not-allowed !important;
+        transform: none !important;
+        opacity: 0.6;
+      }
 
       /* Enhanced Random Events */
       .random-event {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: #1a1a1a;
-        color: #ffffff;
+        color: #fff;
         padding: 25px;
         border-radius: 12px;
         margin: 20px 0;
         text-align: center;
         animation: slideDown 0.5s ease;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
-        border: 3px solid #555;
-        max-width: 600px;
-        width: 90%;
-        z-index: 1500;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        border: 2px solid rgba(255, 255, 255, 0.3);
       }
 
-      /* Event Types - Màu solid thay vì gradient */
+      /* Event Types */
       .event-conditional {
-        background: #cc3300;
-        border-color: #ff6666;
+        background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
       }
-
       .event-chain {
-        background: #0066cc;
-        border-color: #3399ff;
+        background: linear-gradient(135deg, #4ecdc4, #44a08d);
       }
-
       .event-auto {
-        background: #cc6600;
-        border-color: #ff9933;
+        background: linear-gradient(135deg, #ffa726, #fb8c00);
       }
-
       .event-normal {
-        background: #1a1a1a;
-        border-color: #666666;
+        background: linear-gradient(135deg, #9c27b0, #673ab7);
       }
 
       .event-title {
         font-size: 1.4em;
         font-weight: 700;
         margin-bottom: 15px;
-        color: #ffffff;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
       }
 
       .event-description {
         font-size: 1.1em;
         line-height: 1.5;
         margin-bottom: 20px;
-        color: #eeeeee;
       }
 
       .event-effects {
-        background: #333333;
+        background: rgba(0, 0, 0, 0.2);
         padding: 15px;
         border-radius: 8px;
-        border: 1px solid #555;
+        border: 1px solid rgba(255, 255, 255, 0.2);
       }
 
       .effects-title {
         font-size: 1em;
         font-weight: 600;
         margin-bottom: 10px;
-        color: #ffffff;
+        color: #fff;
         text-transform: uppercase;
         letter-spacing: 1px;
       }
@@ -322,53 +318,39 @@
 
       .effect-item {
         padding: 8px;
-        background: #555555;
+        background: rgba(255, 255, 255, 0.1);
         border-radius: 6px;
         text-align: center;
-        border: 1px solid #777;
+        border: 1px solid rgba(255, 255, 255, 0.1);
       }
 
       .effect-positive {
-        color: #00ff00;
+        color: #2e7d32;
         font-weight: 700;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
       }
-
       .effect-negative {
-        color: #ff4444;
+        color: #c62828;
         font-weight: 700;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
       }
-
       .effect-neutral {
-        color: #ffaa00;
+        color: #f57c00;
         font-weight: 700;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
-      }
-
-      .event-type {
-        background: #666666;
-        color: #ffffff;
-        padding: 5px 10px;
-        border-radius: 15px;
-        font-size: 0.8em;
-        text-align: center;
-        margin-bottom: 15px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-weight: bold;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
       }
 
       @keyframes slideDown {
         from {
-          transform: translate(-50%, -60%);
+          transform: translateY(-20px);
           opacity: 0;
         }
         to {
-          transform: translate(-50%, -50%);
+          transform: translateY(0);
           opacity: 1;
         }
       }
+
       /* Result */
       .result-panel {
         background: rgba(0, 0, 0, 0.1);
@@ -427,132 +409,6 @@
           grid-template-columns: repeat(2, 1fr);
         }
       }
-
-      /* Guide Button */
-      .guide-btn {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: rgba(255, 255, 255, 0.9);
-        color: #333;
-        border: 2px solid #666;
-        padding: 12px 20px;
-        font-size: 1em;
-        font-weight: 600;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        z-index: 999;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
-
-      .guide-btn:hover {
-        background: #fff;
-        border-color: #333;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      }
-
-      /* Guide Popup */
-      .guide-popup {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.9);
-        display: none;
-        align-items: center;
-        justify-content: center;
-        z-index: 2000;
-        padding: 20px;
-      }
-
-      .guide-content {
-        background: #fff;
-        color: #333;
-        max-width: 900px;
-        max-height: 90vh;
-        overflow-y: auto;
-        border-radius: 12px;
-        padding: 30px;
-        position: relative;
-      }
-
-      .guide-close {
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        background: #ff4444;
-        color: white;
-        border: none;
-        padding: 8px 15px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-weight: bold;
-        font-size: 1.1em;
-      }
-
-      .guide-close:hover {
-        background: #cc0000;
-      }
-
-      .guide-content h1 {
-        color: #333;
-        text-align: center;
-        margin-bottom: 25px;
-        border-bottom: 3px solid #333;
-        padding-bottom: 10px;
-      }
-
-      .guide-content h2 {
-        color: #444;
-        margin-top: 25px;
-        margin-bottom: 15px;
-        border-left: 4px solid #333;
-        padding-left: 12px;
-      }
-
-      .guide-content h3 {
-        color: #555;
-        margin-top: 20px;
-        margin-bottom: 10px;
-      }
-
-      .guide-content ul,
-      .guide-content ol {
-        padding-left: 20px;
-        margin-bottom: 15px;
-      }
-
-      .guide-content li {
-        margin-bottom: 5px;
-        line-height: 1.6;
-      }
-
-      .guide-content code {
-        background: #f5f5f5;
-        padding: 2px 6px;
-        border-radius: 3px;
-        font-family: monospace;
-      }
-
-      .guide-content .warning {
-        background: #ffe6e6;
-        border-right: 4px solid #ff4444;
-        padding: 15px;
-        margin: 15px 0;
-        border-radius: 5px;
-      }
-
-      .guide-content .tip {
-        background: #e6ffe6;
-        border-left: 4px solid #44ff44;
-        padding: 15px;
-        margin: 15px 0;
-        border-radius: 5px;
-      }
     </style>
   </head>
   <body>
@@ -564,112 +420,7 @@
         Bạn có thể dẫn dắt đất nước đến thịnh vượng hay sụp đổ?<br />
         <strong>Chúc bạn may mắn!</strong>
       </p>
-
-      <!-- Guide Button -->
-      <button class="guide-btn" onclick="openGuide()">HƯỚNG DẪN</button>
-
-      <!-- Guide Popup -->
-      <div class="guide-popup" id="guidePopup">
-        <div class="guide-content">
-          <button class="guide-close" onclick="closeGuide()">✕</button>
-
-          <h1>HƯỚNG DẪN CHIẾN LƯỢC - NGƯỜI CẦM QUYỀN SIMULATOR</h1>
-
-          <h2>TỔNG QUAN GAME</h2>
-          <p>
-            <strong>Mục tiêu:</strong> Duy trì quyền lực và dẫn dắt đất nước qua 20+ lượt chơi với 6 chỉ số quan trọng:
-          </p>
-          <ul>
-            <li><strong>Bất Mãn (Discontent):</strong> ≤ 80 tránh nổi loạn</li>
-            <li><strong>Xung Đột (Conflict):</strong> ≤ 85 tránh cách mạng</li>
-            <li><strong>Kinh Tế (Economy):</strong> ≥ 30 tránh suy thoái</li>
-            <li><strong>Môi Trường (Environment):</strong> Cân bằng phát triển</li>
-            <li><strong>Tự Do (Freedom):</strong> Cân bằng dân chủ vs kiểm soát</li>
-            <li><strong>An Ninh (Security):</strong> ≥ 30 tránh hỗn loạn</li>
-          </ul>
-
-          <h2>CÁC TÌNH HUỐNG KẾT THÚC SỚM (GAME OVER)</h2>
-
-          <h3>CÁCH MẠNG - Xung Đột ≥ 85</h3>
-          <div class="warning">
-            <strong>Triệu chứng báo động:</strong>
-            <ul>
-              <li>Biểu tình quy mô lớn liên tục</li>
-              <li>Đình công toàn quốc</li>
-              <li>Quân đội từ chối tuân lệnh</li>
-              <li>Bạo lực đường phố lan rộng</li>
-            </ul>
-          </div>
-          <p><strong>Cách tránh:</strong> Luôn dưới 80 Xung Đột, sử dụng "Hội nghị hòa giải" khi ≥65 Conflict</p>
-
-          <h3>MẤT QUYỀN LỰC - Bất Mãn ≥ 80</h3>
-          <div class="warning">
-            <strong>Triệu chứng:</strong>
-            <ul>
-              <li>Tỷ lệ ủng hộ giảm mạnh</li>
-              <li>Các bộ trưởng từ chức hàng loạt</li>
-              <li>Truyền thông phản đối gay gắt</li>
-              <li>Đảng cầm quyền nội bộ rạn nứt</li>
-            </ul>
-          </div>
-
-          <h2>ĐƯỜNG ĐẾN CÁC KẾT THÚC TỐT</h2>
-
-          <h3>PERFECT LEADER - Tất cả chỉ số ≥70</h3>
-          <div class="tip">
-            <strong>Chiến lược cân bằng hoàn hảo:</strong><br />
-            <code>Bất Mãn ≤30 | Xung Đột ≤40 | Kinh Tế ≥75 | Môi Trường ≥70 | Tự Do ≥70 | An Ninh ≥70</code>
-          </div>
-
-          <h3>ECONOMIC EMPEROR - Kinh tế ≥85</h3>
-          <p>Gói kích thích 500 tỷ USD, công nghiệp hóa mạnh mẽ, đầu tư FDI</p>
-
-          <h3>GREEN MESSIAH - Môi trường ≥85</h3>
-          <p>Khẩn cấp sinh thái, đóng nhà máy nhiệt điện, đầu tư năng lượng sạch</p>
-
-          <h3>DEMOCRATIC HERO - Tự Do ≥80, An Ninh <50</h3>
-          <p>Cải cách chính trị, bầu cử tự do, tự do báo chí tuyệt đối</p>
-
-          <h3>🛡️ WARLORD - An Ninh ≥80, Xung Đột <60</h3>
-          <p>Hiện đại hóa quốc phòng, tăng ngân sách 10% GDP, mua F-35</p>
-
-          <h2>QUẢN LÝ SỰ KIỆN NGẪU NHIÊN</h2>
-          <ul>
-            <li><strong>Common (80%):</strong> Ảnh hưởng ±5-20 điểm</li>
-            <li><strong>Rare (15%):</strong> Ảnh hưởng ±10-30 điểm</li>
-            <li><strong>Epic (3%):</strong> Ảnh hưởng ±15-40 điểm</li>
-            <li><strong>Legendary (2%):</strong> Ảnh hưởng ±20-50 điểm</li>
-          </ul>
-
-          <h3>Sự Kiện Tự Động:</h3>
-          <ul>
-            <li><strong>Economy <20:</strong> Ngân hàng TW can thiệp (+15 Economy)</li>
-            <li><strong>Conflict >80:</strong> Quân đội tự động triển khai (+20 Security, -10 Freedom)</li>
-          </ul>
-
-          <h2>CHIẾN THUẬT NÂNG CAO</h2>
-          <p><strong>Ưu tiên theo giai đoạn:</strong></p>
-          <ul>
-            <li><strong>Lượt 1-5:</strong> Ổn định Bất Mãn + Xung Đột</li>
-            <li><strong>Lượt 6-10:</strong> Phát triển Kinh Tế + An Ninh</li>
-            <li><strong>Lượt 11-15:</strong> Cân bằng Môi Trường + Tự Do</li>
-            <li><strong>Lượt 16-20:</strong> Đẩy chỉ số mục tiêu lên cao</li>
-          </ul>
-
-          <h3>Tránh các bẫy:</h3>
-          <ul>
-            <li><strong>Thiết quân luật:</strong> +35 Security nhưng -30 Freedom</li>
-            <li><strong>Tăng lương 200%:</strong> -25 Economy, có thể gây phá sản</li>
-            <li><strong>Đóng nhà máy:</strong> +40 Environment nhưng -30 Economy</li>
-          </ul>
-
-          <p style="text-align: center; font-size: 1.2em; font-weight: bold; margin-top: 30px">
-            Thành công = Kiên nhẫn + Chiến thuật + Một chút may mắn!
-          </p>
-        </div>
-      </div>
-
-      <button class="start-btn" onclick="startGame()">Bắt Đầu Trò Chơi</button>
+      <button class="start-btn" onclick="handleStartGame()">Bắt Đầu Trò Chơi</button>
     </div>
 
     <!-- Main Game -->
@@ -699,7 +450,7 @@
 
         <!-- Controls -->
         <div class="controls">
-          <button class="reset-btn" onclick="resetGame()">Chơi Lại</button>
+          <button class="reset-btn" onclick="handleResetGame()">Chơi Lại</button>
         </div>
       </div>
     </div>
@@ -723,6 +474,8 @@
         eventHistory: [], // Track triggered events
         gameStarted: false,
         randomEventChance: 0.3,
+        isProcessingChoice: false, // Debounce flag
+        debounceDelay: 500, // 500ms debounce
       };
 
       const statLabels = {
@@ -846,8 +599,26 @@
         return turnsPassed >= condition.turns_after;
       }
 
+      // Handle Start Game with Debounce
+      function handleStartGame() {
+        if (gameState.isProcessingChoice) return;
+
+        gameState.isProcessingChoice = true;
+        startGame();
+
+        setTimeout(() => {
+          gameState.isProcessingChoice = false;
+        }, gameState.debounceDelay);
+      }
+
       // Start Game
       function startGame() {
+        const startBtn = document.querySelector('.start-btn');
+        if (startBtn) {
+          startBtn.disabled = true;
+          startBtn.textContent = 'Đang tải...';
+        }
+
         document.getElementById("startScreen").classList.add("hidden");
         document.getElementById("gameContainer").classList.add("visible");
         gameState.gameStarted = true;
@@ -859,6 +630,7 @@
         gameState.currentStoryIndex = 0;
         gameState.currentTurn = 0;
         gameState.eventHistory = [];
+        gameState.isProcessingChoice = false; // Reset debounce flag
         gameState.stats = {
           discontent: 50,
           conflict: 30,
@@ -925,7 +697,8 @@
           const button = document.createElement("button");
           button.className = "choice-btn";
           button.textContent = choice.text;
-          button.onclick = () => makeChoice(index);
+          button.disabled = gameState.isProcessingChoice;
+          button.onclick = () => handleChoiceClick(index);
           choicesContainer.appendChild(button);
         });
 
@@ -952,9 +725,7 @@
 
       // Enhanced Random Event Display
       function showRandomEvent(event = null) {
-        if (!event) {
-          event = selectRandomEvent();
-        }
+        if (!event) event = selectRandomEvent();
         if (!event) return;
 
         const randomEventEl = document.getElementById("randomEvent");
@@ -971,56 +742,86 @@
         let eventClass = "event-normal";
         if (event.rarity === "conditional") eventClass = "event-conditional";
         else if (event.rarity === "chain") eventClass = "event-chain";
-        else if (event.rarity === "autoresponse") eventClass = "event-auto";
+        else if (event.rarity === "auto_response") eventClass = "event-auto";
 
-        // APPLY EFFECTS FIRST - FIX THE BUG
+        // Create effects display
         let effectsHtml = "";
         Object.entries(event.effects).forEach(([stat, change]) => {
           if (change !== 0) {
-            // Apply the effect to game state
-            const oldValue = gameState.stats[stat];
-            gameState.stats[stat] = Math.max(0, Math.min(100, gameState.stats[stat] + change));
-            const newValue = gameState.stats[stat];
-
-            // Create display for the effect
             const label = statLabels[stat];
             const sign = change > 0 ? "+" : "";
             const className = change > 0 ? "effect-positive" : change < 0 ? "effect-negative" : "effect-neutral";
-
             effectsHtml += `<div class="effect-item"><span class="${className}">${label}: ${sign}${change}</span></div>`;
-
-            // Log for debugging
-            console.log(`Applied effect: ${stat} ${oldValue} → ${newValue} (${sign}${change})`);
           }
         });
 
         // Event type indicator
         let typeIndicator = "";
-        if (event.rarity === "conditional") typeIndicator = "SỰ KIỆN ĐIỀU KIỆN";
-        else if (event.rarity === "chain") typeIndicator = "SỰ KIỆN LIÊN HOÀN";
-        else if (event.rarity === "autoresponse") typeIndicator = "PHẢN ỨNG TỰ ĐỘNG";
-        else typeIndicator = "SỰ KIỆN NGẪU NHIÊN";
+        if (event.rarity === "conditional") typeIndicator = "🎯 SỰ KIỆN ĐIỀU KIỆN";
+        else if (event.rarity === "chain") typeIndicator = "🔗 SỰ KIỆN LIÊN HOÀN";
+        else if (event.rarity === "auto_response") typeIndicator = "🚨 PHẢN ỨNG TỰ ĐỘNG";
+        else typeIndicator = "🎲 SỰ KIỆN NGẪU NHIÊN";
 
         randomEventEl.innerHTML = `
-        <div class="event-type" style="font-size: 0.9em; margin-bottom: 10px; opacity: 0.8;">${typeIndicator}</div>
-        <div class="event-title">${event.title}</div>
-        <div class="event-description">${event.text}</div>
-        <div class="event-effects">
-            <div class="effects-title">Ảnh Hưởng</div>
-            <div class="effects-grid">${effectsHtml}</div>
-        </div>
-    `;
+    <div class="event-type" style="font-size: 0.9em; margin-bottom: 10px; opacity: 0.8;">${typeIndicator}</div>
+    <div class="event-title">${event.title}</div>
+    <div class="event-description">${event.text}</div>
+    <div class="event-effects">
+      <div class="effects-title">📊 Ảnh Hưởng:</div>
+      <div class="effects-grid">${effectsHtml}</div>
+    </div>
+  `;
 
         randomEventEl.className = `random-event ${eventClass}`;
         randomEventEl.style.display = "block";
 
-        // UPDATE STATS DISPLAY AFTER APPLYING EFFECTS
+        // Apply effects
+        Object.entries(event.effects).forEach(([stat, change]) => {
+          gameState.stats[stat] = Math.max(0, Math.min(100, gameState.stats[stat] + change));
+        });
+
         updateStatsDisplay();
 
-        // Auto-hide after 12 seconds
+        // Auto-hide after 5 seconds
         setTimeout(() => {
           randomEventEl.style.display = "none";
-        }, 5000);
+        }, 12000);
+      }
+
+      // Handle Choice Click with Debounce
+      function handleChoiceClick(choiceIndex) {
+        if (gameState.isProcessingChoice) return;
+
+        gameState.isProcessingChoice = true;
+        disableChoiceButtons();
+
+        makeChoice(choiceIndex);
+
+        // Re-enable buttons after debounce delay
+        setTimeout(() => {
+          gameState.isProcessingChoice = false;
+          enableChoiceButtons();
+        }, gameState.debounceDelay);
+      }
+
+      // Disable all choice buttons
+      function disableChoiceButtons() {
+        const buttons = document.querySelectorAll('.choice-btn');
+        buttons.forEach(button => {
+          button.disabled = true;
+          button.style.opacity = '0.6';
+          button.style.cursor = 'not-allowed';
+        });
+      }
+
+      // Enable all choice buttons
+      function enableChoiceButtons() {
+        const buttons = document.querySelectorAll('.choice-btn');
+        buttons.forEach(button => {
+          button.disabled = false;
+          button.style.opacity = '1';
+          button.style.cursor = 'pointer';
+        });
       }
 
       // Make Choice
@@ -1090,9 +891,21 @@
     <div style="text-align: center; padding: 30px; background: rgba(255,0,0,0.1); border-radius: 8px;">
       <h2>🔥 CÁCH MẠNG BÙNG NỔ!</h2>
       <p>Xung đột đã vượt quá ngưỡng chịu đựng. Bạn đã mất quyền lực!</p>
-      <button class="choice-btn" onclick="resetGame()" style="background: #ff4444;">Chơi Lại</button>
+      <button class="choice-btn" onclick="handleResetGame()" style="background: #ff4444;">Chơi Lại</button>
     </div>
   `;
+      }
+
+      // Handle Reset Game with Debounce
+      function handleResetGame() {
+        if (gameState.isProcessingChoice) return;
+
+        gameState.isProcessingChoice = true;
+        resetGame();
+
+        setTimeout(() => {
+          gameState.isProcessingChoice = false;
+        }, gameState.debounceDelay);
       }
 
       // Show End Game with 10 Endings
@@ -1130,25 +943,10 @@
       <div style="margin: 15px 0; font-size: 0.9em; color: #666;">
         <strong>Tổng số sự kiện đã trải qua:</strong> ${gameState.eventHistory.length}
       </div>
-      <button class="choice-btn" onclick="resetGame()">Chơi Lại</button>
+      <button class="choice-btn" onclick="handleResetGame()">Chơi Lại</button>
     </div>
   `;
       }
-      // Guide Popup Functions
-      function openGuide() {
-        document.getElementById("guidePopup").style.display = "flex";
-      }
-
-      function closeGuide() {
-        document.getElementById("guidePopup").style.display = "none";
-      }
-
-      // Close guide when clicking outside content
-      document.getElementById("guidePopup").addEventListener("click", function (e) {
-        if (e.target === this) {
-          closeGuide();
-        }
-      });
 
       // Initialize Game
       loadGameData();
