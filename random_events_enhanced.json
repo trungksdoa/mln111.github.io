@@ -1,212 +1,113 @@
 [
-    {
-        "id": 1,
-        "title": "SIÊU BÃO YAGI TẤN CÔNG MIỀN BẮC!",
-        "text": "Siêu bão cấp 16 đổ bộ miền Bắc, gió 200km/h. Hàng triệu người cần sơ tán khẩn cấp, thiệt hại hạ tầng nghiêm trọng!",
-        "effects": {
-            "discontent": 15,
-            "conflict": 5,
-            "economy": -25,
-            "environment": -20,
-            "freedom": -10,
-            "security": -15
-        },
-        "rarity": "common"
+  {
+    "id": 101,
+    "title": "TẤN CÔNG MẠNG QUY MÔ LỚN!",
+    "text": "Nhóm hacker quốc tế tấn công hệ thống ngân hàng do hệ thống bảo mật yếu kém, rò rỉ 100 triệu thông tin cá nhân!",
+    "conditions": {
+      "security": {"max": 30},
+      "min_turn": 3
     },
-    {
-        "id": 2,
-        "title": "PHÁT HIỆN MỎ DẦU KHỔNG LỒ BIỂN ĐÔNG!",
-        "text": "Tập đoàn dầu khí phát hiện mỏ dầu trữ lượng 8 tỷ thùng ngoài khơi Vũng Tàu!",
-        "effects": {
-            "discontent": -20,
-            "conflict": -5,
-            "economy": 30,
-            "environment": -15,
-            "freedom": 5,
-            "security": 15
-        },
-        "rarity": "rare"
+    "effects": {
+      "discontent": 25,
+      "conflict": 15,
+      "economy": -20,
+      "freedom": -10,
+      "security": -15
     },
-    {
-        "id": 3,
-        "title": "DỊCH CORONA BIẾN CHỦNG MỚI!",
-        "text": "Phát hiện biến chủng COVID-26 lây lan nhanh gấp 3 lần, WHO tuyên bố tình trạng khẩn cấp!",
-        "effects": {
-            "discontent": 25,
-            "conflict": 10,
-            "economy": -30,
-            "environment": 5,
-            "freedom": -25,
-            "security": -10
-        },
-        "rarity": "common"
+    "rarity": "conditional",
+    "trigger_chance": 0.7
+  },
+  {
+    "id": 102,
+    "title": "CƯỚP NGÂN HÀNG LIÊN HOÀN!",
+    "text": "Băng cướp có vũ trang tấn công 5 ngân hàng cùng lúc do lực lượng an ninh thiếu hụt nghiêm trọng!",
+    "conditions": {
+      "security": {"max": 25},
+      "economy": {"min": 40},
+      "min_turn": 2
     },
-    {
-        "id": 4,
-        "title": "ĐỘI TUYỂN VIỆT NAM VÔ ĐỊCH WORLD CUP!",
-        "text": "Đội tuyển Việt Nam tạo địa chấn lịch sử, đánh bại Pháp 2-1 tại chung kết World Cup 2026!",
-        "effects": {
-            "discontent": -30,
-            "conflict": -15,
-            "economy": 15,
-            "environment": 0,
-            "freedom": 20,
-            "security": 10
-        },
-        "rarity": "legendary"
+    "effects": {
+      "discontent": 30,
+      "conflict": 20,
+      "economy": -15,
+      "security": -20
     },
-    {
-        "id": 5,
-        "title": "TỔNG BÍ THƯ NGUYỄN PHÚ TRỌNG QUA ĐỜI!",
-        "text": "Tổng Bí thư Nguyễn Phú Trọng qua đời, cả nước tang lễ quốc gia, chuyển giao quyền lực diễn ra ổn định!",
-        "effects": {
-            "discontent": 10,
-            "conflict": 8,
-            "economy": -5,
-            "environment": 0,
-            "freedom": 5,
-            "security": -10
-        },
-        "rarity": "epic"
+    "rarity": "conditional",
+    "trigger_chance": 0.8
+  },
+  {
+    "id": 201,
+    "title": "SẬP TIỆM VÀNG SJC TOÀN QUỐC!",
+    "text": "Hệ thống SJC sập do khủng hoảng kinh tế, hàng triệu người mất trắng tiền tiết kiệm!",
+    "conditions": {
+      "economy": {"max": 25},
+      "discontent": {"min": 20},
+      "min_turn": 4
     },
-    {
-        "id": 6,
-        "title": "NVIDIA ĐẦU TƯ 50 TỶ USD VÀO VIỆT NAM!",
-        "text": "NVIDIA công bố đầu tư 50 tỷ USD xây dựng trung tâm AI và semiconductor lớn nhất châu Á tại Việt Nam!",
-        "effects": {
-            "discontent": -15,
-            "conflict": -5,
-            "economy": 35,
-            "environment": -10,
-            "freedom": 10,
-            "security": 15
-        },
-        "rarity": "epic"
+    "effects": {
+      "discontent": 45,
+      "conflict": 35,
+      "economy": -30,
+      "security": -15
     },
-    {
-        "id": 7,
-        "title": "TẤN CÔNG MẠNG QUY MÔ LỚN!",
-        "text": "Nhóm hacker quốc tế tấn công hệ thống ngân hàng, rò rỉ 100 triệu thông tin cá nhân và 5000 tỷ tiền mặt!",
-        "effects": {
-            "discontent": 30,
-            "conflict": 15,
-            "economy": -25,
-            "environment": 0,
-            "freedom": -15,
-            "security": -30
-        },
-        "rarity": "common"
+    "rarity": "conditional",
+    "trigger_chance": 0.8
+  },
+  {
+    "id": 301,
+    "title": "SÔNG HỒNG Ô NHIỄM NẶNG!",
+    "text": "Sông Hồng chuyển màu đen, cá chết hàng loạt, người dân không có nước sạch sử dụng!",
+    "conditions": {
+      "environment": {"max": 25},
+      "economy": {"min": 30},
+      "min_turn": 3
     },
-    {
-        "id": 8,
-        "title": "VIỆT NAM THƯƠNG MẠI HÓA 5G TOÀN QUỐC!",
-        "text": "Viettel và VNPT chính thức thương mại hóa 5G toàn quốc, tốc độ internet tăng 100 lần!",
-        "effects": {
-            "discontent": -10,
-            "conflict": -5,
-            "economy": 25,
-            "environment": -5,
-            "freedom": 15,
-            "security": 10
-        },
-        "rarity": "common"
+    "effects": {
+      "discontent": 35,
+      "conflict": 20,
+      "economy": -25,
+      "environment": -20,
+      "security": -5
     },
-    {
-        "id": 9,
-        "title": "LẠM PHÁT TĂNG VỌT 18%!",
-        "text": "Giá cả hàng hóa tăng chóng mặt, lương tối thiểu không theo kịp chi phí sinh hoạt, người dân biểu tình!",
-        "effects": {
-            "discontent": 35,
-            "conflict": 25,
-            "economy": -30,
-            "environment": 0,
-            "freedom": 0,
-            "security": -15
-        },
-        "rarity": "common"
+    "rarity": "conditional",
+    "trigger_chance": 0.8
+  },
+  {
+    "id": 401,
+    "title": "BIỂU TÌNH ĐÒI DÂN CHỦ!",
+    "text": "100,000 người xuống đường biểu tình đòi dân chủ và tự do ngôn luận, cảnh sát không thể kiểm soát!",
+    "conditions": {
+      "freedom": {"max": 25},
+      "security": {"min": 60},
+      "min_turn": 5
     },
-    {
-        "id": 10,
-        "title": "ĐỘNG ĐẤT 7.8 RICHTER TẠI VIỆT NAM!",
-        "text": "Động đất 7.8 Richter rung chuyển miền Bắc, cảnh báo sóng thần cao 8m sắp tới!",
-        "effects": {
-            "discontent": 25,
-            "conflict": 20,
-            "economy": -35,
-            "environment": -25,
-            "freedom": -20,
-            "security": -25
-        },
-        "rarity": "rare"
+    "effects": {
+      "discontent": 35,
+      "conflict": 40,
+      "freedom": -15,
+      "security": -10
     },
-    {
-        "id": 11,
-        "title": "ĐỀ ÁN ĐƯỜNG SẮT CAO TỐC BẮC-NAM!",
-        "text": "Quốc hội thông qua đầu tư 58 tỷ USD xây dựng đường sắt cao tốc Bắc-Nam!",
-        "effects": {
-            "discontent": -15,
-            "conflict": -10,
-            "economy": 30,
-            "environment": -15,
-            "freedom": 5,
-            "security": 10
-        },
-        "rarity": "epic"
+    "rarity": "conditional",
+    "trigger_chance": 0.9
+  },
+  {
+    "id": 601,
+    "title": "DOANH NGHIỆP NƯỚC NGOÀI ĐỔ XÔ ĐẦU TƯ!",
+    "text": "Samsung, Apple, Google đồng loạt thông báo đầu tư 100 tỷ USD vào Việt Nam nhờ môi trường kinh doanh tốt!",
+    "conditions": {
+      "economy": {"min": 70},
+      "freedom": {"min": 60},
+      "security": {"min": 60},
+      "min_turn": 6
     },
-    {
-        "id": 12,
-        "title": "MẤT ĐIỆN TOÀN QUỐC 8 TIẾNG!",
-        "text": "Sự cố lưới điện khiến 90% lãnh thổ mất điện 8 tiếng liên tục, tê liệt toàn bộ hoạt động kinh tế!",
-        "effects": {
-            "discontent": 30,
-            "conflict": 20,
-            "economy": -25,
-            "environment": 5,
-            "freedom": -10,
-            "security": -20
-        },
-        "rarity": "common"
+    "effects": {
+      "discontent": -25,
+      "economy": 30,
+      "freedom": 10,
+      "security": 15,
+      "environment": -10
     },
-    {
-        "id": 13,
-        "title": "VINFAST BÁN 1 TRIỆU XE ĐIỆN!",
-        "text": "VinFast đạt mốc 1 triệu xe điện bán ra toàn cầu, trở thành Tesla của châu Á!",
-        "effects": {
-            "discontent": -20,
-            "conflict": -10,
-            "economy": 25,
-            "environment": 20,
-            "freedom": 10,
-            "security": 5
-        },
-        "rarity": "rare"
-    },
-    {
-        "id": 14,
-        "title": "ỨNG DỤNG ZALO BỊ HACK TOÀN BỘ!",
-        "text": "Zalo với 75 triệu người dùng bị hack hoàn toàn, toàn bộ tin nhắn và thông tin cá nhân bị rò rỉ!",
-        "effects": {
-            "discontent": 25,
-            "conflict": 15,
-            "economy": -15,
-            "environment": 0,
-            "freedom": -20,
-            "security": -25
-        },
-        "rarity": "common"
-    },
-    {
-        "id": 15,
-        "title": "PHIM 'TRƯNG VƯƠNG' THẮNG OSCAR!",
-        "text": "Phim 'Trưng Vương' của đạo diễn Trần Anh Hùng giành Oscar Phim hay nhất!",
-        "effects": {
-            "discontent": -25,
-            "conflict": -15,
-            "economy": 15,
-            "environment": 0,
-            "freedom": 20,
-            "security": 5
-        },
-        "rarity": "rare"
-    }
+    "rarity": "conditional",
+    "trigger_chance": 0.6
+  }
 ]

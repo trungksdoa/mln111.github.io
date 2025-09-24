@@ -1,76 +1,105 @@
 {
-  "endings": [
-    {
-      "id": "talented_leader",
-      "name": "NHÀ LÃNH ĐẠO TÀI BA - BEST LEADER EVER",
-      "condition": "balanced_excellent_stats",
-      "description": "Bạn đã thành công trong việc cân bằng tất cả các khía cạnh của xã hội. Đất nước thịnh vượng, dân chúng hạnh phúc, tự do được đảm bảo và an ninh ổn định. You are a best leader ever! Bạn sẽ được nhớ mãi như một nhà lãnh đạo tài ba!",
-      "requirements": {
-        "discontent": "≤ 20",
-        "conflict": "≤ 25", 
-        "economy": "≥ 70",
-        "environment": "≥ 60",
-        "freedom": "≥ 65",
-        "security": "≥ 60"
-      }
-    },
-    {
-      "id": "dictator_temporary",
-      "name": "ĐỘC TÀI QUÂN SỰ (TẠM THỜI)",
-      "condition": "high_security_low_freedom_oppressive",
-      "description": "Bạn đã thiết lập chế độ độc tài quân sự. Đất nước trong tầm kiểm soát tuyệt đối... nhưng lịch sử sẽ phán xét...",
-      "requirements": {
-        "security": "≥ 75",
-        "freedom": "≤ 25"
-      },
-      "leads_to": "hitler_aftermath"
-    },
-    {
-      "id": "hitler_aftermath",
-      "name": "HẬU QUẢ CỦA ĐỘC TÀI - DICTATOR'S COLLAPSE",
-      "condition": "aftermath_of_dictatorship",
-      "description": "Bạn đã trở thành nhà độc tài, nhưng lịch sử chứng minh: 'Quyền lực tuyệt đối dẫn đến sự sụp đổ tuyệt đối.' Một năm sau, cách mạng bùng nổ và lật đổ chế độ độc tài! You look like Hitler after this you will collapse! Giống như trong lịch sử, mọi chế độ độc tài đều có ngày sụp đổ.",
-      "requirements": {
-        "triggered_by": "dictator_temporary"
-      }
-    },
-    {
-      "id": "revolution",
-      "name": "CÁCH MẠNG BÙNG NỔ",
-      "condition": "high_conflict_social_unrest",
-      "description": "Xung đột xã hội vượt quá ngưỡng chịu đựng. Hàng triệu người xuống đường biểu tình. Chính phủ của bạn đã bị lật đổ bởi sức mạnh của nhân dân!",
-      "requirements": {
-        "conflict": "≥ 85"
-      }
-    },
-    {
-      "id": "economic_collapse",
-      "name": "SUY THOÁI KINH TẾ",
-      "condition": "economic_failure",
-      "description": "Nền kinh tế sụp đổ hoàn toàn. Đất nước rơi vào khủng hoảng tài chính nghiêm trọng. Thất nghiệp cao, lạm phát tăng vọt. Bạn đã thất bại trong việc lãnh đạo kinh tế!",
-      "requirements": {
-        "economy": "≤ 10"
-      }
-    },
-    {
-      "id": "environmental_disaster",
-      "name": "THẢM HỌA MÔI TRƯỜNG",
-      "condition": "environmental_collapse",
-      "description": "Môi trường bị tàn phá nghiêm trọng. Biến đổi khí hậu và ô nhiễm đã làm đất nước không thể sinh sống được. Thảm họa sinh thái đã xảy ra!",
-      "requirements": {
-        "environment": "≤ 10"
-      }
-    },
-    {
-      "id": "authoritarian_stability",
-      "name": "ỔN ĐỊNH TOÀN TRỊ",
-      "condition": "stable_authoritarianism",
-      "description": "Bạn đã thiết lập một chế độ toàn trị ổn định. Trật tự được duy trì, nhưng với cái giá của tự do. Đất nước yên bình nhưng thiếu sự sáng tạo và phát triển.",
-      "requirements": {
-        "security": "≥ 80",
-        "freedom": "≤ 30",
-        "conflict": "≤ 20"
-      }
-    }
-  ]
+    "endings": [
+        {
+            "id": "talented_leader",
+            "name": "NHÀ LÃNH ĐẠO TÀI BA - BEST LEADER EVER",
+            "condition": "balanced_excellent_stats",
+            "description": "Bạn đã thành công trong việc cân bằng tất cả các khía cạnh của xã hội. Đất nước thịnh vượng, dân chúng hạnh phúc, tự do được đảm bảo và an ninh ổn định. You are a best leader ever! Bạn sẽ được nhớ mãi như một nhà lãnh đạo tài ba!",
+            "requirements": {
+                "discontent": "≤ 20",
+                "conflict": "≤ 25",
+                "economy": "≥ 70",
+                "environment": "≥ 60",
+                "freedom": "≥ 65",
+                "security": "≥ 60"
+            }
+        },
+        {
+            "id": "dictator_temporary",
+            "name": "ĐỘC TÀI QUÂN SỰ (TẠM THỜI)",
+            "condition": "high_security_low_freedom_oppressive",
+            "description": "Bạn đã thiết lập chế độ độc tài quân sự. Đất nước trong tầm kiểm soát tuyệt đối... nhưng lịch sử sẽ phán xét...",
+            "requirements": {
+                "security": "≥ 75",
+                "freedom": "≤ 25"
+            },
+            "leads_to": "hitler_aftermath"
+        },
+        {
+            "id": "hitler_aftermath",
+            "name": "HẬU QUẢ CỦA ĐỘC TÀI - DICTATOR'S COLLAPSE",
+            "condition": "aftermath_of_dictatorship",
+            "description": "Bạn đã trở thành nhà độc tài, nhưng lịch sử chứng minh: 'Quyền lực tuyệt đối dẫn đến sự sụp đổ tuyệt đối.' Một năm sau, cách mạng bùng nổ và lật đổ chế độ độc tài! You look like Hitler after this you will collapse! Giống như trong lịch sử, mọi chế độ độc tài đều có ngày sụp đổ.",
+            "requirements": {
+                "triggered_by": "dictator_temporary"
+            }
+        },
+        {
+            "id": "revolution",
+            "name": "CÁCH MẠNG BÙNG NỔ",
+            "condition": "high_conflict_social_unrest",
+            "description": "Xung đột xã hội vượt quá ngưỡng chịu đựng. Hàng triệu người xuống đường biểu tình. Chính phủ của bạn đã bị lật đổ bởi sức mạnh của nhân dân!",
+            "requirements": {
+                "conflict": "≥ 85"
+            }
+        },
+        {
+            "id": "economic_collapse",
+            "name": "SUY THOÁI KINH TẾ",
+            "condition": "economic_failure",
+            "description": "Nền kinh tế sụp đổ hoàn toàn. Đất nước rơi vào khủng hoảng tài chính nghiêm trọng. Thất nghiệp cao, lạm phát tăng vọt. Bạn đã thất bại trong việc lãnh đạo kinh tế!",
+            "requirements": {
+                "economy": "≤ 10"
+            }
+        },
+        {
+            "id": "environmental_disaster",
+            "name": "THẢM HỌA MÔI TRƯỜNG",
+            "condition": "environmental_collapse",
+            "description": "Môi trường bị tàn phá nghiêm trọng. Biến đổi khí hậu và ô nhiễm đã làm đất nước không thể sinh sống được. Thảm họa sinh thái đã xảy ra!",
+            "requirements": {
+                "environment": "≤ 10"
+            }
+        },
+        {
+            "id": "authoritarian_stability",
+            "name": "ỔN ĐỊNH TOÀN TRỊ",
+            "condition": "stable_authoritarianism",
+            "description": "Bạn đã thiết lập một chế độ toàn trị ổn định. Trật tự được duy trì, nhưng với cái giá của tự do. Đất nước yên bình nhưng thiếu sự sáng tạo và phát triển.",
+            "requirements": {
+                "security": "≥ 80",
+                "freedom": "≤ 30",
+                "conflict": "≤ 20"
+            }
+        },
+        {
+            "id": "economic_emperor",
+            "name": "HOÀNG ĐẾ KINH TẾ",
+            "condition": "economic_excellence",
+            "description": "Nền kinh tế phát triển mạnh mẽ dưới sự lãnh đạo của bạn. Tăng trường GDP vượt trội, thu nhập bình quân tăng cao, thất nghiệp giảm xuống mức thấp kỷ lục. Bạn đã biến đất nước thành cường quốc kinh tế!",
+            "requirements": {
+                "economy": "≥ 85",
+                "min_turn": "≥ 10"
+            }
+        },
+        {
+            "id": "environmental_champion",
+            "name": "VUA BẢO VỆ MÔI TRƯỜNG",
+            "condition": "environmental_excellence",
+            "description": "Chính sách môi trường xuất sắc của bạn đã mang lại thành công vượt bậc. Không khí trong lành, rừng phục hồi, năng lượng tái tạo phát triển mạnh. Bạn đã biến đất nước thành thiên đường xanh với môi trường hoàn hảo!",
+            "requirements": {
+                "environment": "≥ 85",
+                "min_turn": "≥ 10"
+            }
+        },
+        {
+            "id": "natural_end",
+            "name": "KẾT THÚC NHIỆM KỲ",
+            "condition": "completed_term",
+            "description": "Bạn đã hoàn thành nhiệm kỳ cầm quyền. Dù còn nhiều thử thách, nhưng bạn đã cố gắng hết mình vì đất nước và nhân dân. Lịch sử sẽ đánh giá những đóng góp của bạn.",
+            "requirements": {
+                "completed_turns": "= max_turns"
+            }
+        }
+    ]
 }
