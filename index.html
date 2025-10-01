@@ -2494,7 +2494,7 @@ Hãy tạo sự kiện câu chuyện bằng tiếng Việt ngay bây giờ:`;
         eventDiv.innerHTML = `
     <div class="ai-story-modal">
       <div class="modal-header">
-        <div class="header-icon">📜</div>
+        <div class="header-icon">🎭</div>
         <h3>Biên niên sử - Lượt ${story.turn}</h3>
         <div class="turn-badge">Turn ${story.turn}</div>
       </div>
@@ -2531,7 +2531,7 @@ Hãy tạo sự kiện câu chuyện bằng tiếng Việt ngay bây giờ:`;
     </div>
   `;
 
-        // Enhanced styles
+        // ✅ Chỉnh màu sắc đồng nhất với theme chính của game
         const styles = document.createElement("style");
         styles.textContent = `
     .ai-story-event {
@@ -2541,7 +2541,7 @@ Hãy tạo sự kiện câu chuyện bằng tiếng Việt ngay bây giờ:`;
       right: 0;
       bottom: 0;
       background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(5px);
+      backdrop-filter: blur(10px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -2555,16 +2555,17 @@ Hãy tạo sự kiện câu chuyện bằng tiếng Việt ngay bây giờ:`;
     }
 
     .ai-story-modal {
-      background: linear-gradient(145deg, #2a1810, #1a1410);
-      border: 2px solid #8b4513;
+      background: linear-gradient(135deg, var(--background-light) 0%, var(--background-secondary) 100%);
+      border: 2px solid var(--primary-color);
       border-radius: 20px;
       max-width: 700px;
       max-height: 80vh;
       overflow-y: auto;
-      color: #f4e4bc;
+      color: var(--text-primary);
       box-shadow: 
-        0 0 40px rgba(139, 69, 19, 0.3),
-        inset 0 0 20px rgba(255, 215, 0, 0.1);
+        0 25px 60px rgba(0, 0, 0, 0.6),
+        0 0 40px var(--shadow-color),
+        inset 0 0 20px rgba(99, 102, 241, 0.1);
       position: relative;
       animation: slideIn 0.4s ease;
     }
@@ -2575,37 +2576,40 @@ Hãy tạo sự kiện câu chuyện bằng tiếng Việt ngay bây giờ:`;
     }
 
     .modal-header {
-      background: linear-gradient(135deg, #8b4513, #a0522d);
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
       padding: 1.5rem;
       border-radius: 18px 18px 0 0;
       display: flex;
       align-items: center;
       gap: 1rem;
       position: relative;
-      border-bottom: 2px solid #daa520;
+      border-bottom: 2px solid var(--accent-color);
     }
 
     .header-icon {
       font-size: 2rem;
       filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
+      color: white;
     }
 
     .modal-header h3 {
-      color: #ffd700;
+      color: white;
       margin: 0;
       font-size: 1.5rem;
       font-weight: bold;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
       flex: 1;
+      font-family: 'Poppins', sans-serif;
     }
 
     .turn-badge {
-      background: rgba(255, 215, 0, 0.2);
-      border: 1px solid #ffd700;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
       padding: 0.3rem 0.8rem;
       border-radius: 20px;
       font-size: 0.8rem;
-      color: #ffd700;
+      color: white;
+      backdrop-filter: blur(10px);
     }
 
     .story-content {
@@ -2617,89 +2621,98 @@ Hãy tạo sự kiện câu chuyện bằng tiếng Việt ngay bây giờ:`;
       font-size: 1rem;
       margin-bottom: 1.5rem;
       text-align: justify;
-      color: #f4e4bc;
-      background: rgba(139, 69, 19, 0.1);
+      color: var(--text-secondary);
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%);
       padding: 1.5rem;
-      border-radius: 10px;
-      border-left: 4px solid #daa520;
+      border-radius: 12px;
+      border-left: 4px solid var(--primary-color);
+      backdrop-filter: blur(10px);
     }
 
     .choices-section {
       margin-top: 2rem;
       padding-top: 1.5rem;
-      border-top: 2px solid #8b4513;
+      border-top: 2px solid var(--border-color);
     }
 
     .choices-section h4 {
-      color: #ffd700;
+      color: var(--primary-color);
       margin-bottom: 1rem;
       font-size: 1.2rem;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      text-align: center;
     }
 
     .choices-content {
-      background: rgba(139, 69, 19, 0.15);
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
       padding: 1rem;
-      border-radius: 10px;
-      border: 1px solid #8b4513;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      backdrop-filter: blur(10px);
     }
 
     .choice-option {
-      background: rgba(255, 215, 0, 0.1);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
       margin: 0.5rem 0;
       padding: 0.8rem;
       border-radius: 8px;
-      border-left: 3px solid #daa520;
-      transition: all 0.2s ease;
+      border-left: 3px solid var(--accent-color);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .choice-option:hover {
-      background: rgba(255, 215, 0, 0.2);
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
       transform: translateX(5px);
+      border-color: var(--primary-color);
+      box-shadow: 0 4px 15px var(--shadow-color);
     }
 
     .modal-footer {
-      background: linear-gradient(135deg, #1a1410, #2a1810);
+      background: linear-gradient(135deg, var(--background-secondary), var(--background-dark));
       padding: 1.5rem;
       border-radius: 0 0 18px 18px;
       display: flex;
       gap: 1rem;
       justify-content: center;
-      border-top: 2px solid #8b4513;
+      border-top: 2px solid var(--border-color);
     }
 
     .btn-primary, .btn-secondary {
       padding: 0.8rem 1.5rem;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
       font-weight: bold;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: all 0.3s ease;
       font-size: 0.9rem;
+      font-family: 'Poppins', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #daa520, #ffd700);
-      color: #1a1410;
-      box-shadow: 0 4px 8px rgba(218, 165, 32, 0.3);
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      box-shadow: 0 4px 15px var(--shadow-color);
     }
 
     .btn-primary:hover {
-      background: linear-gradient(135deg, #ffd700, #ffed4e);
+      background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
       transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(218, 165, 32, 0.4);
+      box-shadow: 0 8px 25px var(--shadow-color);
     }
 
     .btn-secondary {
-      background: linear-gradient(135deg, #8b4513, #a0522d);
-      color: #f4e4bc;
-      box-shadow: 0 4px 8px rgba(139, 69, 19, 0.3);
+      background: linear-gradient(135deg, var(--accent-color), var(--success-color));
+      color: white;
+      box-shadow: 0 4px 15px rgba(6, 214, 160, 0.3);
     }
 
     .btn-secondary:hover {
-      background: linear-gradient(135deg, #a0522d, #cd853f);
+      background: linear-gradient(135deg, var(--success-color), var(--accent-color));
       transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(139, 69, 19, 0.4);
+      box-shadow: 0 8px 25px rgba(6, 214, 160, 0.4);
     }
 
     /* Scrollbar styling */
@@ -2708,17 +2721,17 @@ Hãy tạo sự kiện câu chuyện bằng tiếng Việt ngay bây giờ:`;
     }
 
     .ai-story-modal::-webkit-scrollbar-track {
-      background: rgba(139, 69, 19, 0.2);
+      background: rgba(99, 102, 241, 0.1);
       border-radius: 10px;
     }
 
     .ai-story-modal::-webkit-scrollbar-thumb {
-      background: #8b4513;
+      background: var(--primary-color);
       border-radius: 10px;
     }
 
     .ai-story-modal::-webkit-scrollbar-thumb:hover {
-      background: #a0522d;
+      background: var(--secondary-color);
     }
 
     /* Responsive */
@@ -2740,15 +2753,27 @@ Hãy tạo sự kiện câu chuyện bằng tiếng Việt ngay bây giờ:`;
         flex-direction: column;
       }
     }
+
+    /* Glow effects */
+    .modal-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+      animation: headerGlow 3s ease-in-out infinite;
+    }
+
+    @keyframes headerGlow {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
   `;
 
         document.head.appendChild(styles);
         document.body.appendChild(eventDiv);
-
-        // Thêm hiệu ứng âm thanh (optional)
-        // const audio = new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmYfCj2Z2O/EcyQGLIHO9tiKNwgZZ7rr7qhxGAA');
-        // audio.volume = 0.3;
-        // audio.play().catch(() => {}); // Ignore audio errors
       }
 
       // Load game data
@@ -3874,8 +3899,6 @@ Hãy tạo sự kiện câu chuyện bằng tiếng Việt ngay bây giờ:`;
           console.log("🔒 Game already ended, skipping checks");
           return true;
         }
-
-
 
         // 🚨 KIỂM TRA CÁC TRƯỜNG HỢP CỰC ĐOAN TRƯỚC (ưu tiên cao nhất)
         console.log("🚨 Checking critical failure conditions first...");
