@@ -42,6 +42,41 @@
         overflow-x: hidden;
       }
 
+      .audio-controls {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 1000;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 10px;
+        border-radius: 8px;
+        color: white;
+        font-size: 12px;
+      }
+
+      .audio-controls button {
+        background: #4caf50;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-left: 5px;
+        font-size: 11px;
+      }
+
+      .audio-controls button:hover {
+        background: #45a049;
+      }
+
+      .audio-controls button.muted {
+        background: #f44336;
+      }
+
+      .volume-slider {
+        width: 60px;
+        margin-left: 10px;
+      }
       body {
         margin: 0;
         padding: 0;
@@ -1929,6 +1964,28 @@
         </div>
       </div>
 
+      <!-- Audio Elements -->
+      <audio id="backgroundMusic" loop>
+        <source src="audio/backroundMusic.mp3" type="audio/mpeg" />
+        Trình duyệt không hỗ trợ audio.
+      </audio>
+
+      <!-- Audio Controls UI -->
+      <div class="audio-controls">
+        <span>🎵 Nhạc nền:</span>
+        <button id="toggleMusic" onclick="toggleBackgroundMusic()">🔊</button>
+        <input
+          type="range"
+          id="volumeSlider"
+          class="volume-slider"
+          min="0"
+          max="100"
+          value="50"
+          onchange="changeVolume(this.value)"
+        />
+        <span id="volumeDisplay">50%</span>
+      </div>
+
       <!-- Random Events now display as center screen popups -->
 
       <!-- Game End -->
@@ -2921,6 +2978,7 @@ Hãy tạo sự kiện câu chuyện bằng tiếng Việt ngay bây giờ:`;
       // Initialize game
       function startGame() {
         console.log("🎮 Starting game...");
+        startBackgroundMusic();
 
         // Chỉ setup gameState nếu chưa có hoặc chưa được setup từ difficulty selection
         if (!gameState || !gameState.stats.hasOwnProperty("economy")) {
@@ -4118,11 +4176,102 @@ Hãy tạo sự kiện câu chuyện bằng tiếng Việt ngay bây giờ:`;
         }
       });
 
+      // Audio variables
+      let backgroundMusic = null;
+      let isMusicPlaying = false;
+      let currentVolume = 0.5;
+
+      // Initialize audio system
+      function initAudio() {
+        backgroundMusic = document.getElementById("backgroundMusic");
+
+        if (backgroundMusic) {
+          backgroundMusic.volume = currentVolume;
+
+          backgroundMusic.addEventListener("canplaythrough", function () {
+            console.log("Background music loaded successfully");
+          });
+
+          backgroundMusic.addEventListener("ended", function () {
+            if (isMusicPlaying) {
+              backgroundMusic.currentTime = 0;
+              backgroundMusic.play();
+            }
+          });
+
+          backgroundMusic.addEventListener("error", function (e) {
+            console.log("Error loading background music:", e);
+            document.querySelector(".audio-controls").style.display = "none";
+          });
+        }
+      }
+
+      // Toggle background music on/off
+      function toggleBackgroundMusic() {
+        if (!backgroundMusic) return;
+
+        const toggleBtn = document.getElementById("toggleMusic");
+
+        if (isMusicPlaying) {
+          backgroundMusic.pause();
+          isMusicPlaying = false;
+          toggleBtn.textContent = "🔇";
+          toggleBtn.classList.add("muted");
+        } else {
+          const playPromise = backgroundMusic.play();
+
+          if (playPromise !== undefined) {
+            playPromise
+              .then((_) => {
+                isMusicPlaying = true;
+                toggleBtn.textContent = "🔊";
+                toggleBtn.classList.remove("muted");
+              })
+              .catch((error) => {
+                console.log("Auto-play prevented:", error);
+                alert("Vui lòng click vào trang để bật nhạc nền!");
+              });
+          }
+        }
+      }
+
+      // Change volume
+      function changeVolume(value) {
+        currentVolume = value / 100;
+        if (backgroundMusic) {
+          backgroundMusic.volume = currentVolume;
+        }
+        document.getElementById("volumeDisplay").textContent = value + "%";
+      }
+
+      // Start background music when game begins
+      function startBackgroundMusic() {
+        if (backgroundMusic && !isMusicPlaying) {
+          const playPromise = backgroundMusic.play();
+
+          if (playPromise !== undefined) {
+            playPromise
+              .then((_) => {
+                isMusicPlaying = true;
+                const toggleBtn = document.getElementById("toggleMusic");
+                if (toggleBtn) {
+                  toggleBtn.textContent = "🔊";
+                  toggleBtn.classList.remove("muted");
+                }
+              })
+              .catch((error) => {
+                console.log("Background music auto-start failed:", error);
+              });
+          }
+        }
+      }
+
       // Initialize when page loads
       window.addEventListener("load", function () {
         console.log("Political Simulator loaded with difficulty modes and comprehensive guide");
         // Add keyboard event listener
         window.addEventListener("keydown", handleKeyPress);
+        initAudio();
       });
     </script>
   </body>
