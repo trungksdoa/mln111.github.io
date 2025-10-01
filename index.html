@@ -36,7 +36,8 @@
         padding: 0;
       }
 
-      html, body {
+      html,
+      body {
         width: 100%;
         overflow-x: hidden;
       }
@@ -53,14 +54,13 @@
       }
 
       body::before {
-        content: '';
+        content: "";
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: 
-          radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+        background: radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
           radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
           radial-gradient(circle at 40% 80%, rgba(6, 214, 160, 0.05) 0%, transparent 50%);
         pointer-events: none;
@@ -84,8 +84,12 @@
       }
 
       @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
       }
 
       .difficulty-modal {
@@ -103,7 +107,7 @@
       }
 
       .difficulty-modal::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
@@ -125,7 +129,7 @@
       }
 
       .difficulty-option::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: -100%;
@@ -206,21 +210,25 @@
       }
 
       .start-screen::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: 
-          radial-gradient(circle at 30% 30%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+        background: radial-gradient(circle at 30% 30%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
           radial-gradient(circle at 70% 70%, rgba(139, 92, 246, 0.15) 0%, transparent 50%);
         animation: pulse 4s ease-in-out infinite;
       }
 
       @keyframes pulse {
-        0%, 100% { opacity: 0.5; }
-        50% { opacity: 1; }
+        0%,
+        100% {
+          opacity: 0.5;
+        }
+        50% {
+          opacity: 1;
+        }
       }
 
       .start-screen.hidden {
@@ -247,8 +255,13 @@
       }
 
       @keyframes titleGlow {
-        0%, 100% { filter: brightness(1); }
-        50% { filter: brightness(1.2); }
+        0%,
+        100% {
+          filter: brightness(1);
+        }
+        50% {
+          filter: brightness(1.2);
+        }
       }
 
       .start-subtitle {
@@ -281,7 +294,7 @@
       }
 
       .start-btn::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: -100%;
@@ -507,13 +520,24 @@
       }
 
       @keyframes alertSlide {
-        from { top: -50px; opacity: 0; }
-        to { top: 80px; opacity: 1; }
+        from {
+          top: -50px;
+          opacity: 0;
+        }
+        to {
+          top: 80px;
+          opacity: 1;
+        }
       }
 
       @keyframes alertPulse {
-        0%, 100% { transform: translateX(-50%) scale(1); }
-        50% { transform: translateX(-50%) scale(1.05); }
+        0%,
+        100% {
+          transform: translateX(-50%) scale(1);
+        }
+        50% {
+          transform: translateX(-50%) scale(1.05);
+        }
       }
 
       /* Header */
@@ -546,7 +570,7 @@
       }
 
       .header::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: -20px;
         left: 50%;
@@ -584,7 +608,7 @@
       }
 
       .stat::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
@@ -639,9 +663,15 @@
       }
 
       @keyframes statChange {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.2); }
-        100% { transform: scale(1); }
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(1);
+        }
       }
 
       /* Change Indicator */
@@ -667,9 +697,18 @@
       }
 
       @keyframes changeIndicator {
-        0% { opacity: 0; transform: scale(0) rotate(180deg); }
-        20% { opacity: 1; transform: scale(1.2) rotate(0deg); }
-        100% { opacity: 0; transform: scale(0.8) rotate(0deg); }
+        0% {
+          opacity: 0;
+          transform: scale(0) rotate(180deg);
+        }
+        20% {
+          opacity: 1;
+          transform: scale(1.2) rotate(0deg);
+        }
+        100% {
+          opacity: 0;
+          transform: scale(0.8) rotate(0deg);
+        }
       }
 
       /* Effect Items in Choices */
@@ -693,26 +732,31 @@
       }
 
       @keyframes highImpactEffect {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.05); }
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
       }
 
       /* Demo Animation */
       @keyframes slideIn {
-        from { 
-          opacity: 0; 
-          transform: translate(-50%, -60%) scale(0.8); 
+        from {
+          opacity: 0;
+          transform: translate(-50%, -60%) scale(0.8);
         }
-        to { 
-          opacity: 1; 
-          transform: translate(-50%, -50%) scale(1); 
+        to {
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(1);
         }
       }
 
       /* Random Event Animations */
       @keyframes eventSlideIn {
-        0% { 
-          opacity: 0; 
+        0% {
+          opacity: 0;
           transform: translate(-50%, -60%) scale(0.7) rotate(5deg);
           filter: blur(10px);
         }
@@ -720,31 +764,32 @@
           transform: translate(-50%, -45%) scale(1.05) rotate(0deg);
           filter: blur(2px);
         }
-        100% { 
-          opacity: 1; 
+        100% {
+          opacity: 1;
           transform: translate(-50%, -50%) scale(1) rotate(0deg);
           filter: blur(0px);
         }
       }
 
       @keyframes eventSlideOut {
-        0% { 
-          opacity: 1; 
+        0% {
+          opacity: 1;
           transform: translate(-50%, -50%) scale(1);
         }
-        100% { 
-          opacity: 0; 
+        100% {
+          opacity: 0;
           transform: translate(-50%, -30%) scale(0.8);
           filter: blur(5px);
         }
       }
 
       @keyframes eventTitleGlow {
-        0%, 100% { 
+        0%,
+        100% {
           text-shadow: 0 0 20px currentColor;
           transform: scale(1);
         }
-        50% { 
+        50% {
           text-shadow: 0 0 30px currentColor, 0 0 40px currentColor;
           transform: scale(1.02);
         }
@@ -760,7 +805,7 @@
       }
 
       .stat-bar::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
@@ -771,8 +816,12 @@
       }
 
       @keyframes shimmer {
-        0% { transform: translateX(-100%); }
-        100% { transform: translateX(100%); }
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(100%);
+        }
       }
 
       .stat-fill {
@@ -804,17 +853,29 @@
       }
 
       @keyframes criticalPulse {
-        0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(239, 68, 68, 0.4); }
-        50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(239, 68, 68, 0.6); }
+        0%,
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 20px rgba(239, 68, 68, 0.4);
+        }
+        50% {
+          transform: scale(1.05);
+          box-shadow: 0 0 30px rgba(239, 68, 68, 0.6);
+        }
       }
 
       @keyframes warningGlow {
-        0%, 100% { box-shadow: 0 0 15px rgba(245, 158, 11, 0.3); }
-        50% { box-shadow: 0 0 25px rgba(245, 158, 11, 0.5); }
+        0%,
+        100% {
+          box-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
+        }
+        50% {
+          box-shadow: 0 0 25px rgba(245, 158, 11, 0.5);
+        }
       }
 
       .stat-fill::after {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
@@ -825,8 +886,12 @@
       }
 
       @keyframes fillShimmer {
-        0% { transform: translateX(-100%); }
-        100% { transform: translateX(100%); }
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(100%);
+        }
       }
 
       /* Game Info */
@@ -888,8 +953,13 @@
       }
 
       @keyframes demoGlow {
-        0%, 100% { box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3); }
-        50% { box-shadow: 0 6px 25px rgba(245, 158, 11, 0.5); }
+        0%,
+        100% {
+          box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        }
+        50% {
+          box-shadow: 0 6px 25px rgba(245, 158, 11, 0.5);
+        }
       }
 
       .change-difficulty-btn {
@@ -914,8 +984,13 @@
       }
 
       @keyframes changeModeGlow {
-        0%, 100% { box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3); }
-        50% { box-shadow: 0 6px 25px rgba(139, 92, 246, 0.5); }
+        0%,
+        100% {
+          box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+        }
+        50% {
+          box-shadow: 0 6px 25px rgba(139, 92, 246, 0.5);
+        }
       }
 
       .debug-btn {
@@ -938,7 +1013,8 @@
         box-shadow: 0 8px 25px rgba(6, 214, 160, 0.4);
       }
 
-      .turn-counter, .scenario-counter {
+      .turn-counter,
+      .scenario-counter {
         font-size: 1.2em;
         font-weight: 600;
         color: var(--warning-color);
@@ -959,8 +1035,13 @@
       }
 
       @keyframes lateGamePulse {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.05); }
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
       }
 
       .scenario-counter {
@@ -993,7 +1074,7 @@
       }
 
       .story-section::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
@@ -1002,7 +1083,7 @@
         background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
         border-radius: 20px 20px 0 0;
       }
-      
+
       .story-section.loading {
         opacity: 0.7;
         transform: scale(0.98);
@@ -1049,7 +1130,7 @@
       }
 
       .choice::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: -100%;
@@ -1062,7 +1143,7 @@
       .choice:hover:not(.disabled)::before {
         left: 100%;
       }
-      
+
       .choice.disabled {
         pointer-events: none;
         opacity: 0.4;
@@ -1098,8 +1179,13 @@
       }
 
       @keyframes highImpactGlow {
-        0%, 100% { box-shadow: 0 4px 20px rgba(239, 68, 68, 0.2); }
-        50% { box-shadow: 0 8px 30px rgba(239, 68, 68, 0.4); }
+        0%,
+        100% {
+          box-shadow: 0 4px 20px rgba(239, 68, 68, 0.2);
+        }
+        50% {
+          box-shadow: 0 8px 30px rgba(239, 68, 68, 0.4);
+        }
       }
 
       .choice-title {
@@ -1161,7 +1247,7 @@
       }
 
       .random-event::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
@@ -1172,8 +1258,13 @@
       }
 
       @keyframes eventGlow {
-        0%, 100% { opacity: 0.5; }
-        50% { opacity: 1; }
+        0%,
+        100% {
+          opacity: 0.5;
+        }
+        50% {
+          opacity: 1;
+        }
       }
 
       .event-title {
@@ -1269,7 +1360,7 @@
       }
 
       .game-end::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
@@ -1280,8 +1371,13 @@
       }
 
       @keyframes endingGlow {
-        0%, 100% { opacity: 0.6; }
-        50% { opacity: 1; }
+        0%,
+        100% {
+          opacity: 0.6;
+        }
+        50% {
+          opacity: 1;
+        }
       }
 
       .game-end h2 {
@@ -1326,7 +1422,7 @@
       }
 
       .restart-btn::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: -100%;
@@ -1350,16 +1446,16 @@
         .container {
           padding: 20px;
         }
-        
+
         .header h1 {
           font-size: 3em;
         }
-        
+
         .game-layout {
           grid-template-columns: 320px 1fr;
           gap: 25px;
         }
-        
+
         .stats-panel {
           padding: 20px;
         }
@@ -1370,22 +1466,22 @@
           grid-template-columns: 1fr;
           gap: 30px;
         }
-        
+
         .left-panel {
           position: static;
           order: 1;
         }
-        
+
         .right-panel {
           order: 2;
           min-height: auto;
         }
-        
+
         .stats-panel {
           grid-template-columns: repeat(3, 1fr);
           gap: 15px;
         }
-        
+
         .game-info {
           flex-direction: row;
           flex-wrap: wrap;
@@ -1398,7 +1494,7 @@
           padding: 15px;
           max-width: 100%;
         }
-        
+
         .start-title {
           font-size: 2.5em;
         }
@@ -1437,7 +1533,9 @@
           text-align: center;
         }
 
-        .turn-counter, .scenario-counter, .game-score {
+        .turn-counter,
+        .scenario-counter,
+        .game-score {
           font-size: 1em;
           padding: 8px 12px;
         }
@@ -1472,7 +1570,7 @@
         .container {
           padding: 10px;
         }
-        
+
         .start-title {
           font-size: 2em;
         }
@@ -1532,7 +1630,9 @@
           width: calc(100% - 10px);
         }
 
-        .turn-counter, .scenario-counter, .game-score {
+        .turn-counter,
+        .scenario-counter,
+        .game-score {
           font-size: 0.9em;
           padding: 6px 10px;
         }
@@ -1553,8 +1653,10 @@
           --border-color: #666;
           --text-secondary: #fff;
         }
-        
-        .choice, .stat, .story-section {
+
+        .choice,
+        .stat,
+        .story-section {
           border-width: 2px;
         }
       }
@@ -1776,7 +1878,7 @@
         <!-- Left Column - Stats & Info -->
         <div class="left-panel">
           <div class="panel-title">📊 BẢNG ĐIỀU KHIỂN</div>
-          
+
           <!-- Stats Panel -->
           <div class="stats-panel" id="statsPanel">
             <!-- Stats will be populated by JavaScript -->
@@ -1787,23 +1889,25 @@
             <div class="turn-counter">Lượt <span id="turnCounter">1</span></div>
             <div class="scenario-counter">Tình huống: <span id="scenarioCount">2</span>/20</div>
             <div class="game-score">Điểm <span id="gameScore">0</span></div>
-            <button id="reloadDataBtn" class="reload-btn" onclick="reloadGameData()" title="Tải lại dữ liệu game sau khi setup server">
+            <button
+              id="reloadDataBtn"
+              class="reload-btn"
+              onclick="reloadGameData()"
+              title="Tải lại dữ liệu game sau khi setup server"
+            >
               🔄 Tải lại dữ liệu
             </button>
-            <button onclick="demoRandomEvent()" class="demo-btn" title="Xem demo random event">
-              🎲 Demo Event
-            </button>
+            <button onclick="demoRandomEvent()" class="demo-btn" title="Xem demo random event">🎲 Demo Event</button>
             <button onclick="changeDifficulty()" class="change-difficulty-btn" title="Đổi độ khó và reset game">
               ⚙️ Đổi Mode
             </button>
-
           </div>
         </div>
 
         <!-- Right Column - Story & Choices -->
         <div class="right-panel">
           <div class="panel-title">📖 TÌNH HUỐNG & LỰA CHỌN</div>
-          
+
           <!-- Story Section -->
           <div class="story-section">
             <div class="story-title" id="storyTitle">Bắt đầu nhiệm kỳ</div>
@@ -1816,26 +1920,40 @@
           <div class="choices-grid" id="choicesGrid">
             <!-- Choices will be populated by JavaScript -->
           </div>
+
+          <div class="game-end" id="gameEnd" style="display: none">
+            <h2 id="endingTitle">Game Over</h2>
+            <div class="ending-description" id="endingDescription"></div>
+            <button class="restart-btn" onclick="restartGame()">Chơi lại</button>
+          </div>
         </div>
       </div>
 
       <!-- Random Events now display as center screen popups -->
 
       <!-- Game End -->
-      <div class="game-end" id="gameEnd" style="display: none">
+      <!-- <div class="game-end" id="gameEnd" style="display: none">
         <h2 id="endingTitle">Game Over</h2>
         <div class="ending-description" id="endingDescription"></div>
         <button class="restart-btn" onclick="restartGame()">Chơi lại</button>
-      </div>
+      </div> -->
     </div>
 
     <script>
       // === DIFFICULTY MODES SYSTEM ===
 
+      // Gemini AI Configuration
+      const GEMINI_API_KEY = "AIzaSyC9gp_B0IZiOW1LBGtaFjGD9wnVmcuYxD0";
+      // const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent';
+      // const apiKey = "YOUR_API_KEY";
+      const GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent";
+      let aiGeneratedStoryCache = [];
+
       // Global game state
       let currentDifficulty = "normal";
       let maxTurns = 30;
       let gameState = {
+        turnMode: 1,
         currentTurn: 1,
         stats: {
           discontent: 45,
@@ -1915,9 +2033,8 @@
 
       // Game data
       let gameStoryData = [];
-      let randomEventsData = [];
       let randomEventsWithChoicesData = [];
-      
+
       // Event tracking to prevent repetition
       let usedEvents = new Set();
       let lastEventTurn = 0;
@@ -1929,14 +2046,15 @@
 
       // Demo function to trigger random event immediately
       function demoRandomEvent() {
-        console.log('🎪 Demo: Triggering random event...');
-        
-        if (randomEventsData.length > 0) {
+        console.log("🎪 Demo: Triggering random event...");
+
+        if (randomEventsWithChoicesData.length > 0) {
           // Pick a random event for demo
-          const randomEvent = randomEventsData[Math.floor(Math.random() * randomEventsData.length)];
-          
+          const randomEvent =
+            randomEventsWithChoicesData[Math.floor(Math.random() * randomEventsWithChoicesData.length)];
+
           // Create demo event display
-          const demoDiv = document.createElement('div');
+          const demoDiv = document.createElement("div");
           demoDiv.style.cssText = `
             position: fixed;
             top: 50%;
@@ -1953,19 +2071,19 @@
             animation: slideIn 0.5s ease-out;
             backdrop-filter: blur(10px);
           `;
-          
+
           // Determine event severity color
-          const isHighImpact = Object.values(randomEvent.effects).some(val => Math.abs(val) >= 15);
-          const severityColor = isHighImpact ? '#ef4444' : '#f59e0b';
-          const severityIcon = isHighImpact ? '💥' : '⚡';
-          
+          const isHighImpact = Object.values(randomEvent.effects).some((val) => Math.abs(val) >= 15);
+          const severityColor = isHighImpact ? "#ef4444" : "#f59e0b";
+          const severityIcon = isHighImpact ? "💥" : "⚡";
+
           demoDiv.innerHTML = `
             <div style="text-align: center; margin-bottom: 25px;">
               <h2 style="color: ${severityColor}; margin-bottom: 10px; font-size: 1.5em;">
                 ${severityIcon} RANDOM EVENT DEMO ${severityIcon}
               </h2>
               <div style="background: rgba(245, 158, 11, 0.1); padding: 8px 16px; border-radius: 20px; display: inline-block; font-size: 0.9em; color: #f59e0b;">
-                ID: ${randomEvent.id} | ${randomEvent.rarity?.toUpperCase() || 'NORMAL'}
+                ID: ${randomEvent.id} | ${randomEvent.rarity?.toUpperCase() || "NORMAL"}
               </div>
             </div>
             
@@ -1980,38 +2098,50 @@
             <div style="background: rgba(99, 102, 241, 0.1); padding: 20px; border-radius: 15px; margin-bottom: 25px; border: 1px solid rgba(99, 102, 241, 0.3);">
               <h4 style="color: #6366f1; margin-bottom: 15px; text-align: center;">📊 Tác Động Lên Chỉ Số:</h4>
               <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
-                ${Object.entries(randomEvent.effects).map(([stat, change]) => 
-                  `<span style="
+                ${Object.entries(randomEvent.effects)
+                  .map(
+                    ([stat, change]) =>
+                      `<span style="
                     display: inline-block; 
                     padding: 8px 12px; 
-                    background: ${change > 0 ? 'rgba(239, 68, 68, 0.2)' : 'rgba(16, 185, 129, 0.2)'}; 
-                    border: 1px solid ${change > 0 ? '#ef4444' : '#10b981'};
+                    background: ${change > 0 ? "rgba(239, 68, 68, 0.2)" : "rgba(16, 185, 129, 0.2)"}; 
+                    border: 1px solid ${change > 0 ? "#ef4444" : "#10b981"};
                     border-radius: 20px; 
-                    color: ${change > 0 ? '#ef4444' : '#10b981'};
+                    color: ${change > 0 ? "#ef4444" : "#10b981"};
                     font-weight: 600;
                     font-size: 0.95em;
-                    ${Math.abs(change) >= 15 ? 'animation: highImpactEffect 2s infinite;' : ''}
+                    ${Math.abs(change) >= 15 ? "animation: highImpactEffect 2s infinite;" : ""}
                   ">
-                    ${statLabels[stat] || stat}: ${change > 0 ? '+' : ''}${change}
+                    ${statLabels[stat] || stat}: ${change > 0 ? "+" : ""}${change}
                   </span>`
-                ).join('')}
+                  )
+                  .join("")}
               </div>
             </div>
             
-            ${randomEvent.conditions ? `
+            ${
+              randomEvent.conditions
+                ? `
               <div style="background: rgba(139, 92, 246, 0.1); padding: 15px; border-radius: 10px; margin-bottom: 20px; border: 1px solid rgba(139, 92, 246, 0.3);">
                 <h5 style="color: #8b5cf6; margin-bottom: 10px; text-align: center;">🎯 Điều Kiện Kích Hoạt:</h5>
                 <div style="font-size: 0.9em; color: #cbd5e1; text-align: center;">
-                  ${Object.entries(randomEvent.conditions).filter(([key]) => key !== 'min_turn').map(([stat, condition]) => {
-                    if (typeof condition === 'object') {
-                      return `${statLabels[stat] || stat}: ${condition.min ? '≥' + condition.min : ''}${condition.max ? '≤' + condition.max : ''}`;
-                    }
-                    return `${stat}: ${condition}`;
-                  }).join(' • ')}
-                  ${randomEvent.conditions.min_turn ? `• Từ lượt ${randomEvent.conditions.min_turn}` : ''}
+                  ${Object.entries(randomEvent.conditions)
+                    .filter(([key]) => key !== "min_turn")
+                    .map(([stat, condition]) => {
+                      if (typeof condition === "object") {
+                        return `${statLabels[stat] || stat}: ${condition.min ? "≥" + condition.min : ""}${
+                          condition.max ? "≤" + condition.max : ""
+                        }`;
+                      }
+                      return `${stat}: ${condition}`;
+                    })
+                    .join(" • ")}
+                  ${randomEvent.conditions.min_turn ? `• Từ lượt ${randomEvent.conditions.min_turn}` : ""}
                 </div>
               </div>
-            ` : ''}
+            `
+                : ""
+            }
             
             <div style="text-align: center;">
               <button onclick="this.parentElement.parentElement.remove()" 
@@ -2020,60 +2150,57 @@
               </button>
             </div>
           `;
-          
+
           document.body.appendChild(demoDiv);
-          
+
           // Add hover effect to close button
-          const closeBtn = demoDiv.querySelector('button');
-          closeBtn.addEventListener('mouseenter', function() {
-            this.style.transform = 'scale(1.05)';
-            this.style.boxShadow = '0 8px 25px rgba(245, 158, 11, 0.4)';
+          const closeBtn = demoDiv.querySelector("button");
+          closeBtn.addEventListener("mouseenter", function () {
+            this.style.transform = "scale(1.05)";
+            this.style.boxShadow = "0 8px 25px rgba(245, 158, 11, 0.4)";
           });
-          closeBtn.addEventListener('mouseleave', function() {
-            this.style.transform = 'scale(1)';
-            this.style.boxShadow = 'none';
+          closeBtn.addEventListener("mouseleave", function () {
+            this.style.transform = "scale(1)";
+            this.style.boxShadow = "none";
           });
-          
         } else {
           // Fallback demo with sample data if events not loaded
           const sampleEvent = {
-            id: 'DEMO',
-            title: 'DEMO: TẤN CÔNG MẠNG QUY MÔ LỚN!',
-            text: 'Đây là demo một random event. Nhóm hacker quốc tế tấn công hệ thống ngân hàng do hệ thống bảo mật yếu kém!',
+            id: "DEMO",
+            title: "DEMO: TẤN CÔNG MẠNG QUY MÔ LỚN!",
+            text: "Đây là demo một random event. Nhóm hacker quốc tế tấn công hệ thống ngân hàng do hệ thống bảo mật yếu kém!",
             effects: {
               discontent: 15,
               conflict: 10,
               economy: -12,
               freedom: -8,
-              security: -10
+              security: -10,
             },
-            rarity: 'conditional',
+            rarity: "conditional",
             conditions: {
-              security: {max: 30},
-              min_turn: 3
-            }
+              security: { max: 30 },
+              min_turn: 3,
+            },
           };
-          
+
           // Use sample event for demo
-          alert('Đang load demo event... Random events data chưa sẵn sàng!');
-          console.log('Sample demo event:', sampleEvent);
+          alert("Đang load demo event... Random events data chưa sẵn sàng!");
+          console.log("Sample demo event:", sampleEvent);
         }
       }
 
-
-
       // Function to change difficulty (auto-reset stats)
       function changeDifficulty() {
-        if (confirm('⚙️ Bạn có muốn đổi độ khó không? Game sẽ được reset và áp dụng chỉ số mới.')) {
-          console.log('⚙️ Changing difficulty...');
-          
+        if (confirm("⚙️ Bạn có muốn đổi độ khó không? Game sẽ được reset và áp dụng chỉ số mới.")) {
+          console.log("⚙️ Changing difficulty...");
+
           // Hide current game
-          document.getElementById('gameContainer').style.display = 'none';
-          
+          document.getElementById("gameContainer").style.display = "none";
+
           // Show difficulty selection again với chế độ reset
           showDifficultySelection(true); // true = reset mode
-          
-          console.log('✅ Difficulty selection shown');
+
+          console.log("✅ Difficulty selection shown");
         }
       }
 
@@ -2086,12 +2213,13 @@
 
         // RESET HOÀN TOÀN game state
         gameState = {
+          turnMode: mode.maxTurns,
           currentTurn: 1,
           usedScenarios: [],
           stats: { ...mode.startingStats },
           score: 0,
         };
-        
+
         maxTurns = mode.maxTurns;
 
         // Reset events tracking
@@ -2126,8 +2254,8 @@
       function showDifficultySelection(resetMode = false) {
         document.getElementById("startScreen").classList.add("hidden");
 
-        const functionToCall = resetMode ? 'selectDifficultyAndReset' : 'selectDifficulty';
-        const titleText = resetMode ? '🔄 ĐỔI ĐỘ KHÓ & RESET' : '🎮 CHỌN ĐỘ KHÓ';
+        const functionToCall = resetMode ? "selectDifficultyAndReset" : "selectDifficulty";
+        const titleText = resetMode ? "🔄 ĐỔI ĐỘ KHÓ & RESET" : "🎮 CHỌN ĐỘ KHÓ";
 
         const difficultyHTML = `
         <div class="difficulty-selection" id="difficultySelection">
@@ -2143,7 +2271,9 @@
                   <h3>${mode.name}</h3>
                   <p>${mode.description}</p>
                   <div class="difficulty-stats">
-                    Economy ${mode.startingStats.economy} | Security ${mode.startingStats.security} | Freedom ${mode.startingStats.freedom} | 
+                    Economy ${mode.startingStats.economy} | Security ${mode.startingStats.security} | Freedom ${
+                    mode.startingStats.freedom
+                  } | 
                     Rounds: ${mode.maxTurns} | 
                     Events: ${Math.round(mode.randomEventsFrequency * 100)}%
                   </div>
@@ -2178,7 +2308,7 @@
           // Nếu đang có game, CHỈ cập nhật difficulty settings
           console.log(`🔄 Game đang chạy, chỉ cập nhật difficulty settings`);
         }
-        
+
         maxTurns = mode.maxTurns;
 
         // Remove difficulty selection screen
@@ -2187,12 +2317,18 @@
           difficultyModal.remove();
         }
 
+        // Remove existing difficulty indicator if any
+        const existingIndicator = document.getElementById("difficulty-indicator");
+        if (existingIndicator) {
+          existingIndicator.remove();
+        }
+
         // Show difficulty indicator nếu chưa có
         if (!document.getElementById("difficulty-indicator")) {
           showDifficultyIndicator(mode.name);
         }
 
-        console.log(`✅ Difficulty selected (no reset):`, gameState?.stats || 'No game state yet');
+        console.log(`✅ Difficulty selected (no reset):`, gameState?.stats || "No game state yet");
 
         // ✨ CẬP NHẬT UI (nếu có gameState)
         if (gameState) {
@@ -2231,180 +2367,425 @@
         return modifiedEffects;
       }
 
+      // Generate story using Gemini AI
+      async function generateAIStory() {
+        try {
+          // Prepare context from game state
+          const context = {
+            turn: gameState.currentTurn,
+            stats: gameState.stats,
+            history: gameState.eventHistory?.slice(-5) || [],
+            difficulty: currentDifficulty,
+          };
+
+          // Prompt tiếng Việt cho tạo câu chuyện
+          const storyPrompt = `
+Bạn là một nhà thiết kế kịch bản game chuyên nghiệp. Hãy tạo một sự kiện câu chuyện hấp dẫn cho game chiến lược/mô phỏng.
+
+BỐI CẢNH GAME:
+- Lượt hiện tại: ${context.turn}
+- Chỉ số người chơi: ${JSON.stringify(context.stats)}
+- Các sự kiện gần đây: ${JSON.stringify(context.history)}
+- Mức độ khó: ${context.difficulty}
+
+YÊU CẦU:
+1. Viết một sự kiện câu chuyện hấp dẫn (150-250 từ):
+   - Phản ánh tình trạng game hiện tại và tiến độ người chơi
+   - Đưa ra hậu quả có ý nghĩa dựa trên chỉ số người chơi
+   - Phù hợp với mức độ khó ${context.difficulty}
+   - Tạo ra căng thẳng và sự tham gia
+
+2. Câu chuyện nên:
+   - Có câu mở đầu kịch tính
+   - Bao gồm chi tiết cụ thể liên quan đến tình huống hiện tại của người chơi
+   - Trình bày tình huống thử thách có thể ảnh hưởng đến gameplay tương lai
+   - Kết thúc bằng một tình huống hồi hộp hoặc thời điểm quyết định quan trọng
+
+3. Giọng điệu và phong cách:
+   - Viết ở ngôi thứ hai ("Bạn phát hiện...", "Quốc gia của bạn đối mặt...")
+   - Sử dụng ngôn ngữ sinh động, đắm chìm
+   - Cân bằng giữa yếu tố kịch tính và chiến lược
+   - Duy trì tính nhất quán với các sự kiện trước đó
+
+4. Xem xét các yếu tố này:
+   - Nếu chỉ số cao: Đưa ra cơ hội tham vọng hoặc mối đe dọa lớn hơn
+   - Nếu chỉ số thấp: Tập trung vào kịch bản sinh tồn hoặc phục hồi
+   - Nếu số lượt cao: Làm leo thang các xung đột hiện có
+   - Nếu số lượt thấp: Giới thiệu những bí ẩn mới hoặc nền tảng
+
+ĐỊNH DẠNG MẪU:
+"Khi bình minh ló dạng trên lãnh thổ của bạn, một sứ giả đến với tin tức khẩn cấp sẽ thử thách mọi thứ bạn đã xây dựng. [Tiếp tục với câu chuyện kết hợp các chỉ số và tạo ra những lựa chọn có ý nghĩa...]"
+
+Hãy tạo sự kiện câu chuyện bằng tiếng Việt ngay bây giờ:`;
+
+          const response = await fetch(`${GEMINI_API_URL}?key=${GEMINI_API_KEY}`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              contents: [
+                {
+                  parts: [
+                    {
+                      text: storyPrompt,
+                    },
+                  ],
+                },
+              ],
+              generationConfig: {
+                temperature: 0.9, // Tính sáng tạo cao
+                topK: 40, // Lựa chọn từ đa dạng
+                topP: 0.95, // Sáng tạo nhưng tập trung
+                maxOutputTokens: 400, // Giới hạn độ dài phản hồi (tăng cho tiếng Việt)
+              },
+            }),
+          });
+
+          if (!response.ok) {
+            const errorData = await response.json();
+            console.error("API Error:", errorData);
+            throw new Error(`AI API call failed: ${response.status}`);
+          }
+
+          const data = await response.json();
+          const generatedStory = {
+            title: "🎭 Sự kiện đặc biệt",
+            description: data.candidates[0].content.parts[0].text,
+            turn: gameState.currentTurn,
+            timestamp: new Date().toISOString(),
+          };
+
+          aiGeneratedStoryCache.push(generatedStory);
+
+          // Display the AI generated story
+          showAIStoryEvent(generatedStory);
+        } catch (error) {
+          console.error("Failed to generate AI story:", error);
+
+          // Câu chuyện dự phòng nếu API lỗi
+          const fallbackStory = {
+            title: "⚡ Sự kiện bất ngờ",
+            description: `Một tin tức bất ngờ đến từ vương quốc láng giềng trong lúc bạn đang ở lượt ${gameState.currentTurn}. Tình hình hiện tại đòi hỏi bạn phải đưa ra quyết định quan trọng dựa trên khả năng và tài nguyên hiện có. Điều này có thể thay đổi hoàn toàn tiến trình phát triển của đế chế bạn...`,
+            turn: gameState.currentTurn,
+            timestamp: new Date().toISOString(),
+          };
+          showAIStoryEvent(fallbackStory);
+        }
+      }
+
+      // Display AI generated story event
+      function showAIStoryEvent(story) {
+        const eventDiv = document.createElement("div");
+        eventDiv.className = "ai-story-event";
+
+        // Parse story để tách phần lựa chọn nếu có
+        const storyText = story.description;
+        const hasChoices = storyText.includes("**Lựa chọn:**");
+        let mainStory = storyText;
+        let choices = "";
+
+        if (hasChoices) {
+          const parts = storyText.split("**Lựa chọn:**");
+          mainStory = parts[0].trim();
+          choices = parts[1].trim();
+        }
+
+        eventDiv.innerHTML = `
+    <div class="ai-story-modal">
+      <div class="modal-header">
+        <div class="header-icon">📜</div>
+        <h3>Biên niên sử - Lượt ${story.turn}</h3>
+        <div class="turn-badge">Turn ${story.turn}</div>
+      </div>
+      
+      <div class="story-content">
+        <div class="story-text">
+          ${mainStory.replace(/\n/g, "<br>")}
+        </div>
+        
+        ${
+          choices
+            ? `
+          <div class="choices-section">
+            <h4>🎯 Lựa chọn của bạn:</h4>
+            <div class="choices-content">
+              ${choices
+                .replace(/\n/g, "<br>")
+                .replace(/(\d+\.\s\*\*[^*]+\*\*)/g, '<div class="choice-option">$1</div>')}
+            </div>
+          </div>
+        `
+            : ""
+        }
+      </div>
+      
+      <div class="modal-footer">
+        <button class="btn-primary" onclick="this.closest('.ai-story-event').remove()">
+          ⚔️ Tiếp tục hành trình
+        </button>
+        <button class="btn-secondary" onclick="this.closest('.ai-story-event').remove()">
+          📖 Ghi nhận
+        </button>
+      </div>
+    </div>
+  `;
+
+        // Enhanced styles
+        const styles = document.createElement("style");
+        styles.textContent = `
+    .ai-story-event {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(5px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .ai-story-modal {
+      background: linear-gradient(145deg, #2a1810, #1a1410);
+      border: 2px solid #8b4513;
+      border-radius: 20px;
+      max-width: 700px;
+      max-height: 80vh;
+      overflow-y: auto;
+      color: #f4e4bc;
+      box-shadow: 
+        0 0 40px rgba(139, 69, 19, 0.3),
+        inset 0 0 20px rgba(255, 215, 0, 0.1);
+      position: relative;
+      animation: slideIn 0.4s ease;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-50px) scale(0.9); }
+      to { transform: translateY(0) scale(1); }
+    }
+
+    .modal-header {
+      background: linear-gradient(135deg, #8b4513, #a0522d);
+      padding: 1.5rem;
+      border-radius: 18px 18px 0 0;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      position: relative;
+      border-bottom: 2px solid #daa520;
+    }
+
+    .header-icon {
+      font-size: 2rem;
+      filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
+    }
+
+    .modal-header h3 {
+      color: #ffd700;
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+      flex: 1;
+    }
+
+    .turn-badge {
+      background: rgba(255, 215, 0, 0.2);
+      border: 1px solid #ffd700;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      color: #ffd700;
+    }
+
+    .story-content {
+      padding: 2rem;
+      line-height: 1.7;
+    }
+
+    .story-text {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      text-align: justify;
+      color: #f4e4bc;
+      background: rgba(139, 69, 19, 0.1);
+      padding: 1.5rem;
+      border-radius: 10px;
+      border-left: 4px solid #daa520;
+    }
+
+    .choices-section {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid #8b4513;
+    }
+
+    .choices-section h4 {
+      color: #ffd700;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    }
+
+    .choices-content {
+      background: rgba(139, 69, 19, 0.15);
+      padding: 1rem;
+      border-radius: 10px;
+      border: 1px solid #8b4513;
+    }
+
+    .choice-option {
+      background: rgba(255, 215, 0, 0.1);
+      margin: 0.5rem 0;
+      padding: 0.8rem;
+      border-radius: 8px;
+      border-left: 3px solid #daa520;
+      transition: all 0.2s ease;
+    }
+
+    .choice-option:hover {
+      background: rgba(255, 215, 0, 0.2);
+      transform: translateX(5px);
+    }
+
+    .modal-footer {
+      background: linear-gradient(135deg, #1a1410, #2a1810);
+      padding: 1.5rem;
+      border-radius: 0 0 18px 18px;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      border-top: 2px solid #8b4513;
+    }
+
+    .btn-primary, .btn-secondary {
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 0.9rem;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #daa520, #ffd700);
+      color: #1a1410;
+      box-shadow: 0 4px 8px rgba(218, 165, 32, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #ffd700, #ffed4e);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(218, 165, 32, 0.4);
+    }
+
+    .btn-secondary {
+      background: linear-gradient(135deg, #8b4513, #a0522d);
+      color: #f4e4bc;
+      box-shadow: 0 4px 8px rgba(139, 69, 19, 0.3);
+    }
+
+    .btn-secondary:hover {
+      background: linear-gradient(135deg, #a0522d, #cd853f);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(139, 69, 19, 0.4);
+    }
+
+    /* Scrollbar styling */
+    .ai-story-modal::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .ai-story-modal::-webkit-scrollbar-track {
+      background: rgba(139, 69, 19, 0.2);
+      border-radius: 10px;
+    }
+
+    .ai-story-modal::-webkit-scrollbar-thumb {
+      background: #8b4513;
+      border-radius: 10px;
+    }
+
+    .ai-story-modal::-webkit-scrollbar-thumb:hover {
+      background: #a0522d;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .ai-story-modal {
+        max-width: 90%;
+        margin: 1rem;
+      }
+      
+      .modal-header {
+        padding: 1rem;
+      }
+      
+      .story-content {
+        padding: 1.5rem;
+      }
+      
+      .modal-footer {
+        flex-direction: column;
+      }
+    }
+  `;
+
+        document.head.appendChild(styles);
+        document.body.appendChild(eventDiv);
+
+        // Thêm hiệu ứng âm thanh (optional)
+        // const audio = new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmYfCj2Z2O/EcyQGLIHO9tiKNwgZZ7rr7qhxGAA');
+        // audio.volume = 0.3;
+        // audio.play().catch(() => {}); // Ignore audio errors
+      }
+
       // Load game data
       async function loadGameData() {
         console.log("Starting to load game data...");
-        
-        try {
-          // First method: Try to load with relative paths
-          console.log("Method 1: Loading with relative paths...");
-          const [storyResponse, eventsResponse, eventsWithChoicesResponse, endingsResponse] = await Promise.all([
-            fetch("./game_story_data_expanded.json"),
-            fetch("./random_events_enhanced.json"), 
-            fetch("./random_events_with_choices.json"),
-            fetch("./endings.json"),
-          ]);
 
-          console.log("Response status:", {
-            story: storyResponse.status,
-            events: eventsResponse.status,
-            eventsWithChoices: eventsWithChoicesResponse.status,
-            endings: endingsResponse.status
+        // Load story data, events with choices, and endings
+        console.log("Loading game data...");
+        const [storyResponse, eventsWithChoicesResponse, endingsResponse] = await Promise.all([
+          fetch("./game_story_data_expanded.json"),
+          fetch("./random_events_with_choices.json"),
+          fetch("./endings.json"),
+        ]);
+
+        console.log("Response status:", {
+          story: storyResponse.status,
+          eventsWithChoices: eventsWithChoicesResponse.status,
+          endings: endingsResponse.status,
+        });
+
+        if (storyResponse.ok && eventsWithChoicesResponse.ok && endingsResponse.ok) {
+          gameStoryData = await storyResponse.json();
+          randomEventsWithChoicesData = await eventsWithChoicesResponse.json();
+          const endingsJson = await endingsResponse.json();
+          endingsData = endingsJson.endings || endingsJson;
+
+          console.log("✅ Game data loaded successfully:", {
+            scenarios: gameStoryData.length,
+            randomEventsWithChoices: randomEventsWithChoicesData.length,
+            endings: endingsData.length,
           });
-
-          if (storyResponse.ok && eventsResponse.ok && eventsWithChoicesResponse.ok && endingsResponse.ok) {
-            gameStoryData = await storyResponse.json();
-            randomEventsData = await eventsResponse.json();
-            randomEventsWithChoicesData = await eventsWithChoicesResponse.json();
-            const endingsJson = await endingsResponse.json();
-            endingsData = endingsJson.endings || endingsJson;
-
-            console.log("✅ Game data loaded successfully:", {
-              scenarios: gameStoryData.length,
-              randomEvents: randomEventsData.length,
-              randomEventsWithChoices: randomEventsWithChoicesData.length,
-              endings: endingsData.length,
-            });
-            updateScenarioCounter();
-            return; // Success, exit function
-          } else {
-            throw new Error(`HTTP Error: ${storyResponse.status}, ${eventsResponse.status}, ${eventsWithChoicesResponse.status}, ${endingsResponse.status}`);
-          }
-        } catch (error) {
-          console.error("❌ Method 1 failed:", error);
-          
-          try {
-            // Second method: Try without ./ prefix
-            console.log("Method 2: Loading without prefix...");
-            const [storyResponse2, eventsResponse2, eventsWithChoicesResponse2, endingsResponse2] = await Promise.all([
-              fetch("game_story_data_expanded.json"),
-              fetch("random_events_enhanced.json"),
-              fetch("random_events_with_choices.json"),
-              fetch("endings.json"),
-            ]);
-
-            if (storyResponse2.ok && eventsResponse2.ok && eventsWithChoicesResponse2.ok && endingsResponse2.ok) {
-              gameStoryData = await storyResponse2.json();
-              randomEventsData = await eventsResponse2.json();
-              randomEventsWithChoicesData = await eventsWithChoicesResponse2.json();
-              const endingsJson2 = await endingsResponse2.json();
-              endingsData = endingsJson2.endings || endingsJson2;
-
-              console.log("✅ Method 2 successful! Game data loaded:", {
-                scenarios: gameStoryData.length,
-                randomEvents: randomEventsData.length,
-                randomEventsWithChoices: randomEventsWithChoicesData.length,
-                endings: endingsData.length,
-              });
-              updateScenarioCounter();
-              return; // Success, exit function
-            } else {
-              throw new Error("Files not accessible");
-            }
-          } catch (error2) {
-            console.error("❌ Method 2 failed:", error2);
-            
-            // Final fallback - embed essential data
-            console.log("🔄 Using embedded fallback data...");
-            
-            // Use the actual data from the files we know exist
-            gameStoryData = [
-              {
-                "id": 1,
-                "title": "Khủng Hoảng COVID-19",
-                "description": "Đại dịch COVID-19 bùng phát trên toàn quốc. Hệ thống y tế quá tải, nền kinh tế đình trệ. Bạn phải quyết định biện pháp ứng phó khẩn cấp.",
-                "choices": [
-                  {
-                    "title": "Phong tỏa toàn quốc 30 ngày",
-                    "text": "Áp dụng lệnh phong tỏa nghiêm ngặt để kiểm soát dịch bệnh",
-                    "effects": { "discontent": 15, "conflict": 10, "economy": -25, "environment": 10, "freedom": -20, "security": 15 }
-                  },
-                  {
-                    "title": "Cách ly khu vực nguy cơ cao", 
-                    "text": "Chỉ phong tỏa những khu vực có ca nhiễm cao",
-                    "effects": { "discontent": 5, "conflict": 8, "economy": -10, "environment": -5, "freedom": -5, "security": 5 }
-                  },
-                  {
-                    "title": "Để dân tự bảo vệ",
-                    "text": "Ưu tiên kinh tế, để người dân tự quyết định", 
-                    "effects": { "discontent": 25, "conflict": 20, "economy": 5, "environment": -15, "freedom": 10, "security": -20 }
-                  }
-                ]
-              },
-              {
-                "id": 6,
-                "title": "Phong Trào Cải Cách Chính Trị",
-                "description": "Các nhóm trí thức và sinh viên yêu cầu cải cách hệ thống chính trị, đòi dân chủ hóa và minh bạch hơn. Họ tổ chức biểu tình ôn hòa nhưng quy mô ngày càng lớn.",
-                "choices": [
-                  {
-                    "title": "Đối thoại và cải cách từng bước",
-                    "text": "Mở đối thoại với các nhóm dân chủ và tiến hành cải cách chính trị dần dần",
-                    "effects": { "discontent": -20, "conflict": -15, "economy": 5, "environment": 0, "freedom": 25, "security": -5 }
-                  },
-                  {
-                    "title": "Duy trì hiện trạng, tăng cường kiểm soát",
-                    "text": "Giữ nguyên hệ thống hiện tại và tăng cường giám sát các hoạt động chính trị",
-                    "effects": { "discontent": 25, "conflict": 20, "economy": -5, "environment": 0, "freedom": -20, "security": 10 }
-                  }
-                ]
-              }
-            ];
-            
-            randomEventsData = [];
-            randomEventsWithChoicesData = [];
-            endingsData = [];
-            
-            console.log("⚠️ Using embedded fallback data. To get full content, please serve the files via HTTP server!");
-            updateScenarioCounter();
-            
-            // Show instruction to user
-            const instruction = `
-🚨 HƯỚNG DẪN CHẠY GAME ĐẦY ĐỦ:
-
-1. Trong VS Code: 
-   - Cài extension "Live Server"
-   - Right-click vào index.html → "Open with Live Server"
-
-2. Hoặc dùng Python:
-   - Chạy: python -m http.server 8000
-   - Mở: http://localhost:8000
-
-3. Hoặc dùng Node.js:
-   - Chạy: npx serve
-   - Mở link được hiển thị
-
-Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
-            `;
-            
-            // Create a better notification instead of alert
-            const notification = document.createElement('div');
-            notification.style.cssText = `
-              position: fixed; top: 50%; left: 50%; 
-              transform: translate(-50%, -50%);
-              background: #ff9800; color: white; 
-              padding: 20px; border-radius: 10px; 
-              z-index: 1000; max-width: 500px;
-              box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-              font-family: Arial, sans-serif;
-              line-height: 1.5;
-            `;
-            notification.innerHTML = `
-              <h3 style="margin: 0 0 15px 0;">🚨 HƯỚNG DẪN CHẠY GAME ĐẦY ĐỦ</h3>
-              <p><strong>Hiện tại:</strong> Đang dùng 2/20 tình huống game</p>
-              <p><strong>Để có đầy đủ:</strong></p>
-              <ol style="margin: 10px 0; padding-left: 20px;">
-                <li>Trong VS Code: Cài "Live Server" extension</li>
-                <li>Right-click index.html → "Open with Live Server"</li>
-                <li>Hoặc chạy: <code>python -m http.server 8000</code></li>
-              </ol>
-              <button onclick="this.parentElement.remove()" style="
-                background: #fff; color: #ff9800; border: none; 
-                padding: 8px 16px; border-radius: 4px; 
-                cursor: pointer; float: right; margin-top: 10px;
-              ">Đóng</button>
-            `;
-            document.body.appendChild(notification);
-          }
+          updateScenarioCounter();
+          return; // Success, exit function
+        } else {
+          throw new Error(
+            `HTTP Error: ${storyResponse.status}, ${eventsWithChoicesResponse.status}, ${endingsResponse.status}`
+          );
         }
       }
 
@@ -2412,15 +2793,13 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
       function preloadNextStories() {
         if (gameState.currentTurn < maxTurns - 2) {
           const nextTurns = [gameState.currentTurn + 1, gameState.currentTurn + 2];
-          
-          nextTurns.forEach(turn => {
+
+          nextTurns.forEach((turn) => {
             const cacheKey = `turn_${turn}_${gameState.usedScenarios.length}`;
             if (!storyCache.has(cacheKey) && gameStoryData.length > 0) {
               const usedSet = new Set(gameState.usedScenarios);
-              const availableStories = gameStoryData.filter(
-                story => !usedSet.has(story.id)
-              );
-              
+              const availableStories = gameStoryData.filter((story) => !usedSet.has(story.id));
+
               if (availableStories.length > 0) {
                 const randomIndex = Math.floor(Math.random() * availableStories.length);
                 const story = availableStories[randomIndex];
@@ -2431,12 +2810,38 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
         }
       }
 
+      // Handle keyboard inputs
+      function handleKeyPress(e) {
+        if (gameState.gameEnded) return;
+
+        // Space or Enter to continue/select first choice
+        if ((e.code === "Space" || e.code === "Enter") && !isProcessingChoice) {
+          const firstChoice = document.querySelector(".choice:not(.disabled)");
+          if (firstChoice) {
+            const choiceData = JSON.parse(firstChoice.dataset.choice);
+            const index = parseInt(firstChoice.dataset.choiceIndex);
+            makeChoice(choiceData, index);
+          }
+        }
+
+        // Number keys 1-9 to select choices
+        if (e.code.startsWith("Digit") && !isProcessingChoice) {
+          const num = parseInt(e.code.replace("Digit", "")) - 1;
+          const choices = document.querySelectorAll(".choice:not(.disabled)");
+          if (choices[num]) {
+            const choiceData = JSON.parse(choices[num].dataset.choice);
+            const index = parseInt(choices[num].dataset.choiceIndex);
+            makeChoice(choiceData, index);
+          }
+        }
+      }
+
       // Update scenario counter display
       function updateScenarioCounter() {
         const counter = document.getElementById("scenarioCount");
         if (counter) {
           counter.textContent = gameStoryData.length;
-          
+
           // Change color based on data completeness
           const scenarioCounterEl = counter.parentElement;
           if (gameStoryData.length >= 20) {
@@ -2455,15 +2860,15 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
         const originalText = btn.innerHTML;
         btn.innerHTML = "⏳ Đang tải...";
         btn.disabled = true;
-        
+
         try {
           await loadGameData();
           // Show success message
           btn.innerHTML = "✅ Đã tải!";
           console.log("Game data reloaded successfully!");
-          
+
           // Show notification to user
-          const notification = document.createElement('div');
+          const notification = document.createElement("div");
           notification.style.cssText = `
             position: fixed; top: 20px; right: 20px; 
             background: #4CAF50; color: white; 
@@ -2473,16 +2878,15 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
           `;
           notification.textContent = `✅ Đã tải ${gameStoryData.length} tình huống game!`;
           document.body.appendChild(notification);
-          
+
           setTimeout(() => {
             notification.remove();
           }, 3000);
-          
         } catch (error) {
           btn.innerHTML = "❌ Lỗi!";
           console.error("Failed to reload game data:", error);
         }
-        
+
         setTimeout(() => {
           btn.innerHTML = originalText;
           btn.disabled = false;
@@ -2492,9 +2896,9 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
       // Initialize game
       function startGame() {
         console.log("🎮 Starting game...");
-        
+
         // Chỉ setup gameState nếu chưa có hoặc chưa được setup từ difficulty selection
-        if (!gameState || !gameState.stats.hasOwnProperty('economy')) {
+        if (!gameState || !gameState.stats.hasOwnProperty("economy")) {
           console.log("⚠️ No valid gameState found, creating default...");
           gameState = {
             currentTurn: 1,
@@ -2512,25 +2916,30 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
         } else {
           console.log("✅ Using existing gameState from difficulty selection:", gameState);
         }
-        
+
         console.log("🎯 Current game stats:", gameState.stats);
-        
-        loadGameData().then(() => {
-          console.log("📚 Game data loaded, starting UI...");
-          
-          // Ẩn start screen và hiển thị game
-          document.getElementById("startScreen").classList.add("hidden");
-          document.getElementById("gameContainer").style.display = "block";
-          document.getElementById("guideBtn").style.display = "block";
-          
-          console.log("🎯 Updating display with stats:", gameState.stats);
-          updateDisplay();
-          console.log("🔄 Loading first story...");
-          loadCurrentStory();
-        }).catch(error => {
-          console.error("❌ Error starting game:", error);
-          alert("Lỗi khởi động game: " + error.message);
-        });
+
+        // Remove document event listeners first to prevent memory leaks
+        window.removeEventListener("keydown", handleKeyPress);
+
+        loadGameData()
+          .then(() => {
+            console.log("📚 Game data loaded, starting UI...");
+
+            // Ẩn start screen và hiển thị game
+            document.getElementById("startScreen").classList.add("hidden");
+            document.getElementById("gameContainer").style.display = "block";
+            document.getElementById("guideBtn").style.display = "block";
+
+            console.log("🎯 Updating display with stats:", gameState.stats);
+            updateDisplay();
+            console.log("🔄 Loading first story...");
+            loadCurrentStory();
+          })
+          .catch((error) => {
+            console.error("❌ Error starting game:", error);
+            alert("Lỗi khởi động game: " + error.message);
+          });
       }
 
       // Update stats display with visual effects
@@ -2542,7 +2951,7 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
           // Check if stat element already exists
           let statElement = document.getElementById(`stat-${stat}`);
           const isNewElement = !statElement;
-          
+
           if (isNewElement) {
             statElement = document.createElement("div");
             statElement.className = "stat";
@@ -2553,19 +2962,19 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
           // Detect value changes for animation
           const oldValue = parseInt(statElement.dataset.oldValue) || value;
           const hasChanged = oldValue !== value;
-          
+
           // Determine status class
-          let statusClass = '';
+          let statusClass = "";
           if (stat === "discontent" || stat === "conflict") {
             // Higher is worse for these stats
-            if (value >= 70) statusClass = 'critical';
-            else if (value >= 50) statusClass = 'warning';
-            else statusClass = 'good';
+            if (value >= 70) statusClass = "critical";
+            else if (value >= 50) statusClass = "warning";
+            else statusClass = "good";
           } else {
             // Higher is better for these stats
-            if (value <= 20) statusClass = 'critical';
-            else if (value <= 40) statusClass = 'warning';
-            else if (value >= 70) statusClass = 'good';
+            if (value <= 20) statusClass = "critical";
+            else if (value <= 40) statusClass = "warning";
+            else if (value >= 70) statusClass = "good";
           }
 
           // Color coding based on stat type and value
@@ -2578,21 +2987,26 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
 
           // Update classes
           statElement.className = `stat ${statusClass}`;
-          
+
           // Create change indicator if value changed
-          let changeIndicator = '';
+          let changeIndicator = "";
           if (hasChanged && !isNewElement) {
             const change = value - oldValue;
-            const changeClass = change > 0 ? '' : 'negative';
-            changeIndicator = `<div class="stat-change ${changeClass}">${change > 0 ? '+' + change : change}</div>`;
+            const changeClass = change > 0 ? "" : "negative";
+            changeIndicator = `<div class="stat-change ${changeClass}">${change > 0 ? "+" + change : change}</div>`;
           }
 
           statElement.innerHTML = `
             <div class="stat-label">${statLabels[stat]}</div>
-            <div class="stat-value ${hasChanged ? 'changed' : ''} ${value > oldValue ? 'increased' : value < oldValue ? 'decreased' : ''}" 
+            <div class="stat-value ${hasChanged ? "changed" : ""} ${
+            value > oldValue ? "increased" : value < oldValue ? "decreased" : ""
+          }" 
                  id="stat-value-${stat}" style="color: ${fillColor}">${value}</div>
             <div class="stat-bar">
-              <div class="stat-fill" style="width: ${Math.max(0, Math.min(100, value))}%; background: ${fillColor}"></div>
+              <div class="stat-fill" style="width: ${Math.max(
+                0,
+                Math.min(100, value)
+              )}%; background: ${fillColor}"></div>
             </div>
             ${changeIndicator}
           `;
@@ -2605,14 +3019,14 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
             setTimeout(() => {
               const valueEl = document.getElementById(`stat-value-${stat}`);
               if (valueEl) {
-                valueEl.classList.remove('changed', 'increased', 'decreased');
+                valueEl.classList.remove("changed", "increased", "decreased");
               }
-              const changeEl = statElement.querySelector('.stat-change');
+              const changeEl = statElement.querySelector(".stat-change");
               if (changeEl) changeEl.remove();
             }, 2000);
           }
         });
-        
+
         // Check for crisis situations
         checkCrisisSituations();
       }
@@ -2620,7 +3034,7 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
       // Check and display crisis alerts
       function checkCrisisSituations() {
         const criticalStats = [];
-        
+
         Object.entries(gameState.stats).forEach(([stat, value]) => {
           if (stat === "discontent" || stat === "conflict") {
             if (value >= 85) criticalStats.push(statLabels[stat]);
@@ -2628,12 +3042,12 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
             if (value <= 15) criticalStats.push(statLabels[stat]);
           }
         });
-        
+
         if (criticalStats.length > 0) {
-          const message = `KHỦNG HOẢNG: ${criticalStats.join(', ')} đang ở mức nguy hiểm!`;
+          const message = `KHỦNG HOẢNG: ${criticalStats.join(", ")} đang ở mức nguy hiểm!`;
           showCrisisAlert(message);
         }
-        
+
         // Check for multiple problematic stats
         const problematicStats = Object.entries(gameState.stats).filter(([stat, value]) => {
           if (stat === "discontent" || stat === "conflict") {
@@ -2642,25 +3056,25 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
             return value <= 30;
           }
         });
-        
+
         if (problematicStats.length >= 3) {
-          showCrisisAlert('CẢNH BÁO: Nhiều chỉ số đang ở mức có vấn đề!');
+          showCrisisAlert("CẢNH BÁO: Nhiều chỉ số đang ở mức có vấn đề!");
         }
       }
 
       // Show crisis alert
       function showCrisisAlert(message) {
         // Remove existing alert if any
-        const existingAlert = document.querySelector('.crisis-alert');
+        const existingAlert = document.querySelector(".crisis-alert");
         if (existingAlert) existingAlert.remove();
-        
-        const alertDiv = document.createElement('div');
-        alertDiv.className = 'crisis-alert';
-        alertDiv.textContent = '⚠️ ' + message;
-        alertDiv.style.display = 'block';
-        
+
+        const alertDiv = document.createElement("div");
+        alertDiv.className = "crisis-alert";
+        alertDiv.textContent = "⚠️ " + message;
+        alertDiv.style.display = "block";
+
         document.body.appendChild(alertDiv);
-        
+
         setTimeout(() => {
           if (alertDiv.parentNode) {
             alertDiv.remove();
@@ -2672,19 +3086,19 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
       function updateGameInfo() {
         const turnElement = document.getElementById("turnCounter");
         const scoreElement = document.getElementById("gameScore");
-        
+
         if (turnElement) {
           turnElement.textContent = gameState.currentTurn + "/" + maxTurns;
-          
+
           // Add late game warning
           const gameProgress = gameState.currentTurn / maxTurns;
           if (gameProgress >= 0.75) {
-            turnElement.classList.add('late-game');
+            turnElement.classList.add("late-game");
           } else {
-            turnElement.classList.remove('late-game');
+            turnElement.classList.remove("late-game");
           }
         }
-        
+
         if (scoreElement) {
           scoreElement.textContent = gameState.score;
         }
@@ -2693,16 +3107,16 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
       // OPTIMIZED: Load current story function with caching and performance improvements
       let storyCache = new Map();
       let isLoadingStory = false;
-      
+
       function loadCurrentStory() {
         // Prevent multiple simultaneous loads
         if (isLoadingStory) return;
         isLoadingStory = true;
-        
+
         // Show loading state
-        const storySection = document.querySelector('.story-section');
-        storySection?.classList.add('loading');
-        
+        const storySection = document.querySelector(".story-section");
+        storySection?.classList.add("loading");
+
         // Use requestAnimationFrame for smooth UI updates
         requestAnimationFrame(() => {
           console.log(`⚡ Loading story for turn ${gameState.currentTurn}/${maxTurns}`);
@@ -2710,11 +3124,11 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
           // Check cache first
           const cacheKey = `turn_${gameState.currentTurn}_${gameState.usedScenarios.length}`;
           let storyData = storyCache.get(cacheKey);
-          
+
           if (!storyData) {
             // Get available scenarios that haven't been used (optimized with Set)
             const usedSet = new Set(gameState.usedScenarios);
-            const availableScenarios = gameStoryData.filter(scenario => !usedSet.has(scenario.id));
+            const availableScenarios = gameStoryData.filter((scenario) => !usedSet.has(scenario.id));
 
             if (availableScenarios.length > 0) {
               // Use a random available scenario
@@ -2730,27 +3144,27 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
                 storyData = gameStoryData[Math.floor(Math.random() * gameStoryData.length)];
                 gameState.usedScenarios.push(storyData.id);
               } else {
-            // Fallback scenario
-            storyData = {
-              id: 999,
-              title: "Quyết Định Quan Trọng",
-              description:
-                "Một tình huống quan trọng đang chờ quyết định của bạn. Hãy cân nhắc kỹ lưỡng trước khi hành động.",
-              choices: [
-                {
-                  title: "Lựa chọn thận trọng",
-                  text: "Hành động một cách cẩn thận và thận trọng để tránh rủi ro",
-                  effects: { discontent: -5, security: 5, conflict: -3 },
-                },
-                {
-                  title: "Hành động mạnh mẽ",
-                  text: "Đưa ra quyết định quyết đoán và mạnh mẽ để giải quyết vấn đề",
-                  effects: { conflict: -5, freedom: -5, security: 10 },
-                },
-              ],
-            };
-          }
-        }
+                // Fallback scenario
+                storyData = {
+                  id: 999,
+                  title: "Quyết Định Quan Trọng",
+                  description:
+                    "Một tình huống quan trọng đang chờ quyết định của bạn. Hãy cân nhắc kỹ lưỡng trước khi hành động.",
+                  choices: [
+                    {
+                      title: "Lựa chọn thận trọng",
+                      text: "Hành động một cách cẩn thận và thận trọng để tránh rủi ro",
+                      effects: { discontent: -5, security: 5, conflict: -3 },
+                    },
+                    {
+                      title: "Hành động mạnh mẽ",
+                      text: "Đưa ra quyết định quyết đoán và mạnh mẽ để giải quyết vấn đề",
+                      effects: { conflict: -5, freedom: -5, security: 10 },
+                    },
+                  ],
+                };
+              }
+            }
 
             // Cache the story for potential reuse
             storyCache.set(cacheKey, storyData);
@@ -2759,17 +3173,17 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
           // Display the story with smooth animation
           const titleEl = document.getElementById("storyTitle");
           const textEl = document.getElementById("storyText");
-          
+
           if (titleEl) titleEl.textContent = storyData.title;
           if (textEl) textEl.textContent = storyData.description;
-          
+
           displayChoices(storyData.choices);
-          
+
           // Remove loading state
           setTimeout(() => {
-            storySection?.classList.remove('loading');
+            storySection?.classList.remove("loading");
             isLoadingStory = false;
-            
+
             // Preload next stories for better performance
             preloadNextStories();
           }, 100);
@@ -2798,15 +3212,15 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
         choices.forEach((choice, index) => {
           const choiceElement = document.createElement("div");
           let choiceClass = "choice";
-          
+
           // Check if this is a high impact choice
           const isHighImpact = checkHighImpact(choice.effects);
           if (isHighImpact) {
             choiceClass += " high-impact";
           }
-          
+
           choiceElement.className = choiceClass;
-          
+
           // Use event delegation instead of individual onclick handlers
           choiceElement.dataset.choiceIndex = index;
           choiceElement.dataset.choice = JSON.stringify(choice);
@@ -2818,7 +3232,7 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
               if (change !== 0) {
                 const sign = change > 0 ? "+" : "";
                 const statName = statLabels[stat] || stat;
-                const impactClass = Math.abs(change) >= 15 ? ' high-impact-effect' : '';
+                const impactClass = Math.abs(change) >= 15 ? " high-impact-effect" : "";
                 effectsPreview += `<span class="effect-item${impactClass}">${statName} ${sign}${change}</span> `;
               }
             });
@@ -2832,47 +3246,75 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
 
           fragment.appendChild(choiceElement);
         });
-        
+
         // Clear and append all choices at once for better performance
         choicesGrid.innerHTML = "";
         choicesGrid.appendChild(fragment);
-        
+
         // Add event delegation listener if not already added
-        if (!choicesGrid.hasAttribute('data-listener-added')) {
-          choicesGrid.addEventListener('click', function(e) {
-            const choiceEl = e.target.closest('.choice');
-            if (choiceEl && !choiceEl.classList.contains('disabled')) {
+        if (!choicesGrid.hasAttribute("data-listener-added")) {
+          choicesGrid.addEventListener("click", function (e) {
+            const choiceEl = e.target.closest(".choice");
+            if (choiceEl && !choiceEl.classList.contains("disabled")) {
               const choice = JSON.parse(choiceEl.dataset.choice);
               const index = parseInt(choiceEl.dataset.choiceIndex);
               makeChoice(choice, index);
             }
           });
-          choicesGrid.setAttribute('data-listener-added', 'true');
+          choicesGrid.setAttribute("data-listener-added", "true");
         }
       }
 
       // Check if a choice has high impact effects
       function checkHighImpact(effects) {
         if (!effects) return false;
-        
+
         // Consider high impact if any effect is >= 15 or <= -15
-        return Object.values(effects).some(value => Math.abs(value) >= 15);
+        return Object.values(effects).some((value) => Math.abs(value) >= 15);
       }
 
-      // OPTIMIZED: Make choice with debouncing and faster processing  
+      // OPTIMIZED: Make choice with debouncing and faster processing
       let isProcessingChoice = false;
-      
+
       function makeChoice(choice, index) {
         // Prevent double-clicking with debouncing
         if (isProcessingChoice) return;
         isProcessingChoice = true;
-        
+
         console.log(`⚡ Making choice at turn ${gameState.currentTurn}:`, choice.title);
 
+        // Check for emergency endings (negative conditions)
+        const emergencyEndingConditions = {
+          discontent: gameState.stats.discontent >= 90,
+          conflict: gameState.stats.conflict >= 90,
+          economy: gameState.stats.economy <= 10,
+        };
+
+        const shouldTriggerEmergencyEnding = Object.values(emergencyEndingConditions).some((condition) => condition);
+
+        // Only check for endings if it's the last turn or emergency conditions are met
+        const isLastTurn = gameState.currentTurn >= maxTurns;
+        if (shouldTriggerEmergencyEnding || isLastTurn) {
+          const endingToShow = findAppropriateEnding();
+          if (endingToShow) {
+            gameState.gameEnded = true;
+            showEnding(endingToShow);
+            return;
+          }
+        }
+
+        // Continue with normal turn if no ending triggered
+
+        // Check if it's time to generate AI story (every 5 turns)
+        if (gameState.currentTurn % 5 === 0) {
+          console.log("start story");
+          generateAIStory();
+        }
+
         // Disable all choices immediately to prevent double-clicks
-        const allChoices = document.querySelectorAll('.choice');
-        allChoices.forEach(el => {
-          el.classList.add('disabled');
+        const allChoices = document.querySelectorAll(".choice");
+        allChoices.forEach((el) => {
+          el.classList.add("disabled");
         });
 
         // Use requestAnimationFrame for smooth processing
@@ -2898,7 +3340,7 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
 
           // Update display immediately to show changes
           updateDisplay();
-          console.log('🔄 Display updated with new stats');
+          console.log("🔄 Display updated with new stats");
 
           // Check for game end conditions
           if (checkGameEnd()) {
@@ -2913,16 +3355,20 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
           const mode = DIFFICULTY_MODES[currentDifficulty];
           const eventChance = Math.random();
           const turnsSinceLastEvent = gameState.currentTurn - lastEventTurn;
-          
-          console.log(`🎲 Event check: roll=${eventChance.toFixed(2)} vs ${mode.randomEventsFrequency}, cooldown=${turnsSinceLastEvent}/${eventCooldown}`);
-          
+
+          console.log(
+            `🎲 Event check: roll=${eventChance.toFixed(2)} vs ${
+              mode.randomEventsFrequency
+            }, cooldown=${turnsSinceLastEvent}/${eventCooldown}`
+          );
+
           setTimeout(() => {
             // Only trigger if conditions met: min turn, cooldown passed AND chance hits
             const canTriggerEvent = turnsSinceLastEvent >= eventCooldown && gameState.currentTurn >= minEventTurn;
             const shouldTriggerEvent = eventChance < mode.randomEventsFrequency;
-            
-            if (canTriggerEvent && shouldTriggerEvent && randomEventsData.length > 0) {
-              console.log('🎪 Triggering random event!');
+
+            if (canTriggerEvent && shouldTriggerEvent && randomEventsWithChoicesData.length > 0) {
+              console.log("🎪 Triggering random event!");
               lastEventTurn = gameState.currentTurn;
               triggerRandomEvent();
               setTimeout(() => {
@@ -2940,24 +3386,12 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
 
       // Trigger random event - now supports both types of events
       function triggerRandomEvent() {
-        console.log('🎪 triggerRandomEvent called, checking both event types...');
-        
-        // First, check if we should trigger an event with choices (higher priority)
-        const eventWithChoices = selectRandomEventWithChoices();
-        if (eventWithChoices) {
-          console.log(`🎲 Random event WITH CHOICES selected: ${eventWithChoices.title}`);
-          showRandomEventWithChoices(eventWithChoices);
-          return;
-        }
-        
-        // If no event with choices, try regular random event
-        const regularEvent = selectRandomEvent();
-        if (regularEvent) {
-          console.log(`🎲 Regular random event selected: ${regularEvent.title} (${regularEvent.rarity})`);
-          if (regularEvent.conditions) {
-            console.log(`📋 Event conditions:`, regularEvent.conditions);
-          }
-          showRandomEvent(regularEvent);
+        console.log("🎪 triggerRandomEvent called...");
+
+        const event = selectRandomEventWithChoices();
+        if (event) {
+          console.log(`🎲 Random event selected: ${event.title}`);
+          showRandomEventWithChoices(event);
         } else {
           console.log("🚫 No random events available for current conditions");
         }
@@ -2992,9 +3426,9 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
       }
       // Select random event with choices
       function selectRandomEventWithChoices() {
-        console.log('🔍 Selecting random event with choices from', randomEventsWithChoicesData?.length || 0, 'events');
+        console.log("🔍 Selecting random event with choices from", randomEventsWithChoicesData?.length || 0, "events");
         if (!randomEventsWithChoicesData || randomEventsWithChoicesData.length === 0) {
-          console.log('❌ No random events with choices data available');
+          console.log("❌ No random events with choices data available");
           return null;
         }
 
@@ -3005,11 +3439,11 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
             console.log(`⏭️ Skipping used event: ${event.title}`);
             return false;
           }
-          
+
           // Check basic conditions
           const meetsConditions = checkEventConditions(event);
           console.log(`📋 Event with choices "${event.title}" meets conditions:`, meetsConditions);
-          
+
           if (!meetsConditions) return false;
 
           // For conditional events, check trigger_chance
@@ -3022,68 +3456,16 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
           return true;
         });
 
-        console.log('✅ Available events with choices after filtering:', availableEvents.length);
+        console.log("✅ Available events with choices after filtering:", availableEvents.length);
         if (availableEvents.length === 0) {
-          console.log('⚠️ No events with choices available for current conditions');
+          console.log("⚠️ No events with choices available for current conditions");
           return null;
         }
 
         // Select random from available and mark as used
         const selectedEvent = availableEvents[Math.floor(Math.random() * availableEvents.length)];
         usedEvents.add(selectedEvent.title);
-        console.log('🎯 Selected event with choices:', selectedEvent.title, '| Used events:', usedEvents.size);
-        return selectedEvent;
-      }
-
-      // Select regular random event
-      function selectRandomEvent() {
-        console.log('🔍 Selecting random event from', randomEventsData?.length || 0, 'events');
-        if (!randomEventsData || randomEventsData.length === 0) {
-          console.log('❌ No random events data available');
-          return null;
-        }
-
-        // Filter events that meet conditions AND haven't been used recently
-        const availableEvents = randomEventsData.filter((event) => {
-          // Skip if event was used recently
-          if (usedEvents.has(event.title)) {
-            console.log(`⏭️ Skipping used event: ${event.title}`);
-            return false;
-          }
-          
-          // Check basic conditions
-          const meetsConditions = checkEventConditions(event);
-          console.log(`📋 Event "${event.title}" meets conditions:`, meetsConditions);
-          
-          if (!meetsConditions) return false;
-
-          // For conditional events, check trigger_chance
-          if (event.rarity === "conditional") {
-            const triggerRoll = Math.random() < event.trigger_chance;
-            console.log(`🎲 Conditional event roll: ${triggerRoll}`);
-            return triggerRoll;
-          }
-
-          // For regular events, use rarity-based selection
-          return true;
-        });
-
-        console.log('✅ Available events after filtering:', availableEvents.length);
-        if (availableEvents.length === 0) {
-          // If no unused events, reset used events and try again
-          if (usedEvents.size > 0) {
-            console.log('🔄 Resetting used events list');
-            usedEvents.clear();
-            return selectRandomEvent(); // Recursively try again
-          }
-          console.log('⚠️ No events available at all');
-          return null;
-        }
-
-        // Select random from available and mark as used
-        const selectedEvent = availableEvents[Math.floor(Math.random() * availableEvents.length)];
-        usedEvents.add(selectedEvent.title);
-        console.log('🎯 Selected event:', selectedEvent.title, '| Used events:', usedEvents.size);
+        console.log("🎯 Selected event with choices:", selectedEvent.title, "| Used events:", usedEvents.size);
         return selectedEvent;
       }
 
@@ -3103,7 +3485,11 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
             const oldValue = gameState.stats[stat];
             gameState.stats[stat] = Math.max(0, Math.min(100, gameState.stats[stat] + change));
             totalChange += Math.abs(change);
-            console.log(`Random event effect - ${stat}: ${oldValue} -> ${gameState.stats[stat]} (${change > 0 ? '+' : ''}${change})`);
+            console.log(
+              `Random event effect - ${stat}: ${oldValue} -> ${gameState.stats[stat]} (${
+                change > 0 ? "+" : ""
+              }${change})`
+            );
           }
         });
 
@@ -3111,8 +3497,8 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
         gameState.score += totalChange * 2; // Random events give bonus score
 
         // Create event popup in center screen
-        const eventDiv = document.createElement('div');
-        eventDiv.className = 'random-event-popup';
+        const eventDiv = document.createElement("div");
+        eventDiv.className = "random-event-popup";
         eventDiv.style.cssText = `
           position: fixed;
           top: 50%;
@@ -3134,9 +3520,9 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
         `;
 
         // Determine event severity
-        const isHighImpact = Object.values(modifiedEffects).some(val => Math.abs(val) >= 15);
-        const severityColor = isHighImpact ? '#ef4444' : '#f59e0b';
-        const severityIcon = isHighImpact ? '💥' : '⚡';
+        const isHighImpact = Object.values(modifiedEffects).some((val) => Math.abs(val) >= 15);
+        const severityColor = isHighImpact ? "#ef4444" : "#f59e0b";
+        const severityIcon = isHighImpact ? "💥" : "⚡";
 
         eventDiv.innerHTML = `
           <div style="text-align: center; margin-bottom: 25px;">
@@ -3144,7 +3530,7 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
               ${severityIcon} RANDOM EVENT! ${severityIcon}
             </h2>
             <div style="background: rgba(245, 158, 11, 0.15); padding: 8px 16px; border-radius: 20px; display: inline-block; font-size: 0.9em; color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3);">
-              Lượt ${gameState.currentTurn} | ${event.rarity?.toUpperCase() || 'RANDOM'}
+              Lượt ${gameState.currentTurn} | ${event.rarity?.toUpperCase() || "RANDOM"}
             </div>
           </div>
           
@@ -3159,22 +3545,29 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
           <div style="background: rgba(99, 102, 241, 0.15); padding: 25px; border-radius: 15px; margin-bottom: 30px; border: 1px solid rgba(99, 102, 241, 0.3);">
             <h4 style="color: #6366f1; margin-bottom: 20px; text-align: center; font-size: 1.2em;">📊 Tác Động Lên Chỉ Số:</h4>
             <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
-              ${Object.entries(modifiedEffects).map(([stat, change]) => {
-                if (change === 0) return '';
-                return `<span style="
+              ${Object.entries(modifiedEffects)
+                .map(([stat, change]) => {
+                  if (change === 0) return "";
+                  return `<span style="
                   display: inline-block; 
                   padding: 10px 15px; 
-                  background: ${change > 0 ? 'rgba(239, 68, 68, 0.2)' : 'rgba(16, 185, 129, 0.2)'}; 
-                  border: 2px solid ${change > 0 ? '#ef4444' : '#10b981'};
+                  background: ${change > 0 ? "rgba(239, 68, 68, 0.2)" : "rgba(16, 185, 129, 0.2)"}; 
+                  border: 2px solid ${change > 0 ? "#ef4444" : "#10b981"};
                   border-radius: 25px; 
-                  color: ${change > 0 ? '#ef4444' : '#10b981'};
+                  color: ${change > 0 ? "#ef4444" : "#10b981"};
                   font-weight: 700;
                   font-size: 1em;
-                  ${Math.abs(change) >= 15 ? 'animation: highImpactEffect 2s infinite; box-shadow: 0 0 15px rgba(255,255,255,0.2);' : ''}
+                  ${
+                    Math.abs(change) >= 15
+                      ? "animation: highImpactEffect 2s infinite; box-shadow: 0 0 15px rgba(255,255,255,0.2);"
+                      : ""
+                  }
                 ">
-                  ${statLabels[stat] || stat}: ${change > 0 ? '+' : ''}${change}
+                  ${statLabels[stat] || stat}: ${change > 0 ? "+" : ""}${change}
                 </span>`;
-              }).filter(Boolean).join('')}
+                })
+                .filter(Boolean)
+                .join("")}
             </div>
           </div>
           
@@ -3193,9 +3586,9 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
         updateDisplay();
 
         // Add close function
-        window.closeRandomEvent = function(button) {
-          const eventPopup = button.closest('.random-event-popup');
-          eventPopup.style.animation = 'eventSlideOut 0.5s ease-in';
+        window.closeRandomEvent = function (button) {
+          const eventPopup = button.closest(".random-event-popup");
+          eventPopup.style.animation = "eventSlideOut 0.5s ease-in";
           setTimeout(() => {
             if (eventPopup.parentNode) {
               eventPopup.remove();
@@ -3205,14 +3598,14 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
         };
 
         // Add hover effect to button
-        const continueBtn = eventDiv.querySelector('button');
-        continueBtn.addEventListener('mouseenter', function() {
-          this.style.transform = 'scale(1.05) translateY(-2px)';
-          this.style.boxShadow = '0 10px 30px rgba(245, 158, 11, 0.5)';
+        const continueBtn = eventDiv.querySelector("button");
+        continueBtn.addEventListener("mouseenter", function () {
+          this.style.transform = "scale(1.05) translateY(-2px)";
+          this.style.boxShadow = "0 10px 30px rgba(245, 158, 11, 0.5)";
         });
-        continueBtn.addEventListener('mouseleave', function() {
-          this.style.transform = 'scale(1) translateY(0)';
-          this.style.boxShadow = 'none';
+        continueBtn.addEventListener("mouseleave", function () {
+          this.style.transform = "scale(1) translateY(0)";
+          this.style.boxShadow = "none";
         });
 
         // Update stats display after applying effects
@@ -3231,8 +3624,8 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
         console.log(`🎪 Showing random event with choices: ${event.title}`);
 
         // Create event popup in center screen with choices
-        const eventDiv = document.createElement('div');
-        eventDiv.className = 'random-event-popup';
+        const eventDiv = document.createElement("div");
+        eventDiv.className = "random-event-popup";
         eventDiv.style.cssText = `
           position: fixed;
           top: 50%;
@@ -3254,11 +3647,11 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
         `;
 
         // Determine event severity
-        const isHighImpact = event.choices.some(choice => 
-          Object.values(choice.effects).some(val => Math.abs(val) >= 15)
+        const isHighImpact = event.choices.some((choice) =>
+          Object.values(choice.effects).some((val) => Math.abs(val) >= 15)
         );
-        const severityColor = isHighImpact ? '#ef4444' : '#f59e0b';
-        const severityIcon = isHighImpact ? '💥' : '⚡';
+        const severityColor = isHighImpact ? "#ef4444" : "#f59e0b";
+        const severityIcon = isHighImpact ? "💥" : "⚡";
 
         eventDiv.innerHTML = `
           <div style="text-align: center; margin-bottom: 25px;">
@@ -3266,7 +3659,7 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
               ${severityIcon} RANDOM EVENT WITH CHOICES! ${severityIcon}
             </h2>
             <div style="background: rgba(245, 158, 11, 0.15); padding: 8px 16px; border-radius: 20px; display: inline-block; font-size: 0.9em; color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3);">
-              Lượt ${gameState.currentTurn} | ${event.rarity?.toUpperCase() || 'RANDOM'}
+              Lượt ${gameState.currentTurn} | ${event.rarity?.toUpperCase() || "RANDOM"}
             </div>
           </div>
           
@@ -3281,33 +3674,41 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
           <div style="margin-bottom: 30px;">
             <h4 style="color: #6366f1; margin-bottom: 20px; text-align: center; font-size: 1.2em;">📋 Lựa Chọn Của Bạn:</h4>
             <div class="choices-container" style="display: flex; flex-direction: column; gap: 15px;">
-              ${event.choices.map((choice, index) => {
-                const isHighImpactChoice = Object.values(choice.effects).some(val => Math.abs(val) >= 15);
-                const choiceClass = isHighImpactChoice ? 'high-impact-choice' : '';
-                
-                let effectsPreview = "";
-                if (choice.effects) {
-                  Object.entries(choice.effects).forEach(([stat, change]) => {
-                    if (change !== 0) {
-                      const sign = change > 0 ? "+" : "";
-                      const statName = statLabels[stat] || stat;
-                      const impactClass = Math.abs(change) >= 15 ? ' high-impact-effect' : '';
-                      effectsPreview += `<span class="effect-item${impactClass}">${statName} ${sign}${change}</span> `;
-                    }
-                  });
-                }
+              ${event.choices
+                .map((choice, index) => {
+                  const isHighImpactChoice = Object.values(choice.effects).some((val) => Math.abs(val) >= 15);
+                  const choiceClass = isHighImpactChoice ? "high-impact-choice" : "";
 
-                return `
+                  let effectsPreview = "";
+                  if (choice.effects) {
+                    Object.entries(choice.effects).forEach(([stat, change]) => {
+                      if (change !== 0) {
+                        const sign = change > 0 ? "+" : "";
+                        const statName = statLabels[stat] || stat;
+                        const impactClass = Math.abs(change) >= 15 ? " high-impact-effect" : "";
+                        effectsPreview += `<span class="effect-item${impactClass}">${statName} ${sign}${change}</span> `;
+                      }
+                    });
+                  }
+
+                  return `
                   <div class="choice-option ${choiceClass}" onclick="handleEventChoice(${event.id}, ${index})" 
                        style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%); 
                               padding: 20px; border-radius: 15px; border: 2px solid rgba(99, 102, 241, 0.3); 
-                              cursor: pointer; transition: all 0.3s ease; ${isHighImpactChoice ? 'border-color: #ef4444; background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.05) 100%);' : ''}">
-                    <div style="font-weight: 700; font-size: 1.1em; margin-bottom: 10px; color: ${isHighImpactChoice ? '#ef4444' : '#f59e0b'};">${choice.title}</div>
+                              cursor: pointer; transition: all 0.3s ease; ${
+                                isHighImpactChoice
+                                  ? "border-color: #ef4444; background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.05) 100%);"
+                                  : ""
+                              }">
+                    <div style="font-weight: 700; font-size: 1.1em; margin-bottom: 10px; color: ${
+                      isHighImpactChoice ? "#ef4444" : "#f59e0b"
+                    };">${choice.title}</div>
                     <div style="margin-bottom: 15px; color: #e2e8f0;">${choice.text}</div>
                     <div style="font-size: 0.9em; color: #cbd5e1;">Tác động: ${effectsPreview || "Không có"}</div>
                   </div>
                 `;
-              }).join('')}
+                })
+                .join("")}
             </div>
           </div>
         `;
@@ -3316,21 +3717,21 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
         document.body.appendChild(eventDiv);
 
         // Add hover effects to choices
-        const choiceOptions = eventDiv.querySelectorAll('.choice-option');
-        choiceOptions.forEach(option => {
-          option.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-3px) scale(1.02)';
-            this.style.boxShadow = '0 8px 25px rgba(99, 102, 241, 0.3)';
+        const choiceOptions = eventDiv.querySelectorAll(".choice-option");
+        choiceOptions.forEach((option) => {
+          option.addEventListener("mouseenter", function () {
+            this.style.transform = "translateY(-3px) scale(1.02)";
+            this.style.boxShadow = "0 8px 25px rgba(99, 102, 241, 0.3)";
           });
-          option.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-            this.style.boxShadow = 'none';
+          option.addEventListener("mouseleave", function () {
+            this.style.transform = "translateY(0) scale(1)";
+            this.style.boxShadow = "none";
           });
         });
 
         // Add global function to handle choice selection
-        window.handleEventChoice = function(eventId, choiceIndex) {
-          const selectedEvent = randomEventsWithChoicesData.find(e => e.id === eventId);
+        window.handleEventChoice = function (eventId, choiceIndex) {
+          const selectedEvent = randomEventsWithChoicesData.find((e) => e.id === eventId);
           if (!selectedEvent) return;
 
           const selectedChoice = selectedEvent.choices[choiceIndex];
@@ -3346,7 +3747,11 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
               const oldValue = gameState.stats[stat];
               gameState.stats[stat] = Math.max(0, Math.min(100, gameState.stats[stat] + change));
               totalChange += Math.abs(change);
-              console.log(`Event choice effect - ${stat}: ${oldValue} -> ${gameState.stats[stat]} (${change > 0 ? '+' : ''}${change})`);
+              console.log(
+                `Event choice effect - ${stat}: ${oldValue} -> ${gameState.stats[stat]} (${
+                  change > 0 ? "+" : ""
+                }${change})`
+              );
             }
           });
 
@@ -3357,7 +3762,7 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
           updateDisplay();
 
           // Remove event popup
-          const eventPopup = document.querySelector('.random-event-popup');
+          const eventPopup = document.querySelector(".random-event-popup");
           if (eventPopup) eventPopup.remove();
 
           // Clean up global function
@@ -3379,13 +3784,14 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
 
         console.log(`🎯 Evaluating ending: ${ending.id}`, {
           currentStats: stats,
-          requirements: req
+          requirements: req,
         });
 
         // Check basic stat requirements
         for (const [statName, condition] of Object.entries(req)) {
-          if (statName === 'min_turn') {
-            const minTurn = parseInt(condition.replace('≥ ', ''));
+          // Special cases first
+          if (statName === "min_turn") {
+            const minTurn = parseInt(condition.replace(/[≥\s]/g, ""));
             if (gameState.currentTurn < minTurn) {
               console.log(`❌ Failed min_turn: ${gameState.currentTurn} < ${minTurn}`);
               return false;
@@ -3393,18 +3799,23 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
             continue;
           }
 
-          if (statName === 'completed_turns') {
-            if (condition === '= max_turns') {
-              if (gameState.currentTurn < maxTurns) {
-                console.log(`❌ Failed completed_turns: ${gameState.currentTurn} < ${maxTurns}`);
+          if (statName === "completed_turns") {
+            if (condition === "= max_turns") {
+              if (gameState.currentTurn <= maxTurns) {
+                // Fixed: should be <= not <
+                console.log(`❌ Failed completed_turns: ${gameState.currentTurn} <= ${maxTurns}`);
                 return false;
               }
             }
             continue;
           }
 
-          if (statName === 'triggered_by') {
-            // Special case for chain endings
+          if (statName === "triggered_by") {
+            // Check if the required ending has been triggered
+            if (!triggeredEndings.has(condition)) {
+              console.log(`❌ Failed triggered_by: ${condition} not triggered yet`);
+              return false;
+            }
             continue;
           }
 
@@ -3412,23 +3823,35 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
           const currentValue = stats[statName];
           if (currentValue === undefined) {
             console.log(`❌ Stat not found: ${statName}`);
-            continue;
+            return false; // Changed: return false instead of continue
           }
 
-          // Parse condition (≤ 20, ≥ 70, etc.)
+          // Parse condition more carefully
           let passed = false;
-          if (condition.includes('≤')) {
-            const threshold = parseInt(condition.replace('≤ ', ''));
+          const conditionStr = String(condition).trim();
+
+          if (conditionStr.includes("≤")) {
+            const threshold = parseInt(conditionStr.replace(/[≤\s]/g, ""));
             passed = currentValue <= threshold;
             console.log(`📊 ${statName}: ${currentValue} ≤ ${threshold} = ${passed}`);
-          } else if (condition.includes('≥')) {
-            const threshold = parseInt(condition.replace('≥ ', ''));
+          } else if (conditionStr.includes("≥")) {
+            const threshold = parseInt(conditionStr.replace(/[≥\s]/g, ""));
             passed = currentValue >= threshold;
             console.log(`📊 ${statName}: ${currentValue} ≥ ${threshold} = ${passed}`);
+          } else {
+            // Fallback: try to parse as number for exact match
+            const exactValue = parseInt(conditionStr);
+            if (!isNaN(exactValue)) {
+              passed = currentValue === exactValue;
+              console.log(`📊 ${statName}: ${currentValue} === ${exactValue} = ${passed}`);
+            } else {
+              console.log(`❌ Unknown condition format: ${conditionStr}`);
+              return false;
+            }
           }
 
           if (!passed) {
-            console.log(`❌ Failed requirement: ${statName} ${condition}`);
+            console.log(`❌ Failed requirement: ${statName} ${condition} (current: ${currentValue})`);
             return false;
           }
         }
@@ -3440,67 +3863,110 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
       // Check game end conditions using endings.json
       function checkGameEnd() {
         console.log("🎯 Checking game end conditions...");
-        
-        if (gameState.gameEnded) return true;
+        console.log("📊 Current game state:", {
+          turn: gameState.currentTurn,
+          maxTurns: maxTurns,
+          stats: gameState.stats,
+          gameEnded: gameState.gameEnded,
+        });
+
+        if (gameState.gameEnded) {
+          console.log("🔒 Game already ended, skipping checks");
+          return true;
+        }
+
+
 
         // 🚨 KIỂM TRA CÁC TRƯỜNG HỢP CỰC ĐOAN TRƯỚC (ưu tiên cao nhất)
         console.log("🚨 Checking critical failure conditions first...");
-        
+
         // Cách mạng - Conflict quá cao
         if (gameState.stats.conflict >= 85) {
           console.log("💥 CRITICAL: Conflict >= 85, triggering revolution");
-          endGame("revolution", "🔥 CÁCH MẠNG BÙNG NỔ", "Xung đột xã hội vượt quá ngưỡng chịu đựng. Hàng triệu người xuống đường biểu tình. Chính phủ của bạn đã bị lật đổ bởi sức mạnh của nhân dân!");
+          endGame(
+            "revolution",
+            "🔥 CÁCH MẠNG BÙNG NỔ",
+            "Xung đột xã hội vượt quá ngưỡng chịu đựng. Hàng triệu người xuống đường biểu tình. Chính phủ của bạn đã bị lật đổ bởi sức mạnh của nhân dân!"
+          );
           return true;
         }
 
         // Sụp đổ kinh tế - Economy quá thấp
         if (gameState.stats.economy <= 10) {
           console.log("📉 CRITICAL: Economy <= 10, triggering economic collapse");
-          endGame("economic_collapse", "📉 SUY THOÁI KINH TẾ", "Nền kinh tế sụp đổ hoàn toàn. Đất nước rơi vào khủng hoảng tài chính nghiêm trọng. Thất nghiệp cao, lạm phát tăng vọt. Bạn đã thất bại trong việc lãnh đạo kinh tế!");
+          endGame(
+            "economic_collapse",
+            "📉 SUY THOÁI KINH TẾ",
+            "Nền kinh tế sụp đổ hoàn toàn. Đất nước rơi vào khủng hoảng tài chính nghiêm trọng. Thất nghiệp cao, lạm phát tăng vọt. Bạn đã thất bại trong việc lãnh đạo kinh tế!"
+          );
           return true;
         }
 
         // Thảm họa môi trường - Environment quá thấp
         if (gameState.stats.environment <= 10) {
           console.log("🌍 CRITICAL: Environment <= 10, triggering environmental disaster");
-          endGame("environmental_disaster", "🌍 THẢM HỌA MÔI TRƯỜNG", "Môi trường bị tàn phá nghiêm trọng. Biến đổi khí hậu và ô nhiễm đã làm đất nước không thể sinh sống được. Thảm họa sinh thái đã xảy ra!");
+          endGame(
+            "environmental_disaster",
+            "🌍 THẢM HỌA MÔI TRƯỜNG",
+            "Môi trường bị tàn phá nghiêm trọng. Biến đổi khí hậu và ô nhiễm đã làm đất nước không thể sinh sống được. Thảm họa sinh thái đã xảy ra!"
+          );
           return true;
         }
 
         // Mất quyền lực - Discontent quá cao
         if (gameState.stats.discontent >= 85) {
           console.log("🔻 CRITICAL: Discontent >= 85, triggering overthrow");
-          endGame("overthrown", "🔻 MẤT QUYỀN LỰC", "Sự bất mãn của dân chúng đạt đỉnh điểm. Người dân không còn tin tưởng vào chính quyền. Bạn bị truất phế khỏi chức vụ!");
+          endGame(
+            "overthrown",
+            "🔻 MẤT QUYỀN LỰC",
+            "Sự bất mãn của dân chúng đạt đỉnh điểm. Người dân không còn tin tưởng vào chính quyền. Bạn bị truất phế khỏi chức vụ!"
+          );
           return true;
         }
 
         // Security quá thấp - Mất kiểm soát
         if (gameState.stats.security <= 5) {
           console.log("⚠️ CRITICAL: Security <= 5, triggering anarchy");
-          endGame("anarchy", "⚡ TÌNH TRẠNG VÔ CHÍNH PHỦ", "An ninh sụp đổ hoàn toàn. Tội phạm hoành hành, luật pháp không còn hiệu lực. Đất nước rơi vào tình trạng hỗn loạn!");
+          endGame(
+            "anarchy",
+            "⚡ TÌNH TRẠNG VÔ CHÍNH PHỦ",
+            "An ninh sụp đổ hoàn toàn. Tội phạm hoành hành, luật pháp không còn hiệu lực. Đất nước rơi vào tình trạng hỗn loạn!"
+          );
           return true;
         }
 
         // Freedom quá thấp + Security quá cao = Độc tài ngay lập tức
         if (gameState.stats.freedom <= 5 && gameState.stats.security >= 90) {
           console.log("⚔️ CRITICAL: Extreme dictatorship detected");
-          endGame("extreme_dictatorship", "👑 ĐỘC TÀI TUYỆT ĐỐI", "Bạn đã thiết lập chế độ độc tài tuyệt đối. Mọi quyền tự do bị triệt tiêu, kiểm soát tuyệt đối. Nhưng lịch sử chứng minh... không ai cai trị mãi mãi!");
+          endGame(
+            "extreme_dictatorship",
+            "👑 ĐỘC TÀI TUYỆT ĐỐI",
+            "Bạn đã thiết lập chế độ độc tài tuyệt đối. Mọi quyền tự do bị triệt tiêu, kiểm soát tuyệt đối. Nhưng lịch sử chứng minh... không ai cai trị mãi mãi!"
+          );
           return true;
         }
 
         // 📚 SAU ĐÓ MỚI KIỂM TRA ENDINGS.JSON (cho các trường hợp bình thường)
-        if (Array.isArray(endingsData) && endingsData.length > 0) {
-          console.log(`📚 Evaluating ${endingsData.length} endings from endings.json`);
-          
+        // QUAN TRỌNG: Chỉ kiểm tra endings đặc biệt sau turn 3 để tránh ending sớm
+        if (Array.isArray(endingsData) && endingsData.length > 0 && gameState.currentTurn >= 3) {
+          console.log(`📚 Evaluating ${endingsData.length} endings from endings.json (turn ${gameState.currentTurn})`);
+
           // Evaluate each ending in order from most specific to generic
           for (const ending of endingsData) {
             if (triggeredEndings.has(ending.id)) continue; // Skip already shown endings
+
+            // Filter out premature endings - some endings should only trigger after certain turns
+            const earlyEndingIds = ["dictator_temporary", "authoritarian_stability", "talented_leader"];
+            if (earlyEndingIds.includes(ending.id) && gameState.currentTurn < 5) {
+              console.log(`⏰ Skipping early ending ${ending.id} (turn ${gameState.currentTurn} < 5)`);
+              continue;
+            }
 
             if (evaluateEnding(ending)) {
               // Handle leads_to chain for dictator path
               if (ending.leads_to) {
                 console.log(`� Chain ending detected: ${ending.id} → ${ending.leads_to}`);
-                
+
                 // Trigger temporary ending first (if defined) then queue leads_to
                 endGame(ending.id, ending.name, ending.description);
                 triggeredEndings.add(ending.id);
@@ -3529,7 +3995,7 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
 
         // Fallback: Basic failure conditions if no endings.json
         console.log("⚠️ Using fallback ending conditions");
-        
+
         if (gameState.stats.conflict >= 85) {
           endGame("revolution", "🔥 CÁCH MẠNG BÙNG NỔ", "Xung đột đạt mức tới hạn!");
           return true;
@@ -3587,6 +4053,7 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
         };
 
         dictatorModeTriggered = false;
+        triggeredEndings.clear(); // Reset triggered endings
 
         // Reset event tracking
         usedEvents.clear();
@@ -3631,6 +4098,8 @@ Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
       // Initialize when page loads
       window.addEventListener("load", function () {
         console.log("Political Simulator loaded with difficulty modes and comprehensive guide");
+        // Add keyboard event listener
+        window.addEventListener("keydown", handleKeyPress);
       });
     </script>
   </body>

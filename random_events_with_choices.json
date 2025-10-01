@@ -1,54 +1,60 @@
 [
   {
-    "id": 101,
-    "title": "BẠO LOẠN SINH VIÊN Ở QUẢNG TRƯỜNG THIÊN AN MÔN",
-    "text": "Hàng ngàn sinh viên xuống đường biểu tình đòi dân chủ và tự do ngôn luận. Họ chiếm giữ quảng trường và yêu cầu chính phủ thực hiện cải cách chính trị. Tình hình đang trở nên căng thẳng.",
+    "id": 102,
+    "title": "BIỂU TÌNH CHỐNG CHÍNH SÁCH THUÊ ĐẤT ĐẶC KHU 99 NĂM",
+    "text": "Hàng ngàn người dân xuống đường phản đối dự luật cho phép thuê đất đặc khu 99 năm, lo ngại sự chi phối của nước ngoài và nguy cơ ảnh hưởng đến chủ quyền quốc gia. Tình hình đang diễn biến phức tạp trên diện rộng.",
     "conditions": {
-      "freedom": {"max": 25},
-      "security": {"min": 60},
+      "freedom": {
+        "min": 30
+      },
+      "conflict": {
+        "min": 20
+      },
       "min_turn": 5
     },
     "choices": [
       {
-        "title": "ĐÀN ÁP BẰNG VŨ LỰC",
-        "text": "Triển khai quân đội và cảnh sát để dẹp loạn ngay lập tức, khôi phục trật tự bằng mọi giá",
+        "title": "SIẾT CHẶT AN NINH, GIẢI TÁN BIỂU TÌNH",
+        "text": "Triển khai lực lượng an ninh dẹp bỏ biểu tình và kiểm soát nghiêm ngặt thông tin, hạn chế các hoạt động tập trung đông người.",
         "effects": {
-          "discontent": 25,
-          "conflict": 30,
-          "freedom": -20,
-          "security": 15
+          "discontent": 20,
+          "conflict": 25,
+          "freedom": -15,
+          "security": 10
         }
       },
       {
-        "title": "XOA DỊU VÀ ĐỐI THOẠI",
-        "text": "Cử đại diện chính phủ đối thoại với sinh viên, cam kết xem xét các yêu cầu cải cách",
+        "title": "LẮNG NGHE VÀ RÚT DỰ LUẬT",
+        "text": "Chính phủ tiếp nhận ý kiến người dân, hoãn hoặc rút dự luật cho thuê đất 99 năm để xoa dịu dư luận.",
         "effects": {
-          "discontent": -10,
+          "discontent": -20,
           "conflict": -15,
-          "freedom": 15,
+          "freedom": 10,
           "security": -5
         }
       },
       {
-        "title": "BẮT NGƯỜI CẦM ĐẦU",
-        "text": "Bắt giữ các nhà lãnh đạo phong trào để làm gương, nhưng cho phép biểu tình ôn hòa tiếp tục",
+        "title": "BẮT GIỮ NGƯỜI KÍCH ĐỘNG",
+        "text": "Bắt giữ các đối tượng bị cáo buộc kích động nhằm lập lại trật tự, đồng thời tuyên truyền trấn an dư luận về dự luật.",
         "effects": {
           "discontent": 15,
-          "conflict": 20,
-          "freedom": -15,
-          "security": 10
+          "conflict": 10,
+          "freedom": -10,
+          "security": 5
         }
       }
     ],
     "rarity": "conditional",
-    "trigger_chance": 0.9
+    "trigger_chance": 0.8
   },
   {
     "id": 102,
     "title": "KHỦNG HOẢNG TÀI CHÍNH TOÀN CẦU",
     "text": "Một cuộc khủng hoảng tài chính quốc tế đang lan rộng, ảnh hưởng nghiêm trọng đến nền kinh tế trong nước. Các ngân hàng đứng trước nguy cơ sụp đổ.",
     "conditions": {
-      "economy": {"max": 30},
+      "economy": {
+        "max": 30
+      },
       "min_turn": 3
     },
     "choices": [
@@ -91,7 +97,9 @@
     "title": "THẢM HỌA THIÊN NHIÊN LỊCH SỬ",
     "text": "Một trận động đất mạnh kèm theo sóng thần đã tàn phá nhiều tỉnh thành ven biển. Hàng triệu người mất nhà cửa, cần cứu trợ khẩn cấp.",
     "conditions": {
-      "environment": {"max": 20},
+      "environment": {
+        "max": 20
+      },
       "min_turn": 4
     },
     "choices": [
@@ -134,8 +142,12 @@
     "title": "CUỘC ĐẢO CHÍNH QUÂN SỰ",
     "text": "Một nhóm sĩ quan quân đội cấp cao đang âm mưu đảo chính lật đổ chính phủ. Họ cáo buộc chính phủ tham nhũng và yếu kém trong lãnh đạo.",
     "conditions": {
-      "security": {"max": 40},
-      "discontent": {"min": 60},
+      "security": {
+        "max": 40
+      },
+      "discontent": {
+        "min": 60
+      },
       "min_turn": 8
     },
     "choices": [
@@ -178,8 +190,12 @@
     "title": "PHONG TRÀO ĐÒI TỰ TRỊ DÂN TỘC THIỂU SỐ",
     "text": "Các dân tộc thiểu số ở vùng biên giới tuyên bố muốn tự trị và thành lập chính quyền riêng. Họ đòi hỏi quyền tự quản và ngôn ngữ chính thức riêng.",
     "conditions": {
-      "freedom": {"max": 30},
-      "conflict": {"min": 40},
+      "freedom": {
+        "max": 30
+      },
+      "conflict": {
+        "min": 40
+      },
       "min_turn": 6
     },
     "choices": [
@@ -222,7 +238,9 @@
     "title": "ĐẠI DỊCH TOÀN CẦU BÙNG PHÁT",
     "text": "Một đại dịch mới với tốc độ lây lan cực nhanh đang hoành hành trên toàn cầu. Hệ thống y tế quá tải, kinh tế đình trệ.",
     "conditions": {
-      "economy": {"min": 40},
+      "economy": {
+        "min": 40
+      },
       "min_turn": 3
     },
     "choices": [
@@ -268,7 +286,9 @@
     "title": "KHỦNG HOẢNG NĂNG LƯỢNG TOÀN CẦU",
     "text": "Giá dầu thế giới tăng vọt 300% do xung đột ở khu vực sản xuất dầu lớn. Người dân biểu tình đòi chính phủ can thiệp giảm giá nhiên liệu.",
     "conditions": {
-      "economy": {"min": 50},
+      "economy": {
+        "min": 50
+      },
       "min_turn": 4
     },
     "choices": [
@@ -312,7 +332,9 @@
     "title": "VỤ THAM NHŨNG CHẤN ĐỘNG",
     "text": "Một vụ tham nhũng lớn bị phanh phui liên quan đến nhiều quan chức cao cấp. Dư luận yêu cầu điều tra triệt để và xử lý nghiêm minh.",
     "conditions": {
-      "security": {"min": 50},
+      "security": {
+        "min": 50
+      },
       "min_turn": 5
     },
     "choices": [
@@ -358,7 +380,9 @@
     "title": "CUỘC CÁCH MẠNG CÔNG NGHIỆP 4.0",
     "text": "Tự động hóa và AI đang thay thế hàng triệu việc làm truyền thống. Công nhân biểu tình đòi chính phủ bảo vệ quyền lợi và tạo việc làm mới.",
     "conditions": {
-      "economy": {"min": 60},
+      "economy": {
+        "min": 60
+      },
       "min_turn": 7
     },
     "choices": [
@@ -404,8 +428,12 @@
     "title": "XUNG ĐỘT BIÊN GIỚI VỚI NƯỚC LÁNG GIỀNG",
     "text": "Căng thẳng biên giới với nước láng giềng leo thang. Cả hai bên đều triển khai thêm quân đội, nguy cơ xung đột vũ trang đang hiện hữu.",
     "conditions": {
-      "security": {"max": 50},
-      "conflict": {"min": 40},
+      "security": {
+        "max": 50
+      },
+      "conflict": {
+        "min": 40
+      },
       "min_turn": 6
     },
     "choices": [
@@ -445,5 +473,729 @@
     ],
     "rarity": "conditional",
     "trigger_chance": 0.6
+  },
+  {
+    "id": 111,
+    "title": "TẤN CÔNG MẠNG QUY MÔ LỚN",
+    "text": "Hệ thống mạng quốc gia bị tấn công bởi hacker quốc tế. Dữ liệu nhạy cảm của chính phủ và công dân có nguy cơ bị đánh cắp. Hệ thống ngân hàng và điện lực bị tê liệt.",
+    "conditions": {
+      "security": {
+        "max": 30
+      },
+      "min_turn": 4
+    },
+    "choices": [
+      {
+        "title": "ĐÓNG CẮT TOÀN BỘ INTERNET QUỐC GIA",
+        "text": "Ngắt kết nối internet toàn quốc để ngăn chặn tấn công, ưu tiên bảo mật",
+        "effects": {
+          "security": 25,
+          "economy": -30,
+          "freedom": -20,
+          "conflict": 20
+        }
+      },
+      {
+        "title": "TĂNG CƯỜNG PHÒNG THỦ MẠNG",
+        "text": "Đầu tư khẩn cấp vào hệ thống an ninh mạng và hợp tác quốc tế chống tội phạm mạng",
+        "effects": {
+          "security": 15,
+          "economy": -15,
+          "freedom": 5,
+          "conflict": -5
+        }
+      },
+      {
+        "title": "CHẤP NHẬN RỦI RO VÀ DUY TRÌ HOẠT ĐỘNG",
+        "text": "Tiếp tục hoạt động bình thường, tăng cường giám sát nhưng không gián đoạn dịch vụ",
+        "effects": {
+          "security": -10,
+          "economy": 10,
+          "freedom": 15,
+          "conflict": 15,
+          "discontent": 20
+        }
+      }
+    ],
+    "rarity": "conditional",
+    "trigger_chance": 0.8
+  },
+  {
+    "id": 112,
+    "title": "VỤ CƯỚP NGÂN HÀNG TRUNG ƯƠNG",
+    "text": "Một băng nhóm tội phạm có tổ chức đã thực hiện vụ cướp táo bạo tại ngân hàng trung ương. Họ đã chiếm đoạt lượng lớn vàng dự trữ quốc gia và đang bỏ trốn.",
+    "conditions": {
+      "security": {
+        "max": 30
+      },
+      "economy": {
+        "min": 40
+      },
+      "min_turn": 5
+    },
+    "choices": [
+      {
+        "title": "PHONG TỎA TOÀN QUỐC TÌM KIẾM",
+        "text": "Triển khai toàn bộ lực lượng an ninh để truy bắt tội phạm bằng mọi giá",
+        "effects": {
+          "security": 20,
+          "freedom": -25,
+          "economy": -20,
+          "conflict": 15
+        }
+      },
+      {
+        "title": "THƯƠNG LƯỢNG VÀ CHUỘC TỘI",
+        "text": "Đàm phán với tội phạm để lấy lại tài sản, chấp nhận trả tiền chuộc",
+        "effects": {
+          "security": -10,
+          "economy": -25,
+          "freedom": 5,
+          "discontent": 15
+        }
+      },
+      {
+        "title": "BẢO HIỂM VÀ TÁI CẤU TRÚC",
+        "text": "Sử dụng bảo hiểm quốc tế và cải tổ lại hệ thống an ninh ngân hàng",
+        "effects": {
+          "security": 15,
+          "economy": -15,
+          "freedom": 10,
+          "environment": -5
+        }
+      }
+    ],
+    "rarity": "conditional",
+    "trigger_chance": 0.7
+  },
+  {
+    "id": 113,
+    "title": "VỤ KHỦNG BỐ TẠI SÂN BAY QUỐC TẾ",
+    "text": "Một vụ khủng bố đã xảy ra tại sân bay quốc tế chính, gây thương vong và hoảng loạn. An ninh hàng không toàn quốc bị đặt câu hỏi về hiệu quả.",
+    "conditions": {
+      "security": {
+        "max": 35
+      },
+      "freedom": {
+        "min": 60
+      },
+      "min_turn": 6
+    },
+    "choices": [
+      {
+        "title": "TĂNG CƯỜNG KIỂM SOÁT AN NINH HÀNG KHÔNG",
+        "text": "Áp dụng các biện pháp an ninh nghiêm ngặt tại tất cả sân bay và cửa khẩu",
+        "effects": {
+          "security": 25,
+          "freedom": -20,
+          "economy": -15,
+          "discontent": 10
+        }
+      },
+      {
+        "title": "HỢP TÁC QUỐC TẾ CHỐNG KHỦNG BỐ",
+        "text": "Tăng cường hợp tác tình báo với các nước và tổ chức quốc tế",
+        "effects": {
+          "security": 15,
+          "freedom": -5,
+          "economy": -10,
+          "conflict": -10
+        }
+      },
+      {
+        "title": "GIỮ NGUYÊN VÀ TĂNG GIÁM SÁT",
+        "text": "Không thay đổi chính sách lớn, chỉ tăng cường giám sát và theo dõi",
+        "effects": {
+          "security": 5,
+          "freedom": 10,
+          "economy": 5,
+          "discontent": -5,
+          "conflict": 5
+        }
+      }
+    ],
+    "rarity": "conditional",
+    "trigger_chance": 0.6
+  },
+  {
+    "id": 114,
+    "title": "SỤP ĐỔ TIỆM VÀNG VÀ TÀI CHÍNH",
+    "text": "Hệ thống tiệm vàng và trao đổi vàng bạc truyền thống sụp đổ do khủng hoảng thanh khoản. Hàng triệu người dân mất tiết kiệm, đe dọa ổn định xã hội.",
+    "conditions": {
+      "economy": {
+        "max": 25
+      },
+      "min_turn": 4
+    },
+    "choices": [
+      {
+        "title": "GIẢI CỨU VÀ BẢO LÃNH TIỆM VÀNG",
+        "text": "Sử dụng ngân sách nhà nước để cứu trợ các tiệm vàng và bảo vệ người tiết kiệm",
+        "effects": {
+          "economy": 10,
+          "discontent": -20,
+          "freedom": -10,
+          "security": 5
+        }
+      },
+      {
+        "title": "ĐỂ THỊ TRƯỜNG TỰ ĐIỀU CHỈNH",
+        "text": "Không can thiệp, để các doanh nghiệp tự phá sản và thị trường tự phục hồi",
+        "effects": {
+          "economy": -15,
+          "discontent": 25,
+          "freedom": 15,
+          "conflict": 20
+        }
+      },
+      {
+        "title": "CHUYỂN ĐỔI SANG NGÂN HÀNG HIỆN ĐẠI",
+        "text": "Thúc đẩy chuyển đổi sang hệ thống ngân hàng điện tử và thanh toán số",
+        "effects": {
+          "economy": 5,
+          "discontent": 10,
+          "freedom": 10,
+          "security": -5,
+          "environment": 5
+        }
+      }
+    ],
+    "rarity": "conditional",
+    "trigger_chance": 0.9
+  },
+  {
+    "id": 115,
+    "title": "KHỦNG HOẢNG THỰC PHẨM TOÀN QUỐC",
+    "text": "Hạn hán và dịch bệnh cây trồng đã tàn phá mùa màng. Giá thực phẩm tăng vọt 400%, người dân xếp hàng dài để mua gạo và thực phẩm thiết yếu.",
+    "conditions": {
+      "economy": {
+        "max": 30
+      },
+      "environment": {
+        "max": 40
+      },
+      "min_turn": 5
+    },
+    "choices": [
+      {
+        "title": "NHẬP KHẨU KHẨN CẤP THỰC PHẨM",
+        "text": "Sử dụng dự trữ ngoại tệ để nhập khẩu lương thực từ các nước láng giềng",
+        "effects": {
+          "economy": -20,
+          "discontent": -15,
+          "security": 10,
+          "freedom": -5
+        }
+      },
+      {
+        "title": "PHÂN PHỐI THEO ĐỊNH LƯỢNG",
+        "text": "Áp dụng hệ thống phân phối thực phẩm theo định lượng cho từng gia đình",
+        "effects": {
+          "discontent": -10,
+          "freedom": -20,
+          "security": 15,
+          "economy": -10,
+          "conflict": 10
+        }
+      },
+      {
+        "title": "KHUYẾN KHÍCH SẢN XUẤT TRONG NƯỚC",
+        "text": "Đầu tư mạnh vào nông nghiệp công nghệ cao và hỗ trợ nông dân chuyển đổi cây trồng",
+        "effects": {
+          "economy": -25,
+          "environment": 15,
+          "discontent": 5,
+          "conflict": -5
+        }
+      }
+    ],
+    "rarity": "conditional",
+    "trigger_chance": 0.8
+  },
+  {
+    "id": 116,
+    "title": "THẤT NGHIỆP HÀNG LOẠT TRONG CÔNG NGHIỆP",
+    "text": "Cuộc cách mạng tự động hóa đã khiến 3 triệu công nhân mất việc chỉ trong 6 tháng. Các khu công nghiệp trở thành 'thành phố ma', tỷ lệ thất nghiệp lên tới 35%.",
+    "conditions": {
+      "economy": {
+        "max": 40
+      },
+      "min_turn": 6
+    },
+    "choices": [
+      {
+        "title": "CHƯƠNG TRÌNH ĐÀO TẠO LẠI NGHỀ TOÀN DIỆN",
+        "text": "Chi 50 tỷ USD để đào tạo lại kỹ năng cho tất cả công nhân thất nghiệp",
+        "effects": {
+          "economy": -30,
+          "discontent": -25,
+          "freedom": 10,
+          "security": 5
+        }
+      },
+      {
+        "title": "TRỢ CẤP THẤT NGHIỆP DÀI HẠN",
+        "text": "Cung cấp trợ cấp thất nghiệp 2 năm cho tất cả công nhân bị mất việc",
+        "effects": {
+          "economy": -25,
+          "discontent": -20,
+          "freedom": 5,
+          "conflict": -10
+        }
+      },
+      {
+        "title": "TẠO VIỆC LÀM CÔNG CỘNG",
+        "text": "Khởi động các dự án công trình công cộng quy mô lớn để tạo việc làm",
+        "effects": {
+          "economy": -20,
+          "discontent": -15,
+          "environment": 10,
+          "security": 10
+        }
+      }
+    ],
+    "rarity": "conditional",
+    "trigger_chance": 0.7
+  },
+  {
+    "id": 117,
+    "title": "Ô NHIỄM SÔNG CHÍNH NGHIÊM TRỌNG",
+    "text": "Sông chính của đất nước bị ô nhiễm nặng nề do chất thải công nghiệp. Hàng triệu người mất nguồn nước sạch, cá chết hàng loạt, hệ sinh thái sụp đổ.",
+    "conditions": {
+      "environment": {
+        "max": 25
+      },
+      "economy": {
+        "min": 50
+      },
+      "min_turn": 4
+    },
+    "choices": [
+      {
+        "title": "ĐÓNG CỬA TẤT CẢ NHÀNH MÁY GÂY Ô NHIỄM",
+        "text": "Buộc đóng cửa ngay lập tức tất cả các nhà máy gây ô nhiễm dọc sông",
+        "effects": {
+          "environment": 25,
+          "economy": -35,
+          "discontent": 15,
+          "conflict": 20
+        }
+      },
+      {
+        "title": "ĐẦU TƯ HỆ THỐNG XỬ LÝ NƯỚC THẢI",
+        "text": "Chi ngân sách lớn xây dựng hệ thống xử lý nước thải hiện đại",
+        "effects": {
+          "environment": 20,
+          "economy": -25,
+          "discontent": -10,
+          "security": 5
+        }
+      },
+      {
+        "title": "DI DỜI DÂN CƯ VÙNG Ô NHIỄM",
+        "text": "Sơ tán người dân khỏi khu vực ô nhiễm và tìm nguồn nước mới",
+        "effects": {
+          "discontent": 20,
+          "economy": -30,
+          "conflict": 25,
+          "security": -10,
+          "freedom": -15
+        }
+      }
+    ],
+    "rarity": "conditional",
+    "trigger_chance": 0.9
+  },
+  {
+    "id": 118,
+    "title": "SIÊU BÃO CỰC ĐOAN ĐÁNH VÀO ĐẤT LIỀN",
+    "text": "Siêu bão có sức gió 300km/h - mạnh nhất trong lịch sử - đang tiến thẳng vào khu vực đông dân cư nhất. Dự báo sẽ có thiệt hại nghiêm trọng về người và của.",
+    "conditions": {
+      "environment": {
+        "max": 30
+      },
+      "min_turn": 3
+    },
+    "choices": [
+      {
+        "title": "SƠ TÁN KHẨN CẤP 10 TRIỆU DÂN",
+        "text": "Triển khai sơ tán quy mô lớn nhất trong lịch sử, di chuyển toàn bộ dân cư nguy hiểm",
+        "effects": {
+          "security": 15,
+          "economy": -35,
+          "discontent": -20,
+          "conflict": 15
+        }
+      },
+      {
+        "title": "TĂNG CƯỜNG CÁC CÔNG TRÌNH CHỐNG BÃO",
+        "text": "Khẩn cấp gia cố các công trình, kè chắn sóng và hệ thống thoát nước",
+        "effects": {
+          "environment": 10,
+          "economy": -25,
+          "security": 10,
+          "discontent": 5
+        }
+      },
+      {
+        "title": "ĐỂ DÂN TỰ BẢO VỆ VÀ CỨU TRỢ SAU BÃO",
+        "text": "Để người dân tự quyết định, tập trung nguồn lực cho công tác cứu trợ sau bão",
+        "effects": {
+          "freedom": 15,
+          "economy": 10,
+          "discontent": 30,
+          "conflict": 25,
+          "environment": -15
+        }
+      }
+    ],
+    "rarity": "conditional",
+    "trigger_chance": 0.8
+  },
+  {
+    "id": 119,
+    "title": "THẢM HỌA SINH THÁI - TUYỆT CHỦNG HÀNG LOẠT",
+    "text": "Hệ sinh thái quốc gia sụp đổ do ô nhiễm và biến đổi khí hậu. 60% loài động vật bản địa đang đối mặt nguy cơ tuyệt chủng trong 5 năm tới.",
+    "conditions": {
+      "environment": {
+        "max": 20
+      },
+      "economy": {
+        "min": 40
+      },
+      "min_turn": 7
+    },
+    "choices": [
+      {
+        "title": "CHƯƠNG TRÌNH BẢO TỒN KHẨN CẤP",
+        "text": "Đầu tư 100 tỷ USD cho bảo tồn thiên nhiên và phục hồi hệ sinh thái",
+        "effects": {
+          "environment": 30,
+          "economy": -40,
+          "discontent": -5,
+          "freedom": 10
+        }
+      },
+      {
+        "title": "CÂN BẰNG GIỮA PHÁT TRIỂN VÀ BẢO VỆ",
+        "text": "Thực hiện bảo tồn vừa phải, không ảnh hưởng quá nhiều đến kinh tế",
+        "effects": {
+          "environment": 15,
+          "economy": -15,
+          "discontent": 5,
+          "conflict": 10
+        }
+      },
+      {
+        "title": "ƯU TIÊN KINH TẾ HƠN MÔI TRƯỜNG",
+        "text": "Tiếp tục phát triển kinh tế, để tự nhiên tự điều chỉnh theo quy luật tự nhiên",
+        "effects": {
+          "economy": 20,
+          "environment": -20,
+          "discontent": 15,
+          "conflict": 25
+        }
+      }
+    ],
+    "rarity": "conditional",
+    "trigger_chance": 0.8
+  },
+  {
+    "id": 120,
+    "title": "BIỂU TÌNH ĐÒI DÂN CHỦ HÓA",
+    "text": "Phong trào dân chủ quy mô lớn với hàng triệu người tham gia đòi hỏi cải cách chính trị toàn diện. Họ yêu cầu bầu cử tự do, đa đảng và minh bạch quyền lực.",
+    "conditions": {
+      "freedom": {
+        "max": 25
+      },
+      "security": {
+        "min": 60
+      },
+      "min_turn": 8
+    },
+    "choices": [
+      {
+        "title": "THỰC HIỆN DÂN CHỦ HÓA TOÀN DIỆN",
+        "text": "Chấp nhận yêu cầu của người dân, tiến hành cải cách dân chủ sâu rộng",
+        "effects": {
+          "freedom": 35,
+          "discontent": -30,
+          "security": -20,
+          "conflict": -15
+        }
+      },
+      {
+        "title": "CẢI CÁCH TỪ TỪNG BƯỚC",
+        "text": "Đồng ý cải cách nhưng theo lộ trình từng bước, có kiểm soát",
+        "effects": {
+          "freedom": 20,
+          "discontent": -15,
+          "security": -10,
+          "conflict": 5
+        }
+      },
+      {
+        "title": "DUY TRÌ HIỆN TRẠNG VÀ KIỂM SOÁT",
+        "text": "Từ chối cải cách, tăng cường kiểm soát để duy trì ổn định chính trị",
+        "effects": {
+          "freedom": -15,
+          "discontent": 30,
+          "security": 15,
+          "conflict": 35
+        }
+      }
+    ],
+    "rarity": "conditional",
+    "trigger_chance": 0.9
+  },
+  {
+    "id": 121,
+    "title": "KIỂM DUYỆT TRUYỀN THÔNG VÀ INTERNET",
+    "text": "Chính phủ đang cân nhắc áp dụng luật kiểm duyệt nghiêm ngặt đối với truyền thông và mạng xã hội để 'duy trì ổn định xã hội'. Các nhà báo và blogger phản ứng mạnh mẽ.",
+    "conditions": {
+      "freedom": {
+        "max": 35
+      },
+      "security": {
+        "min": 50
+      },
+      "min_turn": 5
+    },
+    "choices": [
+      {
+        "title": "ÁP DỤNG KIỂM DUYỆT NGHIÊM NGẶT",
+        "text": "Thông qua luật kiểm duyệt toàn diện, kiểm soát chặt chẽ mọi nội dung truyền thông",
+        "effects": {
+          "freedom": -25,
+          "security": 20,
+          "discontent": 25,
+          "conflict": 20
+        }
+      },
+      {
+        "title": "KIỂM DUYỆT CÓ CHỌN LỌC",
+        "text": "Chỉ kiểm duyệt những nội dung cực đoan hoặc có hại, giữ tự do báo chí cơ bản",
+        "effects": {
+          "freedom": -10,
+          "security": 10,
+          "discontent": 10,
+          "conflict": 5
+        }
+      },
+      {
+        "title": "BẢO VỆ TỰ DO TRUYỀN THÔNG",
+        "text": "Từ chối kiểm duyệt, cam kết bảo vệ quyền tự do ngôn luận và báo chí",
+        "effects": {
+          "freedom": 20,
+          "security": -15,
+          "discontent": -15,
+          "conflict": -10
+        }
+      }
+    ],
+    "rarity": "conditional",
+    "trigger_chance": 0.8
+  },
+  {
+    "id": 122,
+    "title": "BẠO LOẠN THÀNH PHỐ QUY MÔ LỚN",
+    "text": "Căng thẳng xã hội bùng nổ thành bạo loạn ở nhiều thành phố lớn. Cửa hàng bị cướp phá, xe cộ bị đốt, cảnh sát bị tấn công. Tình trạng mất trật tự lan rộng.",
+    "conditions": {
+      "conflict": {
+        "min": 60
+      },
+      "discontent": {
+        "min": 50
+      },
+      "min_turn": 6
+    },
+    "choices": [
+      {
+        "title": "TRIỂN KHAI QUÂN ĐỘI DẸP LOẠN",
+        "text": "Sử dụng quân đội để khôi phục trật tự, áp đặt giới nghiêm và bắt giữ người gây rối",
+        "effects": {
+          "security": 25,
+          "conflict": -20,
+          "freedom": -25,
+          "discontent": 15
+        }
+      },
+      {
+        "title": "ĐỐI THOẠI VỚI NGƯỜI BIỂU TÌNH",
+        "text": "Cử đại diện đối thoại với người biểu tình, tìm hiểu nguyên nhân và giải pháp hòa bình",
+        "effects": {
+          "conflict": -25,
+          "freedom": 15,
+          "discontent": -20,
+          "security": -10
+        }
+      },
+      {
+        "title": "NHƯỢNG BỘ VÀ CẢI CÁCH KHẨN CẤP",
+        "text": "Chấp nhận yêu cầu của người dân và thực hiện cải cách kinh tế-xã hội ngay lập tức",
+        "effects": {
+          "discontent": -30,
+          "conflict": -15,
+          "economy": -20,
+          "freedom": 20
+        }
+      }
+    ],
+    "rarity": "conditional",
+    "trigger_chance": 0.9
+  },
+  {
+    "id": 123,
+    "title": "ĐẤU TRANH VŨ TRANG NỔI DẬY",
+    "text": "Một nhóm vũ trang đã chiếm giữ một số khu vực biên giới và tuyên bố thành lập 'vùng giải phóng'. Họ có vũ khí hạng nặng và được một số dân địa phương ủng hộ.",
+    "conditions": {
+      "conflict": {
+        "min": 70
+      },
+      "security": {
+        "max": 40
+      },
+      "min_turn": 9
+    },
+    "choices": [
+      {
+        "title": "CHIẾN DỊCH QUÂN SỰ QUY MÔ LỚN",
+        "text": "Triển khai toàn bộ quân đội để tiến hành chiến dịch quân sự giành lại lãnh thổ",
+        "effects": {
+          "conflict": 30,
+          "security": 20,
+          "economy": -30,
+          "freedom": -20,
+          "discontent": 25
+        }
+      },
+      {
+        "title": "ĐÀM PHÁN HÒA BÌNH VÀ TỰ TRỊ",
+        "text": "Mở đàm phán với nhóm nổi dậy, cân nhắc trao một số quyền tự trị cho vùng này",
+        "effects": {
+          "conflict": -20,
+          "security": -15,
+          "freedom": 15,
+          "discontent": -10
+        }
+      },
+      {
+        "title": "CÔ LẬP VÀ PHONG TỎA KINH TẾ",
+        "text": "Phong tỏa kinh tế khu vực nổi dậy, cắt đứt mọi liên lạc và tiếp tế",
+        "effects": {
+          "conflict": 10,
+          "economy": -15,
+          "security": 10,
+          "discontent": 10,
+          "freedom": -10
+        }
+      }
+    ],
+    "rarity": "conditional",
+    "trigger_chance": 0.7
+  },
+  {
+    "id": 124,
+    "title": "ĐẦU TƯ NƯỚC NGOÀI TĂNG MẠNH",
+    "text": "Nhờ chính sách ổn định và kinh tế phát triển, các tập đoàn đa quốc gia đang đổ xô đầu tư vào đất nước. Đây là cơ hội tăng trưởng nhưng cũng có rủi ro phụ thuộc.",
+    "conditions": {
+      "economy": {
+        "min": 70
+      },
+      "freedom": {
+        "min": 60
+      },
+      "security": {
+        "min": 60
+      },
+      "min_turn": 8
+    },
+    "choices": [
+      {
+        "title": "MỞ CỬA TOÀN DIỆN CHO ĐẦU TƯ NƯỚC NGOÀI",
+        "text": "Tạo điều kiện tối đa cho đầu tư nước ngoài, giảm thuế và loại bỏ rào cản",
+        "effects": {
+          "economy": 25,
+          "freedom": 10,
+          "discontent": -10,
+          "security": -5
+        }
+      },
+      {
+        "title": "KIỂM SOÁT VÀ CHỌN LỌC ĐẦU TƯ",
+        "text": "Chỉ cho phép đầu tư vào các lĩnh vực phù hợp, có kiểm soát về an ninh quốc gia",
+        "effects": {
+          "economy": 15,
+          "security": 10,
+          "freedom": 5,
+          "discontent": -5
+        }
+      },
+      {
+        "title": "ƯU TIÊN PHÁT TRIỂN NỘI LỰC",
+        "text": "Hạn chế đầu tư nước ngoài, tập trung đầu tư nội địa để tự chủ kinh tế",
+        "effects": {
+          "economy": -10,
+          "security": 15,
+          "freedom": -5,
+          "discontent": 10,
+          "conflict": 5
+        }
+      }
+    ],
+    "rarity": "conditional",
+    "trigger_chance": 0.8
+  },
+  {
+    "id": 125,
+    "title": "CÔNG NHẬN QUỐC TẾ VÀ GIA NHẬP TỔ CHỨC QUỐC TẾ",
+    "text": "Cộng đồng quốc tế ghi nhận những thành tựu phát triển của đất nước và mời gia nhập các tổ chức quốc tế uy tín. Đây là dấu hiệu của sự thành công trong lãnh đạo.",
+    "conditions": {
+      "economy": {
+        "min": 75
+      },
+      "freedom": {
+        "min": 65
+      },
+      "security": {
+        "min": 65
+      },
+      "min_turn": 10
+    },
+    "choices": [
+      {
+        "title": "TÍCH CỰC GIA NHẬP CÁC TỔ CHỨC QUỐC TẾ",
+        "text": "Tham gia tích cực vào cộng đồng quốc tế, đóng góp và nhận hỗ trợ phát triển",
+        "effects": {
+          "economy": 15,
+          "freedom": 10,
+          "discontent": -15,
+          "security": 10,
+          "environment": 5
+        }
+      },
+      {
+        "title": "HỢP TÁC CÓ CHỌN LỌC",
+        "text": "Chỉ tham gia những tổ chức và thỏa thuận có lợi cho quốc gia",
+        "effects": {
+          "economy": 10,
+          "freedom": 5,
+          "security": 5,
+          "discontent": -5
+        }
+      },
+      {
+        "title": "DUY TRÌ ĐỘC LẬP VÀ TỰ CHỦ",
+        "text": "Giữ nguyên chính sách độc lập, không phụ thuộc vào các tổ chức quốc tế",
+        "effects": {
+          "security": 10,
+          "freedom": -5,
+          "economy": -5,
+          "conflict": 5
+        }
+      }
+    ],
+    "rarity": "conditional",
+    "trigger_chance": 0.7
   }
 ]
