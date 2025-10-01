@@ -8,36 +8,36 @@
                 "title": "Phong tỏa toàn quốc 30 ngày",
                 "text": "Áp dụng lệnh phong tỏa nghiêm ngặt để kiểm soát dịch bệnh",
                 "effects": {
-                    "discontent": 15,
-                    "conflict": 10,
-                    "economy": -25,
-                    "environment": 10,
-                    "freedom": -20,
-                    "security": 15
+                    "discontent": 12,
+                    "conflict": 8,
+                    "economy": -18,
+                    "environment": 8,
+                    "freedom": -15,
+                    "security": 12
                 }
             },
             {
                 "title": "Cách ly khu vực nguy cơ cao",
                 "text": "Chỉ phong tỏa những khu vực có ca nhiễm cao",
                 "effects": {
-                    "discontent": 5,
-                    "conflict": 8,
-                    "economy": -10,
-                    "environment": -5,
-                    "freedom": -5,
-                    "security": 5
+                    "discontent": 4,
+                    "conflict": 6,
+                    "economy": -8,
+                    "environment": -3,
+                    "freedom": -4,
+                    "security": 4
                 }
             },
             {
                 "title": "Để dân tự bảo vệ",
                 "text": "Ưu tiên kinh tế, để người dân tự quyết định",
                 "effects": {
-                    "discontent": 25,
-                    "conflict": 20,
-                    "economy": 5,
-                    "environment": -15,
-                    "freedom": 10,
-                    "security": -20
+                    "discontent": 18,
+                    "conflict": 15,
+                    "economy": 4,
+                    "environment": -12,
+                    "freedom": 8,
+                    "security": -15
                 }
             }
         ]
@@ -118,12 +118,12 @@
                 "title": "Che đậy để tránh mất ổn định",
                 "text": "Ưu tiên ổn định chính trị hơn minh bạch",
                 "effects": {
-                    "discontent": 30,
-                    "conflict": 25,
-                    "economy": -10,
+                    "discontent": 22,
+                    "conflict": 18,
+                    "economy": -8,
                     "environment": 0,
-                    "freedom": -25,
-                    "security": -15
+                    "freedom": -18,
+                    "security": -12
                 }
             }
         ]
@@ -210,6 +210,651 @@
                     "environment": 0,
                     "freedom": 15,
                     "security": 5
+                }
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "title": "Phong Trào Cải Cách Chính Trị",
+        "description": "Các nhóm trí thức và sinh viên yêu cầu cải cách hệ thống chính trị, đòi dân chủ hóa và minh bạch hơn. Họ tổ chức biểu tình ôn hòa nhưng quy mô ngày càng lớn.",
+        "choices": [
+            {
+                "title": "Đối thoại và cải cách từng bước",
+                "text": "Mở đối thoại với các nhóm dân chủ và tiến hành cải cách chính trị dần dần",
+                "effects": {
+                    "discontent": -20,
+                    "conflict": -15,
+                    "economy": 5,
+                    "environment": 0,
+                    "freedom": 25,
+                    "security": -5
+                }
+            },
+            {
+                "title": "Duy trì hiện trạng, tăng cường kiểm soát",
+                "text": "Giữ nguyên hệ thống hiện tại và tăng cường giám sát các hoạt động chính trị",
+                "effects": {
+                    "discontent": 25,
+                    "conflict": 20,
+                    "economy": -5,
+                    "environment": 0,
+                    "freedom": -20,
+                    "security": 10
+                }
+            },
+            {
+                "title": "Cải cách toàn diện và nhanh chóng",
+                "text": "Thực hiện dân chủ hóa mạnh mẽ và toàn diện ngay lập tức",
+                "effects": {
+                    "discontent": -10,
+                    "conflict": 15,
+                    "economy": -15,
+                    "environment": 0,
+                    "freedom": 30,
+                    "security": -15
+                }
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "title": "Cuộc Khủng Hoảng Hiến Pháp",
+        "description": "Tòa án Hiến pháp tuyên bố một số luật quan trọng vi hiến. Quốc hội và chính phủ có quan điểm trái ngược về cách xử lý vấn đề này.",
+        "choices": [
+            {
+                "title": "Tuân thủ quyết định của Tòa án",
+                "text": "Tôn trọng nguyên tắc tam quyền phân lập và sửa đổi luật theo yêu cầu",
+                "effects": {
+                    "discontent": -5,
+                    "conflict": -10,
+                    "economy": -10,
+                    "environment": 0,
+                    "freedom": 20,
+                    "security": 5
+                }
+            },
+            {
+                "title": "Sửa đổi Hiến pháp để hợp pháp hóa",
+                "text": "Thay đổi Hiến pháp để các luật hiện tại trở nên hợp hiến",
+                "effects": {
+                    "discontent": 15,
+                    "conflict": 20,
+                    "economy": 5,
+                    "environment": 0,
+                    "freedom": -15,
+                    "security": -5
+                }
+            },
+            {
+                "title": "Bỏ qua quyết định của Tòa án",
+                "text": "Tiếp tục thực thi luật hiện tại bất chấp quyết định vi hiến",
+                "effects": {
+                    "discontent": 25,
+                    "conflict": 30,
+                    "economy": -5,
+                    "environment": 0,
+                    "freedom": -25,
+                    "security": -10
+                }
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "title": "Cuộc Cách Mạng Kỹ Thuật Số",
+        "description": "Phong trào số hóa chính phủ đang diễn ra mạnh mẽ. Công dân đòi hỏi các dịch vụ công trực tuyến và minh bạch dữ liệu, nhưng điều này đòi hỏi đầu tư lớn và có rủi ro an ninh.",
+        "choices": [
+            {
+                "title": "Số hóa toàn diện và mở dữ liệu",
+                "text": "Đầu tư mạnh vào chính phủ điện tử và công khai dữ liệu cho công dân",
+                "effects": {
+                    "discontent": -15,
+                    "conflict": -5,
+                    "economy": -20,
+                    "environment": 10,
+                    "freedom": 20,
+                    "security": -10
+                }
+            },
+            {
+                "title": "Số hóa từng bước có kiểm soát",
+                "text": "Tiến hành số hóa chậm và thận trọng với các biện pháp bảo mật cao",
+                "effects": {
+                    "discontent": 5,
+                    "conflict": 0,
+                    "economy": -10,
+                    "environment": 5,
+                    "freedom": 10,
+                    "security": 5
+                }
+            },
+            {
+                "title": "Duy trì hệ thống truyền thống",
+                "text": "Giữ nguyên cách thức làm việc truyền thống để đảm bảo an toàn",
+                "effects": {
+                    "discontent": 20,
+                    "conflict": 15,
+                    "economy": 5,
+                    "environment": -10,
+                    "freedom": -15,
+                    "security": 10
+                }
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "title": "Khủng Hoảng Phân Ly Quyền Lực",
+        "description": "Căng thẳng nghiêm trọng giữa chính phủ trung ương và các chính quyền địa phương. Một số tỉnh thành tuyên bố sẽ không tuân thủ các chính sách mới của trung ương.",
+        "choices": [
+            {
+                "title": "Đàm phán và nhượng bộ quyền tự chủ",
+                "text": "Trao thêm quyền tự chủ cho địa phương và đàm phán tìm tiếng nói chung",
+                "effects": {
+                    "discontent": -10,
+                    "conflict": -15,
+                    "economy": 5,
+                    "environment": 0,
+                    "freedom": 15,
+                    "security": -10
+                }
+            },
+            {
+                "title": "Sử dụng biện pháp pháp lý nghiêm khắc",
+                "text": "Áp dụng pháp luật nghiêm túc để duy trì thẩm quyền trung ương",
+                "effects": {
+                    "discontent": 20,
+                    "conflict": 25,
+                    "economy": -10,
+                    "environment": 0,
+                    "freedom": -20,
+                    "security": 15
+                }
+            },
+            {
+                "title": "Cải tổ cơ cấu quyền lực",
+                "text": "Tiến hành cải cách tổng thể về phân quyền giữa trung ương và địa phương",
+                "effects": {
+                    "discontent": 0,
+                    "conflict": 5,
+                    "economy": -15,
+                    "environment": 0,
+                    "freedom": 25,
+                    "security": 0
+                }
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "title": "Cuộc Cách Mạng Truyền Thông",
+        "description": "Mạng xã hội trở thành công cụ chính để công dân giám sát chính phủ. Tin giả lan tràn nhưng việc kiểm duyệt gây tranh cãi về tự do ngôn luận.",
+        "choices": [
+            {
+                "title": "Tăng cường kiểm duyệt nội dung",
+                "text": "Kiểm soát chặt chẽ thông tin trên mạng để chống tin giả",
+                "effects": {
+                    "discontent": 25,
+                    "conflict": 15,
+                    "economy": -5,
+                    "environment": 0,
+                    "freedom": -30,
+                    "security": 15
+                }
+            },
+            {
+                "title": "Tự do hoàn toàn truyền thông",
+                "text": "Không can thiệp vào nội dung truyền thông, để công dân tự phán đoán",
+                "effects": {
+                    "discontent": -10,
+                    "conflict": 20,
+                    "economy": 5,
+                    "environment": 0,
+                    "freedom": 30,
+                    "security": -20
+                }
+            },
+            {
+                "title": "Giáo dục kỹ năng phương tiện truyền thông",
+                "text": "Đầu tư vào giáo dục để công dân biết phân biệt thông tin đúng sai",
+                "effects": {
+                    "discontent": -5,
+                    "conflict": -5,
+                    "economy": -15,
+                    "environment": 0,
+                    "freedom": 15,
+                    "security": 5
+                }
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "title": "Cuộc Khủng Hoảng Thế Hệ Lãnh Đạo",
+        "description": "Thế hệ lãnh đạo cũ đang về hưu, nhưng giữa thế hệ trẻ và già có quan điểm rất khác nhau về hướng phát triển đất nước. Cuộc chuyển giao quyền lực đang gây chia rẽ.",
+        "choices": [
+            {
+                "title": "Ưu tiên kinh nghiệm của thế hệ cũ",
+                "text": "Kéo dài nhiệm kỳ của các lãnh đạo có kinh nghiệm để ổn định",
+                "effects": {
+                    "discontent": 20,
+                    "conflict": 15,
+                    "economy": 10,
+                    "environment": -5,
+                    "freedom": -10,
+                    "security": 10
+                }
+            },
+            {
+                "title": "Chuyển giao nhanh cho thế hệ trẻ",
+                "text": "Thúc đẩy thế hệ lãnh đạo trẻ lên nắm quyền để đổi mới",
+                "effects": {
+                    "discontent": -10,
+                    "conflict": 10,
+                    "economy": -5,
+                    "environment": 15,
+                    "freedom": 20,
+                    "security": -10
+                }
+            },
+            {
+                "title": "Mô hình lãnh đạo kết hợp",
+                "text": "Tạo ra cơ chế kết hợp kinh nghiệm cũ và tư duy mới",
+                "effects": {
+                    "discontent": -5,
+                    "conflict": -5,
+                    "economy": 5,
+                    "environment": 10,
+                    "freedom": 15,
+                    "security": 5
+                }
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "title": "Cuộc Nổi Dậy Của Nông Dân",
+        "description": "Nông dân ở các vùng nông thôn nổi dậy phản đối chính sách thuế đất và cải cách nông nghiệp. Họ chiếm giữ các cơ quan chính quyền địa phương và đòi gặp lãnh đạo trung ương.",
+        "choices": [
+            {
+                "title": "Điều quân đội dẹp loạn",
+                "text": "Sử dụng lực lượng vũ trang để khôi phục trật tự",
+                "effects": {
+                    "discontent": 25,
+                    "conflict": 22,
+                    "economy": -12,
+                    "environment": -8,
+                    "freedom": -18,
+                    "security": 15
+                }
+            },
+            {
+                "title": "Đàm phán và giảm thuế nông nghiệp",
+                "text": "Thương lượng với nông dân và điều chỉnh chính sách thuế",
+                "effects": {
+                    "discontent": -20,
+                    "conflict": -15,
+                    "economy": -25,
+                    "environment": 5,
+                    "freedom": 10,
+                    "security": -5
+                }
+            },
+            {
+                "title": "Cải cách toàn diện chính sách nông thôn",
+                "text": "Thay đổi căn bản cách tiếp cận phát triển nông nghiệp",
+                "effects": {
+                    "discontent": -15,
+                    "conflict": -10,
+                    "economy": -20,
+                    "environment": 15,
+                    "freedom": 15,
+                    "security": 0
+                }
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "title": "Khủng Hoảng Ngân Sách Quốc Gia",
+        "description": "Ngân sách nhà nước thâm hụt nghiêm trọng do chi tiêu quá mức và thu thuế giảm. IMF đe dọa cắt viện trợ nếu không có biện pháp quyết liệt.",
+        "choices": [
+            {
+                "title": "Thắt lưng buộc bụng và cắt giảm chi tiêu",
+                "text": "Giảm mạnh chi tiêu công và trợ cấp xã hội",
+                "effects": {
+                    "discontent": 22,
+                    "conflict": 15,
+                    "economy": 12,
+                    "environment": -4,
+                    "freedom": -4,
+                    "security": -8
+                }
+            },
+            {
+                "title": "Tăng thuế và phí đối với doanh nghiệp",
+                "text": "Tăng thuế doanh nghiệp và người giàu để cân bằng ngân sách",
+                "effects": {
+                    "discontent": 12,
+                    "conflict": 8,
+                    "economy": -15,
+                    "environment": 0,
+                    "freedom": -8,
+                    "security": 4
+                }
+            },
+            {
+                "title": "In thêm tiền và chấp nhận lạm phát",
+                "text": "Tăng cung tiền để giải quyết khủng hoảng ngắn hạn",
+                "effects": {
+                    "discontent": 18,
+                    "conflict": 12,
+                    "economy": -22,
+                    "environment": 0,
+                    "freedom": 0,
+                    "security": -12
+                }
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "title": "Cuộc Cách Mạng Công Nghiệp 4.0",
+        "description": "Tự động hóa và AI đang thay thế hàng triệu việc làm. Công nhân biểu tình đòi chính phủ bảo vệ quyền lợi và tạo việc làm mới.",
+        "choices": [
+            {
+                "title": "Đầu tư mạnh vào đào tạo lại lao động",
+                "text": "Chi ngân sách lớn để đào tạo kỹ năng mới cho công nhân",
+                "effects": {
+                    "discontent": -10,
+                    "conflict": -5,
+                    "economy": -25,
+                    "environment": 10,
+                    "freedom": 10,
+                    "security": 5
+                }
+            },
+            {
+                "title": "Hạn chế công nghệ tự động hóa",
+                "text": "Ban hành luật hạn chế việc thay thế lao động bằng máy móc",
+                "effects": {
+                    "discontent": -15,
+                    "conflict": 5,
+                    "economy": -30,
+                    "environment": -15,
+                    "freedom": -20,
+                    "security": 10
+                }
+            },
+            {
+                "title": "Thúc đẩy nền kinh tế số toàn diện",
+                "text": "Ưu tiên phát triển công nghệ và để thị trường tự điều chỉnh",
+                "effects": {
+                    "discontent": 20,
+                    "conflict": 25,
+                    "economy": 20,
+                    "environment": 5,
+                    "freedom": 15,
+                    "security": -5
+                }
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "title": "Phong Trào Độc Lập Dân Tộc Thiểu Số",
+        "description": "Các dân tộc thiểu số ở vùng biên giới tuyên bố muốn tự trị, thành lập chính quyền riêng và có ngôn ngữ chính thức riêng biệt.",
+        "choices": [
+            {
+                "title": "Trao quyền tự trị cao độ",
+                "text": "Cho phép các dân tộc thiểu số có quyền tự quản lý địa phương",
+                "effects": {
+                    "discontent": -20,
+                    "conflict": -25,
+                    "economy": -10,
+                    "environment": 10,
+                    "freedom": 25,
+                    "security": -15
+                }
+            },
+            {
+                "title": "Duy trì thống nhất dưới trung ương",
+                "text": "Kiên quyết giữ nguyên cấu trúc nhà nước thống nhất",
+                "effects": {
+                    "discontent": 25,
+                    "conflict": 30,
+                    "economy": 5,
+                    "environment": -5,
+                    "freedom": -20,
+                    "security": 15
+                }
+            },
+            {
+                "title": "Đàm phán và thỏa hiệp từng bước",
+                "text": "Tìm giải pháp trung gian thông qua đối thoại lâu dài",
+                "effects": {
+                    "discontent": 5,
+                    "conflict": 10,
+                    "economy": -5,
+                    "environment": 5,
+                    "freedom": 10,
+                    "security": 0
+                }
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "title": "Cuộc Khủng Hoảng Tôn Giáo",
+        "description": "Xung đột nghiêm trọng giữa các nhóm tôn giáo khác nhau. Một số giáo phái cực đoan kêu gọi thành lập nhà nước thần quyền.",
+        "choices": [
+            {
+                "title": "Tách biệt hoàn toàn nhà nước và tôn giáo",
+                "text": "Áp dụng nguyên tắc thế tục hóa nghiêm ngặt",
+                "effects": {
+                    "discontent": 20,
+                    "conflict": 25,
+                    "economy": 5,
+                    "environment": 0,
+                    "freedom": 15,
+                    "security": -10
+                }
+            },
+            {
+                "title": "Cho phép tôn giáo tham gia chính trị",
+                "text": "Để các tôn giáo có tiếng nói trong việc làm luật",
+                "effects": {
+                    "discontent": -10,
+                    "conflict": 15,
+                    "economy": -5,
+                    "environment": -5,
+                    "freedom": -15,
+                    "security": 5
+                }
+            },
+            {
+                "title": "Thành lập hội đồng liên tôn giáo",
+                "text": "Tạo cơ quan đối thoại giữa các tôn giáo và nhà nước",
+                "effects": {
+                    "discontent": -5,
+                    "conflict": -10,
+                    "economy": -10,
+                    "environment": 0,
+                    "freedom": 10,
+                    "security": 10
+                }
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "title": "Cuộc Cách Mạng Giáo Dục",
+        "description": "Hệ thống giáo dục cũ không còn phù hợp với thời đại mới. Sinh viên đình công đòi cải cách toàn diện, trong khi các nhà giáo dục truyền thống phản đối.",
+        "choices": [
+            {
+                "title": "Cải cách triệt để hệ thống giáo dục",
+                "text": "Thay đổi hoàn toàn chương trình và phương pháp giáo dục",
+                "effects": {
+                    "discontent": 15,
+                    "conflict": 20,
+                    "economy": -30,
+                    "environment": 5,
+                    "freedom": 20,
+                    "security": -5
+                }
+            },
+            {
+                "title": "Duy trì truyền thống và từ từ cải tiến",
+                "text": "Giữ nguyên nền tảng cũ và chỉ điều chỉnh nhẹ",
+                "effects": {
+                    "discontent": 25,
+                    "conflict": 15,
+                    "economy": 10,
+                    "environment": -5,
+                    "freedom": -10,
+                    "security": 5
+                }
+            },
+            {
+                "title": "Tạo hệ thống giáo dục song song",
+                "text": "Cho phép cả giáo dục truyền thống và mới cùng tồn tại",
+                "effects": {
+                    "discontent": 5,
+                    "conflict": 5,
+                    "economy": -20,
+                    "environment": 0,
+                    "freedom": 25,
+                    "security": 0
+                }
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "title": "Khủng Hoảng Nhà Ở Xã Hội",
+        "description": "Giá nhà tăng vọt, hàng triệu gia đình không có khả năng mua nhà. Các cuộc biểu tình đòi chính phủ can thiệp mạnh vào thị trường bất động sản.",
+        "choices": [
+            {
+                "title": "Xây dựng nhà ở xã hội quy mô lớn",
+                "text": "Đầu tư ngân sách lớn để xây nhà cho người nghèo",
+                "effects": {
+                    "discontent": -18,
+                    "conflict": -12,
+                    "economy": -22,
+                    "environment": -8,
+                    "freedom": 4,
+                    "security": 8
+                }
+            },
+            {
+                "title": "Kiểm soát giá và thuế bất động sản",
+                "text": "Can thiệp mạnh vào thị trường để ổn định giá nhà",
+                "effects": {
+                    "discontent": -8,
+                    "conflict": 15,
+                    "economy": -12,
+                    "environment": 0,
+                    "freedom": -12,
+                    "security": 0
+                }
+            },
+            {
+                "title": "Để thị trường tự điều chỉnh",
+                "text": "Không can thiệp và tin tưởng vào cơ chế thị trường",
+                "effects": {
+                    "discontent": 22,
+                    "conflict": 18,
+                    "economy": 12,
+                    "environment": 4,
+                    "freedom": 15,
+                    "security": -12
+                }
+            }
+        ]
+    },
+    {
+        "id": 19,
+        "title": "Cuộc Khủng Hoảng Thông Tin Sai Lệch",
+        "description": "Tin giả và thông tin sai lệch lan tràn, gây ảnh hưởng đến niềm tin của công dân vào thể chế. Một số nhóm lợi dụng để kích động bạo loạn.",
+        "choices": [
+            {
+                "title": "Thành lập cơ quan kiểm duyệt thông tin",
+                "text": "Tạo ra bộ máy chuyên trách kiểm soát thông tin",
+                "effects": {
+                    "discontent": 22,
+                    "conflict": 8,
+                    "economy": -8,
+                    "environment": 0,
+                    "freedom": -25,
+                    "security": 15
+                }
+            },
+            {
+                "title": "Giáo dục tư duy phản biện cho công dân",
+                "text": "Đầu tư vào việc nâng cao khả năng phân tích thông tin",
+                "effects": {
+                    "discontent": -4,
+                    "conflict": -4,
+                    "economy": -15,
+                    "environment": 0,
+                    "freedom": 18,
+                    "security": -4
+                }
+            },
+            {
+                "title": "Tăng cường minh bạch thông tin chính phủ",
+                "text": "Công khai mọi hoạt động để tăng niềm tin",
+                "effects": {
+                    "discontent": -15,
+                    "conflict": -8,
+                    "economy": -12,
+                    "environment": 0,
+                    "freedom": 22,
+                    "security": -8
+                }
+            }
+        ]
+    },
+    {
+        "id": 20,
+        "title": "Cuộc Cách Mạng Sinh Học và Y Tế",
+        "description": "Công nghệ gene và y học hiện đại đang thay đổi xã hội. Tranh cãi nảy sinh về đạo đức trong chỉnh sửa gene và quyền tiếp cận công nghệ y tế tiên tiến.",
+        "choices": [
+            {
+                "title": "Cấm hoàn toàn chỉnh sửa gene con người",
+                "text": "Ban hành luật nghiêm cấm mọi can thiệp vào gene người",
+                "effects": {
+                    "discontent": 12,
+                    "conflict": 15,
+                    "economy": -18,
+                    "environment": 8,
+                    "freedom": -15,
+                    "security": 12
+                }
+            },
+            {
+                "title": "Cho phép nghiên cứu có kiểm soát",
+                "text": "Phát triển công nghệ gene với quy định nghiêm ngặt",
+                "effects": {
+                    "discontent": 4,
+                    "conflict": 8,
+                    "economy": 12,
+                    "environment": 4,
+                    "freedom": 8,
+                    "security": 0
+                }
+            },
+            {
+                "title": "Tự do hoàn toàn nghiên cứu sinh học",
+                "text": "Không hạn chế để thúc đẩy tiến bộ y học",
+                "effects": {
+                    "discontent": 15,
+                    "conflict": 18,
+                    "economy": 18,
+                    "environment": -8,
+                    "freedom": 22,
+                    "security": -12
                 }
             }
         ]

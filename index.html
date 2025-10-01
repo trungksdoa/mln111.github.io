@@ -3,24 +3,68 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Người Cầm Quyền Simulator - With Difficulty Modes</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Người Cầm Quyền Simulator - With Difficulty Modes - v2.1</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Source+Sans+Pro:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <style>
+      :root {
+        --primary-color: #6366f1;
+        --secondary-color: #8b5cf6;
+        --accent-color: #06d6a0;
+        --danger-color: #ef4444;
+        --warning-color: #f59e0b;
+        --success-color: #10b981;
+        --background-dark: #0f0f23;
+        --background-secondary: #1a1a3a;
+        --background-light: #2a2a4a;
+        --text-primary: #f8fafc;
+        --text-secondary: #cbd5e1;
+        --text-muted: #94a3b8;
+        --border-color: #334155;
+        --shadow-color: rgba(99, 102, 241, 0.2);
+        --glow-color: rgba(99, 102, 241, 0.4);
+      }
+
       * {
         box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html, body {
+        width: 100%;
+        overflow-x: hidden;
       }
 
       body {
         margin: 0;
         padding: 0;
         min-height: 100vh;
-        font-family: "Source Sans Pro", sans-serif;
-        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
-        color: #f5f5f5;
+        font-family: "Inter", sans-serif;
+        background: radial-gradient(ellipse at top, var(--background-secondary) 0%, var(--background-dark) 70%);
+        color: var(--text-primary);
         overflow-x: hidden;
+        position: relative;
+      }
+
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: 
+          radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+          radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+          radial-gradient(circle at 40% 80%, rgba(6, 214, 160, 0.05) 0%, transparent 50%);
+        pointer-events: none;
+        z-index: -1;
       }
 
       /* Difficulty Selection Screen */
@@ -30,55 +74,102 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.95);
+        background: linear-gradient(135deg, rgba(15, 15, 35, 0.95) 0%, rgba(26, 26, 58, 0.95) 100%);
+        backdrop-filter: blur(20px);
         z-index: 1000;
         display: flex;
         align-items: center;
         justify-content: center;
+        animation: fadeIn 0.5s ease-out;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
       }
 
       .difficulty-modal {
-        background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+        background: linear-gradient(135deg, var(--background-light) 0%, var(--background-secondary) 100%);
         padding: 40px;
-        border-radius: 20px;
+        border-radius: 24px;
         max-width: 700px;
+        width: 90%;
         text-align: center;
-        border: 2px solid #444;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+        border: 1px solid var(--border-color);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--shadow-color);
+        position: relative;
+        overflow: hidden;
+        margin: 20px;
+      }
+
+      .difficulty-modal::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
       }
 
       .difficulty-option {
         margin: 20px 0;
-        padding: 25px;
-        border: 2px solid #444;
-        border-radius: 15px;
+        padding: 30px;
+        border: 2px solid var(--border-color);
+        border-radius: 16px;
         cursor: pointer;
-        transition: all 0.3s ease;
-        background: linear-gradient(135deg, #333 0%, #222 100%);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .difficulty-option::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        transition: left 0.5s ease;
+      }
+
+      .difficulty-option:hover::before {
+        left: 100%;
       }
 
       .difficulty-option:hover {
-        border-color: #4caf50;
-        background: linear-gradient(135deg, #444 0%, #333 100%);
-        transform: translateY(-2px);
+        border-color: var(--primary-color);
+        background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
       }
 
       .difficulty-option h3 {
-        margin: 0 0 10px 0;
-        color: #fff;
-        font-size: 1.4em;
+        margin: 0 0 15px 0;
+        color: var(--text-primary);
+        font-size: 1.5em;
+        font-weight: 600;
+        font-family: "Poppins", sans-serif;
+        letter-spacing: -0.02em;
       }
 
       .difficulty-option p {
-        margin: 0 0 10px 0;
-        color: #ccc;
+        margin: 0 0 15px 0;
+        color: var(--text-secondary);
         font-size: 1.1em;
+        line-height: 1.5;
       }
 
       .difficulty-stats {
-        font-size: 0.9em;
-        color: #999;
-        margin-top: 10px;
+        font-size: 0.95em;
+        color: var(--text-muted);
+        margin-top: 15px;
+        padding: 12px;
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
       }
 
       #difficulty-indicator {
@@ -99,9 +190,9 @@
         position: fixed;
         top: 0;
         left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(135deg, #000 0%, #333 50%, #000 100%);
+        width: 100%;
+        height: 100%;
+        background: var(--background-dark);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -109,6 +200,27 @@
         z-index: 1000;
         text-align: center;
         transition: opacity 0.8s ease;
+        overflow: hidden;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      .start-screen::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: 
+          radial-gradient(circle at 30% 30%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+          radial-gradient(circle at 70% 70%, rgba(139, 92, 246, 0.15) 0%, transparent 50%);
+        animation: pulse 4s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%, 100% { opacity: 0.5; }
+        50% { opacity: 1; }
       }
 
       .start-screen.hidden {
@@ -117,70 +229,105 @@
       }
 
       .start-title {
-        font-family: "Merriweather", serif;
-        font-size: 3.5em;
-        font-weight: 700;
-        color: #fff;
+        font-family: "Poppins", sans-serif;
+        font-size: 4em;
+        font-weight: 800;
+        color: var(--text-primary);
         text-align: center;
         margin-bottom: 20px;
-        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-        letter-spacing: 2px;
+        text-shadow: 0 0 20px var(--glow-color);
+        letter-spacing: -0.02em;
+        position: relative;
+        z-index: 1;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: titleGlow 3s ease-in-out infinite;
+      }
+
+      @keyframes titleGlow {
+        0%, 100% { filter: brightness(1); }
+        50% { filter: brightness(1.2); }
       }
 
       .start-subtitle {
-        font-size: 1.3em;
-        color: #ccc;
+        font-size: 1.4em;
+        color: var(--text-secondary);
         text-align: center;
-        margin-bottom: 40px;
-        font-style: italic;
+        margin-bottom: 50px;
+        font-weight: 300;
+        position: relative;
+        z-index: 1;
       }
 
       .start-btn {
-        background: linear-gradient(135deg, #4caf50, #45a049);
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
         color: white;
         border: none;
-        padding: 20px 40px;
-        font-size: 1.3em;
+        padding: 18px 50px;
+        font-size: 1.2em;
         font-weight: 600;
         border-radius: 50px;
         cursor: pointer;
-        transition: all 0.4s ease;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         text-transform: uppercase;
-        letter-spacing: 2px;
-        box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
+        letter-spacing: 1px;
+        box-shadow: 0 10px 30px var(--shadow-color);
+        position: relative;
+        z-index: 1;
+        font-family: "Poppins", sans-serif;
+        overflow: hidden;
+      }
+
+      .start-btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s ease;
+      }
+
+      .start-btn:hover::before {
+        left: 100%;
       }
 
       .start-btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 12px 30px rgba(76, 175, 80, 0.4);
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 20px 50px var(--shadow-color);
       }
 
       /* Guide Button */
       .guide-btn {
         position: fixed;
-        top: 20px;
-        right: 20px;
-        background: #2d2d2d;
-        color: #ffffff;
-        border: 2px solid #555;
-        padding: 12px 20px;
-        font-size: 1em;
-        font-weight: 600;
-        border-radius: 8px;
+        top: 30px;
+        right: 30px;
+        background: linear-gradient(135deg, var(--background-light), var(--background-secondary));
+        color: var(--text-primary);
+        border: 1px solid var(--border-color);
+        padding: 12px 24px;
+        font-size: 0.9em;
+        font-weight: 500;
+        border-radius: 12px;
         cursor: pointer;
-        transition: all 0.3s ease;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 999;
         text-transform: uppercase;
-        letter-spacing: 1px;
+        letter-spacing: 0.5px;
         display: none;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       }
 
       .guide-btn:hover {
-        background: #1a1a1a;
-        border-color: #777;
-        color: #fff;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        border-color: var(--primary-color);
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px var(--shadow-color);
       }
 
       /* Guide Modal */
@@ -282,166 +429,701 @@
 
       /* Main Container */
       .container {
-        max-width: 1200px;
+        max-width: 1400px;
         margin: 0 auto;
+        padding: 30px;
+        position: relative;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      /* Game Layout - 2 Columns */
+      .game-layout {
+        display: grid;
+        grid-template-columns: 350px 1fr;
+        gap: 30px;
+        align-items: start;
+      }
+
+      .left-panel {
+        position: sticky;
+        top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
         padding: 20px;
+        border-radius: 20px;
+        border: 1px solid rgba(99, 102, 241, 0.2);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px rgba(99, 102, 241, 0.1);
+      }
+
+      .right-panel {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        background: linear-gradient(135deg, rgba(6, 214, 160, 0.03) 0%, rgba(99, 102, 241, 0.03) 100%);
+        padding: 20px;
+        border-radius: 20px;
+        border: 1px solid rgba(6, 214, 160, 0.1);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px rgba(6, 214, 160, 0.05);
+      }
+
+      /* Panel Titles */
+      .panel-title {
+        font-family: "Poppins", sans-serif;
+        font-size: 1.1em;
+        font-weight: 600;
+        color: var(--primary-color);
+        text-align: center;
+        padding: 15px;
+        background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+        border-radius: 12px;
+        border: 1px solid rgba(99, 102, 241, 0.3);
+        margin-bottom: 10px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+
+      /* Alert Messages */
+      .crisis-alert {
+        position: fixed;
+        top: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: linear-gradient(135deg, var(--danger-color), #dc2626);
+        color: white;
+        padding: 15px 30px;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1.1em;
+        z-index: 2000;
+        animation: alertSlide 0.5s ease-out, alertPulse 2s infinite 0.5s;
+        box-shadow: 0 10px 30px rgba(239, 68, 68, 0.4);
+        display: none;
+      }
+
+      @keyframes alertSlide {
+        from { top: -50px; opacity: 0; }
+        to { top: 80px; opacity: 1; }
+      }
+
+      @keyframes alertPulse {
+        0%, 100% { transform: translateX(-50%) scale(1); }
+        50% { transform: translateX(-50%) scale(1.05); }
       }
 
       /* Header */
       .header {
         text-align: center;
-        margin-bottom: 30px;
+        margin-bottom: 40px;
+        position: relative;
+        width: 100%;
       }
 
       .header h1 {
-        font-family: "Merriweather", serif;
-        font-size: 2.8em;
-        margin-bottom: 10px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        font-family: "Poppins", sans-serif;
+        font-size: 3.2em;
+        margin: 0 0 15px 0;
+        font-weight: 700;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 0 30px var(--glow-color);
+        letter-spacing: -0.02em;
+        line-height: 1.1;
       }
 
       .header .subtitle {
-        font-size: 1.2em;
-        opacity: 0.9;
-        font-style: italic;
+        font-size: 1.3em;
+        color: var(--text-secondary);
+        font-weight: 300;
+        margin-bottom: 20px;
+      }
+
+      .header::after {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
       }
 
       /* Stats Panel */
       .stats-panel {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        grid-template-columns: 1fr;
         gap: 15px;
-        margin-bottom: 30px;
-        padding: 20px;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 15px;
-        backdrop-filter: blur(10px);
+        margin-bottom: 0;
+        padding: 25px;
+        background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+        border-radius: 20px;
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--border-color);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        width: 100%;
+        box-sizing: border-box;
       }
 
       .stat {
         text-align: center;
-        padding: 15px;
-        background: rgba(0, 0, 0, 0.3);
-        border-radius: 10px;
-        transition: transform 0.3s ease;
+        padding: 25px 20px;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+        border-radius: 16px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .stat::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .stat:hover::before {
+        opacity: 1;
       }
 
       .stat:hover {
-        transform: translateY(-5px);
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 15px 40px rgba(99, 102, 241, 0.2);
+        border-color: var(--primary-color);
+        background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
       }
 
       .stat-label {
-        font-size: 0.9em;
-        margin-bottom: 8px;
+        font-size: 0.95em;
+        margin-bottom: 12px;
         text-transform: uppercase;
-        letter-spacing: 1px;
-        font-weight: 600;
+        letter-spacing: 0.5px;
+        font-weight: 500;
+        color: var(--text-secondary);
       }
 
       .stat-value {
-        font-size: 2em;
+        font-size: 2.5em;
         font-weight: 700;
-        margin-bottom: 5px;
+        margin-bottom: 15px;
+        font-family: "Poppins", sans-serif;
+        transition: all 0.5s ease;
+        position: relative;
+      }
+
+      .stat-value.changed {
+        animation: statChange 1s ease-out;
+      }
+
+      .stat-value.increased {
+        color: var(--success-color);
+        text-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
+      }
+
+      .stat-value.decreased {
+        color: var(--danger-color);
+        text-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
+      }
+
+      @keyframes statChange {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+        100% { transform: scale(1); }
+      }
+
+      /* Change Indicator */
+      .stat-change {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        background: var(--success-color);
+        color: white;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8em;
+        font-weight: 700;
+        animation: changeIndicator 2s ease-out;
+      }
+
+      .stat-change.negative {
+        background: var(--danger-color);
+      }
+
+      @keyframes changeIndicator {
+        0% { opacity: 0; transform: scale(0) rotate(180deg); }
+        20% { opacity: 1; transform: scale(1.2) rotate(0deg); }
+        100% { opacity: 0; transform: scale(0.8) rotate(0deg); }
+      }
+
+      /* Effect Items in Choices */
+      .effect-item {
+        display: inline-block;
+        padding: 2px 6px;
+        margin: 0 2px;
+        background: rgba(99, 102, 241, 0.1);
+        border: 1px solid rgba(99, 102, 241, 0.3);
+        border-radius: 12px;
+        font-size: 0.85em;
+        font-weight: 500;
+      }
+
+      .effect-item.high-impact-effect {
+        background: rgba(239, 68, 68, 0.15);
+        border-color: var(--danger-color);
+        color: var(--danger-color);
+        font-weight: 700;
+        animation: highImpactEffect 2s infinite;
+      }
+
+      @keyframes highImpactEffect {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+      }
+
+      /* Demo Animation */
+      @keyframes slideIn {
+        from { 
+          opacity: 0; 
+          transform: translate(-50%, -60%) scale(0.8); 
+        }
+        to { 
+          opacity: 1; 
+          transform: translate(-50%, -50%) scale(1); 
+        }
+      }
+
+      /* Random Event Animations */
+      @keyframes eventSlideIn {
+        0% { 
+          opacity: 0; 
+          transform: translate(-50%, -60%) scale(0.7) rotate(5deg);
+          filter: blur(10px);
+        }
+        50% {
+          transform: translate(-50%, -45%) scale(1.05) rotate(0deg);
+          filter: blur(2px);
+        }
+        100% { 
+          opacity: 1; 
+          transform: translate(-50%, -50%) scale(1) rotate(0deg);
+          filter: blur(0px);
+        }
+      }
+
+      @keyframes eventSlideOut {
+        0% { 
+          opacity: 1; 
+          transform: translate(-50%, -50%) scale(1);
+        }
+        100% { 
+          opacity: 0; 
+          transform: translate(-50%, -30%) scale(0.8);
+          filter: blur(5px);
+        }
+      }
+
+      @keyframes eventTitleGlow {
+        0%, 100% { 
+          text-shadow: 0 0 20px currentColor;
+          transform: scale(1);
+        }
+        50% { 
+          text-shadow: 0 0 30px currentColor, 0 0 40px currentColor;
+          transform: scale(1.02);
+        }
       }
 
       .stat-bar {
         width: 100%;
-        height: 8px;
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 4px;
+        height: 6px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 3px;
         overflow: hidden;
+        position: relative;
+      }
+
+      .stat-bar::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        animation: shimmer 2s infinite;
+      }
+
+      @keyframes shimmer {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
       }
 
       .stat-fill {
         height: 100%;
-        background: linear-gradient(90deg, #4caf50, #81c784);
-        border-radius: 4px;
-        transition: width 0.5s ease;
+        background: linear-gradient(90deg, var(--success-color), var(--accent-color));
+        border-radius: 3px;
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Stat Status Colors */
+      .stat.critical {
+        background: linear-gradient(135deg, rgba(239, 68, 68, 0.2) 0%, rgba(239, 68, 68, 0.1) 100%);
+        border: 2px solid var(--danger-color);
+        animation: criticalPulse 2s infinite;
+        box-shadow: 0 0 20px rgba(239, 68, 68, 0.4);
+      }
+
+      .stat.warning {
+        background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(245, 158, 11, 0.08) 100%);
+        border: 2px solid var(--warning-color);
+        animation: warningGlow 3s infinite;
+      }
+
+      .stat.good {
+        background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(16, 185, 129, 0.08) 100%);
+        border: 2px solid var(--success-color);
+      }
+
+      @keyframes criticalPulse {
+        0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(239, 68, 68, 0.4); }
+        50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(239, 68, 68, 0.6); }
+      }
+
+      @keyframes warningGlow {
+        0%, 100% { box-shadow: 0 0 15px rgba(245, 158, 11, 0.3); }
+        50% { box-shadow: 0 0 25px rgba(245, 158, 11, 0.5); }
+      }
+
+      .stat-fill::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        animation: fillShimmer 3s infinite;
+      }
+
+      @keyframes fillShimmer {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
       }
 
       /* Game Info */
       .game-info {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 30px;
-        padding: 15px 25px;
-        background: rgba(0, 0, 0, 0.4);
-        border-radius: 10px;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 0;
+        padding: 20px;
+        background: linear-gradient(135deg, var(--background-light) 0%, var(--background-secondary) 100%);
+        border-radius: 16px;
+        border: 1px solid var(--border-color);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        box-sizing: border-box;
       }
 
-      .turn-counter {
-        font-size: 1.3em;
+      .reload-btn {
+        background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
+        border: 1px solid var(--primary-color);
+        color: var(--text-primary);
+        padding: 10px 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 0.85em;
+        font-weight: 500;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .reload-btn:hover {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        border-color: var(--primary-color);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px var(--shadow-color);
+      }
+
+      .demo-btn {
+        background: linear-gradient(135deg, var(--warning-color), #d97706);
+        border: 1px solid var(--warning-color);
+        color: white;
+        padding: 10px 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 0.85em;
         font-weight: 600;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        animation: demoGlow 3s infinite;
+      }
+
+      .demo-btn:hover {
+        background: linear-gradient(135deg, #d97706, #b45309);
+        transform: translateY(-2px) scale(1.05);
+        box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+      }
+
+      @keyframes demoGlow {
+        0%, 100% { box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3); }
+        50% { box-shadow: 0 6px 25px rgba(245, 158, 11, 0.5); }
+      }
+
+      .change-difficulty-btn {
+        background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+        border: 1px solid var(--secondary-color);
+        color: white;
+        padding: 10px 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 0.85em;
+        font-weight: 600;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        animation: changeModeGlow 3s infinite;
+      }
+
+      .change-difficulty-btn:hover {
+        background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+        transform: translateY(-2px) scale(1.05);
+        box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+      }
+
+      @keyframes changeModeGlow {
+        0%, 100% { box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3); }
+        50% { box-shadow: 0 6px 25px rgba(139, 92, 246, 0.5); }
+      }
+
+      .debug-btn {
+        background: linear-gradient(135deg, var(--accent-color), var(--success-color));
+        border: 1px solid var(--accent-color);
+        color: white;
+        padding: 10px 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 0.85em;
+        font-weight: 600;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .debug-btn:hover {
+        background: linear-gradient(135deg, var(--success-color), var(--accent-color));
+        transform: translateY(-2px) scale(1.05);
+        box-shadow: 0 8px 25px rgba(6, 214, 160, 0.4);
+      }
+
+      .turn-counter, .scenario-counter {
+        font-size: 1.2em;
+        font-weight: 600;
+        color: var(--warning-color);
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        padding: 8px 16px;
+        background: rgba(245, 158, 11, 0.1);
+        border-radius: 20px;
+        border: 1px solid rgba(245, 158, 11, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      /* Late Game Warning */
+      .turn-counter.late-game {
+        color: var(--danger-color);
+        background: rgba(239, 68, 68, 0.15);
+        border-color: var(--danger-color);
+        animation: lateGamePulse 2s infinite;
+      }
+
+      @keyframes lateGamePulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+      }
+
+      .scenario-counter {
+        color: var(--success-color);
+        background: rgba(16, 185, 129, 0.1);
+        border-color: rgba(16, 185, 129, 0.3);
       }
 
       .game-score {
-        font-size: 1.1em;
-        opacity: 0.8;
+        font-size: 1.2em;
+        font-weight: 600;
+        color: var(--accent-color);
+        padding: 8px 16px;
+        background: rgba(6, 214, 160, 0.1);
+        border-radius: 20px;
+        border: 1px solid rgba(6, 214, 160, 0.3);
       }
 
       /* Story Section */
       .story-section {
-        background: rgba(255, 255, 255, 0.08);
-        padding: 25px;
-        border-radius: 15px;
-        margin-bottom: 30px;
-        border-left: 4px solid #4caf50;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 100%);
+        padding: 35px;
+        border-radius: 20px;
+        margin-bottom: 0;
+        border: 1px solid var(--border-color);
+        position: relative;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      }
+
+      .story-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+        border-radius: 20px 20px 0 0;
+      }
+      
+      .story-section.loading {
+        opacity: 0.7;
+        transform: scale(0.98);
+        filter: blur(0.5px);
       }
 
       .story-title {
-        font-size: 1.4em;
+        font-size: 1.8em;
         font-weight: 600;
-        margin-bottom: 15px;
-        color: #4caf50;
+        margin-bottom: 20px;
+        color: var(--primary-color);
+        font-family: "Poppins", sans-serif;
+        letter-spacing: -0.01em;
       }
 
       .story-text {
-        font-size: 1.1em;
-        line-height: 1.6;
-        margin-bottom: 20px;
+        font-size: 1.15em;
+        line-height: 1.7;
+        margin-bottom: 25px;
+        color: var(--text-secondary);
       }
 
       /* Choices */
       .choices-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: 1fr;
         gap: 20px;
-        margin-bottom: 30px;
+        margin-bottom: 0;
+        width: 100%;
       }
 
       .choice {
-        background: rgba(255, 255, 255, 0.1);
-        padding: 20px;
-        border-radius: 12px;
+        background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%);
+        padding: 30px;
+        border-radius: 16px;
         cursor: pointer;
-        transition: all 0.3s ease;
-        border: 2px solid transparent;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 2px solid var(--border-color);
+        transform: translateY(0);
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
       }
 
-      .choice:hover {
-        background: rgba(255, 255, 255, 0.15);
-        border-color: #4caf50;
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      .choice::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        transition: left 0.6s ease;
+      }
+
+      .choice:hover:not(.disabled)::before {
+        left: 100%;
+      }
+      
+      .choice.disabled {
+        pointer-events: none;
+        opacity: 0.4;
+        transform: scale(0.95);
+        filter: grayscale(70%);
+        background: rgba(100, 100, 100, 0.05);
+      }
+
+      .choice:hover:not(.disabled) {
+        background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
+        border-color: var(--primary-color);
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 15px 40px rgba(99, 102, 241, 0.2);
+      }
+
+      /* High Impact Choices */
+      .choice.high-impact {
+        border: 2px solid var(--danger-color);
+        background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.05) 100%);
+        animation: highImpactGlow 3s infinite;
+      }
+
+      .choice.high-impact .choice-title {
+        color: var(--danger-color);
+        font-weight: 700;
+      }
+
+      .choice.high-impact .choice-effects {
+        background: rgba(239, 68, 68, 0.15);
+        border: 1px solid var(--danger-color);
+        color: var(--text-primary);
+        font-weight: 600;
+      }
+
+      @keyframes highImpactGlow {
+        0%, 100% { box-shadow: 0 4px 20px rgba(239, 68, 68, 0.2); }
+        50% { box-shadow: 0 8px 30px rgba(239, 68, 68, 0.4); }
       }
 
       .choice-title {
-        font-size: 1.2em;
+        font-size: 1.3em;
         font-weight: 600;
-        margin-bottom: 10px;
-        color: #4caf50;
+        margin-bottom: 15px;
+        color: var(--primary-color);
+        font-family: "Poppins", sans-serif;
       }
 
       .choice-text {
-        line-height: 1.5;
-        margin-bottom: 15px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        color: var(--text-secondary);
       }
 
       .choice-effects {
-        font-size: 0.9em;
-        opacity: 0.8;
-        font-style: italic;
+        font-size: 0.95em;
+        color: var(--text-muted);
+        background: rgba(0, 0, 0, 0.2);
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        font-weight: 500;
       }
 
       /* Random Event */
@@ -450,155 +1132,439 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background: #1a1a1a;
-        color: #ffffff;
-        padding: 25px;
-        border-radius: 12px;
+        background: linear-gradient(135deg, var(--background-light) 0%, var(--background-secondary) 100%);
+        color: var(--text-primary);
+        padding: 40px;
+        border-radius: 20px;
         text-align: center;
-        animation: slideIn 0.5s ease-out;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
-        border: 3px solid #555;
-        max-width: 600px;
+        animation: eventSlideIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px var(--border-color);
+        border: 2px solid var(--primary-color);
+        max-width: 700px;
         width: 90%;
         z-index: 1500;
         display: none;
+        backdrop-filter: blur(20px);
+        position: relative;
+        overflow: hidden;
+      }
+
+      @keyframes eventSlideIn {
+        from {
+          transform: translate(-50%, -60%) scale(0.8);
+          opacity: 0;
+        }
+        to {
+          transform: translate(-50%, -50%) scale(1);
+          opacity: 1;
+        }
+      }
+
+      .random-event::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+        animation: eventGlow 2s ease-in-out infinite;
+      }
+
+      @keyframes eventGlow {
+        0%, 100% { opacity: 0.5; }
+        50% { opacity: 1; }
       }
 
       .event-title {
-        font-size: 1.4em;
+        font-size: 1.8em;
         font-weight: 700;
-        margin-bottom: 15px;
-        color: #ffffff;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        margin-bottom: 20px;
+        color: var(--primary-color);
+        font-family: "Poppins", sans-serif;
+        letter-spacing: -0.01em;
+        position: relative;
+        z-index: 1;
       }
 
       .event-description {
-        font-size: 1.1em;
-        line-height: 1.5;
-        margin-bottom: 20px;
-        color: #eeeeee;
+        font-size: 1.2em;
+        line-height: 1.6;
+        margin-bottom: 25px;
+        color: var(--text-secondary);
+        position: relative;
+        z-index: 1;
       }
 
       .event-effects {
-        background: #333333;
-        padding: 15px;
-        border-radius: 8px;
-        border: 1px solid #555;
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.2) 100%);
+        padding: 25px;
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+        backdrop-filter: blur(10px);
+        position: relative;
+        z-index: 1;
       }
 
       .effects-title {
-        font-size: 1em;
+        font-size: 1.1em;
         font-weight: 600;
-        margin-bottom: 10px;
-        color: #ffffff;
+        margin-bottom: 15px;
+        color: var(--text-primary);
         text-transform: uppercase;
-        letter-spacing: 1px;
+        letter-spacing: 0.5px;
       }
 
       .effects-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-        font-size: 0.9em;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 12px;
+        font-size: 0.95em;
       }
 
       .effect-item {
-        padding: 8px;
-        background: #555555;
-        border-radius: 6px;
+        padding: 12px;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+        border-radius: 8px;
         text-align: center;
-        border: 1px solid #777;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+      }
+
+      .effect-item:hover {
+        transform: scale(1.05);
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.1) 100%);
       }
 
       .effect-positive {
-        color: #00ff00;
+        color: var(--success-color);
         font-weight: 700;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+        text-shadow: 0 2px 4px rgba(16, 185, 129, 0.3);
       }
 
       .effect-negative {
-        color: #ff4444;
+        color: var(--danger-color);
         font-weight: 700;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+        text-shadow: 0 2px 4px rgba(239, 68, 68, 0.3);
       }
 
       .effect-neutral {
-        color: #ffaa00;
+        color: var(--warning-color);
         font-weight: 700;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
-      }
-
-      @keyframes slideIn {
-        from {
-          transform: translate(-50%, -60%);
-          opacity: 0;
-        }
-        to {
-          transform: translate(-50%, -50%);
-          opacity: 1;
-        }
+        text-shadow: 0 2px 4px rgba(245, 158, 11, 0.3);
       }
 
       /* Game End */
       .game-end {
         text-align: center;
-        padding: 40px;
-        background: rgba(0, 0, 0, 0.8);
-        border-radius: 20px;
-        margin-top: 30px;
+        padding: 50px;
+        background: linear-gradient(135deg, var(--background-light) 0%, var(--background-secondary) 100%);
+        border-radius: 24px;
+        margin-top: 40px;
+        border: 1px solid var(--border-color);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(20px);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .game-end::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+        animation: endingGlow 3s ease-in-out infinite;
+      }
+
+      @keyframes endingGlow {
+        0%, 100% { opacity: 0.6; }
+        50% { opacity: 1; }
       }
 
       .game-end h2 {
-        font-size: 2.5em;
-        margin-bottom: 20px;
-        color: #4caf50;
+        font-size: 3em;
+        margin-bottom: 25px;
+        color: var(--primary-color);
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        position: relative;
+        z-index: 1;
       }
 
       .ending-description {
-        font-size: 1.3em;
-        line-height: 1.6;
-        margin-bottom: 30px;
+        font-size: 1.4em;
+        line-height: 1.7;
+        margin-bottom: 40px;
+        color: var(--text-secondary);
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        z-index: 1;
       }
 
       .restart-btn {
-        background: linear-gradient(135deg, #4caf50, #45a049);
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
         color: white;
         border: none;
-        padding: 15px 30px;
+        padding: 18px 40px;
         font-size: 1.2em;
-        border-radius: 25px;
+        border-radius: 50px;
         cursor: pointer;
-        transition: all 0.3s ease;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+      }
+
+      .restart-btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s ease;
+      }
+
+      .restart-btn:hover::before {
+        left: 100%;
       }
 
       .restart-btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 15px 40px var(--shadow-color);
       }
 
-      /* Responsive */
+      /* Responsive Design */
+      @media (max-width: 1200px) {
+        .container {
+          padding: 20px;
+        }
+        
+        .header h1 {
+          font-size: 3em;
+        }
+        
+        .game-layout {
+          grid-template-columns: 320px 1fr;
+          gap: 25px;
+        }
+        
+        .stats-panel {
+          padding: 20px;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .game-layout {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+        
+        .left-panel {
+          position: static;
+          order: 1;
+        }
+        
+        .right-panel {
+          order: 2;
+          min-height: auto;
+        }
+        
+        .stats-panel {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 15px;
+        }
+        
+        .game-info {
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+      }
+
       @media (max-width: 768px) {
+        .container {
+          padding: 15px;
+          max-width: 100%;
+        }
+        
         .start-title {
           font-size: 2.5em;
         }
 
-        .stats-panel {
-          grid-template-columns: repeat(2, 1fr);
+        .header h1 {
+          font-size: 2.3em;
         }
 
-        .choices-grid {
+        .game-layout {
           grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .stats-panel {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 12px;
+          padding: 18px;
+        }
+
+        .stat {
+          padding: 15px 10px;
+        }
+
+        .stat-value {
+          font-size: 1.8em;
+        }
+
+        .choice {
+          padding: 20px;
         }
 
         .game-info {
           flex-direction: column;
           gap: 10px;
+          padding: 15px;
+          text-align: center;
+        }
+
+        .turn-counter, .scenario-counter, .game-score {
+          font-size: 1em;
+          padding: 8px 12px;
         }
 
         .difficulty-modal,
         .guide-content {
-          margin: 20px;
+          margin: 10px;
+          padding: 25px;
+          width: calc(100% - 20px);
+        }
+
+        .story-section {
+          padding: 20px;
+        }
+
+        .random-event {
+          padding: 25px;
+          width: calc(100% - 20px);
+          margin: 10px;
+        }
+
+        .game-end {
           padding: 30px;
+        }
+
+        .game-end h2 {
+          font-size: 2.2em;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .container {
+          padding: 10px;
+        }
+        
+        .start-title {
+          font-size: 2em;
+        }
+
+        .header h1 {
+          font-size: 1.8em;
+        }
+
+        .game-layout {
+          gap: 15px;
+        }
+
+        .stats-panel {
+          grid-template-columns: 1fr;
+          gap: 8px;
+          padding: 15px;
+        }
+
+        .stat {
+          padding: 12px 8px;
+        }
+
+        .stat-value {
+          font-size: 1.6em;
+        }
+
+        .choice {
+          padding: 18px;
+        }
+
+        .story-section {
+          padding: 18px;
+        }
+
+        .game-info {
+          padding: 12px;
+          gap: 8px;
+        }
+
+        .random-event {
+          padding: 20px;
+          width: calc(100% - 20px);
+        }
+
+        .game-end {
+          padding: 20px;
+        }
+
+        .game-end h2 {
+          font-size: 1.8em;
+        }
+
+        .difficulty-modal,
+        .guide-content {
+          margin: 5px;
+          padding: 20px;
+          width: calc(100% - 10px);
+        }
+
+        .turn-counter, .scenario-counter, .game-score {
+          font-size: 0.9em;
+          padding: 6px 10px;
+        }
+      }
+
+      /* Dark mode optimizations */
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --background-dark: #0a0a0f;
+          --background-secondary: #151525;
+          --background-light: #202040;
+        }
+      }
+
+      /* High contrast mode */
+      @media (prefers-contrast: high) {
+        :root {
+          --border-color: #666;
+          --text-secondary: #fff;
+        }
+        
+        .choice, .stat, .story-section {
+          border-width: 2px;
+        }
+      }
+
+      /* Reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
         }
       }
     </style>
@@ -607,8 +1573,10 @@
     <!-- Start Screen -->
     <div class="start-screen" id="startScreen">
       <h1 class="start-title">NGƯỜI CẦM QUYỀN</h1>
-      <p class="start-subtitle">Simulator Chính Trị Chiến Lược</p>
-      <button class="start-btn" onclick="showDifficultySelection()">BẮT ĐẦU GAME</button>
+      <p class="start-subtitle">🎮 Simulator Chính Trị Chiến Lược 🎮</p>
+      <button class="start-btn" onclick="showDifficultySelection()">
+        <span>🚀 BẮT ĐẦU GAME</span>
+      </button>
     </div>
 
     <!-- Guide Button -->
@@ -799,38 +1767,59 @@
     <div class="container" id="gameContainer" style="display: none">
       <!-- Header -->
       <div class="header">
-        <h1>NGƯỜI CẦM QUYỀN</h1>
-        <div class="subtitle">Quyết định tương lai đất nước</div>
+        <h1>🏛️ NGƯỜI CẦM QUYỀN 🏛️</h1>
+        <div class="subtitle">⚖️ Quyết định tương lai đất nước ⚖️</div>
       </div>
 
-      <!-- Stats Panel -->
-      <div class="stats-panel" id="statsPanel">
-        <!-- Stats will be populated by JavaScript -->
-      </div>
+      <!-- Game Layout - 2 Columns -->
+      <div class="game-layout">
+        <!-- Left Column - Stats & Info -->
+        <div class="left-panel">
+          <div class="panel-title">📊 BẢNG ĐIỀU KHIỂN</div>
+          
+          <!-- Stats Panel -->
+          <div class="stats-panel" id="statsPanel">
+            <!-- Stats will be populated by JavaScript -->
+          </div>
 
-      <!-- Game Info -->
-      <div class="game-info">
-        <div class="turn-counter">Lượt <span id="turnCounter">1</span></div>
-        <div class="game-score">Điểm <span id="gameScore">0</span></div>
-      </div>
+          <!-- Game Info -->
+          <div class="game-info">
+            <div class="turn-counter">Lượt <span id="turnCounter">1</span></div>
+            <div class="scenario-counter">Tình huống: <span id="scenarioCount">2</span>/20</div>
+            <div class="game-score">Điểm <span id="gameScore">0</span></div>
+            <button id="reloadDataBtn" class="reload-btn" onclick="reloadGameData()" title="Tải lại dữ liệu game sau khi setup server">
+              🔄 Tải lại dữ liệu
+            </button>
+            <button onclick="demoRandomEvent()" class="demo-btn" title="Xem demo random event">
+              🎲 Demo Event
+            </button>
+            <button onclick="changeDifficulty()" class="change-difficulty-btn" title="Đổi độ khó và reset game">
+              ⚙️ Đổi Mode
+            </button>
 
-      <!-- Story Section -->
-      <div class="story-section">
-        <div class="story-title" id="storyTitle">Bắt đầu nhiệm kỳ</div>
-        <div class="story-text" id="storyText">
-          Chào mừng đến với ghế quyền lực. Những quyết định của bạn sẽ định hình tương lai của đất nước.
+          </div>
+        </div>
+
+        <!-- Right Column - Story & Choices -->
+        <div class="right-panel">
+          <div class="panel-title">📖 TÌNH HUỐNG & LỰA CHỌN</div>
+          
+          <!-- Story Section -->
+          <div class="story-section">
+            <div class="story-title" id="storyTitle">Bắt đầu nhiệm kỳ</div>
+            <div class="story-text" id="storyText">
+              Chào mừng đến với ghế quyền lực. Những quyết định của bạn sẽ định hình tương lai của đất nước.
+            </div>
+          </div>
+
+          <!-- Choices -->
+          <div class="choices-grid" id="choicesGrid">
+            <!-- Choices will be populated by JavaScript -->
+          </div>
         </div>
       </div>
 
-      <!-- Choices -->
-      <div class="choices-grid" id="choicesGrid">
-        <!-- Choices will be populated by JavaScript -->
-      </div>
-
-      <!-- Random Event -->
-      <div class="random-event" id="randomEvent">
-        <!-- Random events will be shown here -->
-      </div>
+      <!-- Random Events now display as center screen popups -->
 
       <!-- Game End -->
       <div class="game-end" id="gameEnd" style="display: none">
@@ -866,50 +1855,50 @@
       const DIFFICULTY_MODES = {
         easy: {
           name: "DỄ - Easy Mode",
-          description: "Bắt đầu với ít tác động tiêu cực - Perfect for beginners",
+          description: "Bắt đầu với buffer tốt cho random events - Perfect for beginners",
           startingStats: {
-            discontent: 35,
-            conflict: 25,
-            economy: 65,
-            environment: 60,
-            freedom: 70,
-            security: 55,
+            discontent: 30,
+            conflict: 20,
+            economy: 75,
+            environment: 70,
+            freedom: 75,
+            security: 65,
           },
-          effectMultiplier: 0.7,
-          positiveBoost: 1.2,
-          randomEventsFrequency: 0.3,
+          effectMultiplier: 0.6, // Giảm tác động tiêu cực
+          positiveBoost: 1.3, // Tăng tác động tích cực
+          randomEventsFrequency: 0.2, // Điều chỉnh cho phù hợp
           maxTurns: 15, // UPDATED: 15 rounds
         },
         normal: {
           name: "BÌNH THƯỜNG - Normal Mode",
-          description: "Cân bằng hoàn hảo - Can breathe :D",
+          description: "Cân bằng với random events - Can breathe :D",
           startingStats: {
-            discontent: 45,
-            conflict: 35,
-            economy: 55,
-            environment: 50,
-            freedom: 60,
-            security: 45,
+            discontent: 40,
+            conflict: 30,
+            economy: 60,
+            environment: 55,
+            freedom: 65,
+            security: 50,
           },
           effectMultiplier: 1.0,
           positiveBoost: 1.0,
-          randomEventsFrequency: 0.5,
+          randomEventsFrequency: 0.3, // Cân bằng với buffer stats
           maxTurns: 30, // UPDATED: 30 rounds
         },
         hard: {
           name: "KHÓ - Hard Mode",
-          description: "Thử thách khắc nghiệt nhất - Most hard to play",
+          description: "Thử thách với nhiều random events - Most hard to play",
           startingStats: {
-            discontent: 55,
-            conflict: 45,
-            economy: 45,
-            environment: 40,
-            freedom: 50,
-            security: 35,
+            discontent: 50,
+            conflict: 40,
+            economy: 50,
+            environment: 45,
+            freedom: 55,
+            security: 40,
           },
-          effectMultiplier: 1.4,
-          positiveBoost: 0.8,
-          randomEventsFrequency: 0.7,
+          effectMultiplier: 1.3, // Giảm xuống để cân bằng
+          positiveBoost: 0.9, // Cải thiện để không quá khó
+          randomEventsFrequency: 0.4, // Vẫn cao nhưng không quá mức
           maxTurns: 50, // UPDATED: 50 rounds
         },
       };
@@ -927,30 +1916,236 @@
       // Game data
       let gameStoryData = [];
       let randomEventsData = [];
+      let randomEventsWithChoicesData = [];
+      
+      // Event tracking to prevent repetition
+      let usedEvents = new Set();
+      let lastEventTurn = 0;
+      let eventCooldown = 2; // Giảm cooldown để events xuất hiện thường xuyên hơn
+      let minEventTurn = 3; // Events không trigger trước lượt 3
       let endingsData = [];
       let dictatorModeTriggered = false;
+      let triggeredEndings = new Set(); // Track endings đã được trigger
+
+      // Demo function to trigger random event immediately
+      function demoRandomEvent() {
+        console.log('🎪 Demo: Triggering random event...');
+        
+        if (randomEventsData.length > 0) {
+          // Pick a random event for demo
+          const randomEvent = randomEventsData[Math.floor(Math.random() * randomEventsData.length)];
+          
+          // Create demo event display
+          const demoDiv = document.createElement('div');
+          demoDiv.style.cssText = `
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            border: 2px solid #f59e0b;
+            max-width: 650px;
+            z-index: 10000;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.7);
+            animation: slideIn 0.5s ease-out;
+            backdrop-filter: blur(10px);
+          `;
+          
+          // Determine event severity color
+          const isHighImpact = Object.values(randomEvent.effects).some(val => Math.abs(val) >= 15);
+          const severityColor = isHighImpact ? '#ef4444' : '#f59e0b';
+          const severityIcon = isHighImpact ? '💥' : '⚡';
+          
+          demoDiv.innerHTML = `
+            <div style="text-align: center; margin-bottom: 25px;">
+              <h2 style="color: ${severityColor}; margin-bottom: 10px; font-size: 1.5em;">
+                ${severityIcon} RANDOM EVENT DEMO ${severityIcon}
+              </h2>
+              <div style="background: rgba(245, 158, 11, 0.1); padding: 8px 16px; border-radius: 20px; display: inline-block; font-size: 0.9em; color: #f59e0b;">
+                ID: ${randomEvent.id} | ${randomEvent.rarity?.toUpperCase() || 'NORMAL'}
+              </div>
+            </div>
+            
+            <h3 style="color: #f59e0b; margin-bottom: 15px; text-align: center; font-size: 1.4em;">
+              ${randomEvent.title}
+            </h3>
+            
+            <p style="margin-bottom: 25px; line-height: 1.6; text-align: center; font-size: 1.1em; color: #e2e8f0;">
+              ${randomEvent.text}
+            </p>
+            
+            <div style="background: rgba(99, 102, 241, 0.1); padding: 20px; border-radius: 15px; margin-bottom: 25px; border: 1px solid rgba(99, 102, 241, 0.3);">
+              <h4 style="color: #6366f1; margin-bottom: 15px; text-align: center;">📊 Tác Động Lên Chỉ Số:</h4>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
+                ${Object.entries(randomEvent.effects).map(([stat, change]) => 
+                  `<span style="
+                    display: inline-block; 
+                    padding: 8px 12px; 
+                    background: ${change > 0 ? 'rgba(239, 68, 68, 0.2)' : 'rgba(16, 185, 129, 0.2)'}; 
+                    border: 1px solid ${change > 0 ? '#ef4444' : '#10b981'};
+                    border-radius: 20px; 
+                    color: ${change > 0 ? '#ef4444' : '#10b981'};
+                    font-weight: 600;
+                    font-size: 0.95em;
+                    ${Math.abs(change) >= 15 ? 'animation: highImpactEffect 2s infinite;' : ''}
+                  ">
+                    ${statLabels[stat] || stat}: ${change > 0 ? '+' : ''}${change}
+                  </span>`
+                ).join('')}
+              </div>
+            </div>
+            
+            ${randomEvent.conditions ? `
+              <div style="background: rgba(139, 92, 246, 0.1); padding: 15px; border-radius: 10px; margin-bottom: 20px; border: 1px solid rgba(139, 92, 246, 0.3);">
+                <h5 style="color: #8b5cf6; margin-bottom: 10px; text-align: center;">🎯 Điều Kiện Kích Hoạt:</h5>
+                <div style="font-size: 0.9em; color: #cbd5e1; text-align: center;">
+                  ${Object.entries(randomEvent.conditions).filter(([key]) => key !== 'min_turn').map(([stat, condition]) => {
+                    if (typeof condition === 'object') {
+                      return `${statLabels[stat] || stat}: ${condition.min ? '≥' + condition.min : ''}${condition.max ? '≤' + condition.max : ''}`;
+                    }
+                    return `${stat}: ${condition}`;
+                  }).join(' • ')}
+                  ${randomEvent.conditions.min_turn ? `• Từ lượt ${randomEvent.conditions.min_turn}` : ''}
+                </div>
+              </div>
+            ` : ''}
+            
+            <div style="text-align: center;">
+              <button onclick="this.parentElement.parentElement.remove()" 
+                      style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white; border: none; padding: 15px 30px; border-radius: 25px; cursor: pointer; font-weight: 600; font-size: 1.1em; transition: all 0.3s ease;">
+                🎮 Đóng Demo
+              </button>
+            </div>
+          `;
+          
+          document.body.appendChild(demoDiv);
+          
+          // Add hover effect to close button
+          const closeBtn = demoDiv.querySelector('button');
+          closeBtn.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.05)';
+            this.style.boxShadow = '0 8px 25px rgba(245, 158, 11, 0.4)';
+          });
+          closeBtn.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+            this.style.boxShadow = 'none';
+          });
+          
+        } else {
+          // Fallback demo with sample data if events not loaded
+          const sampleEvent = {
+            id: 'DEMO',
+            title: 'DEMO: TẤN CÔNG MẠNG QUY MÔ LỚN!',
+            text: 'Đây là demo một random event. Nhóm hacker quốc tế tấn công hệ thống ngân hàng do hệ thống bảo mật yếu kém!',
+            effects: {
+              discontent: 15,
+              conflict: 10,
+              economy: -12,
+              freedom: -8,
+              security: -10
+            },
+            rarity: 'conditional',
+            conditions: {
+              security: {max: 30},
+              min_turn: 3
+            }
+          };
+          
+          // Use sample event for demo
+          alert('Đang load demo event... Random events data chưa sẵn sàng!');
+          console.log('Sample demo event:', sampleEvent);
+        }
+      }
+
+
+
+      // Function to change difficulty (auto-reset stats)
+      function changeDifficulty() {
+        if (confirm('⚙️ Bạn có muốn đổi độ khó không? Game sẽ được reset và áp dụng chỉ số mới.')) {
+          console.log('⚙️ Changing difficulty...');
+          
+          // Hide current game
+          document.getElementById('gameContainer').style.display = 'none';
+          
+          // Show difficulty selection again với chế độ reset
+          showDifficultySelection(true); // true = reset mode
+          
+          console.log('✅ Difficulty selection shown');
+        }
+      }
+
+      // Function riêng để RESET và chọn mode mới
+      function selectDifficultyAndReset(difficulty) {
+        currentDifficulty = difficulty;
+        const mode = DIFFICULTY_MODES[difficulty];
+
+        console.log(`🔄 RESETTING game and selecting difficulty: ${difficulty}`, mode);
+
+        // RESET HOÀN TOÀN game state
+        gameState = {
+          currentTurn: 1,
+          usedScenarios: [],
+          stats: { ...mode.startingStats },
+          score: 0,
+        };
+        
+        maxTurns = mode.maxTurns;
+
+        // Reset events tracking
+        usedEvents.clear();
+        lastEventTurn = 0;
+
+        // Remove difficulty selection screen
+        const difficultyModal = document.getElementById("difficultySelection");
+        if (difficultyModal) {
+          difficultyModal.remove();
+        }
+
+        // Remove existing difficulty indicator if any
+        const existingIndicator = document.getElementById("difficulty-indicator");
+        if (existingIndicator) {
+          existingIndicator.remove();
+        }
+
+        // Show new difficulty indicator
+        showDifficultyIndicator(mode.name);
+
+        console.log(`✅ Game RESET with new stats:`, gameState.stats);
+
+        // ✨ CẬP NHẬT UI VỚI STATS MỚI
+        updateDisplay();
+
+        // Start game
+        startGame();
+      }
 
       // Function to show difficulty selection screen
-      function showDifficultySelection() {
+      function showDifficultySelection(resetMode = false) {
         document.getElementById("startScreen").classList.add("hidden");
+
+        const functionToCall = resetMode ? 'selectDifficultyAndReset' : 'selectDifficulty';
+        const titleText = resetMode ? '🔄 ĐỔI ĐỘ KHÓ & RESET' : '🎮 CHỌN ĐỘ KHÓ';
 
         const difficultyHTML = `
         <div class="difficulty-selection" id="difficultySelection">
           <div class="difficulty-modal">
-            <h2 style="color: #fff; margin-bottom: 20px; font-size: 2rem;">🎮 CHỌN ĐỘ KHÓ</h2>
+            <h2 style="color: #fff; margin-bottom: 20px; font-size: 2rem;">${titleText}</h2>
             <p style="color: #ccc; margin-bottom: 30px;">SELECT DIFFICULTY MODE</p>
             
             <div class="difficulty-options">
               ${Object.entries(DIFFICULTY_MODES)
                 .map(
                   ([key, mode]) => `
-                <div class="difficulty-option" onclick="selectDifficulty('${key}')">
+                <div class="difficulty-option" onclick="${functionToCall}('${key}')">
                   <h3>${mode.name}</h3>
                   <p>${mode.description}</p>
                   <div class="difficulty-stats">
-                    Starting Economy: ${mode.startingStats.economy} | 
+                    Economy ${mode.startingStats.economy} | Security ${mode.startingStats.security} | Freedom ${mode.startingStats.freedom} | 
                     Rounds: ${mode.maxTurns} | 
-                    Random Events: ${Math.round(mode.randomEventsFrequency * 100)}%
+                    Events: ${Math.round(mode.randomEventsFrequency * 100)}%
                   </div>
                 </div>
               `
@@ -963,20 +2158,46 @@
         document.body.insertAdjacentHTML("beforeend", difficultyHTML);
       }
 
-      // Function to select difficulty and start game
+      // Function để chọn mode LẦN ĐẦU (không reset game đã có)
       function selectDifficulty(difficulty) {
         currentDifficulty = difficulty;
         const mode = DIFFICULTY_MODES[difficulty];
 
-        // Set starting stats based on difficulty
-        gameState.stats = { ...mode.startingStats };
+        console.log(`🎮 First time selecting difficulty: ${difficulty}`, mode);
+
+        // Chỉ setup game state nếu chưa có game nào đang chạy
+        if (!gameState || gameState.currentTurn === 1) {
+          console.log(`📊 Setting up NEW game with stats:`, mode.startingStats);
+          gameState = {
+            currentTurn: 1,
+            usedScenarios: [],
+            stats: { ...mode.startingStats },
+            score: 0,
+          };
+        } else {
+          // Nếu đang có game, CHỈ cập nhật difficulty settings
+          console.log(`🔄 Game đang chạy, chỉ cập nhật difficulty settings`);
+        }
+        
         maxTurns = mode.maxTurns;
 
         // Remove difficulty selection screen
-        document.getElementById("difficultySelection").remove();
+        const difficultyModal = document.getElementById("difficultySelection");
+        if (difficultyModal) {
+          difficultyModal.remove();
+        }
 
-        // Show difficulty indicator
-        showDifficultyIndicator(mode.name);
+        // Show difficulty indicator nếu chưa có
+        if (!document.getElementById("difficulty-indicator")) {
+          showDifficultyIndicator(mode.name);
+        }
+
+        console.log(`✅ Difficulty selected (no reset):`, gameState?.stats || 'No game state yet');
+
+        // ✨ CẬP NHẬT UI (nếu có gameState)
+        if (gameState) {
+          updateDisplay();
+        }
 
         // Start game
         startGame();
@@ -1012,159 +2233,503 @@
 
       // Load game data
       async function loadGameData() {
+        console.log("Starting to load game data...");
+        
         try {
-          const [storyResponse, eventsResponse, endingsResponse] = await Promise.all([
-            fetch("game_story_data_expanded.json"),
-            fetch("random_events_enhanced.json"),
-            fetch("endings.json"),
+          // First method: Try to load with relative paths
+          console.log("Method 1: Loading with relative paths...");
+          const [storyResponse, eventsResponse, eventsWithChoicesResponse, endingsResponse] = await Promise.all([
+            fetch("./game_story_data_expanded.json"),
+            fetch("./random_events_enhanced.json"), 
+            fetch("./random_events_with_choices.json"),
+            fetch("./endings.json"),
           ]);
 
-          gameStoryData = await storyResponse.json();
-          randomEventsData = await eventsResponse.json();
-          const endingsJson = await endingsResponse.json();
-          endingsData = endingsJson.endings || endingsJson;
-
-          console.log("Game data loaded successfully:", {
-            scenarios: gameStoryData.length,
-            randomEvents: randomEventsData.length,
-            endings: endingsData.length,
+          console.log("Response status:", {
+            story: storyResponse.status,
+            events: eventsResponse.status,
+            eventsWithChoices: eventsWithChoicesResponse.status,
+            endings: endingsResponse.status
           });
+
+          if (storyResponse.ok && eventsResponse.ok && eventsWithChoicesResponse.ok && endingsResponse.ok) {
+            gameStoryData = await storyResponse.json();
+            randomEventsData = await eventsResponse.json();
+            randomEventsWithChoicesData = await eventsWithChoicesResponse.json();
+            const endingsJson = await endingsResponse.json();
+            endingsData = endingsJson.endings || endingsJson;
+
+            console.log("✅ Game data loaded successfully:", {
+              scenarios: gameStoryData.length,
+              randomEvents: randomEventsData.length,
+              randomEventsWithChoices: randomEventsWithChoicesData.length,
+              endings: endingsData.length,
+            });
+            updateScenarioCounter();
+            return; // Success, exit function
+          } else {
+            throw new Error(`HTTP Error: ${storyResponse.status}, ${eventsResponse.status}, ${eventsWithChoicesResponse.status}, ${endingsResponse.status}`);
+          }
         } catch (error) {
-          console.error("Error loading game data:", error);
-          // Fallback data
-          gameStoryData = [
-            {
-              id: 1,
-              title: "Khủng Hoảng Kinh Tế",
-              description:
-                "Nền kinh tế đất nước đang gặp khó khăn nghiêm trọng. GDP giảm mạnh, thất nghiệp tăng cao. Bạn cần có biện pháp khẩn cấp để ổn định tình hình.",
-              choices: [
-                {
-                  title: "Gói kích thích kinh tế 500 tỷ USD",
-                  text: "Đầu tư mạnh mẽ vào cơ sở hạ tầng và hỗ trợ doanh nghiệp",
-                  effects: { discontent: -10, economy: 25, environment: -5, security: 5 },
-                },
-                {
-                  title: "Cắt giảm chi tiêu chính phủ",
-                  text: "Kiểm soát ngân sách chặt chẽ để ổn định tài chính",
-                  effects: { discontent: 15, economy: 10, security: -5, freedom: -5 },
-                },
-              ],
-            },
-            {
-              id: 2,
-              title: "Biểu Tình Quy Mô Lớn",
-              description:
-                "Hàng ngàn người dân xuống đường biểu tình phản đối chính sách mới. Tình hình có nguy cơ bất ổn.",
-              choices: [
-                {
-                  title: "Đối thoại với người biểu tình",
-                  text: "Tổ chức cuộc gặp gỡ để lắng nghe ý kiến",
-                  effects: { discontent: -15, conflict: -10, freedom: 10, security: -5 },
-                },
-                {
-                  title: "Tăng cường an ninh",
-                  text: "Triển khai lực lượng để duy trì trật tự",
-                  effects: { conflict: 15, freedom: -15, security: 10, discontent: 10 },
-                },
-              ],
-            },
-            {
-              id: 3,
-              title: "Thảm Họa Thiên Nhiên",
-              description:
-                "Một trận lụt lớn vừa xảy ra, gây thiệt hại nghiêm trọng. Hàng ngàn người dân cần được cứu trợ khẩn cấp.",
-              choices: [
-                {
-                  title: "Huy động tất cả nguồn lực cứu trợ",
-                  text: "Triển khai toàn bộ lực lượng để giúp đỡ người dân",
-                  effects: { discontent: -20, economy: -15, security: 5, environment: 5 },
-                },
-                {
-                  title: "Kêu gọi cộng đồng quốc tế hỗ trợ",
-                  text: "Yêu cầu viện trợ từ các nước bạn và tổ chức quốc tế",
-                  effects: { discontent: -10, economy: -5, freedom: 5, environment: 10 },
-                },
-              ],
-            },
-          ];
-          randomEventsData = [];
-          endingsData = [];
+          console.error("❌ Method 1 failed:", error);
+          
+          try {
+            // Second method: Try without ./ prefix
+            console.log("Method 2: Loading without prefix...");
+            const [storyResponse2, eventsResponse2, eventsWithChoicesResponse2, endingsResponse2] = await Promise.all([
+              fetch("game_story_data_expanded.json"),
+              fetch("random_events_enhanced.json"),
+              fetch("random_events_with_choices.json"),
+              fetch("endings.json"),
+            ]);
+
+            if (storyResponse2.ok && eventsResponse2.ok && eventsWithChoicesResponse2.ok && endingsResponse2.ok) {
+              gameStoryData = await storyResponse2.json();
+              randomEventsData = await eventsResponse2.json();
+              randomEventsWithChoicesData = await eventsWithChoicesResponse2.json();
+              const endingsJson2 = await endingsResponse2.json();
+              endingsData = endingsJson2.endings || endingsJson2;
+
+              console.log("✅ Method 2 successful! Game data loaded:", {
+                scenarios: gameStoryData.length,
+                randomEvents: randomEventsData.length,
+                randomEventsWithChoices: randomEventsWithChoicesData.length,
+                endings: endingsData.length,
+              });
+              updateScenarioCounter();
+              return; // Success, exit function
+            } else {
+              throw new Error("Files not accessible");
+            }
+          } catch (error2) {
+            console.error("❌ Method 2 failed:", error2);
+            
+            // Final fallback - embed essential data
+            console.log("🔄 Using embedded fallback data...");
+            
+            // Use the actual data from the files we know exist
+            gameStoryData = [
+              {
+                "id": 1,
+                "title": "Khủng Hoảng COVID-19",
+                "description": "Đại dịch COVID-19 bùng phát trên toàn quốc. Hệ thống y tế quá tải, nền kinh tế đình trệ. Bạn phải quyết định biện pháp ứng phó khẩn cấp.",
+                "choices": [
+                  {
+                    "title": "Phong tỏa toàn quốc 30 ngày",
+                    "text": "Áp dụng lệnh phong tỏa nghiêm ngặt để kiểm soát dịch bệnh",
+                    "effects": { "discontent": 15, "conflict": 10, "economy": -25, "environment": 10, "freedom": -20, "security": 15 }
+                  },
+                  {
+                    "title": "Cách ly khu vực nguy cơ cao", 
+                    "text": "Chỉ phong tỏa những khu vực có ca nhiễm cao",
+                    "effects": { "discontent": 5, "conflict": 8, "economy": -10, "environment": -5, "freedom": -5, "security": 5 }
+                  },
+                  {
+                    "title": "Để dân tự bảo vệ",
+                    "text": "Ưu tiên kinh tế, để người dân tự quyết định", 
+                    "effects": { "discontent": 25, "conflict": 20, "economy": 5, "environment": -15, "freedom": 10, "security": -20 }
+                  }
+                ]
+              },
+              {
+                "id": 6,
+                "title": "Phong Trào Cải Cách Chính Trị",
+                "description": "Các nhóm trí thức và sinh viên yêu cầu cải cách hệ thống chính trị, đòi dân chủ hóa và minh bạch hơn. Họ tổ chức biểu tình ôn hòa nhưng quy mô ngày càng lớn.",
+                "choices": [
+                  {
+                    "title": "Đối thoại và cải cách từng bước",
+                    "text": "Mở đối thoại với các nhóm dân chủ và tiến hành cải cách chính trị dần dần",
+                    "effects": { "discontent": -20, "conflict": -15, "economy": 5, "environment": 0, "freedom": 25, "security": -5 }
+                  },
+                  {
+                    "title": "Duy trì hiện trạng, tăng cường kiểm soát",
+                    "text": "Giữ nguyên hệ thống hiện tại và tăng cường giám sát các hoạt động chính trị",
+                    "effects": { "discontent": 25, "conflict": 20, "economy": -5, "environment": 0, "freedom": -20, "security": 10 }
+                  }
+                ]
+              }
+            ];
+            
+            randomEventsData = [];
+            randomEventsWithChoicesData = [];
+            endingsData = [];
+            
+            console.log("⚠️ Using embedded fallback data. To get full content, please serve the files via HTTP server!");
+            updateScenarioCounter();
+            
+            // Show instruction to user
+            const instruction = `
+🚨 HƯỚNG DẪN CHẠY GAME ĐẦY ĐỦ:
+
+1. Trong VS Code: 
+   - Cài extension "Live Server"
+   - Right-click vào index.html → "Open with Live Server"
+
+2. Hoặc dùng Python:
+   - Chạy: python -m http.server 8000
+   - Mở: http://localhost:8000
+
+3. Hoặc dùng Node.js:
+   - Chạy: npx serve
+   - Mở link được hiển thị
+
+Hiện tại đang dùng dữ liệu tối thiểu (2/20 tình huống).
+            `;
+            
+            // Create a better notification instead of alert
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+              position: fixed; top: 50%; left: 50%; 
+              transform: translate(-50%, -50%);
+              background: #ff9800; color: white; 
+              padding: 20px; border-radius: 10px; 
+              z-index: 1000; max-width: 500px;
+              box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+              font-family: Arial, sans-serif;
+              line-height: 1.5;
+            `;
+            notification.innerHTML = `
+              <h3 style="margin: 0 0 15px 0;">🚨 HƯỚNG DẪN CHẠY GAME ĐẦY ĐỦ</h3>
+              <p><strong>Hiện tại:</strong> Đang dùng 2/20 tình huống game</p>
+              <p><strong>Để có đầy đủ:</strong></p>
+              <ol style="margin: 10px 0; padding-left: 20px;">
+                <li>Trong VS Code: Cài "Live Server" extension</li>
+                <li>Right-click index.html → "Open with Live Server"</li>
+                <li>Hoặc chạy: <code>python -m http.server 8000</code></li>
+              </ol>
+              <button onclick="this.parentElement.remove()" style="
+                background: #fff; color: #ff9800; border: none; 
+                padding: 8px 16px; border-radius: 4px; 
+                cursor: pointer; float: right; margin-top: 10px;
+              ">Đóng</button>
+            `;
+            document.body.appendChild(notification);
+          }
         }
+      }
+
+      // Preload next stories for better performance
+      function preloadNextStories() {
+        if (gameState.currentTurn < maxTurns - 2) {
+          const nextTurns = [gameState.currentTurn + 1, gameState.currentTurn + 2];
+          
+          nextTurns.forEach(turn => {
+            const cacheKey = `turn_${turn}_${gameState.usedScenarios.length}`;
+            if (!storyCache.has(cacheKey) && gameStoryData.length > 0) {
+              const usedSet = new Set(gameState.usedScenarios);
+              const availableStories = gameStoryData.filter(
+                story => !usedSet.has(story.id)
+              );
+              
+              if (availableStories.length > 0) {
+                const randomIndex = Math.floor(Math.random() * availableStories.length);
+                const story = availableStories[randomIndex];
+                storyCache.set(cacheKey, story);
+              }
+            }
+          });
+        }
+      }
+
+      // Update scenario counter display
+      function updateScenarioCounter() {
+        const counter = document.getElementById("scenarioCount");
+        if (counter) {
+          counter.textContent = gameStoryData.length;
+          
+          // Change color based on data completeness
+          const scenarioCounterEl = counter.parentElement;
+          if (gameStoryData.length >= 20) {
+            scenarioCounterEl.style.color = "#4CAF50"; // Green for complete
+          } else if (gameStoryData.length >= 10) {
+            scenarioCounterEl.style.color = "#FF9800"; // Orange for partial
+          } else {
+            scenarioCounterEl.style.color = "#F44336"; // Red for minimal
+          }
+        }
+      }
+
+      // Reload game data function
+      async function reloadGameData() {
+        const btn = document.getElementById("reloadDataBtn");
+        const originalText = btn.innerHTML;
+        btn.innerHTML = "⏳ Đang tải...";
+        btn.disabled = true;
+        
+        try {
+          await loadGameData();
+          // Show success message
+          btn.innerHTML = "✅ Đã tải!";
+          console.log("Game data reloaded successfully!");
+          
+          // Show notification to user
+          const notification = document.createElement('div');
+          notification.style.cssText = `
+            position: fixed; top: 20px; right: 20px; 
+            background: #4CAF50; color: white; 
+            padding: 12px 20px; border-radius: 6px; 
+            z-index: 1000; font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+          `;
+          notification.textContent = `✅ Đã tải ${gameStoryData.length} tình huống game!`;
+          document.body.appendChild(notification);
+          
+          setTimeout(() => {
+            notification.remove();
+          }, 3000);
+          
+        } catch (error) {
+          btn.innerHTML = "❌ Lỗi!";
+          console.error("Failed to reload game data:", error);
+        }
+        
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.disabled = false;
+        }, 2000);
       }
 
       // Initialize game
       function startGame() {
+        console.log("🎮 Starting game...");
+        
+        // Chỉ setup gameState nếu chưa có hoặc chưa được setup từ difficulty selection
+        if (!gameState || !gameState.stats.hasOwnProperty('economy')) {
+          console.log("⚠️ No valid gameState found, creating default...");
+          gameState = {
+            currentTurn: 1,
+            usedScenarios: [],
+            stats: {
+              discontent: 50,
+              conflict: 50,
+              economy: 50,
+              environment: 50,
+              freedom: 50,
+              security: 50,
+            },
+            score: 0,
+          };
+        } else {
+          console.log("✅ Using existing gameState from difficulty selection:", gameState);
+        }
+        
+        console.log("🎯 Current game stats:", gameState.stats);
+        
         loadGameData().then(() => {
+          console.log("📚 Game data loaded, starting UI...");
+          
+          // Ẩn start screen và hiển thị game
+          document.getElementById("startScreen").classList.add("hidden");
           document.getElementById("gameContainer").style.display = "block";
           document.getElementById("guideBtn").style.display = "block";
+          
+          console.log("🎯 Updating display with stats:", gameState.stats);
           updateDisplay();
+          console.log("🔄 Loading first story...");
           loadCurrentStory();
+        }).catch(error => {
+          console.error("❌ Error starting game:", error);
+          alert("Lỗi khởi động game: " + error.message);
         });
       }
 
-      // Update stats display
+      // Update stats display with visual effects
       function updateStatsDisplay() {
         const statsPanel = document.getElementById("statsPanel");
-        statsPanel.innerHTML = "";
+        if (!statsPanel) return;
 
         Object.entries(gameState.stats).forEach(([stat, value]) => {
-          const statElement = document.createElement("div");
-          statElement.className = "stat";
+          // Check if stat element already exists
+          let statElement = document.getElementById(`stat-${stat}`);
+          const isNewElement = !statElement;
+          
+          if (isNewElement) {
+            statElement = document.createElement("div");
+            statElement.className = "stat";
+            statElement.id = `stat-${stat}`;
+            statsPanel.appendChild(statElement);
+          }
+
+          // Detect value changes for animation
+          const oldValue = parseInt(statElement.dataset.oldValue) || value;
+          const hasChanged = oldValue !== value;
+          
+          // Determine status class
+          let statusClass = '';
+          if (stat === "discontent" || stat === "conflict") {
+            // Higher is worse for these stats
+            if (value >= 70) statusClass = 'critical';
+            else if (value >= 50) statusClass = 'warning';
+            else statusClass = 'good';
+          } else {
+            // Higher is better for these stats
+            if (value <= 20) statusClass = 'critical';
+            else if (value <= 40) statusClass = 'warning';
+            else if (value >= 70) statusClass = 'good';
+          }
 
           // Color coding based on stat type and value
           let fillColor = "#4caf50"; // Default green
           if (stat === "discontent" || stat === "conflict") {
-            // Higher is worse for these stats
             fillColor = value >= 70 ? "#ff4444" : value >= 50 ? "#ffaa00" : "#4caf50";
           } else {
-            // Higher is better for these stats
             fillColor = value >= 60 ? "#4caf50" : value >= 40 ? "#ffaa00" : "#ff4444";
+          }
+
+          // Update classes
+          statElement.className = `stat ${statusClass}`;
+          
+          // Create change indicator if value changed
+          let changeIndicator = '';
+          if (hasChanged && !isNewElement) {
+            const change = value - oldValue;
+            const changeClass = change > 0 ? '' : 'negative';
+            changeIndicator = `<div class="stat-change ${changeClass}">${change > 0 ? '+' + change : change}</div>`;
           }
 
           statElement.innerHTML = `
             <div class="stat-label">${statLabels[stat]}</div>
-            <div class="stat-value" style="color: ${fillColor}">${value}</div>
+            <div class="stat-value ${hasChanged ? 'changed' : ''} ${value > oldValue ? 'increased' : value < oldValue ? 'decreased' : ''}" 
+                 id="stat-value-${stat}" style="color: ${fillColor}">${value}</div>
             <div class="stat-bar">
-              <div class="stat-fill" style="width: ${Math.max(
-                0,
-                Math.min(100, value)
-              )}%; background: ${fillColor}"></div>
+              <div class="stat-fill" style="width: ${Math.max(0, Math.min(100, value))}%; background: ${fillColor}"></div>
             </div>
+            ${changeIndicator}
           `;
 
-          statsPanel.appendChild(statElement);
+          // Store current value for next comparison
+          statElement.dataset.oldValue = value;
+
+          // Remove animation classes after animation completes
+          if (hasChanged) {
+            setTimeout(() => {
+              const valueEl = document.getElementById(`stat-value-${stat}`);
+              if (valueEl) {
+                valueEl.classList.remove('changed', 'increased', 'decreased');
+              }
+              const changeEl = statElement.querySelector('.stat-change');
+              if (changeEl) changeEl.remove();
+            }, 2000);
+          }
         });
+        
+        // Check for crisis situations
+        checkCrisisSituations();
       }
 
-      // Update turn and score
-      function updateGameInfo() {
-        document.getElementById("turnCounter").textContent = gameState.currentTurn + "/" + maxTurns;
-        document.getElementById("gameScore").textContent = gameState.score;
-      }
-
-      // FIXED: Load current story function
-      function loadCurrentStory() {
-        console.log(`Loading story for turn ${gameState.currentTurn}/${maxTurns}`);
-
-        // Get available scenarios that haven't been used
-        const availableScenarios = gameStoryData.filter((scenario) => !gameState.usedScenarios.includes(scenario.id));
-
-        let storyData;
-
-        if (availableScenarios.length > 0) {
-          // Use a random available scenario
-          storyData = availableScenarios[Math.floor(Math.random() * availableScenarios.length)];
-          gameState.usedScenarios.push(storyData.id);
-          console.log(`Selected scenario: ${storyData.title} (ID: ${storyData.id})`);
-        } else {
-          // All scenarios used, reset and start over
-          if (gameStoryData.length > 0) {
-            console.log("All scenarios used, resetting used scenarios list");
-            gameState.usedScenarios = [];
-            storyData = gameStoryData[Math.floor(Math.random() * gameStoryData.length)];
-            gameState.usedScenarios.push(storyData.id);
+      // Check and display crisis alerts
+      function checkCrisisSituations() {
+        const criticalStats = [];
+        
+        Object.entries(gameState.stats).forEach(([stat, value]) => {
+          if (stat === "discontent" || stat === "conflict") {
+            if (value >= 85) criticalStats.push(statLabels[stat]);
           } else {
+            if (value <= 15) criticalStats.push(statLabels[stat]);
+          }
+        });
+        
+        if (criticalStats.length > 0) {
+          const message = `KHỦNG HOẢNG: ${criticalStats.join(', ')} đang ở mức nguy hiểm!`;
+          showCrisisAlert(message);
+        }
+        
+        // Check for multiple problematic stats
+        const problematicStats = Object.entries(gameState.stats).filter(([stat, value]) => {
+          if (stat === "discontent" || stat === "conflict") {
+            return value >= 70;
+          } else {
+            return value <= 30;
+          }
+        });
+        
+        if (problematicStats.length >= 3) {
+          showCrisisAlert('CẢNH BÁO: Nhiều chỉ số đang ở mức có vấn đề!');
+        }
+      }
+
+      // Show crisis alert
+      function showCrisisAlert(message) {
+        // Remove existing alert if any
+        const existingAlert = document.querySelector('.crisis-alert');
+        if (existingAlert) existingAlert.remove();
+        
+        const alertDiv = document.createElement('div');
+        alertDiv.className = 'crisis-alert';
+        alertDiv.textContent = '⚠️ ' + message;
+        alertDiv.style.display = 'block';
+        
+        document.body.appendChild(alertDiv);
+        
+        setTimeout(() => {
+          if (alertDiv.parentNode) {
+            alertDiv.remove();
+          }
+        }, 4000);
+      }
+
+      // Update turn and score with late game warning
+      function updateGameInfo() {
+        const turnElement = document.getElementById("turnCounter");
+        const scoreElement = document.getElementById("gameScore");
+        
+        if (turnElement) {
+          turnElement.textContent = gameState.currentTurn + "/" + maxTurns;
+          
+          // Add late game warning
+          const gameProgress = gameState.currentTurn / maxTurns;
+          if (gameProgress >= 0.75) {
+            turnElement.classList.add('late-game');
+          } else {
+            turnElement.classList.remove('late-game');
+          }
+        }
+        
+        if (scoreElement) {
+          scoreElement.textContent = gameState.score;
+        }
+      }
+
+      // OPTIMIZED: Load current story function with caching and performance improvements
+      let storyCache = new Map();
+      let isLoadingStory = false;
+      
+      function loadCurrentStory() {
+        // Prevent multiple simultaneous loads
+        if (isLoadingStory) return;
+        isLoadingStory = true;
+        
+        // Show loading state
+        const storySection = document.querySelector('.story-section');
+        storySection?.classList.add('loading');
+        
+        // Use requestAnimationFrame for smooth UI updates
+        requestAnimationFrame(() => {
+          console.log(`⚡ Loading story for turn ${gameState.currentTurn}/${maxTurns}`);
+
+          // Check cache first
+          const cacheKey = `turn_${gameState.currentTurn}_${gameState.usedScenarios.length}`;
+          let storyData = storyCache.get(cacheKey);
+          
+          if (!storyData) {
+            // Get available scenarios that haven't been used (optimized with Set)
+            const usedSet = new Set(gameState.usedScenarios);
+            const availableScenarios = gameStoryData.filter(scenario => !usedSet.has(scenario.id));
+
+            if (availableScenarios.length > 0) {
+              // Use a random available scenario
+              const randomIndex = Math.floor(Math.random() * availableScenarios.length);
+              storyData = availableScenarios[randomIndex];
+              gameState.usedScenarios.push(storyData.id);
+              console.log(`✅ Selected scenario: ${storyData.title} (ID: ${storyData.id})`);
+            } else {
+              // All scenarios used, reset and start over
+              if (gameStoryData.length > 0) {
+                console.log("🔄 All scenarios used, resetting used scenarios list");
+                gameState.usedScenarios = [];
+                storyData = gameStoryData[Math.floor(Math.random() * gameStoryData.length)];
+                gameState.usedScenarios.push(storyData.id);
+              } else {
             // Fallback scenario
             storyData = {
               id: 999,
@@ -1187,16 +2752,34 @@
           }
         }
 
-        // Display the story
-        document.getElementById("storyTitle").textContent = storyData.title;
-        document.getElementById("storyText").textContent = storyData.description;
-        displayChoices(storyData.choices);
+            // Cache the story for potential reuse
+            storyCache.set(cacheKey, storyData);
+          }
+
+          // Display the story with smooth animation
+          const titleEl = document.getElementById("storyTitle");
+          const textEl = document.getElementById("storyText");
+          
+          if (titleEl) titleEl.textContent = storyData.title;
+          if (textEl) textEl.textContent = storyData.description;
+          
+          displayChoices(storyData.choices);
+          
+          // Remove loading state
+          setTimeout(() => {
+            storySection?.classList.remove('loading');
+            isLoadingStory = false;
+            
+            // Preload next stories for better performance
+            preloadNextStories();
+          }, 100);
+        });
       }
 
-      // Display choices
+      // OPTIMIZED: Display choices with highlighting for high impact
       function displayChoices(choices) {
         const choicesGrid = document.getElementById("choicesGrid");
-        choicesGrid.innerHTML = "";
+        if (!choicesGrid) return;
 
         // Ensure we have at least 1 choice
         if (!choices || choices.length === 0) {
@@ -1209,19 +2792,34 @@
           ];
         }
 
+        // Use DocumentFragment for better performance
+        const fragment = document.createDocumentFragment();
+
         choices.forEach((choice, index) => {
           const choiceElement = document.createElement("div");
-          choiceElement.className = "choice";
-          choiceElement.onclick = () => makeChoice(choice, index);
+          let choiceClass = "choice";
+          
+          // Check if this is a high impact choice
+          const isHighImpact = checkHighImpact(choice.effects);
+          if (isHighImpact) {
+            choiceClass += " high-impact";
+          }
+          
+          choiceElement.className = choiceClass;
+          
+          // Use event delegation instead of individual onclick handlers
+          choiceElement.dataset.choiceIndex = index;
+          choiceElement.dataset.choice = JSON.stringify(choice);
 
-          // Create effects preview
+          // Create effects preview with enhanced formatting
           let effectsPreview = "";
           if (choice.effects) {
             Object.entries(choice.effects).forEach(([stat, change]) => {
               if (change !== 0) {
                 const sign = change > 0 ? "+" : "";
                 const statName = statLabels[stat] || stat;
-                effectsPreview += `${statName} ${sign}${change} `;
+                const impactClass = Math.abs(change) >= 15 ? ' high-impact-effect' : '';
+                effectsPreview += `<span class="effect-item${impactClass}">${statName} ${sign}${change}</span> `;
               }
             });
           }
@@ -1232,62 +2830,134 @@
             <div class="choice-effects">Tác động: ${effectsPreview || "Không có"}</div>
           `;
 
-          choicesGrid.appendChild(choiceElement);
+          fragment.appendChild(choiceElement);
+        });
+        
+        // Clear and append all choices at once for better performance
+        choicesGrid.innerHTML = "";
+        choicesGrid.appendChild(fragment);
+        
+        // Add event delegation listener if not already added
+        if (!choicesGrid.hasAttribute('data-listener-added')) {
+          choicesGrid.addEventListener('click', function(e) {
+            const choiceEl = e.target.closest('.choice');
+            if (choiceEl && !choiceEl.classList.contains('disabled')) {
+              const choice = JSON.parse(choiceEl.dataset.choice);
+              const index = parseInt(choiceEl.dataset.choiceIndex);
+              makeChoice(choice, index);
+            }
+          });
+          choicesGrid.setAttribute('data-listener-added', 'true');
+        }
+      }
+
+      // Check if a choice has high impact effects
+      function checkHighImpact(effects) {
+        if (!effects) return false;
+        
+        // Consider high impact if any effect is >= 15 or <= -15
+        return Object.values(effects).some(value => Math.abs(value) >= 15);
+      }
+
+      // OPTIMIZED: Make choice with debouncing and faster processing  
+      let isProcessingChoice = false;
+      
+      function makeChoice(choice, index) {
+        // Prevent double-clicking with debouncing
+        if (isProcessingChoice) return;
+        isProcessingChoice = true;
+        
+        console.log(`⚡ Making choice at turn ${gameState.currentTurn}:`, choice.title);
+
+        // Disable all choices immediately to prevent double-clicks
+        const allChoices = document.querySelectorAll('.choice');
+        allChoices.forEach(el => {
+          el.classList.add('disabled');
+        });
+
+        // Use requestAnimationFrame for smooth processing
+        requestAnimationFrame(() => {
+          // Apply difficulty modifiers
+          const modifiedEffects = applyDifficultyModifiers(choice.effects || {});
+          console.log("Modified effects:", modifiedEffects);
+
+          // Apply effects with optimized loop
+          let totalChange = 0;
+          for (const [stat, change] of Object.entries(modifiedEffects)) {
+            if (gameState.stats.hasOwnProperty(stat)) {
+              const oldValue = gameState.stats[stat];
+              gameState.stats[stat] = Math.max(0, Math.min(100, gameState.stats[stat] + change));
+              console.log(`📈 ${stat}: ${oldValue} -> ${gameState.stats[stat]} (${change > 0 ? "+" : ""}${change})`);
+              totalChange += Math.abs(change);
+            }
+          }
+
+          // Update score
+          gameState.score += totalChange;
+          console.log(`🎯 Score updated: +${totalChange}, Total: ${gameState.score}`);
+
+          // Update display immediately to show changes
+          updateDisplay();
+          console.log('🔄 Display updated with new stats');
+
+          // Check for game end conditions
+          if (checkGameEnd()) {
+            isProcessingChoice = false;
+            return;
+          }
+
+          // Next turn
+          gameState.currentTurn++;
+
+          // Random event chance based on difficulty with cooldown
+          const mode = DIFFICULTY_MODES[currentDifficulty];
+          const eventChance = Math.random();
+          const turnsSinceLastEvent = gameState.currentTurn - lastEventTurn;
+          
+          console.log(`🎲 Event check: roll=${eventChance.toFixed(2)} vs ${mode.randomEventsFrequency}, cooldown=${turnsSinceLastEvent}/${eventCooldown}`);
+          
+          setTimeout(() => {
+            // Only trigger if conditions met: min turn, cooldown passed AND chance hits
+            const canTriggerEvent = turnsSinceLastEvent >= eventCooldown && gameState.currentTurn >= minEventTurn;
+            const shouldTriggerEvent = eventChance < mode.randomEventsFrequency;
+            
+            if (canTriggerEvent && shouldTriggerEvent && randomEventsData.length > 0) {
+              console.log('🎪 Triggering random event!');
+              lastEventTurn = gameState.currentTurn;
+              triggerRandomEvent();
+              setTimeout(() => {
+                loadCurrentStory();
+                isProcessingChoice = false;
+              }, 3000);
+            } else {
+              console.log(`📖 No event: cooldown=${canTriggerEvent}, chance=${shouldTriggerEvent}`);
+              loadCurrentStory();
+              isProcessingChoice = false;
+            }
+          }, 800);
         });
       }
 
-      // Make choice
-      function makeChoice(choice, index) {
-        console.log(`Making choice at turn ${gameState.currentTurn}:`, choice.title);
-
-        // Apply difficulty modifiers
-        const modifiedEffects = applyDifficultyModifiers(choice.effects || {});
-        console.log("Modified effects:", modifiedEffects);
-
-        // Apply effects
-        Object.entries(modifiedEffects).forEach(([stat, change]) => {
-          const oldValue = gameState.stats[stat];
-          gameState.stats[stat] = Math.max(0, Math.min(100, gameState.stats[stat] + change));
-          console.log(`${stat}: ${oldValue} -> ${gameState.stats[stat]} (${change > 0 ? "+" : ""}${change})`);
-        });
-
-        // Update score
-        gameState.score += Math.abs(Object.values(modifiedEffects).reduce((sum, val) => sum + val, 0));
-
-        // Update display
-        updateDisplay();
-
-        // Check for game end conditions
-        if (checkGameEnd()) {
+      // Trigger random event - now supports both types of events
+      function triggerRandomEvent() {
+        console.log('🎪 triggerRandomEvent called, checking both event types...');
+        
+        // First, check if we should trigger an event with choices (higher priority)
+        const eventWithChoices = selectRandomEventWithChoices();
+        if (eventWithChoices) {
+          console.log(`🎲 Random event WITH CHOICES selected: ${eventWithChoices.title}`);
+          showRandomEventWithChoices(eventWithChoices);
           return;
         }
-
-        // Next turn
-        gameState.currentTurn++;
-
-        // Random event chance based on difficulty
-        const mode = DIFFICULTY_MODES[currentDifficulty];
-        setTimeout(() => {
-          if (Math.random() < mode.randomEventsFrequency && randomEventsData.length > 0) {
-            triggerRandomEvent();
-            setTimeout(() => {
-              loadCurrentStory();
-            }, 5000);
-          } else {
-            loadCurrentStory();
+        
+        // If no event with choices, try regular random event
+        const regularEvent = selectRandomEvent();
+        if (regularEvent) {
+          console.log(`🎲 Regular random event selected: ${regularEvent.title} (${regularEvent.rarity})`);
+          if (regularEvent.conditions) {
+            console.log(`📋 Event conditions:`, regularEvent.conditions);
           }
-        }, 1500);
-      }
-
-      // Trigger random event
-      function triggerRandomEvent() {
-        const event = selectRandomEvent();
-        if (event) {
-          console.log(`🎲 Random event: ${event.title} (${event.rarity})`);
-          if (event.conditions) {
-            console.log(`📋 Event conditions:`, event.conditions);
-          }
-          showRandomEvent(event);
+          showRandomEvent(regularEvent);
         } else {
           console.log("🚫 No random events available for current conditions");
         }
@@ -1320,96 +2990,230 @@
 
         return true;
       }
-      // Select random event
-      function selectRandomEvent() {
-        if (!randomEventsData || randomEventsData.length === 0) {
+      // Select random event with choices
+      function selectRandomEventWithChoices() {
+        console.log('🔍 Selecting random event with choices from', randomEventsWithChoicesData?.length || 0, 'events');
+        if (!randomEventsWithChoicesData || randomEventsWithChoicesData.length === 0) {
+          console.log('❌ No random events with choices data available');
           return null;
         }
 
-        // Filter events that meet conditions
-        const availableEvents = randomEventsData.filter((event) => {
+        // Filter events that meet conditions AND haven't been used recently
+        const availableEvents = randomEventsWithChoicesData.filter((event) => {
+          // Skip if event was used recently
+          if (usedEvents.has(event.title)) {
+            console.log(`⏭️ Skipping used event: ${event.title}`);
+            return false;
+          }
+          
           // Check basic conditions
-          if (!checkEventConditions(event)) return false;
+          const meetsConditions = checkEventConditions(event);
+          console.log(`📋 Event with choices "${event.title}" meets conditions:`, meetsConditions);
+          
+          if (!meetsConditions) return false;
 
           // For conditional events, check trigger_chance
           if (event.rarity === "conditional") {
-            return Math.random() < event.trigger_chance;
+            const triggerRoll = Math.random() < event.trigger_chance;
+            console.log(`🎲 Conditional event with choices roll: ${triggerRoll}`);
+            return triggerRoll;
+          }
+
+          return true;
+        });
+
+        console.log('✅ Available events with choices after filtering:', availableEvents.length);
+        if (availableEvents.length === 0) {
+          console.log('⚠️ No events with choices available for current conditions');
+          return null;
+        }
+
+        // Select random from available and mark as used
+        const selectedEvent = availableEvents[Math.floor(Math.random() * availableEvents.length)];
+        usedEvents.add(selectedEvent.title);
+        console.log('🎯 Selected event with choices:', selectedEvent.title, '| Used events:', usedEvents.size);
+        return selectedEvent;
+      }
+
+      // Select regular random event
+      function selectRandomEvent() {
+        console.log('🔍 Selecting random event from', randomEventsData?.length || 0, 'events');
+        if (!randomEventsData || randomEventsData.length === 0) {
+          console.log('❌ No random events data available');
+          return null;
+        }
+
+        // Filter events that meet conditions AND haven't been used recently
+        const availableEvents = randomEventsData.filter((event) => {
+          // Skip if event was used recently
+          if (usedEvents.has(event.title)) {
+            console.log(`⏭️ Skipping used event: ${event.title}`);
+            return false;
+          }
+          
+          // Check basic conditions
+          const meetsConditions = checkEventConditions(event);
+          console.log(`📋 Event "${event.title}" meets conditions:`, meetsConditions);
+          
+          if (!meetsConditions) return false;
+
+          // For conditional events, check trigger_chance
+          if (event.rarity === "conditional") {
+            const triggerRoll = Math.random() < event.trigger_chance;
+            console.log(`🎲 Conditional event roll: ${triggerRoll}`);
+            return triggerRoll;
           }
 
           // For regular events, use rarity-based selection
           return true;
         });
 
+        console.log('✅ Available events after filtering:', availableEvents.length);
         if (availableEvents.length === 0) {
+          // If no unused events, reset used events and try again
+          if (usedEvents.size > 0) {
+            console.log('🔄 Resetting used events list');
+            usedEvents.clear();
+            return selectRandomEvent(); // Recursively try again
+          }
+          console.log('⚠️ No events available at all');
           return null;
         }
 
-        // Weighted selection based on rarity
-        const rarityWeights = {
-          common: 100,
-          rare: 30,
-          epic: 10,
-          legendary: 3,
-          conditional: 50, // Medium weight for conditional
-        };
-
-        let totalWeight = 0;
-        availableEvents.forEach((event) => {
-          totalWeight += rarityWeights[event.rarity] || 50;
-        });
-
-        let randomWeight = Math.random() * totalWeight;
-        let currentWeight = 0;
-
-        for (let event of availableEvents) {
-          currentWeight += rarityWeights[event.rarity] || 50;
-          if (randomWeight <= currentWeight) {
-            console.log(`🎯 Conditional event triggered: ${event.title}`);
-            console.log(`📊 Current stats:`, gameState.stats);
-            console.log(`✅ Conditions met:`, event.conditions);
-            return event;
-          }
-        }
-
-        return availableEvents[0]; // Fallback
+        // Select random from available and mark as used
+        const selectedEvent = availableEvents[Math.floor(Math.random() * availableEvents.length)];
+        usedEvents.add(selectedEvent.title);
+        console.log('🎯 Selected event:', selectedEvent.title, '| Used events:', usedEvents.size);
+        return selectedEvent;
       }
 
-      // Show random event
+      // Show random event in center screen
       function showRandomEvent(event) {
         if (!event) return;
 
-        const randomEventEl = document.getElementById("randomEvent");
+        console.log(`🎪 Showing random event: ${event.title}`);
 
         // Apply effects with difficulty modifiers
         const modifiedEffects = applyDifficultyModifiers(event.effects || {});
-        let effectsHtml = "";
+        let totalChange = 0;
 
+        // Apply effects to game state first
         Object.entries(modifiedEffects).forEach(([stat, change]) => {
           if (change !== 0) {
-            // Apply the effect to game state
             const oldValue = gameState.stats[stat];
             gameState.stats[stat] = Math.max(0, Math.min(100, gameState.stats[stat] + change));
-
-            // Create display for the effect
-            const label = statLabels[stat] || stat;
-            const sign = change > 0 ? "+" : "";
-            const className = change > 0 ? "effect-positive" : change < 0 ? "effect-negative" : "effect-neutral";
-            effectsHtml += `<div class="effect-item"><span class="${className}">${label} ${sign}${change}</span></div>`;
-
-            console.log(`Random event effect - ${stat}: ${oldValue} -> ${gameState.stats[stat]} (${sign}${change})`);
+            totalChange += Math.abs(change);
+            console.log(`Random event effect - ${stat}: ${oldValue} -> ${gameState.stats[stat]} (${change > 0 ? '+' : ''}${change})`);
           }
         });
 
-        randomEventEl.innerHTML = `
-          <div class="event-title">${event.title}</div>
-          <div class="event-description">${event.text}</div>
-          <div class="event-effects">
-            <div class="effects-title">Ảnh Hưởng</div>
-            <div class="effects-grid">${effectsHtml}</div>
+        // Update score
+        gameState.score += totalChange * 2; // Random events give bonus score
+
+        // Create event popup in center screen
+        const eventDiv = document.createElement('div');
+        eventDiv.className = 'random-event-popup';
+        eventDiv.style.cssText = `
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: linear-gradient(135deg, #1a1a2e, #16213e);
+          color: white;
+          padding: 35px;
+          border-radius: 25px;
+          border: 3px solid #f59e0b;
+          max-width: 700px;
+          z-index: 10000;
+          box-shadow: 0 25px 60px rgba(0,0,0,0.8), 0 0 40px rgba(245, 158, 11, 0.3);
+          animation: eventSlideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+          backdrop-filter: blur(15px);
+          width: 90%;
+          max-height: 80vh;
+          overflow-y: auto;
+        `;
+
+        // Determine event severity
+        const isHighImpact = Object.values(modifiedEffects).some(val => Math.abs(val) >= 15);
+        const severityColor = isHighImpact ? '#ef4444' : '#f59e0b';
+        const severityIcon = isHighImpact ? '💥' : '⚡';
+
+        eventDiv.innerHTML = `
+          <div style="text-align: center; margin-bottom: 25px;">
+            <h2 style="color: ${severityColor}; margin-bottom: 10px; font-size: 1.8em; animation: eventTitleGlow 2s infinite;">
+              ${severityIcon} RANDOM EVENT! ${severityIcon}
+            </h2>
+            <div style="background: rgba(245, 158, 11, 0.15); padding: 8px 16px; border-radius: 20px; display: inline-block; font-size: 0.9em; color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3);">
+              Lượt ${gameState.currentTurn} | ${event.rarity?.toUpperCase() || 'RANDOM'}
+            </div>
+          </div>
+          
+          <h3 style="color: #f59e0b; margin-bottom: 20px; text-align: center; font-size: 1.6em; line-height: 1.2;">
+            ${event.title}
+          </h3>
+          
+          <p style="margin-bottom: 30px; line-height: 1.7; text-align: center; font-size: 1.15em; color: #e2e8f0; padding: 0 10px;">
+            ${event.text}
+          </p>
+          
+          <div style="background: rgba(99, 102, 241, 0.15); padding: 25px; border-radius: 15px; margin-bottom: 30px; border: 1px solid rgba(99, 102, 241, 0.3);">
+            <h4 style="color: #6366f1; margin-bottom: 20px; text-align: center; font-size: 1.2em;">📊 Tác Động Lên Chỉ Số:</h4>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+              ${Object.entries(modifiedEffects).map(([stat, change]) => {
+                if (change === 0) return '';
+                return `<span style="
+                  display: inline-block; 
+                  padding: 10px 15px; 
+                  background: ${change > 0 ? 'rgba(239, 68, 68, 0.2)' : 'rgba(16, 185, 129, 0.2)'}; 
+                  border: 2px solid ${change > 0 ? '#ef4444' : '#10b981'};
+                  border-radius: 25px; 
+                  color: ${change > 0 ? '#ef4444' : '#10b981'};
+                  font-weight: 700;
+                  font-size: 1em;
+                  ${Math.abs(change) >= 15 ? 'animation: highImpactEffect 2s infinite; box-shadow: 0 0 15px rgba(255,255,255,0.2);' : ''}
+                ">
+                  ${statLabels[stat] || stat}: ${change > 0 ? '+' : ''}${change}
+                </span>`;
+              }).filter(Boolean).join('')}
+            </div>
+          </div>
+          
+          <div style="text-align: center;">
+            <button onclick="closeRandomEvent(this)" 
+                    style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white; border: none; padding: 18px 40px; border-radius: 30px; cursor: pointer; font-weight: 700; font-size: 1.2em; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;">
+              ⚡ Tiếp Tục Game
+            </button>
           </div>
         `;
 
-        randomEventEl.style.display = "block";
+        // Add to body
+        document.body.appendChild(eventDiv);
+
+        // Update display
+        updateDisplay();
+
+        // Add close function
+        window.closeRandomEvent = function(button) {
+          const eventPopup = button.closest('.random-event-popup');
+          eventPopup.style.animation = 'eventSlideOut 0.5s ease-in';
+          setTimeout(() => {
+            if (eventPopup.parentNode) {
+              eventPopup.remove();
+            }
+            delete window.closeRandomEvent;
+          }, 500);
+        };
+
+        // Add hover effect to button
+        const continueBtn = eventDiv.querySelector('button');
+        continueBtn.addEventListener('mouseenter', function() {
+          this.style.transform = 'scale(1.05) translateY(-2px)';
+          this.style.boxShadow = '0 10px 30px rgba(245, 158, 11, 0.5)';
+        });
+        continueBtn.addEventListener('mouseleave', function() {
+          this.style.transform = 'scale(1) translateY(0)';
+          this.style.boxShadow = 'none';
+        });
 
         // Update stats display after applying effects
         updateStatsDisplay();
@@ -1420,115 +3224,334 @@
         }, 5000);
       }
 
-      // Check game end conditions
+      // Show random event with choices
+      function showRandomEventWithChoices(event) {
+        if (!event) return;
+
+        console.log(`🎪 Showing random event with choices: ${event.title}`);
+
+        // Create event popup in center screen with choices
+        const eventDiv = document.createElement('div');
+        eventDiv.className = 'random-event-popup';
+        eventDiv.style.cssText = `
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: linear-gradient(135deg, #1a1a2e, #16213e);
+          color: white;
+          padding: 35px;
+          border-radius: 25px;
+          border: 3px solid #f59e0b;
+          max-width: 800px;
+          z-index: 10000;
+          box-shadow: 0 25px 60px rgba(0,0,0,0.8), 0 0 40px rgba(245, 158, 11, 0.3);
+          animation: eventSlideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+          backdrop-filter: blur(15px);
+          width: 90%;
+          max-height: 80vh;
+          overflow-y: auto;
+        `;
+
+        // Determine event severity
+        const isHighImpact = event.choices.some(choice => 
+          Object.values(choice.effects).some(val => Math.abs(val) >= 15)
+        );
+        const severityColor = isHighImpact ? '#ef4444' : '#f59e0b';
+        const severityIcon = isHighImpact ? '💥' : '⚡';
+
+        eventDiv.innerHTML = `
+          <div style="text-align: center; margin-bottom: 25px;">
+            <h2 style="color: ${severityColor}; margin-bottom: 10px; font-size: 1.8em; animation: eventTitleGlow 2s infinite;">
+              ${severityIcon} RANDOM EVENT WITH CHOICES! ${severityIcon}
+            </h2>
+            <div style="background: rgba(245, 158, 11, 0.15); padding: 8px 16px; border-radius: 20px; display: inline-block; font-size: 0.9em; color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3);">
+              Lượt ${gameState.currentTurn} | ${event.rarity?.toUpperCase() || 'RANDOM'}
+            </div>
+          </div>
+          
+          <h3 style="color: #f59e0b; margin-bottom: 20px; text-align: center; font-size: 1.6em; line-height: 1.2;">
+            ${event.title}
+          </h3>
+          
+          <p style="margin-bottom: 30px; line-height: 1.7; text-align: center; font-size: 1.15em; color: #e2e8f0; padding: 0 10px;">
+            ${event.text}
+          </p>
+          
+          <div style="margin-bottom: 30px;">
+            <h4 style="color: #6366f1; margin-bottom: 20px; text-align: center; font-size: 1.2em;">📋 Lựa Chọn Của Bạn:</h4>
+            <div class="choices-container" style="display: flex; flex-direction: column; gap: 15px;">
+              ${event.choices.map((choice, index) => {
+                const isHighImpactChoice = Object.values(choice.effects).some(val => Math.abs(val) >= 15);
+                const choiceClass = isHighImpactChoice ? 'high-impact-choice' : '';
+                
+                let effectsPreview = "";
+                if (choice.effects) {
+                  Object.entries(choice.effects).forEach(([stat, change]) => {
+                    if (change !== 0) {
+                      const sign = change > 0 ? "+" : "";
+                      const statName = statLabels[stat] || stat;
+                      const impactClass = Math.abs(change) >= 15 ? ' high-impact-effect' : '';
+                      effectsPreview += `<span class="effect-item${impactClass}">${statName} ${sign}${change}</span> `;
+                    }
+                  });
+                }
+
+                return `
+                  <div class="choice-option ${choiceClass}" onclick="handleEventChoice(${event.id}, ${index})" 
+                       style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%); 
+                              padding: 20px; border-radius: 15px; border: 2px solid rgba(99, 102, 241, 0.3); 
+                              cursor: pointer; transition: all 0.3s ease; ${isHighImpactChoice ? 'border-color: #ef4444; background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.05) 100%);' : ''}">
+                    <div style="font-weight: 700; font-size: 1.1em; margin-bottom: 10px; color: ${isHighImpactChoice ? '#ef4444' : '#f59e0b'};">${choice.title}</div>
+                    <div style="margin-bottom: 15px; color: #e2e8f0;">${choice.text}</div>
+                    <div style="font-size: 0.9em; color: #cbd5e1;">Tác động: ${effectsPreview || "Không có"}</div>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          </div>
+        `;
+
+        // Add to body
+        document.body.appendChild(eventDiv);
+
+        // Add hover effects to choices
+        const choiceOptions = eventDiv.querySelectorAll('.choice-option');
+        choiceOptions.forEach(option => {
+          option.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-3px) scale(1.02)';
+            this.style.boxShadow = '0 8px 25px rgba(99, 102, 241, 0.3)';
+          });
+          option.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+            this.style.boxShadow = 'none';
+          });
+        });
+
+        // Add global function to handle choice selection
+        window.handleEventChoice = function(eventId, choiceIndex) {
+          const selectedEvent = randomEventsWithChoicesData.find(e => e.id === eventId);
+          if (!selectedEvent) return;
+
+          const selectedChoice = selectedEvent.choices[choiceIndex];
+          console.log(`🎯 Selected choice for event ${eventId}: ${selectedChoice.title}`);
+
+          // Apply effects with difficulty modifiers
+          const modifiedEffects = applyDifficultyModifiers(selectedChoice.effects || {});
+          let totalChange = 0;
+
+          // Apply effects to game state
+          Object.entries(modifiedEffects).forEach(([stat, change]) => {
+            if (change !== 0) {
+              const oldValue = gameState.stats[stat];
+              gameState.stats[stat] = Math.max(0, Math.min(100, gameState.stats[stat] + change));
+              totalChange += Math.abs(change);
+              console.log(`Event choice effect - ${stat}: ${oldValue} -> ${gameState.stats[stat]} (${change > 0 ? '+' : ''}${change})`);
+            }
+          });
+
+          // Update score
+          gameState.score += totalChange * 2; // Events with choices give bonus score
+
+          // Update display
+          updateDisplay();
+
+          // Remove event popup
+          const eventPopup = document.querySelector('.random-event-popup');
+          if (eventPopup) eventPopup.remove();
+
+          // Clean up global function
+          delete window.handleEventChoice;
+
+          // Continue with next turn
+          setTimeout(() => {
+            loadCurrentStory();
+          }, 1000);
+        };
+      }
+
+      // Function để đánh giá ending theo requirements từ endings.json
+      function evaluateEnding(ending) {
+        if (!ending.requirements) return false;
+
+        const stats = gameState.stats;
+        const req = ending.requirements;
+
+        console.log(`🎯 Evaluating ending: ${ending.id}`, {
+          currentStats: stats,
+          requirements: req
+        });
+
+        // Check basic stat requirements
+        for (const [statName, condition] of Object.entries(req)) {
+          if (statName === 'min_turn') {
+            const minTurn = parseInt(condition.replace('≥ ', ''));
+            if (gameState.currentTurn < minTurn) {
+              console.log(`❌ Failed min_turn: ${gameState.currentTurn} < ${minTurn}`);
+              return false;
+            }
+            continue;
+          }
+
+          if (statName === 'completed_turns') {
+            if (condition === '= max_turns') {
+              if (gameState.currentTurn < maxTurns) {
+                console.log(`❌ Failed completed_turns: ${gameState.currentTurn} < ${maxTurns}`);
+                return false;
+              }
+            }
+            continue;
+          }
+
+          if (statName === 'triggered_by') {
+            // Special case for chain endings
+            continue;
+          }
+
+          // Regular stat checks
+          const currentValue = stats[statName];
+          if (currentValue === undefined) {
+            console.log(`❌ Stat not found: ${statName}`);
+            continue;
+          }
+
+          // Parse condition (≤ 20, ≥ 70, etc.)
+          let passed = false;
+          if (condition.includes('≤')) {
+            const threshold = parseInt(condition.replace('≤ ', ''));
+            passed = currentValue <= threshold;
+            console.log(`📊 ${statName}: ${currentValue} ≤ ${threshold} = ${passed}`);
+          } else if (condition.includes('≥')) {
+            const threshold = parseInt(condition.replace('≥ ', ''));
+            passed = currentValue >= threshold;
+            console.log(`📊 ${statName}: ${currentValue} ≥ ${threshold} = ${passed}`);
+          }
+
+          if (!passed) {
+            console.log(`❌ Failed requirement: ${statName} ${condition}`);
+            return false;
+          }
+        }
+
+        console.log(`✅ All requirements met for ending: ${ending.id}`);
+        return true;
+      }
+
+      // Check game end conditions using endings.json
       function checkGameEnd() {
-        // Check failure conditions
+        console.log("🎯 Checking game end conditions...");
+        
+        if (gameState.gameEnded) return true;
+
+        // 🚨 KIỂM TRA CÁC TRƯỜNG HỢP CỰC ĐOAN TRƯỚC (ưu tiên cao nhất)
+        console.log("🚨 Checking critical failure conditions first...");
+        
+        // Cách mạng - Conflict quá cao
         if (gameState.stats.conflict >= 85) {
-          endGame(
-            "revolution",
-            "🔥 CÁCH MẠNG BÙNG NỔ",
-            "Xung đột đạt mức tới hạn. Người dân nổi dậy và lật đổ chính quyền!"
-          );
+          console.log("💥 CRITICAL: Conflict >= 85, triggering revolution");
+          endGame("revolution", "🔥 CÁCH MẠNG BÙNG NỔ", "Xung đột xã hội vượt quá ngưỡng chịu đựng. Hàng triệu người xuống đường biểu tình. Chính phủ của bạn đã bị lật đổ bởi sức mạnh của nhân dân!");
           return true;
         }
 
-        if (gameState.stats.discontent >= 80) {
-          endGame(
-            "overthrown",
-            "🔻 MẤT QUYỀN LỰC",
-            "Sự bất mãn của dân chúng đạt đỉnh điểm. Bạn bị truất phế khỏi chức vụ!"
-          );
+        // Sụp đổ kinh tế - Economy quá thấp
+        if (gameState.stats.economy <= 10) {
+          console.log("📉 CRITICAL: Economy <= 10, triggering economic collapse");
+          endGame("economic_collapse", "📉 SUY THOÁI KINH TẾ", "Nền kinh tế sụp đổ hoàn toàn. Đất nước rơi vào khủng hoảng tài chính nghiêm trọng. Thất nghiệp cao, lạm phát tăng vọt. Bạn đã thất bại trong việc lãnh đạo kinh tế!");
+          return true;
+        }
+
+        // Thảm họa môi trường - Environment quá thấp
+        if (gameState.stats.environment <= 10) {
+          console.log("🌍 CRITICAL: Environment <= 10, triggering environmental disaster");
+          endGame("environmental_disaster", "🌍 THẢM HỌA MÔI TRƯỜNG", "Môi trường bị tàn phá nghiêm trọng. Biến đổi khí hậu và ô nhiễm đã làm đất nước không thể sinh sống được. Thảm họa sinh thái đã xảy ra!");
+          return true;
+        }
+
+        // Mất quyền lực - Discontent quá cao
+        if (gameState.stats.discontent >= 85) {
+          console.log("🔻 CRITICAL: Discontent >= 85, triggering overthrow");
+          endGame("overthrown", "🔻 MẤT QUYỀN LỰC", "Sự bất mãn của dân chúng đạt đỉnh điểm. Người dân không còn tin tưởng vào chính quyền. Bạn bị truất phế khỏi chức vụ!");
+          return true;
+        }
+
+        // Security quá thấp - Mất kiểm soát
+        if (gameState.stats.security <= 5) {
+          console.log("⚠️ CRITICAL: Security <= 5, triggering anarchy");
+          endGame("anarchy", "⚡ TÌNH TRẠNG VÔ CHÍNH PHỦ", "An ninh sụp đổ hoàn toàn. Tội phạm hoành hành, luật pháp không còn hiệu lực. Đất nước rơi vào tình trạng hỗn loạn!");
+          return true;
+        }
+
+        // Freedom quá thấp + Security quá cao = Độc tài ngay lập tức
+        if (gameState.stats.freedom <= 5 && gameState.stats.security >= 90) {
+          console.log("⚔️ CRITICAL: Extreme dictatorship detected");
+          endGame("extreme_dictatorship", "👑 ĐỘC TÀI TUYỆT ĐỐI", "Bạn đã thiết lập chế độ độc tài tuyệt đối. Mọi quyền tự do bị triệt tiêu, kiểm soát tuyệt đối. Nhưng lịch sử chứng minh... không ai cai trị mãi mãi!");
+          return true;
+        }
+
+        // 📚 SAU ĐÓ MỚI KIỂM TRA ENDINGS.JSON (cho các trường hợp bình thường)
+        if (Array.isArray(endingsData) && endingsData.length > 0) {
+          console.log(`📚 Evaluating ${endingsData.length} endings from endings.json`);
+          
+          // Evaluate each ending in order from most specific to generic
+          for (const ending of endingsData) {
+            if (triggeredEndings.has(ending.id)) continue; // Skip already shown endings
+
+            if (evaluateEnding(ending)) {
+              // Handle leads_to chain for dictator path
+              if (ending.leads_to) {
+                console.log(`� Chain ending detected: ${ending.id} → ${ending.leads_to}`);
+                
+                // Trigger temporary ending first (if defined) then queue leads_to
+                endGame(ending.id, ending.name, ending.description);
+                triggeredEndings.add(ending.id);
+
+                // If the ending leads to another ending (e.g. dictator -> hitler_aftermath)
+                const nextEnding = endingsData.find((e) => e.id === ending.leads_to);
+                if (nextEnding) {
+                  // Show the follow-up ending after a short delay
+                  setTimeout(() => {
+                    console.log(`🔗 Triggering follow-up ending: ${nextEnding.id}`);
+                    endGame(nextEnding.id, nextEnding.name, nextEnding.description);
+                    triggeredEndings.add(nextEnding.id);
+                  }, 2000);
+                }
+                return true;
+              }
+
+              // Normal ending
+              console.log(`✅ Triggering ending: ${ending.id}`);
+              endGame(ending.id, ending.name, ending.description);
+              triggeredEndings.add(ending.id);
+              return true;
+            }
+          }
+        }
+
+        // Fallback: Basic failure conditions if no endings.json
+        console.log("⚠️ Using fallback ending conditions");
+        
+        if (gameState.stats.conflict >= 85) {
+          endGame("revolution", "🔥 CÁCH MẠNG BÙNG NỔ", "Xung đột đạt mức tới hạn!");
           return true;
         }
 
         if (gameState.stats.economy <= 10) {
-          endGame(
-            "economiccollapse",
-            "📉 SỤP ĐỔ KINH TẾ",
-            "Nền kinh tế sụp đổ hoàn toàn. Đất nước rơi vào khủng hoảng!"
-          );
+          endGame("economic_collapse", "� SỤP ĐỔ KINH TẾ", "Nền kinh tế sụp đổ hoàn toàn!");
           return true;
         }
 
         if (gameState.stats.environment <= 10) {
-          endGame(
-            "environmental_disaster",
-            "🌍 THẢM HỌA MÔI TRƯỜNG",
-            "Môi trường bị tàn phá nghiêm trọng. Biến đổi khí hậu và ô nhiễm đã làm đất nước không thể sinh sống!"
-          );
+          endGame("environmental_disaster", "� THẢM HỌA MÔI TRƯỜNG", "Môi trường bị tàn phá!");
           return true;
-        }
-
-        // Check success conditions after turn 10
-        if (gameState.currentTurn >= 10) {
-          // Best Leader Ever ending
-          if (
-            gameState.stats.discontent <= 20 &&
-            gameState.stats.conflict <= 25 &&
-            gameState.stats.economy >= 70 &&
-            gameState.stats.environment >= 60 &&
-            gameState.stats.freedom >= 65 &&
-            gameState.stats.security >= 60
-          ) {
-            endGame(
-              "talented_leader",
-              "🏆 NHÀ LÃNH ĐẠO TÀI BA - BEST LEADER EVER",
-              "Bạn đã thành công xuất sắc! Đất nước thịnh vượng, dân chúng hạnh phúc, tự do được đảm bảo và an ninh ổn định. You are a best leader ever! Bạn sẽ được nhớ mãi như một nhà lãnh đạo tài ba!"
-            );
-            return true;
-          }
-
-          // Hitler aftermath ending (dictator path)
-          if (gameState.stats.security >= 75 && gameState.stats.freedom <= 25) {
-            if (!dictatorModeTriggered) {
-              dictatorModeTriggered = true;
-              // Show temporary dictator message, then collapse after 2 seconds
-              setTimeout(() => {
-                endGame(
-                  "hitler_aftermath",
-                  "💥 HẬU QUẢ CỦA ĐỘC TÀI - DICTATOR'S COLLAPSE",
-                  'Bạn đã trở thành nhà độc tài, nhưng lịch sử chứng minh: "Quyền lực tuyệt đối dẫn đến sự sụp đổ tuyệt đối." Một năm sau, cách mạng bùng nổ và lật đổ chế độ độc tài! You look like Hitler after this you will collapse! Giống như trong lịch sử, mọi chế độ độc tài đều có ngày sụp đổ.'
-                );
-              }, 2000);
-
-              endGame(
-                "dictator_temporary",
-                "⚔️ ĐỘC TÀI QUÂN SỰ (TẠM THỜI)",
-                "Bạn đã thiết lập chế độ độc tài quân sự. Đất nước trong tầm kiểm soát tuyệt đối... nhưng lịch sử sẽ phán xét..."
-              );
-              return true;
-            }
-          }
-
-          if (gameState.stats.economy >= 85) {
-            endGame(
-              "economic_emperor",
-              "💰 HOÀNG ĐẾ KINH TẾ",
-              "Nền kinh tế phát triển mạnh mẽ. Bạn biến đất nước thành cường quốc kinh tế!"
-            );
-            return true;
-          }
-
-          if (gameState.stats.environment >= 85) {
-            endGame(
-              "environmental_champion",
-              "🌱 VUA BẢO VỆ MÔI TRƯỜNG",
-              "Bạn đã biến đất nước thành thiên đường xanh. Môi trường được bảo vệ hoàn hảo!"
-            );
-            return true;
-          }
         }
 
         // Natural end at max turns
         if (gameState.currentTurn > maxTurns) {
-          endGame(
-            "natural_end",
-            "⏰ KẾT THÚC NHIỆM KỲ",
-            `Bạn hoàn thành nhiệm kỳ cầm quyền ${maxTurns} lượt. Kết quả cuối cùng tùy thuộc vào các chỉ số bạn đạt được.`
-          );
+          endGame("natural_end", "⏰ KẾT THÚC NHIỆM KỲ", `Hoàn thành nhiệm kỳ ${maxTurns} lượt.`);
           return true;
         }
 
+        console.log("❌ No ending conditions met");
         return false;
       }
 
@@ -1564,6 +3587,10 @@
         };
 
         dictatorModeTriggered = false;
+
+        // Reset event tracking
+        usedEvents.clear();
+        lastEventTurn = 0;
 
         // Remove difficulty indicator
         const indicator = document.getElementById("difficulty-indicator");

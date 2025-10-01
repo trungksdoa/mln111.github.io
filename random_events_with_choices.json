@@ -1,0 +1,449 @@
+[
+  {
+    "id": 101,
+    "title": "BẠO LOẠN SINH VIÊN Ở QUẢNG TRƯỜNG THIÊN AN MÔN",
+    "text": "Hàng ngàn sinh viên xuống đường biểu tình đòi dân chủ và tự do ngôn luận. Họ chiếm giữ quảng trường và yêu cầu chính phủ thực hiện cải cách chính trị. Tình hình đang trở nên căng thẳng.",
+    "conditions": {
+      "freedom": {"max": 25},
+      "security": {"min": 60},
+      "min_turn": 5
+    },
+    "choices": [
+      {
+        "title": "ĐÀN ÁP BẰNG VŨ LỰC",
+        "text": "Triển khai quân đội và cảnh sát để dẹp loạn ngay lập tức, khôi phục trật tự bằng mọi giá",
+        "effects": {
+          "discontent": 25,
+          "conflict": 30,
+          "freedom": -20,
+          "security": 15
+        }
+      },
+      {
+        "title": "XOA DỊU VÀ ĐỐI THOẠI",
+        "text": "Cử đại diện chính phủ đối thoại với sinh viên, cam kết xem xét các yêu cầu cải cách",
+        "effects": {
+          "discontent": -10,
+          "conflict": -15,
+          "freedom": 15,
+          "security": -5
+        }
+      },
+      {
+        "title": "BẮT NGƯỜI CẦM ĐẦU",
+        "text": "Bắt giữ các nhà lãnh đạo phong trào để làm gương, nhưng cho phép biểu tình ôn hòa tiếp tục",
+        "effects": {
+          "discontent": 15,
+          "conflict": 20,
+          "freedom": -15,
+          "security": 10
+        }
+      }
+    ],
+    "rarity": "conditional",
+    "trigger_chance": 0.9
+  },
+  {
+    "id": 102,
+    "title": "KHỦNG HOẢNG TÀI CHÍNH TOÀN CẦU",
+    "text": "Một cuộc khủng hoảng tài chính quốc tế đang lan rộng, ảnh hưởng nghiêm trọng đến nền kinh tế trong nước. Các ngân hàng đứng trước nguy cơ sụp đổ.",
+    "conditions": {
+      "economy": {"max": 30},
+      "min_turn": 3
+    },
+    "choices": [
+      {
+        "title": "GIẢI CỨU NGÂN HÀNG",
+        "text": "Sử dụng ngân sách nhà nước để cứu trợ các ngân hàng lớn, ngăn chặn sụp đổ hệ thống",
+        "effects": {
+          "discontent": 10,
+          "economy": 15,
+          "security": 5,
+          "freedom": -5
+        }
+      },
+      {
+        "title": "ĐỂ THỊ TRƯỜNG TỰ ĐIỀU CHỈNH",
+        "text": "Không can thiệp, để thị trường tự điều chỉnh theo quy luật cung cầu",
+        "effects": {
+          "discontent": 20,
+          "economy": -20,
+          "conflict": 15,
+          "freedom": 10
+        }
+      },
+      {
+        "title": "KIỂM SOÁT VỐN VÀ LÃI SUẤT",
+        "text": "Áp dụng các biện pháp kiểm soát vốn và điều chỉnh lãi suất để ổn định thị trường",
+        "effects": {
+          "discontent": 5,
+          "economy": -5,
+          "security": 10,
+          "freedom": -10
+        }
+      }
+    ],
+    "rarity": "conditional",
+    "trigger_chance": 0.8
+  },
+  {
+    "id": 103,
+    "title": "THẢM HỌA THIÊN NHIÊN LỊCH SỬ",
+    "text": "Một trận động đất mạnh kèm theo sóng thần đã tàn phá nhiều tỉnh thành ven biển. Hàng triệu người mất nhà cửa, cần cứu trợ khẩn cấp.",
+    "conditions": {
+      "environment": {"max": 20},
+      "min_turn": 4
+    },
+    "choices": [
+      {
+        "title": "TẬP TRUNG CỨU TRỢ KHẨN CẤP",
+        "text": "Huy động toàn bộ nguồn lực cho cứu trợ khẩn cấp, ưu tiên cứu người và cung cấp nhu yếu phẩm",
+        "effects": {
+          "discontent": -15,
+          "conflict": -10,
+          "economy": -25,
+          "environment": -5
+        }
+      },
+      {
+        "title": "KÊU GỌI VIỆN TRỢ QUỐC TẾ",
+        "text": "Nhờ cộng đồng quốc tế hỗ trợ tài chính và kỹ thuật cho công tác cứu trợ",
+        "effects": {
+          "discontent": 5,
+          "economy": 15,
+          "security": -5,
+          "freedom": 5
+        }
+      },
+      {
+        "title": "TÁI THIẾT HẠ TẦNG BỀN VỮNG",
+        "text": "Tập trung vào xây dựng lại hệ thống hạ tầng chống chịu thiên tai lâu dài",
+        "effects": {
+          "discontent": 10,
+          "economy": -30,
+          "environment": 20,
+          "security": 10
+        }
+      }
+    ],
+    "rarity": "conditional",
+    "trigger_chance": 0.7
+  },
+  {
+    "id": 104,
+    "title": "CUỘC ĐẢO CHÍNH QUÂN SỰ",
+    "text": "Một nhóm sĩ quan quân đội cấp cao đang âm mưu đảo chính lật đổ chính phủ. Họ cáo buộc chính phủ tham nhũng và yếu kém trong lãnh đạo.",
+    "conditions": {
+      "security": {"max": 40},
+      "discontent": {"min": 60},
+      "min_turn": 8
+    },
+    "choices": [
+      {
+        "title": "ĐÀN ÁP CUỘC ĐẢO CHÍNH",
+        "text": "Sử dụng lực lượng trung thành để bắt giữ những kẻ âm mưu đảo chính",
+        "effects": {
+          "discontent": 20,
+          "conflict": 25,
+          "security": 20,
+          "freedom": -25
+        }
+      },
+      {
+        "title": "THƯƠNG LƯỢNG VÀ NHƯỢNG BỘ",
+        "text": "Đàm phán với nhóm đảo chính, chấp nhận một số yêu cầu để tránh đổ máu",
+        "effects": {
+          "discontent": -10,
+          "conflict": -15,
+          "security": -10,
+          "freedom": 15
+        }
+      },
+      {
+        "title": "TỔ CHỨC BẦU CỬ MỚI",
+        "text": "Đồng ý từ chức và tổ chức bầu cử mới để giải quyết khủng hoảng chính trị",
+        "effects": {
+          "discontent": -20,
+          "conflict": -20,
+          "security": -15,
+          "freedom": 30
+        }
+      }
+    ],
+    "rarity": "conditional",
+    "trigger_chance": 0.6
+  },
+  {
+    "id": 105,
+    "title": "PHONG TRÀO ĐÒI TỰ TRỊ DÂN TỘC THIỂU SỐ",
+    "text": "Các dân tộc thiểu số ở vùng biên giới tuyên bố muốn tự trị và thành lập chính quyền riêng. Họ đòi hỏi quyền tự quản và ngôn ngữ chính thức riêng.",
+    "conditions": {
+      "freedom": {"max": 30},
+      "conflict": {"min": 40},
+      "min_turn": 6
+    },
+    "choices": [
+      {
+        "title": "ĐÀN ÁP PHONG TRÀO TỰ TRỊ",
+        "text": "Sử dụng quân đội để duy trì thống nhất quốc gia, đàn áp mọi phong trào ly khai",
+        "effects": {
+          "discontent": 25,
+          "conflict": 30,
+          "security": 15,
+          "freedom": -20
+        }
+      },
+      {
+        "title": "TRAO QUYỀN TỰ TRỊ CAO ĐỘ",
+        "text": "Chấp nhận cho các dân tộc thiểu số có quyền tự quản lý địa phương cao độ",
+        "effects": {
+          "discontent": -20,
+          "conflict": -25,
+          "security": -15,
+          "freedom": 25
+        }
+      },
+      {
+        "title": "ĐÀM PHÁN THOẢ HIỆP",
+        "text": "Tìm giải pháp trung gian thông qua đối thoại lâu dài và từng bước nhượng bộ",
+        "effects": {
+          "discontent": 5,
+          "conflict": 10,
+          "security": 0,
+          "freedom": 10
+        }
+      }
+    ],
+    "rarity": "conditional",
+    "trigger_chance": 0.8
+  },
+  {
+    "id": 106,
+    "title": "ĐẠI DỊCH TOÀN CẦU BÙNG PHÁT",
+    "text": "Một đại dịch mới với tốc độ lây lan cực nhanh đang hoành hành trên toàn cầu. Hệ thống y tế quá tải, kinh tế đình trệ.",
+    "conditions": {
+      "economy": {"min": 40},
+      "min_turn": 3
+    },
+    "choices": [
+      {
+        "title": "PHONG TỎA TOÀN QUỐC NGHIÊM NGẶT",
+        "text": "Áp dụng lệnh phong tỏa toàn quốc để kiểm soát dịch bệnh triệt để",
+        "effects": {
+          "discontent": 20,
+          "conflict": 15,
+          "economy": -30,
+          "security": 20,
+          "freedom": -25
+        }
+      },
+      {
+        "title": "CÁCH LY CÓ CHỌN LỌC",
+        "text": "Chỉ phong tỏa những khu vực có nguy cơ cao, duy trì hoạt động kinh tế",
+        "effects": {
+          "discontent": 10,
+          "conflict": 10,
+          "economy": -15,
+          "security": 10,
+          "freedom": -10
+        }
+      },
+      {
+        "title": "TẬP TRUNG VÀO VẮC XIN VÀ ĐIỀU TRỊ",
+        "text": "Đầu tư mạnh vào nghiên cứu vắc xin và điều trị thay vì phong tỏa",
+        "effects": {
+          "discontent": 15,
+          "conflict": 20,
+          "economy": -20,
+          "environment": -10,
+          "freedom": 5
+        }
+      }
+    ],
+    "rarity": "conditional",
+    "trigger_chance": 0.7
+  },
+  {
+    "id": 107,
+    "title": "KHỦNG HOẢNG NĂNG LƯỢNG TOÀN CẦU",
+    "text": "Giá dầu thế giới tăng vọt 300% do xung đột ở khu vực sản xuất dầu lớn. Người dân biểu tình đòi chính phủ can thiệp giảm giá nhiên liệu.",
+    "conditions": {
+      "economy": {"min": 50},
+      "min_turn": 4
+    },
+    "choices": [
+      {
+        "title": "TRỢ CẤP GIÁ NHIÊN LIỆU",
+        "text": "Dùng ngân sách nhà nước để trợ cấp giá xăng dầu cho người dân",
+        "effects": {
+          "discontent": -15,
+          "conflict": -10,
+          "economy": -25,
+          "environment": -15
+        }
+      },
+      {
+        "title": "TĂNG THUẾ ĐỂ BÙ ĐẮP",
+        "text": "Tăng thuế để có nguồn tài chính ổn định, chấp nhận giá nhiên liệu cao",
+        "effects": {
+          "discontent": 20,
+          "conflict": 15,
+          "economy": 10,
+          "freedom": -5
+        }
+      },
+      {
+        "title": "ĐẦU TƯ NĂNG LƯỢNG TÁI TẠO",
+        "text": "Chuyển hướng đầu tư mạnh vào năng lượng mặt trời và gió",
+        "effects": {
+          "discontent": 10,
+          "conflict": 5,
+          "economy": -15,
+          "environment": 25,
+          "freedom": 5
+        }
+      }
+    ],
+    "rarity": "conditional",
+    "trigger_chance": 0.8
+  },
+  {
+    "id": 108,
+    "title": "VỤ THAM NHŨNG CHẤN ĐỘNG",
+    "text": "Một vụ tham nhũng lớn bị phanh phui liên quan đến nhiều quan chức cao cấp. Dư luận yêu cầu điều tra triệt để và xử lý nghiêm minh.",
+    "conditions": {
+      "security": {"min": 50},
+      "min_turn": 5
+    },
+    "choices": [
+      {
+        "title": "ĐIỀU TRA CÔNG KHAI VÀ XỬ LÝ NGHIÊM",
+        "text": "Minh bạch hoàn toàn trong xử lý tham nhũng, công khai mọi thông tin",
+        "effects": {
+          "discontent": -20,
+          "conflict": -10,
+          "economy": 5,
+          "freedom": 20,
+          "security": 10
+        }
+      },
+      {
+        "title": "ĐIỀU TRA KÍN VÀ XỬ LÝ NỘI BỘ",
+        "text": "Giải quyết vụ việc một cách kín đáo để tránh ảnh hưởng đến ổn định chính trị",
+        "effects": {
+          "discontent": 15,
+          "conflict": 10,
+          "economy": -5,
+          "freedom": -10,
+          "security": -5
+        }
+      },
+      {
+        "title": "CHE ĐẬY ĐỂ TRÁNH MẤT ỔN ĐỊNH",
+        "text": "Ưu tiên ổn định chính trị hơn minh bạch, che đậy vụ việc",
+        "effects": {
+          "discontent": 25,
+          "conflict": 20,
+          "economy": -8,
+          "freedom": -20,
+          "security": -10
+        }
+      }
+    ],
+    "rarity": "conditional",
+    "trigger_chance": 0.9
+  },
+  {
+    "id": 109,
+    "title": "CUỘC CÁCH MẠNG CÔNG NGHIỆP 4.0",
+    "text": "Tự động hóa và AI đang thay thế hàng triệu việc làm truyền thống. Công nhân biểu tình đòi chính phủ bảo vệ quyền lợi và tạo việc làm mới.",
+    "conditions": {
+      "economy": {"min": 60},
+      "min_turn": 7
+    },
+    "choices": [
+      {
+        "title": "ĐẦU TƯ ĐÀO TẠO LẠI LAO ĐỘNG",
+        "text": "Chi ngân sách lớn để đào tạo kỹ năng mới cho công nhân bị thay thế",
+        "effects": {
+          "discontent": -10,
+          "conflict": -5,
+          "economy": -20,
+          "freedom": 10,
+          "security": 5
+        }
+      },
+      {
+        "title": "HẠN CHẾ CÔNG NGHỆ TỰ ĐỘNG HÓA",
+        "text": "Ban hành luật hạn chế việc thay thế lao động bằng máy móc",
+        "effects": {
+          "discontent": -15,
+          "conflict": 5,
+          "economy": -25,
+          "freedom": -15,
+          "security": 10
+        }
+      },
+      {
+        "title": "THÚC ĐẨY NỀN KINH TẾ SỐ",
+        "text": "Ưu tiên phát triển công nghệ và để thị trường tự điều chỉnh",
+        "effects": {
+          "discontent": 15,
+          "conflict": 20,
+          "economy": 15,
+          "freedom": 10,
+          "security": -5
+        }
+      }
+    ],
+    "rarity": "conditional",
+    "trigger_chance": 0.7
+  },
+  {
+    "id": 110,
+    "title": "XUNG ĐỘT BIÊN GIỚI VỚI NƯỚC LÁNG GIỀNG",
+    "text": "Căng thẳng biên giới với nước láng giềng leo thang. Cả hai bên đều triển khai thêm quân đội, nguy cơ xung đột vũ trang đang hiện hữu.",
+    "conditions": {
+      "security": {"max": 50},
+      "conflict": {"min": 40},
+      "min_turn": 6
+    },
+    "choices": [
+      {
+        "title": "TĂNG CƯỜNG QUÂN SỰ TẠI BIÊN GIỚI",
+        "text": "Triển khai thêm lực lượng để bảo vệ chủ quyền và thể hiện sức mạnh",
+        "effects": {
+          "discontent": 15,
+          "conflict": 20,
+          "economy": -25,
+          "security": 30,
+          "freedom": -10
+        }
+      },
+      {
+        "title": "MỞ ĐÀM PHÁN NGOẠI GIAO",
+        "text": "Giải quyết bằng con đường ngoại giao hòa bình, tìm giải pháp thương lượng",
+        "effects": {
+          "discontent": -5,
+          "conflict": -15,
+          "economy": 5,
+          "security": -5,
+          "freedom": 10
+        }
+      },
+      {
+        "title": "ĐƯA VẤN ĐỀ LÊN LIÊN HỢP QUỐC",
+        "text": "Sử dụng pháp luật quốc tế và cộng đồng quốc tế để giải quyết tranh chấp",
+        "effects": {
+          "discontent": 0,
+          "conflict": -10,
+          "economy": -10,
+          "freedom": 15,
+          "security": 5
+        }
+      }
+    ],
+    "rarity": "conditional",
+    "trigger_chance": 0.6
+  }
+]
